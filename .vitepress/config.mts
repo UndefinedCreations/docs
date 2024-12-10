@@ -25,7 +25,8 @@ export default defineConfig({
           text: 'Getting Started',
           collapsed: false,
           items: [
-            { text: 'Stellar Setup', link: '/stellar/getting-started/stellar-setup' }
+            { text: 'Stellar Setup', link: '/stellar/getting-started/stellar-setup' },
+            { text: 'Creating a Simple Command', link: '/stellar/getting-started/creating-a-simple-command' },
           ]
         }
       ],
