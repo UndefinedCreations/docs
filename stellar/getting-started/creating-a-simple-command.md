@@ -77,9 +77,9 @@ StellarCommand("message")
         val message = getArgument<String>(1)
         target.sendMessage(message)
     }
-    .register(this)
+    .register(this) // this refers to the JavaPlugin instance
 ```
 
-`this` refers to the plugin.
+If you want to add any literal arguments ("forced arguments", like /), use `addArgument`.
 
 And congratulations, you have created your first command!

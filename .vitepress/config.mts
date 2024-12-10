@@ -29,6 +29,13 @@ export default defineConfig({
             { text: 'Creating a Simple Command', link: '/stellar/getting-started/creating-a-simple-command' },
             { text: 'Understanding Command Context', link: '/stellar/getting-started/understanding-command-context' },
           ]
+        },
+        {
+          text: 'Usage',
+          collapsed: false,
+          items: [
+            { text: 'Command Executions', link: '/stellar/usage/command-executions' },
+          ]
         }
       ],
     },
