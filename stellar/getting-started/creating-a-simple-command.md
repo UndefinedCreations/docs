@@ -7,31 +7,32 @@ description: The official docs for the Stellar Command API.
 
 To create a simple command, we first need to initialize the base command:
 
-```kt
+```kotlin
 StellarCommand("message")
 ```
 
 Now we need to add an argument, the player needs to be able to specify who they want to message. For that purpose, we'll use the pre-made online players ListArgument defined in `addOnlinePlayersArgument`:
 
-```kt
+```kotlin
 StellarCommand("message")
     .addOnlinePlayersArgument("target")
 ```
 
 Then we also need the player to be able to specify the message they want to send. We want this to be a phrase, not a word, and have no string limitations. We'll use the greedy string argument for that. There are two ways to create a greedy string argument, and we'll use the simpler one for now:
 
-```kt
+```kotlin
 StellarCommand("message")
     .addOnlinePlayersArgument("target")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
 ```
 
-
-> Note: You cannot have two non-literal arguments with the same! This will result in a DuplicateArgumentNameException being thrown during runtime.
+:::warning
+Note: You cannot have two non-literal arguments with the same! This will result in a DuplicateArgumentNameException being thrown during runtime.
+:::
 
 Now we need to message the target with that message whenever a player runs the commands. To achieve that, we'll use the `addExecution` method.
 
-```kt
+```kotlin
 StellarCommand("message")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addExecution<Player> {
@@ -41,7 +42,7 @@ StellarCommand("message")
 
 The generic type here is customizable to anything that extends CommandSender, and this method will only be called if the cast is successful. The method itself is an extension function (type) of CommandContext, which will be further explained in later docs. You can get the sender with `CommandContext#source` and the results of any arguments using the `CommandContext#getArgument`.
 
-```kt
+```kotlin
 StellarCommand("message")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addExecution<Player> {
@@ -53,7 +54,7 @@ StellarCommand("message")
 
 Now we need to add custom permissions to the command, using the `addRequirement` command.
 
-```kt
+```kotlin
 StellarCommand("message")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addRequirement("example.user.message")
@@ -68,7 +69,7 @@ Requirements are far more powerful than this, and we talk more about that in the
 
 To now register this, we can use the `register` method.
 
-```kt
+```kotlin
 StellarCommand("message")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addRequirement("example.user.message")

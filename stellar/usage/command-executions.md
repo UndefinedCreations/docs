@@ -1,5 +1,5 @@
 ---
-title: CommandExecutions
+title: Command Executions
 description: The official docs for the Stellar Command API.
 ---
 
@@ -15,7 +15,7 @@ There are three types of executions, the first being an execution that runs when
 
 These will only run when it is the last command typed. You can add this by using the `addExecution<T>`. `T` being the `CommandSender` used. Here is an example:
 
-```kt
+```kotlin
 StellarCommand("test")
     .addExecution<Player> {
         source.sendMessage("Hello world!")
@@ -26,7 +26,7 @@ StellarCommand("test")
 
 A command runnable is always run if it is an argument, in order of lowest to highest in the command tree. To add a runnable to your command, use the `addRunnable` method as such:
 
-```kt
+```kotlin
 StellarCommand("test")
     .addRunnable<Player> {
         source.sendMessage("This will always run.")
@@ -37,7 +37,7 @@ StellarCommand("test")
 
 Failure executions will be run if the command has been typed incorrectly and it is the last argument correctly typed. You can initially hide the default minecraft failure messages by using the `hideDefaultFailureMessages` method. Then you can add a simple execution by making use of the `addFailureExecution` method.
 
-```kt
+```kotlin
 StellarCommand("test")
     .addArgument("arg") // Literal argument
     .hideDefaultFailureMessages(hide = true, global = true) // global stands for if this will count for any sub-arguments
@@ -49,7 +49,7 @@ StellarCommand("test")
 
 A better way of adding custom failure message, if that's all you want, would be to use the `addFailureMessage` method:
 
-```kt
+```kotlin
 StellarCommand("test")
     .addArgument("arg")
     .hideDefaultFailureMessages(hide = true, global = true)
@@ -60,7 +60,7 @@ You can also use the `addPlainFailureMessage` to add a string message _not_ pars
 
 Lastly, if you want to add a failure message that will always run for the command and its sub-arguments, then use the `addGlobalFailureMessage` method:
 
-```kt
+```kotlin
 StellarCommand("test")
     .addArgument("arg")
     .hideDefaultFailureMessages(hide = true, global = true)
