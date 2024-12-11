@@ -11,10 +11,18 @@ To create a simple command, we first need to initialize the base command:
 StellarCommand("message")
 ```
 
+For a bit of customization you can add aliases as such:
+
+```kotlin
+StellarCommand("message")
+    .addAliases("msg", "tell")
+```
+
 Now we need to add an argument, the player needs to be able to specify who they want to message. For that purpose, we'll use the pre-made online players ListArgument defined in `addOnlinePlayersArgument`:
 
 ```kotlin
 StellarCommand("message")
+    .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
 ```
 
@@ -22,6 +30,7 @@ Then we also need the player to be able to specify the message they want to send
 
 ```kotlin
 StellarCommand("message")
+    .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
 ```
@@ -34,6 +43,7 @@ Now we need to message the target with that message whenever a player runs the c
 
 ```kotlin
 StellarCommand("message")
+    .addAliases("msg", "tell")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addExecution<Player> {
         // logic here
@@ -44,6 +54,7 @@ The generic type here is customizable to anything that extends CommandSender, an
 
 ```kotlin
 StellarCommand("message")
+    .addAliases("msg", "tell")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addExecution<Player> {
         val target = getArgument<Player>(0) // Player is what the return value will be casted to, and 0 is the index of the argument
@@ -56,6 +67,7 @@ Now we need to add custom permissions to the command, using the `addRequirement`
 
 ```kotlin
 StellarCommand("message")
+    .addAliases("msg", "tell")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addRequirement("example.user.message")
     .addExecution<Player> {
@@ -71,6 +83,7 @@ To now register this, we can use the `register` method.
 
 ```kotlin
 StellarCommand("message")
+    .addAliases("msg", "tell")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addRequirement("example.user.message")
     .addExecution<Player> {
@@ -81,6 +94,6 @@ StellarCommand("message")
     .register(this) // this refers to the JavaPlugin instance
 ```
 
-If you want to add any literal arguments ("forced arguments", like /), use `addArgument`.
+If you want to add any literal arguments ("forced arguments", like /title \<targets> (clear|reset)), use `addArgument`.
 
 And congratulations, you have created your first command!

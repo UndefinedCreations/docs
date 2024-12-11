@@ -24,10 +24,14 @@ Then add the library to your dependencies:
 
 ::: code-group
 ```groovy [build.gradle]
-implementation "com.undefined:stellar:(latest version)"
+maven {
+    url = "https://repo.undefinecreation.com/stellar"
+}
 ```
 ```kts [build.gradle.kts]
-implementation("com.undefined:stellar:(latest version)")
+maven {
+    url = uri("https://repo.undefinecreation.com/stellar")
+}
 ```
 :::
 
