@@ -36,6 +36,7 @@ export default defineConfig({
           items: [
             { text: 'Command Executions', link: '/stellar/usage/command-executions' },
             { text: 'Custom Suggestions', link: '/stellar/usage/custom-suggestions' },
+            { text: 'Command Requirements', link: '/stellar/usage/command-requirements' },
           ]
         }
       ],
