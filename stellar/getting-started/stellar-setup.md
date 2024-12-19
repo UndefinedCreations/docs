@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 To use the Stellar API in your project, we first need to import this into the project.
 
-## Gradle
+## Gradle (recommended)
 
 First add the repository:
 
