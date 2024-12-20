@@ -8,28 +8,28 @@ description: The official docs for the Stellar Command API.
 The `EntityArgument` allows for the selection of a single, or multiple entities. It also includes the use of target selectors (@a, @e, etc.). You can customize the argument using the `EntityDisplayType` enum. Examples:
 
 ::: code-group
-```kt [Entity]
+```kotlin [Entity]
 StellarCommand("select")
     .addEntityArgument(
         name = "target",
         type = EntityDisplayType.ENTITY
     )
 ```
-```kt [Entities]
+```kotlin [Entities]
 StellarCommand("select")
     .addEntityArgument(
         name = "targets",
         type = EntityDisplayType.ENTITIES
     )
 ```
-```kt [Player]
+```kotlin [Player]
 StellarCommand("select")
     .addEntityArgument(
         name = "target",
         type = EntityDisplayType.PLAYER
     )
 ```
-```kt [Players]
+```kotlin [Players]
 StellarCommand("select")
     .addEntityArgument(
         name = "targets",

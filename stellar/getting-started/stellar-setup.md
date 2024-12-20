@@ -14,11 +14,13 @@ First add the repository:
 ::: code-group
 ```groovy [build.gradle]
 maven {
+    name = "undefined-repo"
     url = "https://repo.undefinecreation.com/releases"
 }
 ```
 ```kts [build.gradle.kts]
 maven {
+    name = "undefined-repo"
     url = uri("https://repo.undefinecreation.com/releases")
 }
 ```

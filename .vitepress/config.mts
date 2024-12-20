@@ -64,6 +64,13 @@ export default defineConfig({
                 { text: 'Game Mode', link: '/stellar/arguments/entities/game-mode' },
                 { text: 'Game Profile', link: '/stellar/arguments/entities/game-profile' },
               ]
+            },
+            {
+              text: 'Item',
+              collapsed: true,
+              items: [
+                { text: 'Item Argument', link: '/stellar/arguments/items/item' },
+              ]
             }
           ]
         }

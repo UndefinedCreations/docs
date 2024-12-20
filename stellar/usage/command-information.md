@@ -11,7 +11,7 @@ Bukkit has a default command in any server, the `/help <commandname>` command. U
 
 The first is the description of the command, this is a short text about what the command is about. You can change using the `setDescription` method:
 
-```kt
+```kotlin
 StellarCommand("message")
     .setDescription("You can message others using this command!")
 ```
@@ -20,7 +20,7 @@ StellarCommand("message")
 
 This is a short text about how the command works, it's common practice to use the default minecraft command syntax for this: https://minecraft.wiki/w/Commands#Syntax. You can set the usage text using the `setUsage` method:
 
-```kt
+```kotlin
 StellarCommand("message")
     .setUsage("message <target> [text]")
 ```
@@ -29,7 +29,7 @@ StellarCommand("message")
 
 You can easily add custom information by using the `setInformation` method:
 
-```kt
+```kotlin
 StellarCommand("message")
     .setInformation(
         name = "Times used",

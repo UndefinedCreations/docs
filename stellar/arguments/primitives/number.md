@@ -8,32 +8,32 @@ description: The official docs for the Stellar Command API.
 There are four number arguments: `IntegerArgument`, `LongArgument`, `FloatArgument`, `DoubleArgument`. They respectively return those number types.
 
 ::: code-group
-```kt [Integer]
+```kotlin [Integer]
 StellarCommand("server")
     .addIntegerArgument("int")
     .addExecution<Player> {
         sender.sendMessage(getArgument<Int>("int"))
     }
 ```
-```kt [Long]
+```kotlin [Long]
 StellarCommand("server")
     .addLongArgument("long")
     .addExecution<Player> {
         sender.sendMessage(getArgument<Long>("long"))
     }
 ```
-```kt [Float]
+```kotlin [Float]
 StellarCommand("server")
     .addFloatArgument("float")
     .addExecution<Player> {
         sender.sendMessage(getArgument<Float>("float"))
     }
 ```
-```kt [Double]
+```kotlin [Double]
 StellarCommand("server")
     .addDoubleArgument("double")
     .addExecution<Player> {
-        sender.sendMessage(getArgument<double>("double"))
+        sender.sendMessage(getArgument<Double>("double"))
     }
 ```
 :::

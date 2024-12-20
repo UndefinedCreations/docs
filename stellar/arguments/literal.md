@@ -1,5 +1,5 @@
 ---
-title: String Argument
+title: Literal Argument
 description: The official docs for the Stellar Command API.
 ---
 

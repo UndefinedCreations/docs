@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 The `BooleanArgument` returns, well, a boolean, it's as simple as that. Example:
 
-```kt
+```kotlin
 StellarCommand("server")
     .addBooleanArgument("bool")
     .addExecution<Player> {
