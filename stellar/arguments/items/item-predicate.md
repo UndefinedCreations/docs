@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Item Predicate {#item-predicate}
 
-Returns a predicate, which people can modify be specifying material and components (`<item_type>[<list of tests>]`). For more information: https://minecraft.wiki/w/Argument_types#minecraft:item_predicate. Example:
+Returns `Predicate<ItemStack>`, which people can modify be specifying material and components (`<item_type>[<list of tests>]`). For more information: https://minecraft.wiki/w/Argument_types#minecraft:item_predicate. Example:
 
 ```kotlin
 StellarCommand("isItem")
