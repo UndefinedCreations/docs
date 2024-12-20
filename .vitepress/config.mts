@@ -70,6 +70,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'Item Argument', link: '/stellar/arguments/items/item' },
+                { text: 'Item Predicate', link: '/stellar/arguments/items/item-predicate' },
               ]
             }
           ]

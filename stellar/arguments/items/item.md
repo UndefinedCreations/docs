@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Item Argument {#item}
 
-Returns an item, which people can modify be specifying material and components (`<item_id>[<list of components>]`). For more information: https://minecraft.wiki/w/Argument_types#minecraft:item_stack. Example:
+Returns an item, which people can modify be specifying material and components (`<item_id>[<list of components>]`). Example:
 
 ```kotlin
 StellarCommand("give")
