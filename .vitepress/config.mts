@@ -71,6 +71,7 @@ export default defineConfig({
               items: [
                 { text: 'Item Argument', link: '/stellar/arguments/items/item' },
                 { text: 'Item Predicate', link: '/stellar/arguments/items/item-predicate' },
+                { text: 'Item Slots', link: '/stellar/arguments/items/item-slots' },
               ]
             }
           ]
