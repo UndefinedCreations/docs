@@ -14,12 +14,12 @@ First add the repository:
 ::: code-group
 ```groovy [build.gradle]
 maven {
-    url = "https://repo.undefinecreation.com/stellar"
+    url = "https://repo.undefinecreation.com/releases"
 }
 ```
 ```kts [build.gradle.kts]
 maven {
-    url = uri("https://repo.undefinecreation.com/stellar")
+    url = uri("https://repo.undefinecreation.com/releases")
 }
 ```
 :::
@@ -42,7 +42,7 @@ First add the repository:
 <repository>
     <id>stellar</id>
     <name>Stellar Repository</name>
-    <url>https://repo.undefinedcreation.com/stellar</url>
+    <url>https://repo.undefinedcreation.com/releases</url>
 </repository>
 ```
 

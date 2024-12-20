@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Boolean Argument {#boolean-argument}
 
-The `BooleanArgument` return, well, a boolean, it's as simple as that. Example:
+The `BooleanArgument` returns, well, a boolean, it's as simple as that. Example:
 
 ```kt
 StellarCommand("server")

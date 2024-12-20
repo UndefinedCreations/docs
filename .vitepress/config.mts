@@ -54,6 +54,13 @@ export default defineConfig({
                   { text: 'Number', link: '/stellar/arguments/primitives/number-arguments' },
                   { text: 'Boolean', link: '/stellar/arguments/primitives/boolean-argument' },
               ]
+            },
+            {
+              text: 'Entities',
+              collapsed: true,
+              items: [
+                { text: 'Entity & Player', link: '/stellar/arguments/entities/entity-argument' },
+              ]
             }
           ]
         }
