@@ -1,11 +1,11 @@
 ---
-title: Item Argument
+title: Block Data
 description: The official docs for the Stellar Command API.
 ---
 
-# Item Argument {#item}
+# Block Data {#block-data}
 
-Returns an `ItemStack`, which people can modify be specifying material and components (`<item_id>[<list of components>]`). Example:
+Returns `BlockData`, with this syntax: `block_id[block_states]{data_tags}`. For more information about the syntax see [wiki](https://minecraft.wiki/w/Argument_types#minecraft:block_state). Example:
 
 ```kotlin
 StellarCommand("give")

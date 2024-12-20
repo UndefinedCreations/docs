@@ -73,6 +73,13 @@ export default defineConfig({
                 { text: 'Item Predicate', link: '/stellar/arguments/items/item-predicate' },
                 { text: 'Item Slots', link: '/stellar/arguments/items/item-slots' },
               ]
+            },
+            {
+              text: 'Block',
+              collapsed: true,
+              items: [
+                { text: 'Block Data', link: '/stellar/arguments/block/block-data' },
+              ]
             }
           ]
         }
