@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Undefined Creations",
   description: "The documentation for all projects under Undefined Creations.",
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -38,6 +39,13 @@ export default defineConfig({
             { text: 'Custom Suggestions', link: '/stellar/usage/custom-suggestions' },
             { text: 'Command Requirements', link: '/stellar/usage/command-requirements' },
             { text: 'Command Information ', link: '/stellar/usage/command-information' },
+          ]
+        },
+        {
+          text: 'Arguments',
+          collapsed: false,
+          items: [
+            { text: 'Literal Argument', link: '/stellar/arguments/literal-argument' },
           ]
         }
       ],
