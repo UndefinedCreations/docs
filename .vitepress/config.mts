@@ -45,12 +45,13 @@ export default defineConfig({
           text: 'Arguments',
           collapsed: false,
           items: [
-            { text: 'Literal Argument', link: '/stellar/arguments/literal-argument' },
+            { text: 'Literal Arguments', link: '/stellar/arguments/literal-argument' },
             {
               text: 'Primitives',
               collapsed: true,
               items: [
-                  { text: 'String', link: '/stellar/arguments/primitives/string-argument' },
+                  { text: 'String', link: '/stellar/arguments/primitives/string-arguments' },
+                  { text: 'Number', link: '/stellar/arguments/primitives/number-arguments' },
               ]
             }
           ]

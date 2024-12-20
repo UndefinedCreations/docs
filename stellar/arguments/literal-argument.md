@@ -18,4 +18,4 @@ StellarCommand("server")
 StellarCommand("server")
     .addLiteralArgument(name = "reset")
 ```
-::: code-group
+:::
