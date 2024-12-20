@@ -1,5 +1,5 @@
 ---
-title: Literal Argument
+title: String Argument
 description: The official docs for the Stellar Command API.
 ---
 
@@ -10,11 +10,11 @@ A literal argument is an argument that represents an option you can choose from.
 Here is how to create a literal argument:
 
 ::: code-group
-```kt [Short]
+```kotlin [Short]
 StellarCommand("server")
     .addArgument(name = "reset")
 ```
-```kt [Long]
+```kotlin [Long]
 StellarCommand("server")
     .addLiteralArgument(name = "reset")
 ```

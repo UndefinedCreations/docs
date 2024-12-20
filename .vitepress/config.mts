@@ -46,6 +46,13 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Literal Argument', link: '/stellar/arguments/literal-argument' },
+            {
+              text: 'Primitives',
+              collapsed: true,
+              items: [
+                  { text: 'String', link: '/stellar/arguments/primitives/string-argument' },
+              ]
+            }
           ]
         }
       ],
