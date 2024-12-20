@@ -45,21 +45,22 @@ export default defineConfig({
           text: 'Arguments',
           collapsed: false,
           items: [
-            { text: 'Literal Arguments', link: '/stellar/arguments/literal-argument' },
+            { text: 'Literal Arguments', link: '/stellar/arguments/literal' },
             {
               text: 'Primitives',
               collapsed: true,
               items: [
-                  { text: 'String', link: '/stellar/arguments/primitives/string-arguments' },
-                  { text: 'Number', link: '/stellar/arguments/primitives/number-arguments' },
-                  { text: 'Boolean', link: '/stellar/arguments/primitives/boolean-argument' },
+                  { text: 'String', link: '/stellar/arguments/primitives/string' },
+                  { text: 'Number', link: '/stellar/arguments/primitives/number' },
+                  { text: 'Boolean', link: '/stellar/arguments/primitives/boolean' },
               ]
             },
             {
-              text: 'Entities',
+              text: 'Entity & Player',
               collapsed: true,
               items: [
-                { text: 'Entity & Player', link: '/stellar/arguments/entities/entity-argument' },
+                { text: 'Entity Selector', link: '/stellar/arguments/entities/entity' },
+                { text: 'Entity Anchor', link: '/stellar/arguments/entities/entity-anchor' },
               ]
             }
           ]

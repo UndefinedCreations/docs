@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Entity Argument {#entity-argument}
 
-The `EntityArgument` allows for the selection of a single, or multiple entities. It includes the use target selectors (@a, @e, etc.). You can customize the argument using the `EntityDisplayType` enum. Examples:
+The `EntityArgument` allows for the selection of a single, or multiple entities. It also includes the use of target selectors (@a, @e, etc.). You can customize the argument using the `EntityDisplayType` enum. Examples:
 
 ::: code-group
 ```kt [Entity]
