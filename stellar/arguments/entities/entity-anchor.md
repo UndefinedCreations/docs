@@ -3,7 +3,7 @@ title: Entity Anchor Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Entity Anchor {#entity-anchor-argument}
+# Entity Anchor {#entity-anchor}
 
 The `EntityAnchorArgument` must be either eyes or feet and returns the enum `Anchor`. The `Anchor` enum handles adding the offset that the difference from eyes to feet have by using the `apply` methods:
 

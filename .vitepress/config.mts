@@ -61,6 +61,7 @@ export default defineConfig({
               items: [
                 { text: 'Entity Selector', link: '/stellar/arguments/entities/entity' },
                 { text: 'Entity Anchor', link: '/stellar/arguments/entities/entity-anchor' },
+                { text: 'Game Mode', link: '/stellar/arguments/entities/game-mode' },
               ]
             }
           ]

@@ -3,7 +3,7 @@ title: Literal Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# String Argument {#string-argument}
+# String Argument {#string}
 
 The String argument returns a `String` object, and you can customize what you can type by using the `StringType` object:
 
