@@ -52,6 +52,7 @@ export default defineConfig({
               items: [
                   { text: 'String', link: '/stellar/arguments/primitives/string-arguments' },
                   { text: 'Number', link: '/stellar/arguments/primitives/number-arguments' },
+                  { text: 'Boolean', link: '/stellar/arguments/primitives/boolean-argument' },
               ]
             }
           ]
