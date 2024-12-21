@@ -66,6 +66,13 @@ export default defineConfig({
               ]
             },
             {
+              text: 'World',
+              collapsed: true,
+              items: [
+                { text: 'Dimension', link: '/stellar/arguments/world/dimension' },
+              ]
+            },
+            {
               text: 'Item',
               collapsed: true,
               items: [
