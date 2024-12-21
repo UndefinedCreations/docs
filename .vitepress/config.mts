@@ -71,6 +71,7 @@ export default defineConfig({
               items: [
                 { text: 'Dimension', link: '/stellar/arguments/world/dimension' },
                 { text: 'Height Map', link: '/stellar/arguments/world/height-map' },
+                { text: 'Location', link: '/stellar/arguments/world/location' },
               ]
             },
             {

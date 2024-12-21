@@ -13,6 +13,6 @@ StellarCommand("top")
     .addExecution<Player> {
         val environment = getArgument<HeightMap>("height_map")
         val highestYBlock = sender.world.getHighestBlockAt(sender.location, environment)
-        sender.teleport(highestYBlock.location)
+        sender.teleport(highestYBlock.location.add(0.0, 1.0, 0.0))
     }
 ```
