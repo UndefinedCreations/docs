@@ -98,6 +98,8 @@ export default defineConfig({
               items: [
                 { text: 'Color', link: '/stellar/arguments/text/color' },
                 { text: 'Component', link: '/stellar/arguments/text/component' },
+                { text: 'Message', link: '/stellar/arguments/text/message' },
+                { text: 'Style', link: '/stellar/arguments/text/style' },
               ]
             },
           ]
