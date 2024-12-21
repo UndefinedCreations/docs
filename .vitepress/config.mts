@@ -93,6 +93,14 @@ export default defineConfig({
               ]
             },
             {
+              text: 'Miscellaneous',
+              collapsed: true,
+              items: [
+                { text: 'UUID', link: '/stellar/arguments/misc/uuid' },
+                { text: 'NamespacedKey', link: '/stellar/arguments/misc/key' },
+              ]
+            },
+            {
               text: 'Text',
               collapsed: true,
               items: [
@@ -114,11 +122,10 @@ export default defineConfig({
               ]
             },
             {
-              text: 'Miscellaneous',
+              text: 'Structure',
               collapsed: true,
               items: [
-                { text: 'UUID', link: '/stellar/arguments/misc/uuid' },
-                { text: 'NamespacedKey', link: '/stellar/arguments/misc/key' },
+                { text: 'Loot Table', link: '/stellar/arguments/structure/loot-table' },
               ]
             },
           ]
