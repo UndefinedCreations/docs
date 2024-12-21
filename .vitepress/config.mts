@@ -113,6 +113,14 @@ export default defineConfig({
                 { text: 'Team', link: '/stellar/arguments/scoreboard/team' },
               ]
             },
+            {
+              text: 'Miscellaneous',
+              collapsed: true,
+              items: [
+                { text: 'UUID', link: '/stellar/arguments/misc/uuid' },
+                { text: 'NamespacedKey', link: '/stellar/arguments/misc/key' },
+              ]
+            },
           ]
         }
       ],

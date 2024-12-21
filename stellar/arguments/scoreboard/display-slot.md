@@ -9,11 +9,15 @@ Must be a scoreboard display slot. Returns `DisplaySlot`. Example:
 
 ```kotlin
 val scoreboardManager = Bukkit.getScoreboardManager()!!.mainScoreboard
-val objective = scoreboardManager.registerNewObjective("health", Criteria.HEALTH, "health")
+val scoreboardObjective = scoreboardManager.registerNewObjective(
+    "health",
+    Criteria.HEALTH,
+    "health"
+)
 StellarCommand("displaySlot")
     .addDisplaySlotArgument(name = "slot")
     .addExecution<Player> {
         val slot = getArgument<DisplaySlot>("slot")
-        objective.displaySlot = slot
+        scoreboardObjective.displaySlot = slot
     }
 ```
