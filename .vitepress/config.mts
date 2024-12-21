@@ -97,6 +97,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'Color', link: '/stellar/arguments/text/color' },
+                { text: 'Component', link: '/stellar/arguments/text/component' },
               ]
             },
           ]
