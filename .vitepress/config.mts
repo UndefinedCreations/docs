@@ -102,6 +102,14 @@ export default defineConfig({
                 { text: 'Style', link: '/stellar/arguments/text/style' },
               ]
             },
+            {
+              text: 'Scoreboard',
+              collapsed: true,
+              items: [
+                { text: 'Display Slot', link: '/stellar/arguments/scoreboard/display-slot' },
+                { text: 'Objective', link: '/stellar/arguments/scoreboard/objective' },
+              ]
+            },
           ]
         }
       ],
