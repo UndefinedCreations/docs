@@ -108,7 +108,9 @@ export default defineConfig({
               items: [
                 { text: 'Display Slot', link: '/stellar/arguments/scoreboard/display-slot' },
                 { text: 'Objective', link: '/stellar/arguments/scoreboard/objective' },
+                { text: 'Objective Criteria', link: '/stellar/arguments/scoreboard/objective-criteria' },
                 { text: 'Score Holders', link: '/stellar/arguments/scoreboard/score-holders' },
+                { text: 'Team', link: '/stellar/arguments/scoreboard/team' },
               ]
             },
           ]
