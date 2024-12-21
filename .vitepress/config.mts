@@ -91,7 +91,14 @@ export default defineConfig({
                 { text: 'Block Data', link: '/stellar/arguments/block/block-data' },
                 { text: 'Block Predicate', link: '/stellar/arguments/block/block-predicate' },
               ]
-            }
+            },
+            {
+              text: 'Text',
+              collapsed: true,
+              items: [
+                { text: 'Color', link: '/stellar/arguments/text/color' },
+              ]
+            },
           ]
         }
       ],
