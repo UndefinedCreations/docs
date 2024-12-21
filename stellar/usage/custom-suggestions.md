@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Custom Suggestions {#custom-suggestion}
 
-You can easily override tab completions/command suggestions tha arguments have.
+You can easily override tab completions/command suggestions the arguments have.
 
 ## Basic Usage
 
