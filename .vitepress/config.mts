@@ -101,6 +101,18 @@ export default defineConfig({
               ]
             },
             {
+              text: 'Math',
+              collapsed: true,
+              items: [
+                  { text: 'Angle', link: '/stellar/arguments/math/angle' },
+                  { text: 'Axis', link: '/stellar/arguments/math/axis' },
+                  { text: 'Operation', link: '/stellar/arguments/math/operation' },
+                  { text: 'Range', link: '/stellar/arguments/math/range' },
+                  { text: 'Rotation', link: '/stellar/arguments/math/rotation' },
+                  { text: 'Time', link: '/stellar/arguments/math/time' },
+              ]
+            },
+            {
               text: 'Text',
               collapsed: true,
               items: [
@@ -126,7 +138,10 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'Loot Table', link: '/stellar/arguments/structure/loot-table' },
+                { text: 'Mirror', link: '/stellar/arguments/structure/mirror' },
+                { text: 'Structure Rotation', link: '/stellar/arguments/structure/structure-rotation' },
               ]
+// TODO IDEA: add addArgument<T : AbstractStellarArgument<*, D>, D> D standing for data, which is a class that allows for extra info
             },
           ]
         }
