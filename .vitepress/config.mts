@@ -9,13 +9,13 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Stellar', link: '/stellar' }
+      { text: 'Stellar', link: '/stellar' },
+      { text: 'Gradle Plugins', link: '/gradle-plugins' }
     ],
 
     sidebar: {
       '/stellar/': [
         {
-          // text: "Developer Communities"
           collapsed: false,
           items: [
             { text: 'Undefined Discord', link: 'https://discord.gg/hRGKAQ2ZAv' },
@@ -141,15 +141,32 @@ export default defineConfig({
                 { text: 'Mirror', link: '/stellar/arguments/structure/mirror' },
                 { text: 'Structure Rotation', link: '/stellar/arguments/structure/structure-rotation' },
               ]
-// TODO IDEA: add addArgument<T : AbstractStellarArgument<*, D>, D> D standing for data, which is a class that allows for extra info
             },
           ]
         }
       ],
+      '/gradle-plugins': [
+        {
+          collapsed: false,
+          items: [
+            { text: 'Undefined Discord', link: 'https://discord.gg/hRGKAQ2ZAv' },
+            { text: 'GitHub', link: 'https://github.com/undefinedcreation/undefinedremapper' }
+          ]
+        },
+        {
+          text: 'Plugins',
+          collapsed: false,
+          items: [
+            { text: 'Gradle Plugins', link: '/gradle-plugins/' },
+            { text: 'Undefined Remapper', link: '/gradle-plugins/remapper' },
+          ]
+        }
+      ]
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/undefinedcreation/' }
+      { icon: 'github', link: 'https://github.com/undefinedcreations/' },
+      { icon: 'discord', link: 'https://discord.undefinedcreation.com' }
     ]
   }
 })
