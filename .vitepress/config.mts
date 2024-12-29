@@ -160,7 +160,7 @@ export default defineConfig({
           items: [
             { text: 'Gradle Plugins', link: '/gradle-plugins/' },
             { text: 'Undefined Remapper', link: '/gradle-plugins/remapper' },
-            { text: 'Undefined RunServer', link: '/gradle-plugins/run-server' },
+            { text: 'Undefined Run Server', link: '/gradle-plugins/run-server' },
           ]
         }
       ]
