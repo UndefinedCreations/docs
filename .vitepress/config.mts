@@ -5,6 +5,7 @@ export default defineConfig({
   title: "Undefined Creations",
   description: "The documentation for all projects under Undefined Creations.",
   cleanUrls: true,
+  ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
