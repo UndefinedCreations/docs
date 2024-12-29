@@ -20,10 +20,6 @@ features:
     details: Development docs for our gradle plugins.
     link: /gradle-plugins/
     linkText: Get Started
-  - title: UndefinedAPI
-    icon: 🛠️
-    details: Development docs for our general spigot API.
-    linkText: Get Started
 ---
 
 <div class="vp-doc homepage-container">
