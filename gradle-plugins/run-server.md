@@ -70,14 +70,14 @@ tasks {
 ```
 
 ### Allowed Ram
-You are able to change the amount of ram that the server can use with `allowedRam()`.
+You are able to change the amount of ram that the server can use with `allowedRam()`. This is using the enum called [`RamAmount`](https://github.com/UndefinedCreations/UndefinedRunServer/blob/master/src/main/kotlin/com/undefinedcreation/runServer/RamAmount.kt#L3)
 
 ```kts
 tasks {
     runServer {
         mcVersion("1.21.4")
         
-        allowedRam("4G") // default : 2G
+        allowedRam(4, RamAmount.GIGABYTE) // default : 2 GIGABYTES
     }
 }
 ```
@@ -108,6 +108,19 @@ tasks {
             "https://hangar.papermc.io/Flyte/PluginPortal",
             "https://modrinth.com/plugin/simple-voice-chat"
         )
+    }
+}
+```
+
+### Per version folder
+This option will create a new server folder for every minecraft version you will run
+
+```kts
+tasks {
+    runServer {
+        mcVersion("1.21.4")
+        
+        perVersionFolder(true) // default : false
     }
 }
 ```
