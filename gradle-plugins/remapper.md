@@ -9,29 +9,29 @@ This gradle plugin is made to be able to remap any NMS project you are working o
 
 ## Gradle Imports
 
-[![](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreation.mapper)](https://plugins.gradle.org/plugin/com.undefinedcreation.mapper)
+[![](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreations.mapper)](https://plugins.gradle.org/plugin/com.undefinedcreations.mapper)
 
 Add the plugin at the top of your Gradle build file.
 
 ::: code-group
 ```groovy [build.gradle]
 plugins {
-  id "com.undefinedcreation.mapper" version "VERSION"
+  id "com.undefinedcreations.mapper" version "VERSION"
 }
 ```
 ```kts [build.gradle.kts]
 plugins {
-  id("com.undefinedcreation.mapper") version "VERSION"
+  id("com.undefinedcreations.mapper") version "VERSION"
 }
 ```
 :::
 
 ## Setup
-The setup for the plugin is simple. You create a task and set the `mcVersion` to your Minecraft version. Example:
+The setup for the plugin is simple. You create a task and set the `minecraftVersion` to your Minecraft version. Example:
 
 ```kts
 remap {
-   mcVersion.set("1.21.4")
+   minecraftVersion("1.21.4")
 }
 ```
 
@@ -43,11 +43,12 @@ There are multiple configuration options you can modify.
 
 You are able to change the input task that it will remap to.
 
+If no task selected it will check if a `shadowJar` task exists or not it will use `jar` task.
 ```kts
 tasks {
     remap {
-        mcVersion.set("1.21.4")
-        inputTask.set("shadowJar") // default: jar
+        minecraftVersion("1.21.4")
+        inputTask(customTask)
     }
 }
 ```
@@ -59,8 +60,8 @@ You can also change the remap options. This is done with an enum called [`RemapT
 ```kts
 tasks {
    remap {
-        mcVersion.set("1.21.4")
-        action.set(RemapTask.Action.MOJANG_TO_SPIGOT) // default
+        minecraftVersion("1.21.4")
+        action(RemapTask.Action.MOJANG_TO_SPIGOT) // default
    }
 }
 ```
@@ -72,8 +73,8 @@ This option is used if you want to create a separate jar for the remapped plugin
 ```kts
 tasks {
     remap {
-        mcVersion.set("1.21.4")
-        createNewJar.set(false) // default 
+        minecraftVersion("1.21.4")
+        createNewJar(false) // default 
     }
 }
 ```

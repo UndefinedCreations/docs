@@ -15,13 +15,13 @@ First add the repository:
 ```groovy [build.gradle]
 maven {
     name = "undefined-repo"
-    url = "https://repo.undefinecreation.com/releases"
+    url = "https://repo.undefinecreations.com/releases"
 }
 ```
 ```kts [build.gradle.kts]
 maven {
     name = "undefined-repo"
-    url = uri("https://repo.undefinecreation.com/releases")
+    url = uri("https://repo.undefinecreations.com/releases")
 }
 ```
 :::

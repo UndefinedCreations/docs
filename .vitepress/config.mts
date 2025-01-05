@@ -7,6 +7,8 @@ export default defineConfig({
   cleanUrls: true,
   ignoreDeadLinks: true,
   themeConfig: {
+    logo: "/.vitepress/public/logo.png",
+    head: [["link", { rel: "icon", sizes: "64x64", href: "/.vitepress/public/logo.png" }]],
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
@@ -150,8 +152,8 @@ export default defineConfig({
         {
           collapsed: false,
           items: [
-            { text: 'Undefined Discord', link: 'https://discord.gg/hRGKAQ2ZAv' },
-            { text: 'GitHub', link: 'https://github.com/undefinedcreation/undefinedremapper' }
+            { text: 'Undefined Discord', link: 'https://discord.undefinedcreations.com/' },
+            { text: 'GitHub', link: 'https://github.undefinedcreations.com/' }
           ]
         },
         {
@@ -167,7 +169,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/undefinedcreations/' },
+      { icon: 'github', link: 'https://github.undefinedcreations.com' },
       { icon: 'discord', link: 'https://discord.undefinedcreation.com' }
     ]
   }

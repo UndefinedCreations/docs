@@ -9,19 +9,19 @@ This gradle plugin is made to be able to run any sort of server jar inside your 
 
 ## Gradle Imports
 
-[![](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreation.runServer)](https://plugins.gradle.org/plugin/com.undefinedcreation.runServer)
+[![](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreations.runServer)](https://plugins.gradle.org/plugin/com.undefinedcreations.runServer)
 
 Add the plugin at the top of your Gradle build file.
 
 ::: code-group
 ```groovy [build.gradle]
 plugins {
-  id "com.undefinedcreation.runServer" version "VERSION"
+  id "com.undefinedcreations.runServer" version "VERSION"
 }
 ```
 ```kts [build.gradle.kts]
 plugins {
-  id("com.undefinedcreation.runServer") version "VERSION"
+  id("com.undefinedcreations.runServer") version "VERSION"
 }
 ```
 :::
@@ -29,12 +29,12 @@ plugins {
 ## Setup
 Setting up this gradle plugin you will be modifying a task called `runServer`.
 
-The first thing you will need to set is the `mcVersion`. This will be the server version it will be running.
+The first thing you will need to set is the `minecraftVersion`. This will be the server version it will be running.
 
 ```kts
 tasks {
     runServer {
-        mcVersion("1.21.4")
+        minecraftVersion("1.21.4")
     }
 }
 ```
@@ -62,9 +62,9 @@ One of the most annoying part of create test server is accepting the mojang eula
 ```kts
 tasks {
     runServer {
-        mcVersion("1.21.4")
+        minecraftVersion("1.21.4")
         
-        acceptMojangEula(true) // default : false
+        acceptMojangEula()
     }
 }
 ```
@@ -75,7 +75,7 @@ You are able to change the amount of ram that the server can use with `allowedRa
 ```kts
 tasks {
     runServer {
-        mcVersion("1.21.4")
+        minecraftVersion("1.21.4")
         
         allowedRam(4, RamAmount.GIGABYTE) // default : 2 GIGABYTES
     }
@@ -88,7 +88,7 @@ Some jars will open a gui on start. This will be disabled by default but you are
 ```kts
 tasks {
     runServer {
-        mcVersion("1.21.4")
+        minecraftVersion("1.21.4")
         
         noGui(false) // default : true
     }
@@ -96,12 +96,15 @@ tasks {
 ```
 
 ### Plugins
-You are able to use `spigotmc.org`, `hangar.papermc.io` and `modrinth.com` links to be able to download plugins automatically onto the server before start.
+You are able to autoload plugins into the server at start up
+
+#### Online
+You are able to use `spigotmc.org`, `hangar.papermc.io` and `modrinth.com` links to be able to download plugins automatically onto the server before start. If you want it to re-download every time you can add overwrite
 
 ```kts
 tasks {
     runServer {
-        mcVersion("1.21.4")
+        minecraftVersion("1.21.4")
         
         plugins(
             "https://www.spigotmc.org/resources/plugin-portal.108700/",
@@ -112,13 +115,74 @@ tasks {
 }
 ```
 
+#### Local
+You will also be able to copy local plugins into the server with `filePlugin`. You can also select if it should overwrite the old one.
+
+```kts
+tasks {
+    runServer {
+        minecraftVersion("1.21.4")
+        
+        filePlugins(
+            listOf(
+                File("C:\\Users\\Undefined\\IdeaProjects\\DifferntProject\\build\\libs\\Custom-plugin.jar")
+                ), 
+            overwrite = true
+        )
+    }
+}
+```
+
+### Server Folder
+You can set the folder were the server will run using `serverFolder`.
+
+```kts
+tasks {
+    runServer {
+        minecraftVersion("1.21.4")
+        
+        serverFolder {
+            File("$buildFolder/${serverType.name}-$minecraftVersion")
+        }
+    }
+}
+```
+
+You can also use `serverFolderName` that needs a string inside a file. It will automatically add the folder into build folder then.
+
+```kts
+tasks {
+    runServer {
+        minecraftVersion("1.21.4")
+        
+        serverFolderName {
+            "$${serverType.name}-$minecraftVersion"
+        }
+    }
+}
+```
+
+### Input Task
+You are able to select what task it will build with `inputTask`
+
+If no task is selected it will first check if there is a [`remap`]("https://github.com/UndefinedCreations/UndefinedRemapper") task, if that task was not found it will use `shadowJar` lastly it will be using `jar` task
+```kts
+tasks {
+    runServer {
+        minecraftVersion("1.21.4")
+        
+        inputTask(customTask) 
+    }
+}
+```
+
 ### Per version folder
 This option will create a new server folder for every minecraft version you will run
 
 ```kts
 tasks {
     runServer {
-        mcVersion("1.21.4")
+        minecraftVersion("1.21.4")
         
         perVersionFolder(true) // default : false
     }
@@ -135,7 +199,7 @@ Note: Using custom jars might break the plugins downloader and the mcVersion wil
 ```kts
 tasks {
     runServer {
-        mcVersion("1.21.4")
+        minecraftVersion("1.21.4")
         
         customJar("C:\Users\UndefinedAdmin\Documents\CoolJar.jar", alwaysReplace = true)
     }
