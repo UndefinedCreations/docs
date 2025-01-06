@@ -79,17 +79,25 @@ tasks {
 }
 ```
 
-## Multi Module
+[//]: # (## Multi Module)
 
-To set up the remapper on a multi-module project you will need to add one thing to the `build.gradle` of the module.
+[//]: # ()
+[//]: # (To set up the remapper on a multi-module project you will need to add one thing to the `build.gradle` of the module.)
 
-```kts
-tasks {
-    jar {
-        finalizedBy(remap)
-    }
-}
-```
+[//]: # ()
+[//]: # (```kts)
+
+[//]: # (tasks {)
+
+[//]: # (    jar {)
+
+[//]: # (        finalizedBy&#40;remap&#41;)
+
+[//]: # (    })
+
+[//]: # (})
+
+[//]: # (```)
 
 ## Example projects
 

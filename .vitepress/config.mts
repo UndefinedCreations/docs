@@ -8,7 +8,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
   themeConfig: {
     logo: "/.vitepress/public/logo.png",
-    head: [["link", { rel: "icon", sizes: "64x64", href: "/.vitepress/public/logo.png" }]],
+    head: [["link", { rel: "icon", sizes: "32x32", href: "/.vitepress/public/favicon.png" }]],
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
