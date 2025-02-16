@@ -50,12 +50,14 @@ export default defineConfig({
           items: [
             { text: 'Literal Arguments', link: '/stellar/arguments/literal' },
             {
-              text: 'Primitives',
+              text: 'Basic',
               collapsed: true,
               items: [
-                  { text: 'String', link: '/stellar/arguments/primitives/string' },
-                  { text: 'Number', link: '/stellar/arguments/primitives/number' },
-                  { text: 'Boolean', link: '/stellar/arguments/primitives/boolean' },
+                  { text: 'String', link: '/stellar/arguments/basic/string' },
+                  { text: 'Number', link: '/stellar/arguments/basic/number' },
+                  { text: 'Boolean', link: '/stellar/arguments/basic/boolean' },
+                  { text: 'List', link: '/stellar/arguments/basic/list' },
+                  { text: 'Custom', link: '/stellar/arguments/basic/custom' },
               ]
             },
             {
