@@ -28,19 +28,19 @@ In this example, the command execution will only run if exactly `/greet name` is
 
 ## Command Runnables
 
-A command runnable will always run if it is an command tree, before any executions and . To add a runnable to your command, use the `addRunnable` method as such:
+A command runnable will always run if it is a command tree, before any other executions and runnables in upper arguments. To add a runnable to your command, use the `addRunnable` method as such:
 
 ```kotlin
 StellarCommand("greet")
     .addRunnable<Player> {
         sender.sendMessage("Hello ${sender.name}.") // will always run
-        true // whether to continue
+        true // whether to continue running other executions or runnables
     }
 ```
 
 ## Failure Executions
 
-Failure executions will be run if the command has been typed incorrectly and it is the last argument correctly typed. You can initially hide the default minecraft failure messages by using the `hideDefaultFailureMessages` method. Then you can add a simple execution by making use of the `addFailureExecution` method.
+When a command fails, it will look for the last correctly-typed argument that it can find, then run its failure executions. Then you can add a simple execution by making use of the `addFailureExecution` method.
 
 ```kotlin
 StellarCommand("test")
@@ -52,7 +52,9 @@ StellarCommand("test")
     }
 ```
 
-A better way of adding custom failure message, if that's all you want, would be to use the `addFailureMessage` method:
+You can additionally hide the default minecraft failure messages by using the `hideDefaultFailureMessages` method. The global variable, it requires specifies whether to hide it in the entire command, or just there.
+
+A better way of adding custom failure messages, if that's all you want, would be to use the `addFailureMessage` method:
 
 ```kotlin
 StellarCommand("test")
@@ -63,7 +65,7 @@ StellarCommand("test")
 
 You can also use the `addPlainFailureMessage` to add a string message _not_ parsed by MiniMessage
 
-Lastly, if you want to add a failure message that will always run for the command and its sub-arguments, then use the `addGlobalFailureMessage` method:
+Lastly, if you want to add a failure message that will always run for the entire command, then use the `addGlobalFailureMessage` method:
 
 ```kotlin
 StellarCommand("test")
