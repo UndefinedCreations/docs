@@ -17,7 +17,7 @@ A command tree is a theoretical idea, yet important to fully understand. It refe
 
 In code, we can create a root command with ```StellarCommand```, or a utility method. Then we can add arguments on top of it, and each time we do using an `addArgument` method, it returns that arguments itself. Here is an simple version of the /tp command example:
 
-```kt
+```kotlin
 val main = StellarCommand("tp")
 main.addEntityArgument("target", EntityDisplayType.ENTITY)
     .addLocationArgument("destination", LocationType.PRECISE_LOCATION_3D)

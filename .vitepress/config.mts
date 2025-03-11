@@ -43,6 +43,7 @@ export default defineConfig({
             { text: 'Custom Suggestions', link: '/stellar/usage/custom-suggestions' },
             { text: 'Command Requirements', link: '/stellar/usage/command-requirements' },
             { text: 'Command Information ', link: '/stellar/usage/command-information' },
+            { text: 'Command Unregistering ', link: '/stellar/usage/command-unregistering' },
           ]
         },
         {
