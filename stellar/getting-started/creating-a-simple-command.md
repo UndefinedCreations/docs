@@ -5,11 +5,15 @@ description: The official docs for the Stellar Command API.
 
 # Creating a Simple Command {#creating-a-simple-command}
 
-To create a simple command, we first need to initialize the base command:
+Best way to learn is by doing, thus we are going to create a simple message command. To create a simple command, we first need to initialize the base command:
 
 ```kotlin
 StellarCommand("message")
 ```
+
+:::info
+Need to add constructor aliases.
+:::
 
 For a bit of customization you can add aliases as such:
 
@@ -36,7 +40,7 @@ StellarCommand("message")
 ```
 
 :::warning
-Note: You cannot have two non-literal arguments with the same! This will result in a DuplicateArgumentNameException being thrown during runtime.
+Note: You cannot have two non-literal arguments with the same! This will result in a `DuplicateArgumentNameException` being thrown during runtime.
 :::
 
 Now we need to message the target with that message whenever a player runs the commands. To achieve that, we'll use the `addExecution` method.
@@ -91,9 +95,26 @@ StellarCommand("message")
         val message = getArgument<String>(1)
         target.sendMessage(message)
     }
-    .register(this) // this refers to the JavaPlugin instance
+    .register(this) // this referring to the JavaPlugin instance
 ```
 
-If you want to add any literal arguments ("forced arguments", like /title \<targets> (clear|reset)), use `addArgument`.
+If you want to add any literal arguments ("forced arguments", like `/title \<targets> (clear|reset)`), use `addArgument` or `addLiteralArgument`.
+
+If we try this in-game now, the msg command will not work, as Minecraft already has a msg command. To avoid this problem, you can unregister the default minecraft command with the `unregister` method:
+
+```kotlin
+unregister("msg") // can be used anywhere without a class definition
+
+StellarCommand("message")
+    .addAliases("msg", "tell")
+    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addRequirement("example.user.message")
+    .addExecution<Player> {
+        val target = getArgument<Player>(0) // Player is what the return value will be casted to, and 0 is the index of the argument
+        val message = getArgument<String>(1)
+        target.sendMessage(message)
+    }
+    .register(this) // this referring to the JavaPlugin instance
+```
 
 And congratulations, you have created your first command!

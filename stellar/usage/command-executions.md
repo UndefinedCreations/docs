@@ -5,31 +5,36 @@ description: The official docs for the Stellar Command API.
 
 # Command Executions {#command-executions}
 
-When creating a command, you will **always** use command executions or/and runnables. This page will teach you everything you will need to know about command executions.
+When creating a command, you will nearly **always** use command executions or/and runnables. They allow you to run pieces of code at specific times, and they are added to specific arguments. This page will teach you everything you need to know about command executions.
 
 ## Types of executions
 
-There are three types of executions, the first being an execution that runs whenever someone types in this command as the _last_ command. The second is the runnable, which is _always_ called if it is in the path. The third and last is a failure execution, which will run if it is the last command _and_ somebody typed a command incorrectly.
+There are three types of executions, the first being an execution that runs whenever someone types the **exact** same command. The second is the runnable, which is _always_ called if it is in the command path. The third and last is a failure execution, which will run if it is the last command _and_ somebody typed a command incorrectly.
 
 ## Normal Executions
 
-These will only run when it is the last command typed. You can add this by using the `addExecution<T>`. `T` being the `CommandSender` used. Here is an example:
+These will only run when it is that exact command typed. You can add this by using the `addExecution<T>`, `T` being the `CommandSender` used. Here is an example:
 
 ```kotlin
-StellarCommand("test")
+StellarCommand("greet")
+    .addStringArgument("name")
     .addExecution<Player> {
-        source.sendMessage("Hello world!")
+        val name = getArgument<String>("name")
+        sender.sendMessage("Hello name!")
     }
 ```
 
+In this example, the command execution will only run if exactly `/greet name` is typed. 
+
 ## Command Runnables
 
-A command runnable is always run if it is an argument, in order of lowest to highest in the command tree. To add a runnable to your command, use the `addRunnable` method as such:
+A command runnable will always run if it is an command tree, before any executions and . To add a runnable to your command, use the `addRunnable` method as such:
 
 ```kotlin
-StellarCommand("test")
+StellarCommand("greet")
     .addRunnable<Player> {
-        source.sendMessage("This will always run.")
+        sender.sendMessage("Hello ${sender.name}.") // will always run
+        true // whether to continue
     }
 ```
 
