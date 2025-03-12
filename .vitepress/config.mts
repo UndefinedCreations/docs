@@ -58,8 +58,14 @@ export default defineConfig({
                   { text: 'String', link: '/stellar/arguments/basic/string' },
                   { text: 'Number', link: '/stellar/arguments/basic/number' },
                   { text: 'Boolean', link: '/stellar/arguments/basic/boolean' },
-                  { text: 'List', link: '/stellar/arguments/basic/list' },
-                  { text: 'Custom', link: '/stellar/arguments/basic/custom' },
+              ]
+            },
+            {
+              text: 'List',
+              collapsed: true,
+              items: [
+                { text: 'List', link: '/stellar/arguments/basic/list' },
+                { text: 'Custom', link: '/stellar/arguments/basic/custom' },
               ]
             },
             {

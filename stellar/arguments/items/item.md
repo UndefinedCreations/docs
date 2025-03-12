@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Item Argument {#item}
 
-Returns an `ItemStack`, which people can modify be specifying material and components (`<item_id>[<list of components>]`). Example:
+Returns an `ItemStack`, which players can specify with this syntax: `<item_id>[<list of components>]`. Example:
 
 ```kotlin
 StellarCommand("give")
