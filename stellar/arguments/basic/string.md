@@ -24,7 +24,7 @@ StellarCommand("server")
 
 ## Word
 
-A `StringArgument` of type `WORD` means that you type any alphabet number, including numbers. If this limits you, consider the next options
+A `StringArgument` of type `StringType.WORD` means that you type anything in the English alphabet, including numbers, but nothing more. If this limits you, consider the next options.
 
 ## Quotable Phrase
 
@@ -32,7 +32,7 @@ The `QUOTABLE_PHRASE` has the same limitation as `WORD`, but when it's in quotat
 
 ## Phrase
 
-You can type anything you want using this, the only problem here is that **it's a phrase** not a word. This argument should always be the last argument.
+You can type anything you want using this, the only problem here is that **it's a phrase**, not a word. This means that you are not able to add any other arguments afterward. Thus, this argument should always be the last argument.
 
 To be able to use a Phrase argument and handle each word independently, use the `PhraseArgument`. It contains a list of `WordArgument`, which you can customize:
 
