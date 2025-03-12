@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Entity Anchor {#entity-anchor}
 
-The `EntityAnchorArgument` must be either eyes or feet and returns the enum `Anchor`. The `Anchor` enum handles adding the offset that the difference from eyes to feet have by using the `apply` methods:
+The `EntityAnchorArgument` must be a string of either `eyes` or `feet` and returns the enum `Anchor`. The `Anchor` enum handles adding the offset that the difference between teh eyes and feet have by using the `apply` methods:
 
 ```kotlin
 StellarCommand("test")
