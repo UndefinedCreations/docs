@@ -22,7 +22,7 @@ StellarCommand("message")
     .addAliases("msg", "tell")
 ```
 
-Now we need to add an argument, the player needs to be able to specify who they want to message. For that purpose, we'll use the pre-made online players ListArgument defined in `addOnlinePlayersArgument`:
+Now we need to add an argument, the player needs to be able to specify who they want to message. For that purpose, we'll use the pre-made online players ListArgument defined in [`addOnlinePlayersArgument`](https://github.com/UndefinedCreations/Stellar/blob/34fb887add0b257ff59e3e49df7c6cbe6cdc8522/common/src/main/kotlin/com/undefined/stellar/argument/ArgumentHandler.kt#L362):
 
 ```kotlin
 StellarCommand("message")
@@ -40,7 +40,7 @@ StellarCommand("message")
 ```
 
 :::warning
-Note: You cannot have two non-literal arguments with the same! This will result in a `DuplicateArgumentNameException` being thrown during runtime.
+Note: You cannot have two non-literal arguments with the same! This will result in a [`DuplicateArgumentNameException`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/exception/DuplicateArgumentNameException.kt#L7) being thrown during runtime.
 :::
 
 Now we need to message the target with that message whenever a player runs the commands. To achieve that, we'll use the `addExecution` method.
@@ -54,7 +54,7 @@ StellarCommand("message")
     }
 ```
 
-The generic type here is customizable to anything that extends CommandSender, and this method will only be called if the cast is successful. The method itself is an extension function (type) of CommandContext, which will be further explained in later docs. You can get the sender with `CommandContext#source` and the results of any arguments using the `CommandContext#getArgument`.
+The generic type here is customizable to anything that extends CommandSender, and this method will only be called if the cast is successful. The method itself is an extension function (type) of CommandContext, which will be further explained in later docs. You can get the sender with [`CommandContext.sender`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/data/argument/CommandContext.kt#L7) and the results of any arguments using the [`CommandContext.getArgument()`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/data/argument/CommandContext.kt#L9) methods.
 
 ```kotlin
 StellarCommand("message")
@@ -67,7 +67,7 @@ StellarCommand("message")
     }
 ```
 
-Now we need to add custom permissions to the command, using the `addRequirement` command.
+Now we need to add custom permissions to the command, using the [`addRequirement`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/AbstractStellarCommand.kt#L90) command.
 
 ```kotlin
 StellarCommand("message")
@@ -83,7 +83,7 @@ StellarCommand("message")
 
 Requirements are far more powerful than this, and we talk more about that in the coming pages.
 
-To now register this, we can use the `register` method.
+To now register this, we can use the [`register`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/AbstractStellarCommand.kt#L354) method.
 
 ```kotlin
 StellarCommand("message")
@@ -98,12 +98,12 @@ StellarCommand("message")
     .register(this) // this referring to the JavaPlugin instance
 ```
 
-If you want to add any literal arguments ("forced arguments", like `/title \<targets> (clear|reset)`), use `addArgument` or `addLiteralArgument`.
+If you want to add any literal arguments ("forced arguments", like `/title \<targets> (clear|reset)`), use [`addArgument`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/AbstractStellarCommand.kt#L369) or [`addLiteralArgument`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/AbstractStellarCommand.kt#L374).
 
-If we try this in-game now, the msg command will not work, as Minecraft already has a msg command. To avoid this problem, you can unregister the default minecraft command with the `unregister` method:
+If we try this in-game now, the msg command will not work, as Minecraft already has a msg command. To avoid this problem, you can unregister the default minecraft command with the [`unregisterCommand`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/paper/api/src/main/kotlin/com/undefined/stellar/util/CommandUtil.kt#L136) method:
 
 ```kotlin
-unregister("msg") // can be used anywhere without a class definition
+unregisterCommand("msg") // can be used anywhere without a class definition
 
 StellarCommand("message")
     .addAliases("msg", "tell")
