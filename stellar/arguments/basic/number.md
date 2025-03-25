@@ -5,6 +5,10 @@ description: The official docs for the Stellar Command API.
 
 # Number Arguments {#number}
 
+:::info
+Since: 1.13.
+:::
+
 There are four number arguments: `IntegerArgument`, `LongArgument`, `FloatArgument`, `DoubleArgument`. They respectively return those number types.
 
 ::: code-group

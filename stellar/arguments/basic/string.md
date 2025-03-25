@@ -5,7 +5,11 @@ description: The official docs for the Stellar Command API.
 
 # String Argument {#string}
 
-The String argument returns a `String` object, and you can customize what you can type by using the `StringType` object:
+:::info
+Since: 1.13.
+:::
+
+The `StringArgument` is an argument that allows you to type a string, as allowed by its `StringType`, and returns that `String`.:
 
 ::: code-group
 ```kotlin [Word]
@@ -28,7 +32,7 @@ A `StringArgument` of type `StringType.WORD` means that you type anything in the
 
 ## Quotable Phrase
 
-The `QUOTABLE_PHRASE` has the same limitation as `WORD`, but when it's in quotation marks ("), it becomes limitless.
+The `QUOTABLE_PHRASE` has the same limitation as `WORD`, but when it's in quotation marks (""), it becomes limitless.
 
 ## Phrase
 

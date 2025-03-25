@@ -5,7 +5,11 @@ description: The official docs for the Stellar Command API.
 
 # Boolean Argument {#boolean}
 
-The `BooleanArgument` returns, well, a boolean, it's as simple as that. Example:
+:::info
+Since: 1.13.
+:::
+
+The `BooleanArgument` allows you to input a `boolean`. Example:
 
 ```kotlin
 StellarCommand("server")
