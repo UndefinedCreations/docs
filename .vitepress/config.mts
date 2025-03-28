@@ -67,6 +67,7 @@ export default defineConfig({
                 { text: 'List', link: '/stellar/arguments/list/list' },
                 { text: 'Enum', link: '/stellar/arguments/list/enum' },
                 { text: 'Custom', link: '/stellar/arguments/list/custom' },
+                { text: 'Online Players', link: '/stellar/arguments/list/online-players' },
               ]
             },
             {
