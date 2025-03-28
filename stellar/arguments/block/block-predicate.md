@@ -12,8 +12,8 @@ Returns `Predicate<Block>`, using [this syntax](https://minecraft.wiki/w/Argumen
 new StellarCommand("isblock")
     .addBlockPredicateArgument("predicate")
     .addExecution(() -> { context ->
-        val data = context.getArgument<Predicate<Block>>("predicate")
-        val isBlock = data.test(block)
+        Predicate<Block> data = context.getArgument<Predicate<Block>>("predicate")
+        boolean isBlock = data.test(block)
         sender.sendMessage(isBlock.toString())
     })
 ```

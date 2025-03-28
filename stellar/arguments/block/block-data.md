@@ -12,7 +12,7 @@ Returns `BlockData`, with this syntax: `block_id[block_states]{data_tags}`. For 
 new StellarCommand("spawn")
     .addBlockDataArgument("block")
     .addExecution(() -> { context ->
-        val data = context.getArgument<BlockData>("block")
+        BlockData data = context.getArgument<BlockData>("block")
         context.getSender().getWorld().setBlockData(
             context.getSender().getLocation().subtract(0.0, -1.0, 0.0),
             data

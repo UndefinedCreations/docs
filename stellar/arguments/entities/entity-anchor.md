@@ -7,8 +7,20 @@ description: The official docs for the Stellar Command API.
 
 The `EntityAnchorArgument` must be a string of either `eyes` or `feet` and returns the enum `Anchor`. The `Anchor` enum handles adding the offset that the difference between teh eyes and feet have by using the `apply` methods:
 
+:::code-group
+```Java
+new StellarCommand("calculate")
+    .addEntityAnchor(name = "anchor")
+    .addExecution(Player.class, () -> { context ->
+        Anchor anchor = context.getArgument<Anchor>("anchor")    
+        context.getSender().sendMessage(
+            anchor.apply(sender) // returns location from eyes
+            // or anchor.apply(location, sender)
+        )
+    })
+```
 ```Kotlin
-StellarCommand("test")
+StellarCommand("calculate")
     .addEntityAnchor(name = "anchor")
     .addExecution<Player> {
         val anchor = getArgument<Anchor>("anchor")    
@@ -18,3 +30,4 @@ StellarCommand("test")
         )
     }
 ```
+:::

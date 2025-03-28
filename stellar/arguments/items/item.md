@@ -7,6 +7,15 @@ description: The official docs for the Stellar Command API.
 
 Returns an `ItemStack`, which players can specify with this syntax: `<item_id>[<list of components>]`. Example:
 
+:::code-group
+```Java
+new StellarCommand("give")
+    .addItemArgument(name = "item")
+    .addExecution(Player.class, () -> { context
+        ItemStack item = context.getArgument<ItemStack>("item")
+        context.getSender().getInventory().addItem(item)
+    }
+```
 ```Kotlin
 StellarCommand("give")
     .addItemArgument(name = "item")
@@ -15,3 +24,4 @@ StellarCommand("give")
         sender.inventory.addItem(item)
     }
 ```
+:::
