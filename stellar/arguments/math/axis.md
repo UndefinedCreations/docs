@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Any non-repeating combination of the characters 'x', 'y', and 'z'. Returns `EnumSet<Axis>`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addAxisArgument(name = "axis")
     .addExecution<Player> {

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns `ParticleData`, containing the particle itself and its data. The syntax is very simply just: `particle_type_id{configuration tags}`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("spawn-particle")
     .addParticleArgument(name = "particle")
     .addExecution<Player> {

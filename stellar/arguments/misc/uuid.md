@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a valid `UUID`, which it returns. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("uuid")
     .addUUIDArgument(name = "uuid")
     .addExecution<Player> {

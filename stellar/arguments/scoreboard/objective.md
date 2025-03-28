@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns a scoreboard `Objective`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("setamount")
 .addObjectiveArgument(name = "objective")
 .addIntegerArgument(name = "amount")

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns `Predicate<ItemStack>`, which players can specify with this syntax: `<item_id>[<list of components>]`. For more information: https://minecraft.wiki/w/Argument_types#minecraft:item_predicate. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("isItem")
     .addItemArgument(name = "item")
     .addExecution<Player> {

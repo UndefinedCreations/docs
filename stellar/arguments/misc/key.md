@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a valid `NamespacedKey`, which it returns. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("key")
     .addNamespacedKeyArgument(name = "key")
     .addExecution<Player> {

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 A list argument allows you to add a list of values the player can choose from. It will get the name and parsing from the type entered. Examples:
 
-```kotlin
+```Kotlin
 StellarCommand("list")
     .addFloatArgument("num_two")
     .addExecution<Player> {

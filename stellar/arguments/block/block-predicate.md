@@ -7,7 +7,17 @@ description: The official docs for the Stellar Command API.
 
 Returns `Predicate<Block>`, using [this syntax](https://minecraft.wiki/w/Argument_types#minecraft:block_predicate). Example:
 
-```kotlin
+:::code-group
+```Java
+new StellarCommand("isblock")
+    .addBlockPredicateArgument("predicate")
+    .addExecution(() -> { context ->
+        val data = context.getArgument<Predicate<Block>>("predicate")
+        val isBlock = data.test(block)
+        sender.sendMessage(isBlock.toString())
+    })
+```
+```Kotlin
 StellarCommand("isblock")
     .addBlockPredicateArgument(name = "predicate")
     .addExecution<Player> {
@@ -16,3 +26,4 @@ StellarCommand("isblock")
         sender.sendMessage(isBlock.toString())
     }
 ```
+:::

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a team color, returns `net.kyori.adventure.text.format.Style`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("choose")
     .addColorArgument(name = "color")
     .addExecution<Player> {

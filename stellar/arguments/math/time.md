@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a long suffixed with a unit if wanted (1s, 1d or 1t), which returns a `Long` in ticks. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("set-time")
     .addTimeArgument("time")
     .addExecution<Player> {

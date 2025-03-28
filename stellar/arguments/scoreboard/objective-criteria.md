@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a scoreboard objective criterion, returning `Criteria`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("objective")
     .addArgument("create")
     .addStringArgument(name = "objective")

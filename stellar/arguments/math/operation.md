@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be an arithmetic operator, such as = or +=. Returns an `Operation` enum, and use the `apply` method to calculate the new value from two numbers. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("calculate")
     .addOperationArgument(name = "operation")
     .addFloatArgument("num_one")

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 A valid JSON text component, and only returns its `net.kyori.adventure.text.format.Style`. Example:
 
-```kotlin
+```Kotlin
 val audience = BukkitAudiences.create(this)
 StellarCommand("reminder")
     .addStyleArgument(name = "style")

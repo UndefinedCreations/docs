@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be one of `world_surface`, `motion_blocking`, `motion_blocking_no_leaves`, and `ocean_floor`. It returns a `HeighMap` enum, which defines _how_ to calculate the highest y block. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("top")
     .addHeightMapArgument(name = "height_map")
     .addExecution<Player> {

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a scoreboard display slot. Returns `DisplaySlot`. Example:
 
-```kotlin
+```Kotlin
 val scoreboardManager = Bukkit.getScoreboardManager()!!.mainScoreboard
 val scoreboardObjective = scoreboardManager.registerNewObjective(
     "health",

@@ -8,7 +8,7 @@ description: The official docs for the Stellar Command API.
 Returns an int of a specific slot in any type of inventory . You can use `ItemSlotArgument` for the selection of _one_ slot, and `ItemSlotsArgument` for multiple slots. Examples:
 
 ::: code-group
-```kotlin [Slot]
+```Kotlin [Slot]
 StellarCommand("clearitem")
     .addItemSlotArgument(name = "slot")
     .addExecution<Player> {
@@ -16,7 +16,7 @@ StellarCommand("clearitem")
         sender.inventory.setItem(slot, null)
     }
 ```
-```kotlin [Slots]
+```Kotlin [Slots]
 StellarCommand("clearitems")
     .addItemSlotsArgument(name = "slots")
     .addExecution<Player> {

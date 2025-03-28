@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be one of the following: `none`, `clockwise_90`, `counterclockwise_90` and `180`. It returns `StructureRotation`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("structure")
     .addArgument("spawn")
     .addStructureRotationArgument(name = "rotation")

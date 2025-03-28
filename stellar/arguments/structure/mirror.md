@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be one of the following: `none`, `front_back` and `left_right`. It returns `Mirror`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("structure")
     .addArgument("spawn")
     .addMirrorArgument(name = "mirror")

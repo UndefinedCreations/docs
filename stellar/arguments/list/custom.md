@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 A custom argument is reusable class argument. It acts as a wrapper around the type argument. A custom argument can be made as such:
 
-```kotlin
+```Kotlin
 StellarCommand("list")
     .addFloatArgument("num_two")
     .addExecution<Player> {

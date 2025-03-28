@@ -6,21 +6,38 @@ description: The official docs for the Stellar Command API.
 # String Argument {#string}
 
 :::info
-Since: 1.13.
+Is available from Minecraft Version: 1.13.
 :::
 
-The `StringArgument` is an argument that allows you to type a string, as allowed by its `StringType`, and returns that `String`.:
+The `StringArgument` is an argument that allows you to type a string, as allowed by its `StringType`, and returns that `String`:
 
+Java examples:
 ::: code-group
-```kotlin [Word]
-StellarCommand("server")
-    .addStringArgument("string", StringType.WORD) // This is the default one.
+```Java [Word]
+new StellarCommand("server")
+    .addStringArgument("string", StringType.WORD) // default
 ```
-```kotlin [Quotable Phrase]
+```Java [Quotable Phrase]
+new StellarCommand("server")
+    .addStringArgument("string", StringType.QUOTABLE_PHRASE)
+```
+```Java [Phrase]
+new StellarCommand("server")
+    .addStringArgument("string", StringType.PHRASE)
+```
+:::
+
+Kotlin examples:
+::: code-group
+```Kotlin [Word]
+StellarCommand("server")
+    .addStringArgument("string", StringType.WORD) // default
+```
+```Kotlin [Quotable Phrase]
 StellarCommand("server")
     .addStringArgument("string", StringType.QUOTABLE_PHRASE)
 ```
-```kotlin [Phrase]
+```Kotlin [Phrase]
 StellarCommand("server")
     .addStringArgument("string", StringType.PHRASE)
 ```
@@ -40,7 +57,7 @@ You can type anything you want using this, the only problem here is that **it's 
 
 To be able to use a Phrase argument and handle each word independently, use the `PhraseArgument`. It contains a list of `WordArgument`, which you can customize:
 
-```kotlin
+```Kotlin
 StellarCommand("server")
     .addPhraseArgument("args")
     .onWord(index = 0) { // Extension function of WordArgument

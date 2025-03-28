@@ -6,15 +6,24 @@ description: The official docs for the Stellar Command API.
 # Boolean Argument {#boolean}
 
 :::info
-Since: 1.13.
+Is available from Minecraft Version: 1.13.
 :::
 
 The `BooleanArgument` allows you to input a `boolean`. Example:
 
-```kotlin
+:::code-group
+```Java
+new StellarCommand("server")
+    .addBooleanArgument("boolean")
+    .addExecution(() -> { context ->
+        context.getSender().sendMessage(context.getArgument<Boolean>("bool"))
+    })
+```
+```Kotlin
 StellarCommand("server")
-    .addBooleanArgument("bool")
+    .addBooleanArgument("boolean")
     .addExecution<Player> {
         sender.sendMessage(getArgument<Boolean>("bool"))
     }
 ```
+:::

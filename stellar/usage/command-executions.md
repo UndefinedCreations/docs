@@ -15,7 +15,7 @@ There are three types of executions, the first being an execution that runs when
 
 These will only run when it is that exact command typed. You can add this by using the `addExecution<T>`, `T` being the `CommandSender` used. Here is an example:
 
-```kotlin
+```Kotlin
 StellarCommand("greet")
     .addStringArgument("name")
     .addExecution<Player> {
@@ -30,7 +30,7 @@ In this example, the command execution will only run if exactly `/greet name` is
 
 A command runnable will always run if it is a command tree, before any other executions and runnables in upper arguments. To add a runnable to your command, use the `addRunnable` method as such:
 
-```kotlin
+```Kotlin
 StellarCommand("greet")
     .addRunnable<Player> {
         sender.sendMessage("Hello ${sender.name}.") // will always run
@@ -42,7 +42,7 @@ StellarCommand("greet")
 
 When a command fails, it will look for the last correctly-typed argument that it can find, then run its failure executions. Then you can add a simple execution by making use of the `addFailureExecution` method.
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addArgument("arg") // Literal argument
     .hideDefaultFailureMessages(hide = true, global = true) // global stands for if this will count for any sub-arguments
@@ -56,7 +56,7 @@ You can additionally hide the default minecraft failure messages by using the `h
 
 A better way of adding custom failure messages, if that's all you want, would be to use the `addFailureMessage` method:
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addArgument("arg")
     .hideDefaultFailureMessages(hide = true, global = true)
@@ -67,7 +67,7 @@ You can also use the `addPlainFailureMessage` to add a string message _not_ pars
 
 Lastly, if you want to add a failure message that will always run for the entire command, then use the `addGlobalFailureMessage` method:
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addArgument("arg")
     .hideDefaultFailureMessages(hide = true, global = true)

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a valid JSON text component, returns `net.kyori.adventure.text.Component`. Example:
 
-```kotlin
+```Kotlin
 val audience = BukkitAudiences.create(this)
     StellarCommand("send-to-self")
         .addComponentArgument(name = "component")

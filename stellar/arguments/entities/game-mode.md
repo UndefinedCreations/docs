@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be one of the following: `survival`, `creative`, `adventure` or `spectator`. It returns the `GameMode` enum.
 
-```kotlin
+```Kotlin
 StellarCommand("gamemode")
     .addGameModeArgument("mode")
     .addExecution<Player> {

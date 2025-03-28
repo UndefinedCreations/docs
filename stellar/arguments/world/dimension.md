@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 The `DimensionArgument` must be: `overworld`, `the_nether` or `the_end`. It returns an `Environment` enum. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("isNether")
     .addDimensionArgument(name = "dimension")
     .addExecution<Player> {

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns `Team`, must be an unquoted string, executions only run when there is a valid player. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("setcolor")
     .addTeamArgument(name = "team")
     .addColorArgument(name = "color")

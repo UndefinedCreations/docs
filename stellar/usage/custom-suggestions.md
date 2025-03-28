@@ -11,7 +11,7 @@ You can easily override tab completions/command suggestions the arguments have.
 
 Suggestions use the `Suggestion` data class, which have a title and a tooltip. You can override suggestions by using the `addSuggestion` method on arguments:
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addStringArgument("string")
     .addSuggestions(
@@ -21,7 +21,7 @@ StellarCommand("test")
 
 Or with an execution that returns a list of Suggestion:
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addStringArgument("string")
     .addSuggestion<Player> {

@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Is a phrase, like `StringArgument` with `StringType.PHRASE`, it replaces target selectors (@e, @s, etc.) with their actual result. It returns a `net.kyori.adventure.text.Component`. Example:
 
-```kotlin
+```Kotlin
 val audience = BukkitAudiences.create(this)
 StellarCommand("send-to-self")
     .addMessageArgument(name = "message")

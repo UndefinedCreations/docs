@@ -13,7 +13,7 @@ How commands works, is that the server sends the client a list of commands on sp
 
 You can add string permissions, such as "example.user.test", or level permissions. For more information on level permissions, see https://minecraft.wiki/w/Permission_level. To add such permissions, use the `addRequirement` method:
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addRequirement(3)
     .addRequirement("example.user.test")
@@ -23,7 +23,7 @@ StellarCommand("test")
 
 To add custom requirements, also the `addRequirement` method which is an extension function based on the generic type `T`:
 
-```kotlin
+```Kotlin
 StellarCommand("test")
     .addRequirement<Player> {
         hasPlayedBefore()

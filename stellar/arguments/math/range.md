@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must bee a valid integer range (e.g. 0..5), which returns `IntRange`. Example:
 
-```kotlin
+```Kotlin
 StellarCommand("roll")
     .addRangeArgument("range")
     .addExecution<Player> {
