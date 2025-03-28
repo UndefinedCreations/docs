@@ -65,6 +65,7 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { text: 'List', link: '/stellar/arguments/list/list' },
+                { text: 'Enum', link: '/stellar/arguments/list/enum' },
                 { text: 'Custom', link: '/stellar/arguments/list/custom' },
               ]
             },

@@ -26,7 +26,9 @@ StellarCommand("list")
 
 There are also available methods to create preset lists. These include `addListArgument("name", list)`, which uses a `StringArgument` (as the example above) as a base.
 
-There are usually also additional parameters, here they all are:
+## Parameters
+
+There are also additional parameters, here they all are:
 
 * `base` - The `AbstractStellarArgument` it wraps around.
 * `list` - A function providing a `CommandContext` and returning the list used in the argument.
