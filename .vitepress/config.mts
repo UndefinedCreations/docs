@@ -64,8 +64,8 @@ export default defineConfig({
               text: 'List',
               collapsed: true,
               items: [
-                { text: 'List', link: '/stellar/arguments/basic/list' },
-                { text: 'Custom', link: '/stellar/arguments/basic/custom' },
+                { text: 'List', link: '/stellar/arguments/list/list' },
+                { text: 'Custom', link: '/stellar/arguments/list/custom' },
               ]
             },
             {
