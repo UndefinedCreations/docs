@@ -22,8 +22,10 @@ new StellarCommand("server")
 StellarCommand("server")
     .addArgument(name = "reset")
 ```
-```Kotlin [Long]
+```Kotlin [Kotlin Long]
 StellarCommand("server")
     .addLiteralArgument(name = "reset")
 ```
 :::
+
+![Literal Argument](./literal_argument.gif)
