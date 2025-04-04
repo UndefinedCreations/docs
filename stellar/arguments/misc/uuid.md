@@ -7,6 +7,15 @@ description: The official docs for the Stellar Command API.
 
 Must be a valid `UUID`, which it returns. Example:
 
+:::code-group
+```Java
+new StellarCommand("uuid")
+    .addUUIDArgument("uuid")
+    .addExecution<Player>(() -> { context ->
+        UUID uuid = getArgument<UUID>("uuid");
+        currentUUID = uuid; // separate variable
+    };
+```
 ```Kotlin
 StellarCommand("uuid")
     .addUUIDArgument(name = "uuid")
@@ -15,3 +24,4 @@ StellarCommand("uuid")
         currentUUID = uuid // separate variable
     }
 ```
+:::
