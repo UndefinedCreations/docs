@@ -7,6 +7,18 @@ description: The official docs for the Stellar Command API.
 
 Must be a scoreboard objective criterion, returning `Criteria`. Example:
 
+:::code-group
+```Java
+new StellarCommand("objective")
+    .addArgument("create")
+    .addStringArgument("objective")
+    .addObjectiveCriteriaArgument("criterion")
+    .addExecution<Player>(() -> { context ->
+        String name = getArgument<String>("objective");
+        Criteria criteria = getArgument<Criteria>("criterion");
+        Bukkit.getScoreboardManager()!!.mainScoreboard.registerNewObjective(name, criteria, name);
+    });
+```
 ```Kotlin
 StellarCommand("objective")
     .addArgument("create")
@@ -18,3 +30,4 @@ StellarCommand("objective")
         Bukkit.getScoreboardManager()!!.mainScoreboard.registerNewObjective(name, criteria, name)
     }
 ```
+:::
