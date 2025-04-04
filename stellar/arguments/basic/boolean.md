@@ -16,8 +16,8 @@ The `BooleanArgument` allows you to input a `boolean`. Example:
 new StellarCommand("server")
     .addBooleanArgument("boolean")
     .addExecution(() -> { context ->
-        context.getSender().sendMessage(context.getArgument<Boolean>("bool"))
-    })
+        context.getSender().sendMessage(context.getArgument<Boolean>("bool"));
+    });
 ```
 ```Kotlin
 StellarCommand("server")

@@ -7,13 +7,25 @@ description: The official docs for the Stellar Command API.
 
 A yaw angle, in floating-point number, ranging from -180.0 (north) to 179.9 (just west of north). Returns `Float`. Example:
 
+:::code-group
+```Java
+new StellarCommand("setangle")
+    .addAngleArgument("angle")
+    .addExecution(() -> { context ->
+        float angle = (float) context.getArgument("angle");
+        Location newLocation = context.getSender().location;
+        newLocation.yaw = angle;
+        context.getSender.teleport(newLocation);
+    });
+```
 ```Kotlin
 StellarCommand("setangle")
     .addAngleArgument(name = "angle")
     .addExecution<Player> {
         val angle = getArgument<Float>("angle")
         sender.teleport(
-            sender.location.apply { yaw = angle }
+            sender.location.clone().apply { yaw = angle }
         )
     }
 ```
+:::

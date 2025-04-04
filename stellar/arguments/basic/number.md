@@ -17,8 +17,8 @@ Java examples:
 new StellarCommand("server")
     .addIntegerArgument("int")
     .addExecution(() -> { context ->
-        context.getSender().sendMessage(context.get("int").toString()) // should be converter to context["int"] if possible
-    })
+        context.getSender().sendMessage(context.get("int").toString()); // should be converter to context["int"] if possible
+    });
 ```
 ```Java [Long]
 new StellarCommand("server")
