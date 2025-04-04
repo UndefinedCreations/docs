@@ -10,12 +10,22 @@ A literal argument is an argument that represents an option you can choose from.
 Here is how to create a literal argument:
 
 ::: code-group
-```Kotlin [Short]
+```Java [Java Short]
+new StellarCommand("server")
+    .addArgument("reset")
+```
+```Java [Java Long]
+new StellarCommand("server")
+    .addLiteralArgument("reset")
+```
+```Kotlin [Kotlin Short]
 StellarCommand("server")
     .addArgument(name = "reset")
 ```
-```Kotlin [Long]
+```Kotlin [Kotlin Long]
 StellarCommand("server")
     .addLiteralArgument(name = "reset")
 ```
 :::
+
+![Literal Argument](./literal_argument.gif)
