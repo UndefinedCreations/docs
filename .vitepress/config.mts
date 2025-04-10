@@ -31,8 +31,7 @@ export default defineConfig({
           items: [
             { text: 'Stellar Setup', link: '/stellar/getting-started/stellar-setup' },
             { text: 'Creating a Simple Command', link: '/stellar/getting-started/creating-a-simple-command' },
-            { text: 'Understanding Command Context', link: '/stellar/getting-started/command-context' },
-            { text: 'Understanding Command Tree', link: '/stellar/getting-started/command-tree' },
+            { text: 'Command Context & Tree', link: '/stellar/getting-started/context-tree' },
           ]
         },
         {
