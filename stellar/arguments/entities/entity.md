@@ -21,7 +21,7 @@ StellarCommand("select")
 ```
 :::
 
-![Entity Argument](./entity.gif)
+![Entity Argument](https://cdn.lutto.dev/stellar/gifs/entities/entity.gif)
 
 ## Entity vs Entities & Player vs Players
 

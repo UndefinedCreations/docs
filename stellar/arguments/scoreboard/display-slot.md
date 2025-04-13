@@ -39,4 +39,4 @@ StellarCommand("displaySlot")
 ```
 :::
 
-![Display Slot Argument](./display_slot.gif)
+![Display Slot Argument](https://cdn.lutto.dev/stellar/gifs/scoreboard/display_slot.gif)

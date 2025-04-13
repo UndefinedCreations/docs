@@ -42,4 +42,4 @@ StellarCommand("clear-items")
 ```
 :::
 
-![Item Slot Argument](./item_slot.gif)
+![Item Slot Argument](https://cdn.lutto.dev/stellar/gifs/items/item_slot.gif)

@@ -26,4 +26,4 @@ StellarCommand("uuid")
 ```
 :::
 
-![UUID Argument](./uuid.gif)
+![UUID Argument](https://cdn.lutto.dev/stellar/gifs/misc/uuid.gif)

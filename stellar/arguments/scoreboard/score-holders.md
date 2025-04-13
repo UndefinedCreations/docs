@@ -30,7 +30,7 @@ StellarCommand("objective")
 ```
 :::
 
-![Score Holder Argument](./score_holder.gif)
+![Score Holder Argument](https://cdn.lutto.dev/stellar/gifs/score_holder.gif)
 
 _Multiple_ Examples:
 
@@ -59,4 +59,4 @@ StellarCommand("objective")
 ```
 :::
 
-![Score Holders Argument](./score_holders.gif)
+![Score Holders Argument](https://cdn.lutto.dev/stellar/gifs/scoreboard/score_holders.gif)

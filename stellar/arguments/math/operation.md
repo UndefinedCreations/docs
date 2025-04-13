@@ -36,4 +36,4 @@ StellarCommand("calculate")
 ```
 :::
 
-![Operation Argument](./operation.gif)
+![Operation Argument](https://cdn.lutto.dev/stellar/gifs/math/operation.gif)

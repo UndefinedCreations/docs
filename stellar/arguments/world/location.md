@@ -56,4 +56,4 @@ StellarCommand("teleport-to")
 ```
 :::
 
-![Location Argument](./location.gif)
+![Location Argument](https://cdn.lutto.dev/stellar/gifs/world/location.gif)

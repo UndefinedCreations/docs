@@ -26,4 +26,4 @@ StellarCommand("gamemode")
 ```
 :::
 
-![GameMode Argument](./gamemode.gif)
+![GameMode Argument](https://cdn.lutto.dev/stellar/gifs/entities/gamemode.gif)

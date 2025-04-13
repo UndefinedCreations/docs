@@ -30,4 +30,4 @@ StellarCommand("setangle")
 ```
 :::
 
-![Angle Argument](./angle.gif)
+![Angle Argument](https://cdn.lutto.dev/stellar/gifs/math/angle.gif)

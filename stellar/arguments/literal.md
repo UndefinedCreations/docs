@@ -28,4 +28,4 @@ StellarCommand("server")
 ```
 :::
 
-![Literal Argument](./literal_argument.gif)
+![Literal Argument](https://cdn.lutto.dev/stellar/gifs/literal_argument.gif)

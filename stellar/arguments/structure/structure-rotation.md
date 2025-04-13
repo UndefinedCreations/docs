@@ -17,4 +17,4 @@ StellarCommand("structure")
     }
 ```
 
-![Structure Rotation Argument](./structure-rotation.gif)
+![Structure Rotation Argument](https://cdn.lutto.dev/stellar/gifs/structure/structure-rotation.gif)

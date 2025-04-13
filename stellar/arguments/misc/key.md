@@ -26,4 +26,4 @@ StellarCommand("key")
 ```
 :::
 
-![Namespaced Key Argument](./key.gif)
+![Namespaced Key Argument](https://cdn.lutto.dev/stellar/gifs/misc/key.gif)

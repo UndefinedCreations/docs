@@ -28,4 +28,4 @@ StellarCommand("isItem")
 ```
 :::
 
-![Item Predicate Argument](./item_predicate.gif)
+![Item Predicate Argument](https://cdn.lutto.dev/stellar/gifs/items/item_predicate.gif)

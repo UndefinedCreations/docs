@@ -17,4 +17,4 @@ StellarCommand("loot-table")
     }
 ```
 
-![Loot Table Argument](./loot-table.gif)
+![Loot Table Argument](https://cdn.lutto.dev/stellar/gifs/structure/loot_table.gif)

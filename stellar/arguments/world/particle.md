@@ -21,4 +21,4 @@ StellarCommand("spawn-particle")
     }
 ```
 
-![Particle Argument](./particle.gif)
+![Particle Argument](https://cdn.lutto.dev/stellar/gifs/world/particle.gif)

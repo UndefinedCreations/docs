@@ -32,4 +32,4 @@ StellarCommand("objective")
 ```
 :::
 
-![Objective Criteria Argument](./objective_criteria.gif)
+![Objective Criteria Argument](https://cdn.lutto.dev/stellar/gifs/scoreboard/objective_criteria.gif)

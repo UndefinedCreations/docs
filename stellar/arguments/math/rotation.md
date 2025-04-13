@@ -29,4 +29,4 @@ StellarCommand("set-rotation")
 ```
 :::
 
-![Rotation Argument](./rotation.gif)
+![Rotation Argument](https://cdn.lutto.dev/stellar/gifs/math/rotation.gif)

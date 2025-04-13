@@ -30,4 +30,4 @@ StellarCommand("setcolor")
 ```
 :::
 
-![Team Argument](./team.gif)
+![Team Argument](https://cdn.lutto.dev/stellar/gifs/scoreboard/team.gif)

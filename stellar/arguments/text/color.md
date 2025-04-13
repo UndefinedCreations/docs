@@ -16,4 +16,4 @@ StellarCommand("choose")
     }
 ```
 
-![Color Argument](./color.gif)
+![Color Argument](https://cdn.lutto.dev/stellar/gifs/text/color.gif)

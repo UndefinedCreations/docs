@@ -32,4 +32,4 @@ StellarCommand("spawn")
 ```
 :::
 
-![Block Data Argument](./block_data.gif)
+![Block Data Argument](https://cdn.lutto.dev/stellar/gifs/block/block_data.gif)

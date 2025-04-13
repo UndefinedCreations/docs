@@ -28,4 +28,4 @@ StellarCommand("isblock")
 ```
 :::
 
-![Block Predicate Argument](./block_predicate.gif)
+![Block Predicate Argument](https://cdn.lutto.dev/stellar/gifs/block/block_predicate.gif)

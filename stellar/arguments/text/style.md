@@ -18,4 +18,4 @@ StellarCommand("reminder")
     }
 ```
 
-![Style Argument](./style.gif)
+![Style Argument](https://cdn.lutto.dev/stellar/gifs/text/style.gif)

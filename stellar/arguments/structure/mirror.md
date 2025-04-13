@@ -17,4 +17,4 @@ StellarCommand("structure")
     }
 ```
 
-![Mirror Argument](./mirror.gif)
+![Mirror Argument](https://cdn.lutto.dev/stellar/gifs/structure/mirror.gif)

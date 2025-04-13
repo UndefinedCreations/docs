@@ -28,4 +28,4 @@ StellarCommand("test")
 ```
 :::
 
-![Axis Argument](./axis.gif)
+![Axis Argument](https://cdn.lutto.dev/stellar/gifs/math/axis.gif)

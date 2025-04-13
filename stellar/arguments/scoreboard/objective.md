@@ -30,4 +30,4 @@ StellarCommand("setamount")
 ```
 :::
 
-![Objective Argument](./objective.gif)
+![Objective Argument](https://cdn.lutto.dev/stellar/gifs/scoreboard/objective.gif)

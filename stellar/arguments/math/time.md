@@ -26,4 +26,4 @@ StellarCommand("set-time")
 ```
 :::
 
-![Time Argument](./time.gif)
+![Time Argument](https://cdn.lutto.dev/stellar/gifs/math/time.gif)

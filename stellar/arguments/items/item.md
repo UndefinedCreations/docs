@@ -26,4 +26,4 @@ StellarCommand("give")
 ```
 :::
 
-![Item Argument](./item.gif)
+![Item Argument](https://cdn.lutto.dev/stellar/gifs/items/item.gif)

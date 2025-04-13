@@ -17,4 +17,4 @@ StellarCommand("top")
     }
 ```
 
-![Height Map Argument](./height_map.gif)
+![Height Map Argument](https://cdn.lutto.dev/stellar/gifs/world/height_map.gif)

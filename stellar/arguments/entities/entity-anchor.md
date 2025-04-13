@@ -32,4 +32,4 @@ StellarCommand("calculate")
 ```
 :::
 
-![Entity Anchor Argument](./entity_anchor.gif)
+![Entity Anchor Argument](https://cdn.lutto.dev/stellar/gifs/entities/entity_anchor.gif)

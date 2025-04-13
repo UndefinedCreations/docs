@@ -17,4 +17,4 @@ StellarCommand("send-to-self")
     }
 ```
 
-![Message Argument](./message.gif)
+![Message Argument](https://cdn.lutto.dev/stellar/gifs/text/message.gif)

@@ -17,4 +17,4 @@ StellarCommand("isNether")
     }
 ```
 
-![Environment Argument](./environment.gif)
+![Environment Argument](https://cdn.lutto.dev/stellar/gifs/world/environment.gif)

@@ -17,4 +17,4 @@ val audience = BukkitAudiences.create(this)
         }
 ```
 
-![Component Argument](./component.gif)
+![Component Argument](https://cdn.lutto.dev/stellar/gifs/text/component.gif)

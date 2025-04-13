@@ -26,4 +26,4 @@ StellarCommand("roll")
 ```
 :::
 
-![IntRange Argument](./int_range.gif)
+![IntRange Argument](https://cdn.lutto.dev/stellar/gifs/math/int_range.gif)
