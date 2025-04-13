@@ -16,3 +16,5 @@ StellarCommand("top")
         sender.teleport(highestYBlock.location.add(0.0, 1.0, 0.0))
     }
 ```
+
+![Height Map Argument](./height_map.gif)

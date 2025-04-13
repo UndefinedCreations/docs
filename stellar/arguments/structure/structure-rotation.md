@@ -16,3 +16,5 @@ StellarCommand("structure")
         spawnStructure(rotation) // custom method
     }
 ```
+
+![Structure Rotation Argument](./structure-rotation.gif)

@@ -16,3 +16,5 @@ StellarCommand("send-to-self")
         audience.sender(sender).sendMessage(component)
     }
 ```
+
+![Message Argument](./message.gif)

@@ -29,3 +29,5 @@ StellarCommand("setcolor")
     }
 ```
 :::
+
+![Team Argument](./team.gif)

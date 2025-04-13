@@ -25,3 +25,5 @@ StellarCommand("give")
     }
 ```
 :::
+
+![Item Argument](./item.gif)

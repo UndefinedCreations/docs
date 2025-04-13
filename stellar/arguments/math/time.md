@@ -25,3 +25,5 @@ StellarCommand("set-time")
     }
 ```
 :::
+
+![Time Argument](./time.gif)

@@ -29,3 +29,5 @@ StellarCommand("setamount")
     }
 ```
 :::
+
+![Objective Argument](./objective.gif)

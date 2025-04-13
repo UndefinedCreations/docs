@@ -86,7 +86,7 @@ export default defineConfig({
               items: [
                 { text: 'Location', link: '/stellar/arguments/world/location' },
                 { text: 'Particle', link: '/stellar/arguments/world/particle' },
-                { text: 'Dimension', link: '/stellar/arguments/world/dimension' },
+                { text: 'Environment', link: '/stellar/arguments/world/environment' },
                 { text: 'Height Map', link: '/stellar/arguments/world/height-map' },
               ]
             },

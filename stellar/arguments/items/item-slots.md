@@ -41,3 +41,5 @@ StellarCommand("clear-items")
     }
 ```
 :::
+
+![Item Slot Argument](./item_slot.gif)

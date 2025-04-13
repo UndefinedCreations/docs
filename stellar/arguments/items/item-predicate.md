@@ -27,3 +27,5 @@ StellarCommand("isItem")
     }
 ```
 :::
+
+![Item Predicate Argument](./item_predicate.gif)

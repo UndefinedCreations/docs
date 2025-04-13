@@ -31,3 +31,5 @@ StellarCommand("spawn")
     }
 ```
 :::
+
+![Block Data Argument](./block_data.gif)

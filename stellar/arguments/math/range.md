@@ -25,3 +25,5 @@ StellarCommand("roll")
     }
 ```
 :::
+
+![IntRange Argument](./int_range.gif)

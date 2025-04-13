@@ -27,3 +27,5 @@ StellarCommand("isblock")
     }
 ```
 :::
+
+![Block Predicate Argument](./block_predicate.gif)

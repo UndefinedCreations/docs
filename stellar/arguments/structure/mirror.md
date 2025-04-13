@@ -16,3 +16,5 @@ StellarCommand("structure")
         spawnStructure(mirror) // custom method
     }
 ```
+
+![Mirror Argument](./mirror.gif)

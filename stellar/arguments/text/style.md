@@ -17,3 +17,5 @@ StellarCommand("reminder")
         audience.sender(sender).sendMessage(message)
     }
 ```
+
+![Style Argument](./style.gif)

@@ -16,3 +16,5 @@ val audience = BukkitAudiences.create(this)
             audience.sender(sender).sendMessage(component)
         }
 ```
+
+![Component Argument](./component.gif)

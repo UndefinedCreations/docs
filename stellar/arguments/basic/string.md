@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # String Argument {#string}
 
-:::info
+:::tip
 Is available from Minecraft Version: 1.13.
 :::
 
@@ -46,10 +46,12 @@ StellarCommand("server")
 ## Word
 
 A `StringArgument` of type `StringType.WORD` means that you type anything in the English alphabet, including numbers, but nothing more. If this limits you, consider the next options.
+![Word Argument](./word.gif)
 
 ## Quotable Phrase
 
 The `QUOTABLE_PHRASE` has the same limitation as `WORD`, but when it's in quotation marks (""), it becomes limitless.
+![Word Argument](./quotable_phrase.gif)
 
 ## Phrase
 
@@ -68,3 +70,5 @@ StellarCommand("server")
     }
     .addWordSuggestions(index = 1, suggestions = "first, "second")
 ```
+
+![Phrase Argument](./phrase.gif)

@@ -31,3 +31,5 @@ StellarCommand("objective")
     }
 ```
 :::
+
+![Objective Criteria Argument](./objective_criteria.gif)

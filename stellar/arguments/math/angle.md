@@ -29,3 +29,5 @@ StellarCommand("setangle")
     }
 ```
 :::
+
+![Angle Argument](./angle.gif)

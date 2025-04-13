@@ -55,3 +55,5 @@ StellarCommand("teleport-to")
     }
 ```
 :::
+
+![Location Argument](./location.gif)

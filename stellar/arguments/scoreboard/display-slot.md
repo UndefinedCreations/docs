@@ -38,3 +38,5 @@ StellarCommand("displaySlot")
     }
 ```
 :::
+
+![Display Slot Argument](./display_slot.gif)

@@ -21,6 +21,8 @@ StellarCommand("select")
 ```
 :::
 
+![Entity Argument](./entity.gif)
+
 ## Entity vs Entities & Player vs Players
 
 ::: warning

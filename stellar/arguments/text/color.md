@@ -15,3 +15,5 @@ StellarCommand("choose")
         sender.sendMessage("Color chosen: ${color.color()!!.asHexString()}")
     }
 ```
+
+![Color Argument](./color.gif)

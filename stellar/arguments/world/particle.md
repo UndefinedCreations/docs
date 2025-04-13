@@ -20,3 +20,5 @@ StellarCommand("spawn-particle")
         )
     }
 ```
+
+![Particle Argument](./particle.gif)

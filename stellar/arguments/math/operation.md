@@ -35,3 +35,5 @@ StellarCommand("calculate")
     }
 ```
 :::
+
+![Operation Argument](./operation.gif)

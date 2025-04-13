@@ -16,3 +16,5 @@ StellarCommand("loot-table")
         selectedLootTable = table
     }
 ```
+
+![Loot Table Argument](./loot-table.gif)

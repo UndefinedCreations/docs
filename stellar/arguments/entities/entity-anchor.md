@@ -31,3 +31,5 @@ StellarCommand("calculate")
     }
 ```
 :::
+
+![Entity Anchor Argument](./entity_anchor.gif)

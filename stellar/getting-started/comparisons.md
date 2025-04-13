@@ -16,3 +16,40 @@ description: The official docs for the Stellar Command API.
 | Unrestricted Word Argument |      ✅      |      ❌      |      ❌       |      ❌       |
 |      Cooldown System       |      ✅      |      ❌      |      ✅       |      ✅       |
 |   Command Unregistration   |      ✅      |      ✅      |      ❌       |      ❌       |
+
+Kotlin Code Comparisons:
+
+:::code-group
+```Kotlin [Stellar]
+class Main : JavaPlugin() {
+    override fun onEnable() {
+        unregisterCommand("ban")
+
+        StellarCommand("ban")
+            .addRequirement("undefined.command.ban")
+            .addOnlinePlayersArgument("target")
+            .addTimeArgument("duration", 1)
+            .addStringArgument("reason", StringType.PHRASE)
+            .addExecution<Player> {
+                val target: Player by args
+                val duration: Int by args
+                val reason: String by args
+
+                target.ban<BanEntry<PlayerProfile>>(reason, Duration.ofSeconds((duration / 20).toLong()), sender.name, true)
+            }
+            .register(this)
+    }
+}
+```
+```Kotlin [Lamp]
+@Command(name = "custom-ban") // different name as you cannot unregister commands
+class BanCommand {
+
+    @Permission("undefined.command.ban")
+    fun ban(@Context player: Player, @Arg target: Player, @Arg duration: Duration, @Arg reason: String) {
+        target.ban<BanEntry<PlayerProfile>>(reason, duration, player.name, true)
+    }
+
+}
+```
+:::

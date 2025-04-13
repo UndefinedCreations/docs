@@ -25,3 +25,5 @@ StellarCommand("key")
     }
 ```
 :::
+
+![Namespaced Key Argument](./key.gif)

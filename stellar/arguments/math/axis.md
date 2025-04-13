@@ -27,3 +27,5 @@ StellarCommand("test")
     }
 ```
 :::
+
+![Axis Argument](./axis.gif)

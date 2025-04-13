@@ -25,3 +25,5 @@ StellarCommand("uuid")
     }
 ```
 :::
+
+![UUID Argument](./uuid.gif)

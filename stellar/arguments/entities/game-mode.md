@@ -25,3 +25,5 @@ StellarCommand("gamemode")
     }
 ```
 :::
+
+![GameMode Argument](./gamemode.gif)

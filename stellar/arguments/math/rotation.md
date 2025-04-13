@@ -28,3 +28,5 @@ StellarCommand("set-rotation")
     }
 ```
 :::
+
+![Rotation Argument](./rotation.gif)

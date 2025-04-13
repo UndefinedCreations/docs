@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Number Arguments {#number}
 
-:::info
+:::tip
 Is available from Minecraft Version: 1.13.
 :::
 
@@ -74,3 +74,5 @@ StellarCommand("server")
     }
 ```
 :::
+
+![Number Argument](./number.gif)
