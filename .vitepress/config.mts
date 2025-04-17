@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -6,6 +7,11 @@ export default defineConfig({
   description: "The documentation for all projects under Undefined Creations.",
   cleanUrls: true,
   ignoreDeadLinks: true,
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+    }
+  },
   themeConfig: {
     logo: "/.vitepress/public/logo.png",
     head: [["link", { rel: "icon", sizes: "32x32", href: "/.vitepress/public/favicon.png" }]],

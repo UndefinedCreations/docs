@@ -9,6 +9,7 @@
   },
   "private": true,
   "devDependencies": {
-    "vitepress": "^1.4.1"
+    "vitepress": "^1.4.1",
+    "vitepress-plugin-tabs": "^0.7.0"
   }
 }

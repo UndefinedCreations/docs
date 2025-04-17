@@ -7,16 +7,31 @@ description: The official docs for the Stellar Command API.
 
 Best way to learn is by doing, thus we are going to create a simple message command. To create a simple command, we first need to initialize the base command:
 
+:::tabs key:kotlin-java
+== Kotlin
 ```Kotlin
 StellarCommand("message")
 ```
+== Java
+```Java
+new StellarCommand("message");
+```
+:::
 
 For a bit of customization you can add aliases as such:
 
+:::tabs key:kotlin-java
+== Kotlin
 ```Kotlin
 StellarCommand("message")
     .addAliases("msg", "tell")
 ```
+== Java
+```Java
+new StellarCommand("message")
+    .addAliases("msg", "tell");
+```
+:::
 
 Now we need to add an argument, the player needs to be able to specify who they want to message. For that purpose, we'll use the pre-made online players ListArgument defined in [`addOnlinePlayersArgument`](https://github.com/UndefinedCreations/Stellar/blob/34fb887add0b257ff59e3e49df7c6cbe6cdc8522/common/src/main/kotlin/com/undefined/stellar/argument/ArgumentHandler.kt#L362):
 
