@@ -11,10 +11,6 @@ Best way to learn is by doing, thus we are going to create a simple message comm
 StellarCommand("message")
 ```
 
-:::info
-Need to add constructor aliases.
-:::
-
 For a bit of customization you can add aliases as such:
 
 ```Kotlin

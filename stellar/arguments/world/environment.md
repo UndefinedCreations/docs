@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Environment Argument {#dimension}
 
-The `DimensionArgument` must be: `overworld`, `the_nether` or `the_end`. It returns an `Environment` enum. Example:
+The `EnvironmentArgument` must be: `overworld`, `the_nether` or `the_end`. It returns an `Environment` enum. Example:
 
 ```Kotlin
 StellarCommand("isNether")

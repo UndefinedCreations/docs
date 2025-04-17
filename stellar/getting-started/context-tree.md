@@ -15,7 +15,7 @@ The first part of the context is the sender. The `sender` property has the type 
 
 The second part is a `HashMap` called `arguments` with the key being the argument name, and the value being its return value. You usually don't interact with this property directly, instead using one of the methods provided. For example, you can use `getArgument<Return Value Class>(index or name)` or `get(index or name)`/`context[index or namee]` to get an argument.
 
-The third and last property is `input`, which returns the entire command input without the `/`.
+The last property is `input`, which returns the entire command input without the `/`.
 
 ## Command Tree
 
@@ -29,7 +29,7 @@ A command tree is a theoretical idea, yet important to fully understand. It refe
 │── <target> <x> <y> <z> facing entity <entity> [eyes|feet]
 ```
 
-In code, we can create a root command by instantiating `StellarCommand`, or using a utility method to delegate the instantiation. Then we can add arguments on top of it, and each time we do using an `addArgument` method, it returns that arguments itself. Here is an simple version of the /tp command example:
+In code, we can create a root command by instantiating `StellarCommand`, or using a utility method to delegate the instantiation. Then we can add arguments on top of it, and each time we do using an `addArgument` method, it returns that arguments itself. Here is a simple version of the /tp command example:
 
 ```Kotlin
 val main = StellarCommand("tp")

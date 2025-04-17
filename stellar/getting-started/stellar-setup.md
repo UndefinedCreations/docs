@@ -8,10 +8,15 @@ description: The official docs for the Stellar Command API.
 To use the Stellar API in your project, we first need to import this into the project.
 
 Platform under should be replaced either by spigot or paper. Here is a table of all the versions that are officially supported by Stellar:
-| Version         | Spigot | Paper |
-|-----------------|--------|-------|
-| Latest - 1.16.5 | ✅     | ✅   |
-| 1.16.4 - 1.13   | ✅     | ❌   |
+
+|     Version     | Spigot | Paper |
+|:---------------:|:------:|:-----:|
+| 1.20.6 - Latest |   ✅    |   ✅   |
+|  1.13 - 1.20.6  |   ✅    |   ❌   |
+
+:::tip
+Paper can still be used on older versions, with the SpigotMC module.
+:::
 
 ## Gradle (recommended)
 
