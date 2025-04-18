@@ -1,27 +1,27 @@
 ---
-title: Undefined RunServer
-description: The official docs for Undefined Creations Gradle plugins.
+title: Nova
+description: The official docs for Nova Gradle plugins.
 ---
 
-# Undefined RunServer {#run-server}
+# Nova {#nova}
 
-This gradle plugin is made to be able to run any sort of server jar inside your intellij.
+Nova is a powerful gradle plugin that enables you to run any minecraft jar inside your IDE.
 
 ## Gradle Imports
 
-[![](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreations.runServer)](https://plugins.gradle.org/plugin/com.undefinedcreations.runServer)
+[![](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreations.nova)](https://plugins.gradle.org/plugin/com.undefinedcreations.nova)
 
 Add the plugin at the top of your Gradle build file.
 
 ::: code-group
 ```groovy [build.gradle]
 plugins {
-  id "com.undefinedcreations.runServer" version "VERSION"
+  id "com.undefinedcreations.nova" version "VERSION"
 }
 ```
 ```kts [build.gradle.kts]
 plugins {
-  id("com.undefinedcreations.runServer") version "VERSION"
+  id("com.undefinedcreations.nova") version "VERSION"
 }
 ```
 :::
@@ -39,6 +39,8 @@ tasks {
 }
 ```
 
+If you are using `Echo` you won't need to set this anymore. It will check echo for what version of BuildTools it is using and choose that version
+
 ## Configuration
 
 There are a bunch of configuration that can be done with this plugin.
@@ -55,6 +57,16 @@ They are
 [`WATERFALL`](https://github.com/PaperMC/Waterfall), 
 [`VELOCITY`](https://github.com/PaperMC/Velocity) and
 [`FOLIA`](https://github.com/PaperMC/Folia)
+
+If no server type is chosen it will automatically choose `Spigot`
+
+```kts
+tasks {
+    runServer {
+        serverType(ServerType.SPIGOT)
+    }
+}
+```
 
 ### Auto accept eula
 One of the most annoying part of create test server is accepting the mojang eula. That was why we made an option to automatically accept this.
