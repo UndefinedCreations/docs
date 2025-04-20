@@ -15,7 +15,9 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.png",
     head: [["link", { rel: "icon", sizes: "32x32", href: "/favicon.png" }]],
-    editLink: `https://github.com/UndefinedCreations/docs/edit/master/docs/:path`,
+    editLink: {
+      pattern: 'https://github.com/UndefinedCreations/docs/blob/main/:path'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Stellar', link: '/stellar' },
