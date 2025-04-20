@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Number Arguments {#number}
 
-:::tip
+:::info
 Is available from Minecraft Version: 1.13.
 :::
 

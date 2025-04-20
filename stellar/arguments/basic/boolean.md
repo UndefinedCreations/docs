@@ -5,7 +5,7 @@ description: The official docs for the Stellar Command API.
 
 # Boolean Argument {#boolean}
 
-:::tip
+:::info
 Is available from Minecraft Version: 1.13.
 :::
 
