@@ -237,7 +237,7 @@ StellarCommand("message")
 ```
 == Java
 ```Java
-CommandUtilKt.unregisterCommand("msg")
+CommandUtilKt.unregisterCommand("msg");
 
 new StellarCommand("message")
     .addAliases("msg", "tell")
