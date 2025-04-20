@@ -13,15 +13,14 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: "/.vitepress/public/logo.png",
-    head: [["link", { rel: "icon", sizes: "32x32", href: "/.vitepress/public/favicon.png" }]],
-    // https://vitepress.dev/reference/default-theme-config
+    logo: "/logo.png",
+    head: [["link", { rel: "icon", sizes: "32x32", href: "/favicon.png" }]],
+    editLink: `https://github.com/UndefinedCreations/docs/edit/master/docs/:path`,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Stellar', link: '/stellar' },
       { text: 'Gradle Plugins', link: '/gradle-plugins' }
     ],
-
     sidebar: {
       '/stellar/': [
         {
@@ -185,7 +184,6 @@ export default defineConfig({
         }
       ]
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.undefinedcreations.com' },
       { icon: 'discord', link: 'https://discord.undefinedcreation.com' }
