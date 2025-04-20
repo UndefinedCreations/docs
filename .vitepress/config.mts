@@ -1,18 +1,26 @@
-import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import defineVersionedConfig from "vitepress-versioning-plugin";
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default defineVersionedConfig({
   title: "Undefined Creations",
   description: "The documentation for all projects under Undefined Creations.",
   cleanUrls: true,
   ignoreDeadLinks: true,
+  versioning: {
+    latestVersion: "1.0.0",
+  },
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)
     }
   },
   themeConfig: {
+    lastUpdated: true,
+    footer: {
+      message: 'Released under the MIT License.',
+          copyright: 'Copyright © 2020-PRESENT Anthony Fu and VueUse contributors',
+    },
     logo: "/logo.png",
     head: [["link", { rel: "icon", sizes: "32x32", href: "/favicon.png" }]],
     editLink: {
@@ -194,4 +202,4 @@ export default defineConfig({
       { icon: 'discord', link: 'https://discord.undefinedcreation.com' }
     ]
   }
-})
+}, __dirname)
