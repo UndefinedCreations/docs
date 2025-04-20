@@ -18,6 +18,9 @@ export default defineConfig({
     editLink: {
       pattern: 'https://github.com/UndefinedCreations/docs/blob/main/:path'
     },
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Stellar', link: '/stellar' },
