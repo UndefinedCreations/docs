@@ -69,7 +69,7 @@ export default defineVersionedConfig({
           text: 'Arguments',
           collapsed: false,
           items: [
-            { text: 'Literal Arguments', link: '/stellar/arguments/literal' },
+            { text: 'Literal Argument', link: '/stellar/arguments/literal' },
             {
               text: 'Basic',
               collapsed: true,

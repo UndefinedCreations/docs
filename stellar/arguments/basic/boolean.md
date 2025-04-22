@@ -28,4 +28,6 @@ StellarCommand("server")
 ```
 :::
 
+<ArgumentParser placeholder="true" regex="^(false|true)$" />
+
 ![Boolean Argument](https://cdn.lutto.dev/stellar/gifs/basic/boolean.gif)

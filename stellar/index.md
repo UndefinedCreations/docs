@@ -17,7 +17,7 @@ Stellar is a modern, flexible command framework for Java and Kotlin, built speci
     - Command unregistration.
     - Over **45 specialized arguments** for maximum flexibility
 
-## Documentation Structure  
+## Documentation Structure
 These docs are specially designed to be simple and intuitive, while not missing any information. We made sure that everything is easily understandable, with GIFs and code examples used everywhere.
 
 If you need more help, consider joining the [Discord Server](https://discord.undefinedcreations.com/).
