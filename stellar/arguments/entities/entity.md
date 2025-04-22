@@ -21,7 +21,7 @@ StellarCommand("select")
 ```
 :::
 
-<ArgumentParser placeholder="@e[type=!#player]" regex="(^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89abAB][0-9a-f]{3}-[0-9a-f]{12}$)|(^@[a,e,n,p,r,s](\[[a-zA-Z]+=\S+\])?$)|(^[a-zA-Z]+$)" />
+<ArgumentParser placeholder="@e[type=!#player]" regex="(^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89abAB][0-9a-f]{3}-[0-9a-f]{12}$)|(^@[a,e,n,p,r,s](\[([a-zA-Z]+=\S+)?\])?$)|(^[a-zA-Z]+$)" />
 
 ![Entity Argument](https://cdn.lutto.dev/stellar/gifs/entities/entity.gif)
 

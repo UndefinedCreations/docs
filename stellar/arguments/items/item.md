@@ -26,4 +26,6 @@ StellarCommand("give")
 ```
 :::
 
+<ArgumentParser placeholder="minecraft:diamond_sword[damage=2000]" regex="^(minecraft:[a-zA-Z]+|[a-zA-Z]+)(\[([a-zA-Z]+=\S+)?\])?$" />
+
 ![Item Argument](https://cdn.lutto.dev/stellar/gifs/items/item.gif)

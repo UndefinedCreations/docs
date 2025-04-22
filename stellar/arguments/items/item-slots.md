@@ -42,4 +42,6 @@ StellarCommand("clear-items")
 ```
 :::
 
+<ArgumentParser placeholder="eyes" regex="^[a-zA-Z]+.[a-zA-Z0-9]+$" />
+
 ![Item Slot Argument](https://cdn.lutto.dev/stellar/gifs/items/item_slot.gif)

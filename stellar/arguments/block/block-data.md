@@ -32,6 +32,6 @@ StellarCommand("spawn")
 ```
 :::
 
-<ArgumentParser placeholder="minecraft:stone" regex="^(minecraft:[a-zA-Z]+$)|[a-zA-Z]+$" />
+<ArgumentParser placeholder="minecraft:stone" regex="^(minecraft:[a-zA-Z]+|[a-zA-Z]+)(\[([a-zA-Z]+=\S+)?\])?$" />
 
 ![Block Data Argument](https://cdn.lutto.dev/stellar/gifs/block/block_data.gif)
