@@ -91,6 +91,7 @@ new StellarCommand("message")
     });
 ```
 
+::: tabs key:kotlin-java
 == Kotlin
 ```Kotlin
 StellarCommand("message")
@@ -165,7 +166,7 @@ new StellarCommand("message")
     .addOnlinePlayersArgument("target")
     .addStringArgument("string", StringType.GREEDY_PHRASE)
     .addExecution(Player.class, context -> {
-        Player target = context.getArgument("target");
+        Player target = context.getArgument("target"); // Player is what the parsed return value will be casted to, and "string" is the name of the argument
         String message = context.getArgument("message");
         target.sendMessage(message);
     });

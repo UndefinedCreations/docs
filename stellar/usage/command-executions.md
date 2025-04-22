@@ -18,9 +18,7 @@ There are three types of executions:
 
 These will only run when it's the last command typed.
 
-:::tabs key:kotlin-java
-
-In this example, the command execution will only run if `/greet name` is typed. The generic type `T` here is customizable to anything that extends `CommandSender`, and the function will only be called if the cast is successful.
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("greet")
@@ -30,6 +28,8 @@ new StellarCommand("greet")
         sender.sendMessage("Hello name!");
     });
 ```
+
+In this example, the command execution will only run if `/greet name` is typed. The sender is automatically cast into whatever `Class` is specified before the function, which must be or extend `CommandSender`. If the cast is unsuccessful, then the function will not be run. **If you wish to just use a `CommandSender`, you can omit this parameter.**
 == Kotlin
 ```Kotlin
 StellarCommand("greet")
@@ -40,7 +40,7 @@ StellarCommand("greet")
     }
 ```
 
-In this example, the command execution will only run if `/greet name` is typed. The sender is automatically cast into whatever `Class` is specified before the function, which must be or extend `CommandSender`. If the cast is unsuccessful, then the function will not be run. **If you wish to just use a `CommandSender`, you can omit this parameter.**
+In this example, the command execution will only run if `/greet name` is typed. The generic type `T` here is customizable to anything that extends CommandSender, and the function will only be called if the cast is successful.
 :::
 
 ## Command Runnables
@@ -49,9 +49,7 @@ A command runnable will always run if it is in the command tree **if there are o
 
 The runnable returns a `boolean`, which dictates whether it should continue running subsequent executions and/or runnables. 
 
-:::tabs key:kotlin-java
-
-This command will open the first page (1) if no page is selected, otherwise just open the selected page.
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("info")
@@ -63,6 +61,7 @@ new StellarCommand("info")
     .addIntegerArgument("page");
 ```
 
+This command will open the first page (1) if no page is selected, otherwise just open the selected page.
 == Kotlin
 ```Kotlin
 StellarCommand("info")
@@ -83,7 +82,7 @@ When a command fails, it will look for the last correctly typed argument that it
 
 Before adding any executions, first hide default Minecraft failure message as such:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("test")

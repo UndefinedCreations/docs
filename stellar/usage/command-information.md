@@ -11,7 +11,7 @@ Bukkit has a default command on any server, the `/help <commandname>` command. U
 
 The first piece of information you can easily set is the description of the command, this is a short text about what the command is about. You can change using the `setDescription` method:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")

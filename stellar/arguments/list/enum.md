@@ -10,10 +10,11 @@ The `EnumArgument` is an extension of `ListArgument`, using a `StringArgument` a
 :::tabs key:kotlin-java
 == Java
 ```Java
-new StellarCommand("enum")
-    .addEnumArgument<PotionEffectType>("type")
-    .addExecution(Player.class, context -> {
-        context.getSender().sendMessage(context.getArgument<PotionEffectType>("type").getName())
+new StellarCommand("get-uuid")
+    .addOnlinePlayersArgument("target")
+    .addExecution(context -> {
+        Player target = context.getArgument("target");
+        context.getSender().sendMessage(target.getUniqueId().toString());
     });
 ```
 == Kotlin

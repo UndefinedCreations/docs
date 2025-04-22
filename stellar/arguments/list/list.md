@@ -10,21 +10,29 @@ The `ListArgument` wraps around a `AbstractStellarArgument` and adds a list of s
 :::tabs key:kotlin-java
 == Java
 ```Java
+List<String> list = new ArrayList<>();
+list.add("minecraft:a");
+list.add("minecraft:b");
+list.add("minecraft:c");
 new StellarCommand("list")
-    .addListArgument(new StringArgument("name", StringType.WORD), list)
+    .addListArgument("name", list, (sender, string) -> string.replaceFirst("[a-zA-Z]:", ""))
     .addExecution(Player.class, context -> {
-        context.getSender().sendMessage(context.getArgument<String>("name"))
-    })
+        String name = context.getArgument("name");
+        context.getSender().sendMessage(name);
+    });
 ```
 == Kotlin
 ```Kotlin
+val list = listOf("minecraft:a", "minecraft:b", "minecraft:c")
 StellarCommand("list")
-    .addListArgument(StringArgument("name", StringType.WORD), list)
+    .addListArgument("name", list, { it.replaceFirst("[a-zA-Z]:", "") })
     .addExecution<Player> {
-        sender.sendMessage(getArgument<String>("name"))
+        val name: String by args
+        sender.sendMessage(name)
     }
 ```
 :::
+
 
 There are also available methods to create preset lists. These include `addListArgument("name", list)`, which uses a `StringArgument` (as the example above) as a base.
 
