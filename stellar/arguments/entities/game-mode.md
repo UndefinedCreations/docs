@@ -26,4 +26,6 @@ StellarCommand("gamemode")
 ```
 :::
 
+<ArgumentParser placeholder="eyes" regex="^(survival|creative|adventure|spectator)$" />
+
 ![GameMode Argument](https://cdn.lutto.dev/stellar/gifs/entities/gamemode.gif)

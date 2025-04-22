@@ -28,6 +28,6 @@ StellarCommand("isblock")
 ```
 :::
 
-<ArgumentParser placeholder="#minecraft:stone" regex="^[#]?(minecraft:[a-z,A-Z]+$)|$[a-z,A-Z]+$" />
+<ArgumentParser placeholder="#minecraft:stone" regex="^[#]?(minecraft:[a-zA-Z]+$)|$[a-zA-Z]+$" />
 
 ![Block Predicate Argument](https://cdn.lutto.dev/stellar/gifs/block/block_predicate.gif)

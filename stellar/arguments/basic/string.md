@@ -81,6 +81,6 @@ StellarCommand("server")
     .addWordSuggestions(index = 1, suggestions = "first, "second")
 ```
 
-<ArgumentParser placeholder="You can write anything you want here!" regex='^.*$' />
+<ArgumentParser placeholder="You can write anything you want here!" regex="^.*$" />
 
 ![Phrase Argument](https://cdn.lutto.dev/stellar/gifs/basic/phrase.gif)

@@ -32,4 +32,6 @@ StellarCommand("calculate")
 ```
 :::
 
+<ArgumentParser placeholder="eyes" regex="^(feet|eyes)$" />
+
 ![Entity Anchor Argument](https://cdn.lutto.dev/stellar/gifs/entities/entity_anchor.gif)
