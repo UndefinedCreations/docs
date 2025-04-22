@@ -20,15 +20,16 @@ export default defineComponent({
       input: this.placeholder,
       regexInstance: regexInstance,
       output: "Valid",
+      backgroundColor: "#4d6c2a"
     }
   },
   methods: {
-    checkInput(newValue: String,regexInstance: RegExp): boolean {
+    checkInput(newValue: String, regexInstance: RegExp): boolean {
       this.output = regexInstance.test(newValue) ? "Valid" : "Invalid"
       if (this.output == "Valid") {
-        document.querySelector(".output-text").style.backgroundColor = "#4d6c2a";
+        this.backgroundColor = "#4d6c2a";
       } else {
-        document.querySelector(".output-text").style.backgroundColor = "#d32a2a";
+        this.backgroundColor = "#d32a2a";
       }
     }
   },
@@ -44,7 +45,7 @@ export default defineComponent({
   <div class="console">
     <div class="console-title-container">
       <div class="console-title">Argument Parser</div>
-      <label class="output-text">{{ output }}</label>
+      <label id="output-text" :style="{ backgroundColor: this.backgroundColor }">{{ output }}</label>
     </div>
     <input class="input" v-model="input" type="text" :placeholder="placeholder" >
   </div>
@@ -64,11 +65,11 @@ export default defineComponent({
   margin-right: 5px;
 }
 
-.input:hover {
+.input:hover, .input:focus {
   color: var(--vp-c-text-1);
 }
 
-.output-text {
+#output-text {
   display: inline-block;
   padding: 4px 10px;
   border-radius: 4px;
