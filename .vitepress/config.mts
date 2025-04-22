@@ -39,6 +39,7 @@ export default defineVersionedConfig({
         {
           collapsed: false,
           items: [
+            { text: 'What is Stellar?', link: '/stellar' },
             { text: 'Undefined Discord', link: 'https://discord.gg/hRGKAQ2ZAv' },
             { text: 'Stellar Github', link: 'https://github.com/undefinedcreation/stellar' }
           ]
