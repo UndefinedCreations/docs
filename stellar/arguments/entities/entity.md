@@ -7,11 +7,13 @@ description: The official docs for the Stellar Command API.
 
 The `EntityArgument` allows for the selection of a single entity, or multiple entities. It also includes the use of target selectors (@a, @e, etc.). You can customize the argument using the `EntityDisplayType` enum. Examples:
 
-::: code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("select")
-    .addEntityArgument("target", EntityDisplayType.ENTITY)
+    .addEntityArgument("target", EntityDisplayType.ENTITY);
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("select")
     .addEntityArgument(

@@ -7,16 +7,18 @@ description: The official docs for the Stellar Command API.
 
 Returns `Predicate<ItemStack>`, which players can specify with this syntax: `<item_id>[<list of components>]`. For more information: https://minecraft.wiki/w/Argument_types#minecraft:item_predicate. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("isItem")
     .addItemArgument("item")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         Predicate<Block> predicate = context.getArgument<Predicate<ItemStack>("item")
         boolean isItem = predicate.test(new ItemStack(material))
         context.getSender().sendMessage(isItem)
-    }
+    });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("isItem")
     .addItemArgument(name = "item")

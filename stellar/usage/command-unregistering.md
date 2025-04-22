@@ -9,7 +9,19 @@ You can unregister any commands registered by other plugins, the server or your 
 
 You can unregister other command using the `unregisterCommand` method in `CommandUtil`:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
+```Java
+@Override
+public void onEnable() {
+    CommandUtil.unregisterCommand("enchant", this) // You can also omit the plugin if set in StellarConfig
+
+    new StellarCommand("enchant")
+        /* code logic */
+        .register(this)
+}
+```
+== Kotlin
 ```Kotlin
 override fun onEnable() {
     CommandUtil.unregisterCommand(
@@ -18,16 +30,6 @@ override fun onEnable() {
     )
 
     StellarCommand("enchant")
-        /* code logic */
-        .register(this)
-}
-```
-```Java
-@Override
-public void onEnable() {
-    CommandUtil.unregisterCommand("enchant", this) // You can also omit the plugin if set in StellarConfig
-
-    new StellarCommand("enchant")
         /* code logic */
         .register(this)
 }

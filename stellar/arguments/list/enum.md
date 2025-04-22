@@ -7,14 +7,16 @@ description: The official docs for the Stellar Command API.
 
 The `EnumArgument` is an extension of `ListArgument`, using a `StringArgument` as a base, that adds a list of suggestions based on the `Enum` provided.
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("enum")
     .addEnumArgument<PotionEffectType>("type")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.getArgument<PotionEffectType>("type").getName())
-    })
+    });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("enum")
     .addEnumArgument<PotionEffectType>("type")

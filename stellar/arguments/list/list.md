@@ -7,14 +7,16 @@ description: The official docs for the Stellar Command API.
 
 The `ListArgument` wraps around a `AbstractStellarArgument` and adds a list of suggestions based on the list provided. Examples:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("list")
     .addListArgument(new StringArgument("name", StringType.WORD), list)
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.getArgument<String>("name"))
     })
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("list")
     .addListArgument(StringArgument("name", StringType.WORD), list)

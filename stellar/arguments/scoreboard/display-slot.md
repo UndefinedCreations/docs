@@ -7,7 +7,8 @@ description: The official docs for the Stellar Command API.
 
 Must be a scoreboard display slot. Returns `DisplaySlot`. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 Scoreboard scoreboardManager = Bukkit.getScoreboardManager()!!.mainScoreboard;
 Objective objective = scoreboardManager.registerNewObjective(
@@ -18,11 +19,12 @@ Objective objective = scoreboardManager.registerNewObjective(
 
 new StellarCommand("displaySlot")
     .addDisplaySlotArgument("slot")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         val slot = context.getArgument<DisplaySlot>("slot");
         objective.setDisplaySlot(slot);
     });
 ```
+== Kotlin
 ```Kotlin
 val scoreboardManager = Bukkit.getScoreboardManager()!!.mainScoreboard
 val objective = scoreboardManager.registerNewObjective(

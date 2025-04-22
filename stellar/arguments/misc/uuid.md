@@ -7,15 +7,17 @@ description: The official docs for the Stellar Command API.
 
 Must be a valid `UUID`, which it returns. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("uuid")
     .addUUIDArgument("uuid")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         UUID uuid = getArgument<UUID>("uuid");
         currentUUID = uuid; // separate variable
     };
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("uuid")
     .addUUIDArgument(name = "uuid")

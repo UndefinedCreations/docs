@@ -7,11 +7,12 @@ description: The official docs for the Stellar Command API.
 
 Must be a rotation consisting of yaw and pitch, which returns a `Location` only containing yaw and pitch. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("set-rotation")
     .addRotationArgument("rotation")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         Location rotation = context.getArgument<Location>("rotation");
         Location newLocation = context.getSender().getLocation().clone();
         newLocation.setYaw(rotation.getYaw());
@@ -19,6 +20,7 @@ new StellarCommand("set-rotation")
         context.getSender().teleport(newLocation);
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("set-rotation")
     .addRotationArgument("rotation")

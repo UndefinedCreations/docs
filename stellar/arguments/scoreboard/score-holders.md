@@ -9,16 +9,18 @@ Returns a `String` representing a score holder, being a player's name or an enti
 
 _Single_ Examples:
 
-::: code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("objective")
     .addScoreHolderArgument("holder")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         String holder = getArgument<String>("holder");
         ItemStack item = new ItemStack(Material.DIAMOND);
         Bukkit.getPlayer(holder).getInventory.addItem(item);
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("objective")
     .addScoreHolderArgument(name = "holder")
@@ -34,11 +36,12 @@ StellarCommand("objective")
 
 _Multiple_ Examples:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("objective")
     .addScoreHolderArgument("holders")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         String holders = getArgument<List<String>>("holders");
         ItemStack item = ItemStack(Material.DIAMOND);
         for (holder : holders) {
@@ -46,6 +49,7 @@ new StellarCommand("objective")
         }
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("objective")
     .addScoreHolderArgument(name = "holders")

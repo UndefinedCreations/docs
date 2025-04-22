@@ -7,17 +7,19 @@ description: The official docs for the Stellar Command API.
 
 Returns `Team`, must be an unquoted string, executions only run when there is a valid player. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("setcolor")
     .addTeamArgument("team")
     .addColorArgument("color")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         Team team = getArgument<Team>("team");
         Style color = getArgument<Style>("color");
         team.setColor(color);
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("setcolor")
     .addTeamArgument(name = "team")

@@ -19,15 +19,6 @@ There are three types of executions:
 These will only run when it's the last command typed.
 
 :::tabs key:kotlin-java
-== Kotlin
-```Kotlin
-StellarCommand("greet")
-    .addStringArgument("name")
-    .addExecution<Player> {
-        val name: String as args // or getArgument<String>("name")
-        sender.sendMessage("Hello name!")
-    }
-```
 
 In this example, the command execution will only run if `/greet name` is typed. The generic type `T` here is customizable to anything that extends `CommandSender`, and the function will only be called if the cast is successful.
 == Java
@@ -38,6 +29,15 @@ new StellarCommand("greet")
         String name = context.getArgument("name");
         sender.sendMessage("Hello name!");
     });
+```
+== Kotlin
+```Kotlin
+StellarCommand("greet")
+    .addStringArgument("name")
+    .addExecution<Player> {
+        val name: String as args // or getArgument<String>("name")
+        sender.sendMessage("Hello name!")
+    }
 ```
 
 In this example, the command execution will only run if `/greet name` is typed. The sender is automatically cast into whatever `Class` is specified before the function, which must be or extend `CommandSender`. If the cast is unsuccessful, then the function will not be run. **If you wish to just use a `CommandSender`, you can omit this parameter.**
@@ -50,16 +50,6 @@ A command runnable will always run if it is in the command tree **if there are o
 The runnable returns a `boolean`, which dictates whether it should continue running subsequent executions and/or runnables. 
 
 :::tabs key:kotlin-java
-== Kotlin
-```Kotlin
-StellarCommand("info")
-    .addRunnable<Player> {
-        val page: Int? = getOrNull<Int>("page")
-        if (page == null) openPage(page) else openPage(1) 
-        true // always continue
-    }
-    .addIntegerArgument("page")
-```
 
 This command will open the first page (1) if no page is selected, otherwise just open the selected page.
 == Java
@@ -73,6 +63,17 @@ new StellarCommand("info")
     .addIntegerArgument("page");
 ```
 
+== Kotlin
+```Kotlin
+StellarCommand("info")
+    .addRunnable<Player> {
+        val page: Int? = getOrNull<Int>("page")
+        if (page == null) openPage(page) else openPage(1) 
+        true // always continue
+    }
+    .addIntegerArgument("page")
+```
+
 This command will open the first page (1) if no page is selected, otherwise just open the selected page.
 :::
 
@@ -83,15 +84,6 @@ When a command fails, it will look for the last correctly typed argument that it
 Before adding any executions, first hide default Minecraft failure message as such:
 
 :::tabs key:kotlin-java
-== Kotlin
-```Kotlin
-StellarCommand("test")
-    .addArgument("arg")
-    .hideDefaultFailureMessages(
-        hide = true, // default
-        global = true // whether should also be applied for all subsequent arguments, also default
-    )
-```
 == Java
 ```Java
 new StellarCommand("test")
@@ -101,21 +93,20 @@ new StellarCommand("test")
         true // whether should also be applied for all subsequent arguments
     );
 ```
+== Kotlin
+```Kotlin
+StellarCommand("test")
+    .addArgument("arg")
+    .hideDefaultFailureMessages(
+        hide = true, // default
+        global = true // whether should also be applied for all subsequent arguments, also default
+    )
+```
 :::
 
 Now you can add a simple execution by making use of the `addFailureExecution` method.
 
 :::tabs key:kotlin-java
-== Kotlin
-```Kotlin
-StellarCommand("test")
-    .addArgument("arg")
-    .hideDefaultFailureMessages(hide = true, global = true)
-    .addFailureExecution<CommandSender> {
-        val predictedCommand: String = // custom logic
-        sender.sendMessage("${ChatColor.RED}Incorrect command! Maybe you meant $predictedCommand?")
-    }
-```
 == Java
 ```Java
 new StellarCommand("test")
@@ -126,24 +117,34 @@ new StellarCommand("test")
         context.getSender().sendMessage(ChatColor.RED + "Incorrect command! Maybe you meant $predictedCommand?");
     });
 ```
-:::
-
-A better way of adding custom failure messages, if that's all you want, would be to use the `addFailureMessage` method:
-
-:::tabs key:kotlin-java
 == Kotlin
 ```Kotlin
 StellarCommand("test")
     .addArgument("arg")
     .hideDefaultFailureMessages(hide = true, global = true)
-    .addFailureMessages("") // Accepts strings parsed by MiniMessage or components
+    .addFailureExecution<CommandSender> {
+        val predictedCommand: String = // custom logic
+        sender.sendMessage("${ChatColor.RED}Incorrect command! Maybe you meant $predictedCommand?")
+    }
 ```
+:::
+
+A better way of adding custom failure messages, if that's all you want, would be to use the `addFailureMessage` method:
+
+:::tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("test")
     .addArgument("arg")
     .hideDefaultFailureMessages(true, true)
     .addFailureMessages(""); // Accepts strings parsed by MiniMessage or components
+```
+== Kotlin
+```Kotlin
+StellarCommand("test")
+    .addArgument("arg")
+    .hideDefaultFailureMessages(hide = true, global = true)
+    .addFailureMessages("") // Accepts strings parsed by MiniMessage or components
 ```
 :::
 
@@ -152,18 +153,18 @@ You can also use the `addPlainFailureMessage` to add a string message **not** pa
 Lastly, if you want to add a failure message that will always run for the entire command, then use the `addGlobalFailureMessage` method:
 
 :::tabs key:kotlin-java
-== Kotlin
-```Kotlin
-StellarCommand("test")
-    .addArgument("arg")
-    .hideDefaultFailureMessages(hide = true, global = true)
-    .addGlobalFailureMessages("Incorrect usage! Usage: /test arg")
-```
 == Java
 ```Java
 new StellarCommand("test")
     .addArgument("arg")
     .hideDefaultFailureMessages(true, true)
+    .addGlobalFailureMessages("Incorrect usage! Usage: /test arg")
+```
+== Kotlin
+```Kotlin
+StellarCommand("test")
+    .addArgument("arg")
+    .hideDefaultFailureMessages(hide = true, global = true)
     .addGlobalFailureMessages("Incorrect usage! Usage: /test arg")
 ```
 :::

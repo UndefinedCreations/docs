@@ -13,30 +13,30 @@ There are four number arguments: `IntegerArgument`, `LongArgument`, `FloatArgume
 ```Java [Integer]
 new StellarCommand("server")
     .addIntegerArgument("int")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.get("int").toString()); // should be converter to context["int"] if possible
     });
 ```
 ```Java [Long]
 new StellarCommand("server")
     .addLongArgument("long")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.get("long").toString())
-    })
+    });
 ```
 ```Java [Float]
 new StellarCommand("server")
     .addFloatArgument("float")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.get("float").toString())
-    })
+    });
 ```
 ```Java [Double]
 new StellarCommand("server")
     .addDoubleArgument("double")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.get("double").toString())
-    })
+    });
 ```
 
 == Kotlin

@@ -7,17 +7,19 @@ description: The official docs for the Stellar Command API.
 
 Returns a scoreboard `Objective`. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("setamount")
     .addObjectiveArgument("objective")
     .addIntegerArgument("amount")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         Objective objective = getArgument<Objective>("objective");
         int amount = (int) getArgument("amount");
         objective.getScore("amount").setScore(amount);
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("setamount")
     .addObjectiveArgument(name = "objective")

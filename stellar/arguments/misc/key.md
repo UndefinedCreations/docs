@@ -7,15 +7,17 @@ description: The official docs for the Stellar Command API.
 
 Must be a valid `NamespacedKey`, which it returns. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("key")
     .addNamespacedKeyArgument("key")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         NamespacedKey key = context.getArgument<NamespacedKey>("key");
         currentKey = key; // separate variable
     };
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("key")
     .addNamespacedKeyArgument(name = "key")

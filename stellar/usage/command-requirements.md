@@ -16,17 +16,17 @@ The server sends the client a list of commands at certain times (op, bukkit stri
 You can add bukkit string permissions (example.user.test), or level permissions, from 0-4. For more information on level permissions, see https://minecraft.wiki/w/Permission_level. To add such permissions, use the `addRequirement` method:
 
 :::tabs key:kotlin-java
-== Kotlin
-```Kotlin
-StellarCommand("test")
-    .addRequirement(PermissionLevel.ADMIN) // named as in https://minecraft.wiki/w/Permission_level
-    .addRequirement("example.user.test")
-```
 == Java
 ```Java
 new StellarCommand("test")
     .addRequirement(PermissionLevel.ADMIN) // named as in https://minecraft.wiki/w/Permission_level
     .addRequirement("example.user.test");
+```
+== Kotlin
+```Kotlin
+StellarCommand("test")
+    .addRequirement(PermissionLevel.ADMIN) // named as in https://minecraft.wiki/w/Permission_level
+    .addRequirement("example.user.test")
 ```
 :::
 
@@ -35,13 +35,6 @@ new StellarCommand("test")
 To add custom requirements, you can also use the `addRequirement` method:
 
 :::tabs key:kotlin-java
-== Kotlin
-```Kotlin
-StellarCommand("test")
-    .addRequirement<Player> {
-        this.hasPlayedBefore()
-    }
-```
 == Java
 ```Java
 new StellarCommand("test")
@@ -49,3 +42,11 @@ new StellarCommand("test")
         sender.hasPlayedBefore()
     });
 ```
+== Kotlin
+```Kotlin
+StellarCommand("test")
+    .addRequirement<Player> {
+        this.hasPlayedBefore()
+    }
+```
+:::

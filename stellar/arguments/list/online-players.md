@@ -7,14 +7,16 @@ description: The official docs for the Stellar Command API.
 
 The `OnlinePlayersArgument` is an extension of [ListArgument] using [StringArgument] as a base. It lists the currently online players using `Bukkit.getServer().getOnlinePlayers`.
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("get-uuid")
     .addOnlinePlayersArgument("target")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.getArgument<Player>("target").getUUID().toString())
-    })
+    });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("get-uuid")
     .addOnlinePlayersArgument("target")

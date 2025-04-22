@@ -7,24 +7,29 @@ description: The official docs for the Stellar Command API.
 
 Returns an int of a specific slot in any type of inventory . You can use `ItemSlotArgument` for the selection of _one_ slot, and `ItemSlotsArgument` for multiple slots. Examples:
 
+::: tabs key:kotlin-java
+== Java
 ::: code-group
-```Java [Java Slot]
+```Java [Slot]
 new StellarCommand("clear-item")
     .addItemSlotArgument("slot")
-    .addExecution(Player.class, () -> { context ->
+    .addExecution(Player.class, context -> {
         int slot = (int) context.getArgument("slot")
         context.getSendern().getInventory().setItem(slot, null)
-    }
+    });
 ```
-```Java [Java Slots]
+```Java [Slots]
 new StellarCommand("cleari-tems")
     .addItemSlotArgument("slots", multiple = true)
-    .addExecution(Player.class, () -> { context ->
+    .addExecution(Player.class, context -> {
         int slots = getArgument<List<Integer>>("slots")
         for (slot in slots) context.getSendern().getInventory().setItem(slot, null)
-    }
+    });
 ```
-```Kotlin [Kotlin Slot]
+
+== Kotlin
+::: code-group
+```Kotlin [Slot]
 StellarCommand("clear-item")
     .addItemSlotArgument(name = "slot")
     .addExecution<Player> {
@@ -32,7 +37,7 @@ StellarCommand("clear-item")
         sender.inventory.setItem(slot, null)
     }
 ```
-```Kotlin [Kotlin Slots]
+```Kotlin [Slots]
 StellarCommand("clear-items")
     .addItemSlotArgument(name = "slots", multiple = true)
     .addExecution<Player> {

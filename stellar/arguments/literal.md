@@ -8,20 +8,25 @@ description: The official docs for the Stellar Command API.
 A literal argument is an argument that represents an option you can choose from. They have suggestion, and if the player ends up _not_ choosing any arguments, then nothing will happen.
 Examples:
 
+::: tabs key:kotlin-java
+== Java
 ::: code-group
-```Java [Java Short]
+```Java [Short]
 new StellarCommand("server")
     .addArgument("reset")
 ```
-```Java [Java Long]
+```Java [Long]
 new StellarCommand("server")
     .addLiteralArgument("reset")
 ```
-```Kotlin [Kotlin Short]
+
+== Kotlin
+::: code-group
+```Kotlin [Short]
 StellarCommand("server")
     .addArgument(name = "reset")
 ```
-```Kotlin [Kotlin Long]
+```Kotlin [Long]
 StellarCommand("server")
     .addLiteralArgument(name = "reset")
 ```

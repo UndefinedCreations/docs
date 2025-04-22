@@ -7,13 +7,14 @@ description: The official docs for the Stellar Command API.
 
 Must be an arithmetic operator, such as = or +=. Returns an `Operation` enum, and use the `apply` method to calculate the new value from two numbers. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("calculate")
     .addOperationArgument("operation")
     .addFloatArgument("num_one")
     .addFloatArgument("num_two")
-    .addExecution<Player>(() -> { context ->
+    .addExecution<Player>(Player.class, context -> {
         Operation operation = context.getArgument<Operation>("operation");
         float numOne = (float) context.getArgument("num_one");
         float numTwo = (float) context.getArgument("num_two");
@@ -21,6 +22,7 @@ new StellarCommand("calculate")
         context.getSender().sendMessage("The final result is: $result");
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("calculate")
     .addOperationArgument(name = "operation")

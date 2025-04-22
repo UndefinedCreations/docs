@@ -31,20 +31,22 @@ A command tree is a theoretical idea, yet important to fully understand. It refe
 
 In code, we can create a root command by instantiating `StellarCommand`, or using a utility method to delegate the instantiation. Then we can add arguments on top of it, and each time we do using an `addArgument` method, it returns that arguments itself. Here is a simple version of the /tp command example:
 
-:::code-group
-```Kotlin
-val main = StellarCommand("tp")
+:::tabs key:kotlin-java
+== Java
+```Java
+StellarCommand main = new StellarCommand("tp");
 main.addEntityArgument("target", EntityDisplayType.ENTITY)
     .addLocationArgument("destination", LocationType.PRECISE_LOCATION_3D)
-    .addExecution<Player> { /* logic */ }
+    .addExecution<Player>(Player.class, context -> { /* logic */ })
 main.addEntityArgument("target", EntityDisplayType.ENTITY)
     .addLocationArgument("destination", LocationType.PRECISE_LOCATION_3D)
     .addEntityAnchorArgument("anchor")
-    .addExecution<Player> { /* logic */ }
+    .addExecution<Player>(Player.class, context -> { /* logic */ })
 main.register(this)
 ```
-```Java
-StellarCommand main = new StellarCommand("tp");
+== Kotlin
+```Kotlin
+val main = StellarCommand("tp")
 main.addEntityArgument("target", EntityDisplayType.ENTITY)
     .addLocationArgument("destination", LocationType.PRECISE_LOCATION_3D)
     .addExecution<Player> { /* logic */ }

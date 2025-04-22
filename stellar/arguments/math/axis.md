@@ -7,17 +7,19 @@ description: The official docs for the Stellar Command API.
 
 Any non-repeating combination of the characters 'x', 'y', and 'z'. Returns `EnumSet<Axis>`. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("test")
     .addAxisArgument("axis")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         EnumSet<Axis> axes = getArgument<EnumSet<Axis>>("axis");
         List<String> stringifiedAxes = axes.stream().map(Axis::getName()).collect(Collectors.toList());
         String message = String.join(", ", stringifiedAxes);
         context.getSender().sendMessage(message);
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("test")
     .addAxisArgument(name = "axis")

@@ -7,14 +7,16 @@ description: The official docs for the Stellar Command API.
 
 The `BooleanArgument` allows you to input a `boolean`. Example:
 
-:::code-group
+:::tabs key:kotlin-java
+== Java
 ```Java
 new StellarCommand("server")
     .addBooleanArgument("boolean")
-    .addExecution(() -> { context ->
+    .addExecution(Player.class, context -> {
         context.getSender().sendMessage(context.getArgument<Boolean>("bool"));
     });
 ```
+== Kotlin
 ```Kotlin
 StellarCommand("server")
     .addBooleanArgument("boolean")
@@ -23,5 +25,4 @@ StellarCommand("server")
     }
 ```
 :::
-
 ![Boolean Argument](https://cdn.lutto.dev/stellar/gifs/basic/boolean.gif)
