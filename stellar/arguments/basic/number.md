@@ -75,4 +75,4 @@ StellarCommand("server")
 ```
 :::
 
-![Number Argument](https://cdn.lutto.dev/stellar/gifs/number.gif)
+![Number Argument](https://cdn.lutto.dev/stellar/gifs/basic/number.gif)

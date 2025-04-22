@@ -28,4 +28,4 @@ StellarCommand("server")
 ```
 :::
 
-![Boolean Argument](https://cdn.lutto.dev/stellar/gifs/boolean.gif)
+![Boolean Argument](https://cdn.lutto.dev/stellar/gifs/basic/boolean.gif)
