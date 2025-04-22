@@ -72,7 +72,7 @@ export default defineComponent({
   display: inline-block;
   padding: 4px 10px;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: white;
   background-color: #4d6c2a;
   margin-left: auto;
