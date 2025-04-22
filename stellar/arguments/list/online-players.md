@@ -26,6 +26,8 @@ StellarCommand("get-uuid")
 ```
 :::
 
+![Online Players Argument](https://cdn.lutto.dev/stellar/gifs/list/online_players.gif)
+
 ## Parameters
 
 Here is a list of all parameters:

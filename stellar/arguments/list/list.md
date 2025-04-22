@@ -33,8 +33,9 @@ StellarCommand("list")
 ```
 :::
 
-
 There are also available methods to create preset lists. These include `addListArgument("name", list)`, which uses a `StringArgument` (as the example above) as a base.
+
+![List Argument](https://cdn.lutto.dev/stellar/gifs/list/list.gif)
 
 ## Parameters
 

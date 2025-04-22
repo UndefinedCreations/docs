@@ -27,6 +27,8 @@ StellarCommand("enum")
 ```
 :::
 
+![Enum Argument](https://cdn.lutto.dev/stellar/gifs/list/enum.gif)
+
 ## Parameters
 
 Here is a list of all parameters:
