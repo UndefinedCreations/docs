@@ -5,9 +5,6 @@ description: The official docs for the Stellar Command API.
 
 # What is Stellar? {#index}
 
-These are the official docs for the Stellar Command Java/Kotlin API.
-
-## What is Stellar?
 Stellar is a modern, flexible command framework for Java and Kotlin, built specifically for Spigot and Paper plugin development. It simplifies command creation while offering deep customization and powerful features.
 
 ## Key Features
