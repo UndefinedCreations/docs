@@ -5,10 +5,6 @@ description: The official docs for the Stellar Command API.
 
 # Boolean Argument {#boolean}
 
-:::info
-Is available from Minecraft Version: 1.13.
-:::
-
 The `BooleanArgument` allows you to input a `boolean`. Example:
 
 :::code-group
@@ -27,7 +23,5 @@ StellarCommand("server")
     }
 ```
 :::
-
-<ArgumentParser placeholder="true" regex="^(false|true)$" />
 
 ![Boolean Argument](https://cdn.lutto.dev/stellar/gifs/basic/boolean.gif)

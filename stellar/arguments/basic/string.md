@@ -5,13 +5,10 @@ description: The official docs for the Stellar Command API.
 
 # String Argument {#string}
 
-:::info
-Is available from Minecraft Version: 1.13.
-:::
-
 The `StringArgument` is an argument that allows you to type a string, as allowed by its `StringType`, and returns that `String`:
 
-Java examples:
+::: tabs key:kotlin-java
+== Java
 ::: code-group
 ```Java [Word]
 new StellarCommand("server")
@@ -25,9 +22,8 @@ new StellarCommand("server")
 new StellarCommand("server")
     .addStringArgument("string", StringType.PHRASE)
 ```
-:::
 
-Kotlin examples:
+== Kotlin
 ::: code-group
 ```Kotlin [Word]
 StellarCommand("server")
@@ -43,14 +39,28 @@ StellarCommand("server")
 ```
 :::
 
+## Alphanumeric Word
+
+A `StringArgument` of type `StringType.ALPHANUMERIC_WORD` means that you type anything in the English alphabet, including numbers, but nothing more. If this limits you, consider the next options.
+
+<ArgumentParser placeholder="abcd1234" regex="^[a-z,A-Z,0-9]*$" />
+
+![Alphanumeric Word Argument](https://cdn.lutto.dev/stellar/gifs/basic/alphanumeric_word.gif)
+
 ## Word
 
-A `StringArgument` of type `StringType.WORD` means that you type anything in the English alphabet, including numbers, but nothing more. If this limits you, consider the next options.
+A `StringArgument` of type `StringType.WORD` is a word that does not have any restrictions.
+
+<ArgumentParser placeholder="abcd1234!@#$%" regex="^\S*$" />
+
 ![Word Argument](https://cdn.lutto.dev/stellar/gifs/basic/word.gif)
 
 ## Quotable Phrase
 
-The `QUOTABLE_PHRASE` has the same limitation as `WORD`, but when it's in quotation marks (""), it becomes limitless.
+The `QUOTABLE_PHRASE` has the same limitation as `ALPHANUMERIC_WORD`, but when in quotations (""), it becomes limitless.
+
+<ArgumentParser placeholder='"abcd1234!@#\$%"' regex='^(".*"|[a-z,A-Z,0-9]*)$' />
+
 ![Word Argument](https://cdn.lutto.dev/stellar/gifs/basic/quotable_phrase.gif)
 
 ## Phrase
@@ -70,5 +80,7 @@ StellarCommand("server")
     }
     .addWordSuggestions(index = 1, suggestions = "first, "second")
 ```
+
+<ArgumentParser placeholder="You can write anything you want here!" regex='^.*$' />
 
 ![Phrase Argument](https://cdn.lutto.dev/stellar/gifs/basic/phrase.gif)

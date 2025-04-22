@@ -5,13 +5,10 @@ description: The official docs for the Stellar Command API.
 
 # Number Arguments {#number}
 
-:::info
-Is available from Minecraft Version: 1.13.
-:::
-
 There are four number arguments: `IntegerArgument`, `LongArgument`, `FloatArgument`, `DoubleArgument`. They respectively return those number types.
 
-Java examples:
+::: tabs key:kotlin-java
+== Java
 :::code-group
 ```Java [Integer]
 new StellarCommand("server")
@@ -41,9 +38,8 @@ new StellarCommand("server")
         context.getSender().sendMessage(context.get("double").toString())
     })
 ```
-:::
 
-Kotlin examples:
+== Kotlin
 ::: code-group
 ```Kotlin [Integer]
 StellarCommand("server")
