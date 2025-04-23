@@ -60,11 +60,12 @@ export default defineVersionedConfig({
           items: [
             { text: 'Command Registration ', link: '/stellar/usage/command-registration' },
             { text: 'Command Unregistration ', link: '/stellar/usage/command-unregistration' },
-            { text: 'Stellar Config ', link: '/stellar/usage/config' },
+            { text: 'Configurations ', link: '/stellar/usage/config' },
             { text: 'Command Executions', link: '/stellar/usage/command-executions' },
             { text: 'Custom Suggestions', link: '/stellar/usage/custom-suggestions' },
             { text: 'Command Requirements', link: '/stellar/usage/command-requirements' },
             { text: 'Command Information ', link: '/stellar/usage/command-information' },
+            { text: 'Command Cooldowns ', link: '/stellar/usage/command-cooldowns' },
           ]
         },
         {
