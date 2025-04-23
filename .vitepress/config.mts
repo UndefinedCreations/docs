@@ -58,7 +58,8 @@ export default defineVersionedConfig({
           text: 'Usage',
           collapsed: false,
           items: [
-            { text: 'Command Unregistering ', link: '/stellar/usage/command-unregistering' },
+            { text: 'Command Registration ', link: '/stellar/usage/command-registration' },
+            { text: 'Command Unregistration ', link: '/stellar/usage/command-unregistration' },
             { text: 'Stellar Config ', link: '/stellar/usage/config' },
             { text: 'Command Executions', link: '/stellar/usage/command-executions' },
             { text: 'Custom Suggestions', link: '/stellar/usage/custom-suggestions' },
