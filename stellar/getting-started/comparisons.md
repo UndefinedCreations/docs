@@ -10,7 +10,7 @@ description: The official docs for the Stellar Command API.
 |     Supports Brigadier     |      ✅      |       ✅       |      🟠      |      ❌       |
 |      Version Support       | 1.13-Latest | 1.19.4-Latest | 1.13-Latest* | 1.8.8-Latest |
 |     Annotation/Builder     |   Builder   |     Both*     |  Annotation  |    Both*     |
-|     Failure Executions     |      ✅      |       ❌       |      ❌       |      🟠      |
+|     Failure Executions     |      ✅      |       ❌       |      🟠      |      🟠      |
 |     Custom Suggestions     |      ✅      |       ✅       |      🟠      |      🟠      |
 |    Custom Requirements     |      ✅      |       ✅       |      ✅       |      🟠      |
 | Unrestricted Word Argument |      ✅      |       ❌       |      ❌       |      ❌       |
