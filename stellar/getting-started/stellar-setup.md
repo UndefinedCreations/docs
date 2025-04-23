@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 To use the Stellar API in your project, we first need to import this into the project.
 
-Platform under should be replaced either by spigot or paper. Here is a table of all the versions that are officially supported by Stellar:
+Here is a list of platforms:
 
 |     Version     | Spigot | Paper |
 |:---------------:|:------:|:-----:|
@@ -18,39 +18,26 @@ Platform under should be replaced either by spigot or paper. Here is a table of 
 Paper can still be used on older versions, with the SpigotMC module.
 :::
 
-## Gradle (recommended)
+## Accessing the API
 
 First add the repository:
 
-::: code-group
-```groovy [Groovy DSL]
+::: tabs key:gradle-maven
+== Gradle Groovy DSL
+```groovy
 maven {
     name = "undefined-repo"
     url = "https://repo.undefinecreations.com/releases"
 }
 ```
-```kts [Kotlin DSL]
+== Gradle Kotlin DSL
+```kts
 maven {
     name = "undefined-repo"
     url = uri("https://repo.undefinecreations.com/releases")
 }
 ```
-:::
-
-Then add the library to your dependencies:
-
-::: code-group
-```groovy [build.gradle]
-implementation "com.undefined:stellar:(latest version):platform"
-```
-```kts [build.gradle.kts]
-implementation("com.undefined:stellar:(latest version):(platform)")
-```
-:::
-
-## Maven
-
-First add the repository:
+== Maven
 ```xml
 <repository>
     <id>stellar</id>
@@ -58,13 +45,45 @@ First add the repository:
     <url>https://repo.undefinedcreation.com/releases</url>
 </repository>
 ```
+:::
 
 Then add the library to your dependencies:
+
+::: tabs key:gradle-maven
+== Gradle Groovy DSL
+```groovy
+compile "com.undefined:stellar:(latest version):platform" // or implementation if shadowing
+```
+== Gradle Kotlin DSL
+```kts
+compileOnly("com.undefined:stellar:(latest version):(platform)") // or implementation if shadowing
+```
+== Maven
 ```xml
 <dependency>
     <groupId>com.undefined</groupId>
     <artifactId>stellar</artifactId>
     <version>(latest version)</version>
     <classifier>(platform)</classifier>
+    <scope>provided</scope> // should be removed if shadowing
 </dependency>
 ```
+:::
+
+## Using Stellar
+
+To actually use Stellar, you have two options:
+
+1. Adding the plugin on your server
+2. Shadowing the dependency.
+
+### Adding the plugin to your server
+
+Another option is to add the Stellar plugin to your server. This is a good option for when you have multiple plugins that use Stellar. You can get the latest JAR from the GitHub releases: https://github.com/UndefinedCreations/Stellar/releases.
+
+### Shadowing the dependency
+
+Shadowing means that you stellar will be included in the built JAR. If you use Gradle, it's suggested to use [the gradleup shadow plugin](https://gradleup.com/shadow/getting-started/), and if you are using Maven it's suggested to use [the maven shade plugin](https://maven.apache.org/plugins/maven-shade-plugin/usage.html).
+
+> [!IMPORTANT]
+> You should modify your Gradle dependency to `implementation` instead of `compile`/`compileOnly` and remove the `scope` block from your Maven dependency.
