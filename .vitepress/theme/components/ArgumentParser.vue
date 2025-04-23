@@ -14,11 +14,9 @@ export default defineComponent({
     }
   },
   data() {
-    const regexInstance = new RegExp(this.regex);
-
     return {
       input: this.placeholder,
-      regexInstance: regexInstance,
+      regexInstance: new RegExp(this.regex),
       output: "Valid",
       backgroundColor: "#4d6c2a"
     }
@@ -45,7 +43,7 @@ export default defineComponent({
   <div class="console">
     <div class="console-title-container">
       <div class="console-title">Argument Parser</div>
-      <label id="output-text" :style="{ backgroundColor: this.backgroundColor }">{{ output }}</label>
+      <label id="output-text" :style="{ backgroundColor: backgroundColor }">{{ output }}</label>
     </div>
     <input class="input" v-model="input" type="text" :placeholder="placeholder" >
   </div>
