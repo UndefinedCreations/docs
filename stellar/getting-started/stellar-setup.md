@@ -27,14 +27,14 @@ First add the repository:
 ```groovy
 maven {
     name = "undefined-repo"
-    url = "https://repo.undefinecreations.com/releases"
+    url = "https://repo.undefinedcreations.com/releases"
 }
 ```
 == Gradle Kotlin DSL
 ```kts
 maven {
     name = "undefined-repo"
-    url = uri("https://repo.undefinecreations.com/releases")
+    url = uri("https://repo.undefinedcreations.com/releases")
 }
 ```
 == Maven
