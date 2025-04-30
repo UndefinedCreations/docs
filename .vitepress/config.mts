@@ -189,11 +189,48 @@ export default defineVersionedConfig({
           ]
         },
         {
+          text: 'Echo',
+          collapsed: false,
+          items: [
+            { text: 'Importing ', link: '/gradle-plugins/echo/importing' },
+            {
+              text: 'BuildTools ',
+              items: [
+                {
+                  text: "Setup", link: '/gradle-plugins/echo/buildTools/build-tools'
+                },
+                {
+                  text: "Flags", link: '/gradle-plugins/echo/buildTools/flags'
+                },
+                {
+                  text: "Caching", link: '/gradle-plugins/echo/buildTools/caching'
+                }
+              ]
+            },
+            {
+              text: 'Remap ',
+              items: [
+                {
+                  text: "Setup", link: '/gradle-plugins/echo/remap/setup'
+                },
+                {
+                  text: "Actions", link: '/gradle-plugins/echo/remap/actions'
+                },
+                {
+                  text: "Input Tasks", link: '/gradle-plugins/echo/remap/input-tasks'
+                },
+                {
+                  text: "New Jar", link: '/gradle-plugins/echo/remap/new-jar'
+                }
+              ]
+            }
+          ]
+        },
+        {
           text: 'Plugins',
           collapsed: false,
           items: [
             { text: 'Gradle Plugins', link: '/gradle-plugins/' },
-            { text: 'Undefined Remapper', link: '/gradle-plugins/remapper' },
             { text: 'Undefined Run Server', link: '/gradle-plugins/run-server' },
           ]
         }
