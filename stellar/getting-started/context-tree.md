@@ -37,11 +37,11 @@ In code, we can create a root command by instantiating `StellarCommand`, or usin
 StellarCommand main = new StellarCommand("tp");
 main.addEntityArgument("target", EntityDisplayType.ENTITY)
     .addLocationArgument("destination", LocationType.PRECISE_LOCATION_3D)
-    .addExecution<Player>(Player.class, context -> { /* logic */ })
+    .addExecution(Player.class, context -> { /* logic */ })
 main.addEntityArgument("target", EntityDisplayType.ENTITY)
     .addLocationArgument("destination", LocationType.PRECISE_LOCATION_3D)
     .addEntityAnchorArgument("anchor")
-    .addExecution<Player>(Player.class, context -> { /* logic */ })
+    .addExecution(Player.class, context -> { /* logic */ })
 main.register(this)
 ```
 == Kotlin

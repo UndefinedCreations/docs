@@ -61,14 +61,14 @@ We want this to be a phrase, not a word, and have no string limitations. We'll u
 new StellarCommand("message")
     .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE);
+    .addStringArgument("message", StringType.PHRASE);
 ```
 == Kotlin
 ```Kotlin
 StellarCommand("message")
     .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
 ```
 :::
 
@@ -85,7 +85,7 @@ Now we need to message the target with the chosen message whenever a player runs
 new StellarCommand("message")
     .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution(Player.class, context -> {
         // logic here
     });
@@ -97,7 +97,7 @@ new StellarCommand("message")
 StellarCommand("message")
     .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution<Player> {
         // logic here
     }
@@ -119,9 +119,9 @@ You can get the sender with [`CommandContext.getSender()`](https://github.com/Un
 new StellarCommand("message")
     .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution(Player.class, context -> {
-        Player target = context.getArgument("target"); // Player is what the parsed return value will be casted to, and "string" is the name of the argument
+        Player target = context.getArgument("target"); // Player is what the parsed return value will be casted to, and "message" is the name of the argument
         String message = context.getArgument("message");
         target.sendMessage(message);
     });
@@ -132,7 +132,7 @@ new StellarCommand("message")
 StellarCommand("message")
     .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("message", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution<Player> {
         val target = getArgument<Player>("target") // Player is what the parsed return value will be casted to, and "target" is the name of the argument
         val message = getArgument<String>("message")
@@ -146,7 +146,7 @@ If the name of the variable is the same as the name of the argument, then you ca
 StellarCommand("message")
     .addAliases("msg", "tell")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("message", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution<Player> {
         val target: Player by args // the return value Player must now be statically typed
         val message: String by args
@@ -164,9 +164,9 @@ new StellarCommand("message")
     .addAliases("msg", "tell")
     .addRequirement("example.user.message")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution(Player.class, context -> {
-        Player target = context.getArgument("target"); // Player is what the parsed return value will be casted to, and "string" is the name of the argument
+        Player target = context.getArgument("target");
         String message = context.getArgument("message");
         target.sendMessage(message);
     });
@@ -177,10 +177,10 @@ StellarCommand("message")
     .addAliases("msg", "tell")
     .addRequirement("example.user.message")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution<Player> {
-        val target = getArgument<Player>(0) // Player is what the return value will be casted to, and 0 is the index of the argument
-        val message = getArgument<String>(1)
+        val target: Player by args
+        val message: String by args
         target.sendMessage(message)
     }
 ```
@@ -197,7 +197,7 @@ new StellarCommand("message")
     .addAliases("msg", "tell")
     .addRequirement("example.user.message")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution(Player.class, context -> {
         Player target = context.getArgument("target");
         String message = context.getArgument("message");
@@ -209,11 +209,12 @@ new StellarCommand("message")
 ```Kotlin
 StellarCommand("message")
     .addAliases("msg", "tell")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addOnlinePlayersArgument("target")
+    .addStringArgument("message", StringType.PHRASE)
     .addRequirement("example.user.message")
     .addExecution<Player> {
-        val target = getArgument<Player>(0) // Player is what the return value will be casted to, and 0 is the index of the argument
-        val message = getArgument<String>(1)
+        val target: Player by args
+        val message: String by args
         target.sendMessage(message)
     }
     .register(this) // this referring to the JavaPlugin instance
@@ -227,13 +228,13 @@ If we try this in-game now, the msg command alias will not work, as Minecraft al
 ::: tabs key:kotlin-java
 == Java
 ```Java
-CommandUtilKt.unregisterCommand("msg");
+CommandUtil.unregisterCommand("msg");
 
 new StellarCommand("message")
     .addAliases("msg", "tell")
     .addRequirement("example.user.message")
     .addOnlinePlayersArgument("target")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addExecution(Player.class, context -> {
         Player target = context.getArgument("target");
         String message = context.getArgument("message");
@@ -247,11 +248,11 @@ unregisterCommand("msg") // can be used anywhere without a class definition
 
 StellarCommand("message")
     .addAliases("msg", "tell")
-    .addStringArgument("string", StringType.GREEDY_PHRASE)
+    .addStringArgument("message", StringType.PHRASE)
     .addRequirement("example.user.message")
     .addExecution<Player> {
-        val target = getArgument<Player>(0) // Player is what the return value will be casted to, and 0 is the index of the argument
-        val message = getArgument<String>(1)
+        val target: Player by args
+        val message: String by args
         target.sendMessage(message)
     }
     .register(this) // this referring to the JavaPlugin instance

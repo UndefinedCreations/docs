@@ -30,6 +30,6 @@ StellarCommand("isItem")
 ```
 :::
 
-<ArgumentParser placeholder="#diamond[]" regex="^[#]?(minecraft:[a-zA-Z]+|[a-zA-Z]+)(\[([a-zA-Z]+=\S+)?\])?$" />
+<ArgumentParser placeholder="#diamond[]" regex="^[#]?([a-zA-Z_]+:)?[a-zA-Z_]+(\[([a-zA-Z_]+=[a-zA-Z0-9_!#]+)?(,[a-zA-Z_]+=[a-zA-Z0-9_!#]+)?\])*$" />
 
 ![Item Predicate Argument](https://cdn.lutto.dev/stellar/gifs/items/item_predicate.gif)
