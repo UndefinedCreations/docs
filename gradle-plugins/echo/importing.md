@@ -20,4 +20,4 @@ id("com.undefinedcreations.echo") version "LASTEST-VERSION"
 ```
 :::
 
-After that we have add this reload you `build.gradle`
+After that you have added this, reload your `build.gradle`
