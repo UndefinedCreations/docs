@@ -185,6 +185,7 @@ export default defineVersionedConfig({
         {
           collapsed: false,
           items: [
+            { text: 'Gradle Plugins', link: '/gradle-plugins/' },
             { text: 'Undefined Discord', link: 'https://discord.undefinedcreations.com/' },
             { text: 'GitHub', link: 'https://github.undefinedcreations.com/' }
           ]
@@ -228,10 +229,41 @@ export default defineVersionedConfig({
           ]
         },
         {
+          text: 'Nova',
+          collapsed: false,
+          items: [
+            { text: 'Importing ', link: '/gradle-plugins/nova/importing' },
+            { text: 'Setup ', link: '/gradle-plugins/nova/setup' },
+            {
+              text: 'Server Jar ',
+              collapsed: false,
+              items: [
+                {
+                  text: "Server Types", link: '/gradle-plugins/nova/serverJar/server-type'
+                },
+                {
+                  text: "Custom Jar", link: '/gradle-plugins/nova/serverJar/custom-jar'
+                }
+              ]
+            },
+            {
+              text: 'Run Folder ',
+              collapsed: false,
+              items: [
+                {
+                  text: "Per Version", link: '/gradle-plugins/nova/runFolder/version-folder'
+                },
+                {
+                  text: "Custom Folder", link: '/gradle-plugins/nova/runFolder/custom-folder'
+                }
+              ]
+            }
+          ]
+        },
+        {
           text: 'Plugins',
           collapsed: false,
           items: [
-            { text: 'Gradle Plugins', link: '/gradle-plugins/' },
             { text: 'Undefined Run Server', link: '/gradle-plugins/run-server' },
           ]
         }

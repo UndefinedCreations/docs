@@ -1,5 +1,5 @@
 ---
-title: Importing
+title: Getting Started
 description: The official docs for the Echo Plugin.
 ---
 
