@@ -58,14 +58,14 @@ export default defineVersionedConfig({
           text: 'Usage',
           collapsed: false,
           items: [
-            { text: 'Command Registration ', link: '/stellar/usage/command-registration' },
-            { text: 'Command Unregistration ', link: '/stellar/usage/command-unregistration' },
-            { text: 'Command Configurations ', link: '/stellar/usage/config' },
+            { text: 'Command Registration', link: '/stellar/usage/command-registration' },
+            { text: 'Command Unregistration', link: '/stellar/usage/command-unregistration' },
+            { text: 'Command Configurations', link: '/stellar/usage/config' },
             { text: 'Command Executions', link: '/stellar/usage/command-executions' },
             { text: 'Custom Suggestions', link: '/stellar/usage/custom-suggestions' },
             { text: 'Command Requirements', link: '/stellar/usage/command-requirements' },
-            { text: 'Command Information ', link: '/stellar/usage/command-information' },
-            { text: 'Command Cooldowns ', link: '/stellar/usage/command-cooldowns' },
+            { text: 'Command Information', link: '/stellar/usage/command-information' },
+            { text: 'Command Cooldowns', link: '/stellar/usage/command-cooldowns' },
           ]
         },
         {
@@ -193,23 +193,23 @@ export default defineVersionedConfig({
           text: 'Echo',
           collapsed: false,
           items: [
-            { text: 'Importing ', link: '/gradle-plugins/echo/importing' },
+            { text: 'Getting Started', link: '/gradle-plugins/echo/getting-started' },
             {
-              text: 'BuildTools ',
+              text: 'Server Internals',
               items: [
                 {
-                  text: "Setup", link: '/gradle-plugins/echo/buildTools/build-tools'
+                  text: "Accessing Server Internals", link: '/gradle-plugins/echo/internals/setup'
                 },
                 {
-                  text: "Flags", link: '/gradle-plugins/echo/buildTools/flags'
+                  text: "Flags", link: '/gradle-plugins/echo/internals/flags'
                 },
                 {
-                  text: "Caching", link: '/gradle-plugins/echo/buildTools/caching'
-                }
+                  text: "Caching", link: '/gradle-plugins/echo/internals/caching'
+                },
               ]
             },
             {
-              text: 'Remap ',
+              text: 'Remap',
               items: [
                 {
                   text: "Setup", link: '/gradle-plugins/echo/remap/setup'
@@ -222,7 +222,7 @@ export default defineVersionedConfig({
                 },
                 {
                   text: "New Jar", link: '/gradle-plugins/echo/remap/new-jar'
-                }
+                },
               ]
             }
           ]
