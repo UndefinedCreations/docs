@@ -197,6 +197,7 @@ export default defineVersionedConfig({
             { text: 'Getting Started', link: '/gradle-plugins/echo/getting-started' },
             {
               text: 'Server Internals',
+              collapsed: false,
               items: [
                 {
                   text: "Accessing Server Internals", link: '/gradle-plugins/echo/internals/setup'
@@ -211,6 +212,7 @@ export default defineVersionedConfig({
             },
             {
               text: 'Remap',
+              collapsed: false,
               items: [
                 {
                   text: "Setup", link: '/gradle-plugins/echo/remap/setup'
