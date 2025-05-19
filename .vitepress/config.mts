@@ -271,9 +271,6 @@ export default defineVersionedConfig({
         }
       ]
     },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.undefinedcreations.com' },
-      { icon: 'discord', link: 'https://discord.undefinedcreation.com' }
-    ]
-  }
-}, __dirname)
+  },
+  __dirname,
+);
