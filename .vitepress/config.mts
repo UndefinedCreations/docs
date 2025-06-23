@@ -259,6 +259,15 @@ export default defineVersionedConfig({
                   text: "Custom Folder", link: '/gradle-plugins/nova/runFolder/custom-folder'
                 }
               ]
+            },
+            {
+              text: 'Miscellaneous ',
+              collapsed: false,
+              items: [
+                {
+                  text: "Allowed Ram", link: '/gradle-plugins/nova/miscellaneous/ram'
+                }
+              ]
             }
           ]
         },
