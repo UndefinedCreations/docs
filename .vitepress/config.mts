@@ -249,18 +249,6 @@ export default defineVersionedConfig({
               ]
             },
             {
-              text: 'Run Folder ',
-              collapsed: false,
-              items: [
-                {
-                  text: "Per Version", link: '/gradle-plugins/nova/runFolder/version-folder'
-                },
-                {
-                  text: "Custom Folder", link: '/gradle-plugins/nova/runFolder/custom-folder'
-                }
-              ]
-            },
-            {
               text: 'Miscellaneous ',
               collapsed: false,
               items: [
@@ -269,6 +257,30 @@ export default defineVersionedConfig({
                 },
                 {
                   text: "Eula", link: '/gradle-plugins/nova/miscellaneous/eula'
+                }
+              ]
+            },
+            {
+              text: 'Plugins ',
+              collapsed: false,
+              items: [
+                {
+                  text: "Online plugins", link: '/gradle-plugins/nova/plugin/online-plugins'
+                },
+                {
+                  text: "Local plugins", link: '/gradle-plugins/nova/plugin/local-plugins'
+                }
+              ]
+            },
+            {
+              text: 'Run Folder ',
+              collapsed: false,
+              items: [
+                {
+                  text: "Per Version", link: '/gradle-plugins/nova/runFolder/version-folder'
+                },
+                {
+                  text: "Custom Folder", link: '/gradle-plugins/nova/runFolder/custom-folder'
                 }
               ]
             }

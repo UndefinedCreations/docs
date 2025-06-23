@@ -1,5 +1,5 @@
 ---
-title: Nova Allowed Ram
+title: Nova Eula
 description: The official docs for the Echo Plugin.
 ---
 
