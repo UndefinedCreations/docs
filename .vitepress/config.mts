@@ -284,6 +284,9 @@ export default defineVersionedConfig({
                 },
                 {
                   text: "No GUI", link: '/gradle-plugins/nova/miscellaneous/no-gui'
+                },
+                {
+                  text: "Input Task", link: '/gradle-plugins/nova/miscellaneous/input-task'
                 }
               ]
             }
