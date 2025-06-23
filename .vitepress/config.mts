@@ -281,6 +281,9 @@ export default defineVersionedConfig({
                 },
                 {
                   text: "Eula", link: '/gradle-plugins/nova/miscellaneous/eula'
+                },
+                {
+                  text: "No GUI", link: '/gradle-plugins/nova/miscellaneous/no-gui'
                 }
               ]
             }
