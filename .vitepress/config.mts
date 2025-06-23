@@ -266,6 +266,9 @@ export default defineVersionedConfig({
               items: [
                 {
                   text: "Allowed Ram", link: '/gradle-plugins/nova/miscellaneous/ram'
+                },
+                {
+                  text: "Eula", link: '/gradle-plugins/nova/miscellaneous/eula'
                 }
               ]
             }
