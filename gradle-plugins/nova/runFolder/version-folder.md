@@ -9,14 +9,16 @@ This will make the folder structure like this `run/1.21.4/spigot` if running a s
 
 By default, this option is set to `false`. You can modify this by adding `perVersionFolder(true)`. Below you will see an example.
 
-::: code-group
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 runServer {
     minecraftVersion("1.21.4")
     perVersionFolder(true)
 }
 ```
-```kotlin [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 runServer {
     minecraftVersion("1.21.4")
     perVersionFolder(true)

@@ -8,8 +8,9 @@ description: The official docs for the Echo Plugin.
 The most way to add plugins is to add `plugins("link1", "link2")`.
 Below is an example to install `Luckperms` and `ViaVersion`
 
-::: code-group
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 runServer {
     minecraftVersion("1.21.4")
     plugins(
@@ -18,7 +19,8 @@ runServer {
     )
 }
 ```
-```kotlin [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 runServer {
     minecraftVersion("1.21.4")
     plugins(
@@ -31,8 +33,9 @@ runServer {
 
 This easy way will only install it once. If you want a plugin that will be overwritten every time on start you can do this. See below
 
-::: code-group
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 runServer {
     minecraftVersion("1.21.4")
     plugin(
@@ -41,7 +44,8 @@ runServer {
     )
 }
 ```
-```kotlin [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 runServer {
     minecraftVersion("1.21.4")
     plugin(
@@ -54,8 +58,9 @@ runServer {
 
 You can also pass a `List` and an `overwrite`. See below for an example.
 
-::: code-group
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 runServer {
     minecraftVersion("1.21.4")
     plugin(
@@ -67,7 +72,8 @@ runServer {
     )
 }
 ```
-```kotlin [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 runServer {
     minecraftVersion("1.21.4")
     plugin(

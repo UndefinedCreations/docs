@@ -12,14 +12,16 @@ Keep in mind when you have added this into gradle you have accepted the [eula](h
 
 See below for an example
 
-::: code-group
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 runServer {
     minecraftVersion("1.21.4")
     acceptMojangEula()
 }
 ```
-```kotlin [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 runServer {
     minecraftVersion("1.21.4")
     acceptMojangEula()

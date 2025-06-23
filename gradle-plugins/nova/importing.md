@@ -11,11 +11,13 @@ To use Nova in your project, we will first need to import the plugin.
 
 We will add the plugin under the `plugins` tab in your `build.gradle`.
 
-::: code-group
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 id 'com.undefinedcreations.nova' version 'LASTEST-VERSION'
 ```
-```kts [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 id("com.undefinedcreations.nova") version "LASTEST-VERSION"
 ```
 :::

@@ -8,14 +8,16 @@ The input task is the task that `Nova` will try and get the plugin jar from. By 
 To change the input task you can add `inputTask(customTask)`.
 See below for an example
 
-::: code-group
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 runServer {
     minecraftVersion("1.21.4")
     inputTask(customTask)
 }
 ```
-```kotlin [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 runServer {
     minecraftVersion("1.21.4")
     inputTask(customTask)

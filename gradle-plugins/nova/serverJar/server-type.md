@@ -22,18 +22,19 @@ FOLIA
 Let's have a look on how to change we can server type. Inside the `runServer` task we can set the server type by doing this `serverType(ServerType.TYPE)`. 
 By default, it set to run a `Spigot` server. Below you can see how to change this to a `Paper` server.
 
-::: code-group 
-```groovy [Groovy DSL]
+:::tabs key:kotlin-java
+== Groovy DSL
+```groovy 
 runServer {
     minecraftVersion("1.21.4")
     serverType(ServerType.PAPERMC)
 }
 ```
-```kotlin [Kotlin DSL]
+== Kotlin DSL
+```kotlin
 runServer {
     minecraftVersion("1.21.4")
     serverType(ServerType.PAPERMC)
 }
 ```
 :::
-
