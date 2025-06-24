@@ -5,8 +5,7 @@ import defineVersionedConfig from "vitepress-versioning-plugin";
 export default defineVersionedConfig(
   {
     title: "Undefined Creations",
-    description:
-      "The documentation for all projects under Undefined Creations.",
+    description: "The documentation for all projects under Undefined Creations.",
     cleanUrls: true,
     ignoreDeadLinks: true,
     versioning: {
@@ -367,24 +366,11 @@ export default defineVersionedConfig(
             text: "Nova",
             collapsed: false,
             items: [
-              { text: "Importing ", link: "/gradle-plugins/nova/importing" },
-              { text: "Setup ", link: "/gradle-plugins/nova/setup" },
+              { text: "Getting Started", link: "/gradle-plugins/nova/getting-started" },
+              { text: "Server Types", link: "/gradle-plugins/nova/server-type" },
+              { text: "Custom Jar", link: "/gradle-plugins/nova/custom-jar" },
               {
-                text: "Server Jar ",
-                collapsed: false,
-                items: [
-                  {
-                    text: "Server Types",
-                    link: "/gradle-plugins/nova/serverJar/server-type",
-                  },
-                  {
-                    text: "Custom Jar",
-                    link: "/gradle-plugins/nova/serverJar/custom-jar",
-                  },
-                ],
-              },
-              {
-                text: "Run Folder ",
+                text: "Run Folder",
                 collapsed: false,
                 items: [
                   {
@@ -415,126 +401,6 @@ export default defineVersionedConfig(
         { icon: "github", link: "https://github.undefinedcreations.com" },
         { icon: "discord", link: "https://discord.undefinedcreation.com" },
       ],
-      '/gradle-plugins': [
-        {
-          collapsed: false,
-          items: [
-            { text: 'Undefined Discord', link: 'https://discord.undefinedcreations.com/' },
-            { text: 'GitHub', link: 'https://github.undefinedcreations.com/' }
-          ]
-        },
-        { text: 'Gradle Plugins', link: '/gradle-plugins/' },
-        {
-          text: 'Echo',
-          collapsed: false,
-          items: [
-            { text: 'Importing ', link: '/gradle-plugins/echo/importing' },
-            {
-              text: 'BuildTools ',
-              collapsed: false,
-              items: [
-                {
-                  text: "Setup", link: '/gradle-plugins/echo/buildTools/build-tools'
-                },
-                {
-                  text: "Flags", link: '/gradle-plugins/echo/buildTools/flags'
-                },
-                {
-                  text: "Caching", link: '/gradle-plugins/echo/buildTools/caching'
-                }
-              ]
-            },
-            {
-              text: 'Remap ',
-              collapsed: false,
-              items: [
-                {
-                  text: "Setup", link: '/gradle-plugins/echo/remap/setup'
-                },
-                {
-                  text: "Actions", link: '/gradle-plugins/echo/remap/actions'
-                },
-                {
-                  text: "Input Tasks", link: '/gradle-plugins/echo/remap/input-tasks'
-                },
-                {
-                  text: "New Jar", link: '/gradle-plugins/echo/remap/new-jar'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          text: 'Nova',
-          collapsed: false,
-          items: [
-            { text: 'Importing ', link: '/gradle-plugins/nova/importing' },
-            { text: 'Setup ', link: '/gradle-plugins/nova/setup' },
-            {
-              text: 'Server Jar ',
-              collapsed: false,
-              items: [
-                {
-                  text: "Server Types", link: '/gradle-plugins/nova/serverJar/server-type'
-                },
-                {
-                  text: "Custom Jar", link: '/gradle-plugins/nova/serverJar/custom-jar'
-                }
-              ]
-            },
-            {
-              text: 'Plugins ',
-              collapsed: false,
-              items: [
-                {
-                  text: "Online plugins", link: '/gradle-plugins/nova/plugin/online-plugins'
-                },
-                {
-                  text: "Local plugins", link: '/gradle-plugins/nova/plugin/local-plugins'
-                }
-              ]
-            },
-            {
-              text: 'Run Folder ',
-              collapsed: false,
-              items: [
-                {
-                  text: "Per Version", link: '/gradle-plugins/nova/runFolder/version-folder'
-                },
-                {
-                  text: "Custom Folder", link: '/gradle-plugins/nova/runFolder/custom-folder'
-                }
-              ]
-            },
-            {
-              text: 'Miscellaneous ',
-              collapsed: false,
-              items: [
-                {
-                  text: "Allowed Ram", link: '/gradle-plugins/nova/miscellaneous/ram'
-                },
-                {
-                  text: "Eula", link: '/gradle-plugins/nova/miscellaneous/eula'
-                },
-                {
-                  text: "No GUI", link: '/gradle-plugins/nova/miscellaneous/no-gui'
-                },
-                {
-                  text: "Input Task", link: '/gradle-plugins/nova/miscellaneous/input-task'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          text: 'Plugins',
-          collapsed: false,
-          items: [
-
-            { text: 'Undefined Run Server', link: '/gradle-plugins/run-server' },
-          ]
-        }
-      ]
     },
   },
   __dirname,
