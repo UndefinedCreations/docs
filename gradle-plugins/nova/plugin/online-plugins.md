@@ -8,7 +8,7 @@ description: The official docs for the Echo Plugin.
 The most way to add plugins is to add `plugins("link1", "link2")`.
 Below is an example to install `Luckperms` and `ViaVersion`
 
-:::tabs key:kotlin-java
+:::tabs key:groovy-kotlin
 == Groovy DSL
 ```groovy 
 runServer {
@@ -33,7 +33,7 @@ runServer {
 
 This easy way will only install it once. If you want a plugin that will be overwritten every time on start you can do this. See below
 
-:::tabs key:kotlin-java
+:::tabs key:groovy-kotlin
 == Groovy DSL
 ```groovy 
 runServer {
@@ -58,7 +58,7 @@ runServer {
 
 You can also pass a `List` and an `overwrite`. See below for an example.
 
-:::tabs key:kotlin-java
+:::tabs key:groovy-kotlin
 == Groovy DSL
 ```groovy 
 runServer {

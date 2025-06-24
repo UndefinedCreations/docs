@@ -10,6 +10,7 @@ The first and the most simple one is changing the folder name. We can do this by
 This will create the folder still inside you project with the given name. Below is an example.
 
 :::tabs key:kotlin-java
+:::tabs key:groovy-kotlin
 == Groovy DSL
 ```groovy 
 runServer {
@@ -32,6 +33,7 @@ See below for an example
 :::tabs key:kotlin-java
 == Groovy DSL
 ```groovy 
+:::tabs key:groovy-kotlin
 runServer {
     minecraftVersion("1.21.4")
     serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
