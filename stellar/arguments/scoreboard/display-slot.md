@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a scoreboard display slot. Returns `DisplaySlot`. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 Scoreboard scoreboardManager = Bukkit.getScoreboardManager()!!.mainScoreboard;

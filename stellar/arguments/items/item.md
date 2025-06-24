@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns an `ItemStack`, which players can specify with this syntax: `<item_id>[<list of components>]`. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("give")

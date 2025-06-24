@@ -31,7 +31,7 @@ A command tree is a theoretical idea, yet important to fully understand. It refe
 
 In code, we can create a root command by instantiating `StellarCommand`, or using a utility method to delegate the instantiation. Then we can add arguments on top of it, and each time we do using an `addArgument` method, it returns that arguments itself. Here is a simple version of the /tp command example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 StellarCommand main = new StellarCommand("tp");

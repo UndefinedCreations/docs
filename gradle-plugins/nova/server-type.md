@@ -23,7 +23,7 @@ You can also use a custom JAR, which is shown in the next page.
 
 You can change the server type by using the `serverType` method as such:
 
-:::tabs key:groovy-kotlin
+::: tabs key:groovy-kotlin
 == Groovy DSL
 ``` Groovy 
 runServer {

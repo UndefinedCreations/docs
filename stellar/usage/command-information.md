@@ -28,7 +28,7 @@ StellarCommand("message")
 
 This is the second piece of information you can easily set. It is a short text about how the command works, and it's common to use the default minecraft command syntax for this: https://minecraft.wiki/w/Commands#Syntax. You can set the usage text using the `setUsage` method:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")
@@ -45,7 +45,7 @@ StellarCommand("message")
 
 You can easily add custom information by using the `setInformation` method, which takes in a name and some text:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")

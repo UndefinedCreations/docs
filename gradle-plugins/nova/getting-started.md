@@ -9,7 +9,7 @@ description: The official docs for the Nova Gradle Plugin.
 
 To use Nova in your project, start by adding the plugin under the plugins block in your `build.gradle` file:
 
-:::tabs key:groovy-kotlin
+::: tabs key:groovy-kotlin
 == Groovy DSL
 ``` Groovy 
 id 'com.undefinedcreations.nova' version 'LATEST-VERSION'
@@ -26,7 +26,7 @@ If you are using [`Echo`](/gradle-plugins/echo/importing) and [`BuildTools`](/gr
 
 To begin setting up Nova, set the `minecraftVersion` by modifying the `runServer` task configurations under the tasks block in your `build.gradle`:
 
-:::tabs key:groovy-kotlin
+::: tabs key:groovy-kotlin
 == Groovy DSL
 ``` Groovy
 tasks {

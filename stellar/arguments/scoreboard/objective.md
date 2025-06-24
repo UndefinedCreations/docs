@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns a scoreboard `Objective`. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("setamount")

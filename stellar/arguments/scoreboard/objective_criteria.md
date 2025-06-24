@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Must be a scoreboard objective criterion, returning `Criteria`. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("objective")

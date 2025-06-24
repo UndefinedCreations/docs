@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 The `BooleanArgument` allows you to input a `boolean`. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("server")

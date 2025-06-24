@@ -8,7 +8,7 @@ When running a server it will use RAM on your system. By default `Nova` will onl
 You can change this value by running `allowedRam(amount, RamAmount)`. [`RamAmount`](https://github.com/UndefinedCreations/Nova/blob/master/plugin/nova/src/main/kotlin/com/undefinedcreations/nova/RamAmount.kt) is the ram type. They are `Gigabyte` and `Megabyte`
 See below for an example.
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Groovy DSL
 ```groovy 
 runServer {

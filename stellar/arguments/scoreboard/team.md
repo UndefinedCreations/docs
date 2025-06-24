@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns `Team`, must be an unquoted string, executions only run when there is a valid player. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("setcolor")

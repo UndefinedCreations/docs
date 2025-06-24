@@ -105,7 +105,7 @@ StellarCommand("test")
 
 Now you can add a simple execution by making use of the `addFailureExecution` method.
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("test")
@@ -130,7 +130,7 @@ StellarCommand("test")
 
 A better way of adding custom failure messages, if that's all you want, would be to use the `addFailureMessage` method:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("test")
@@ -151,7 +151,7 @@ You can also use the `addPlainFailureMessage` to add a string message **not** pa
 
 Lastly, if you want to add a failure message that will always run for the entire command, then use the `addGlobalFailureMessage` method:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("test")

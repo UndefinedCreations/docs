@@ -9,7 +9,7 @@ Best way to learn is by doing, thus we are going to create a simple message comm
 
 We first need to initialize the base command:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message");
@@ -22,7 +22,7 @@ StellarCommand("message")
 
 For a bit of customization you can add aliases as such:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")
@@ -37,7 +37,7 @@ StellarCommand("message")
 
 Now we need to add an argument, as the player running the command needs to be able to specify who they want to message. For that purpose, we'll use the pre-made online players ListArgument defined in [`addOnlinePlayersArgument`](https://stellardocs.lutto.dev/com/undefined/stellar/argument/list/OnlinePlayersArgument.html):
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")
@@ -55,7 +55,7 @@ StellarCommand("message")
 The player also needs to specify the message they wish to send.
 We want this to be a phrase, not a word, and have no string limitations. We'll use the phrase argument for that, which offers no limitations. There are two ways to create a phrase argument, and we'll use the simpler one for now:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")
@@ -78,7 +78,7 @@ Note: You cannot have two non-literal arguments with the same! This will result 
 
 Now we need to message the target with the chosen message whenever a player runs the commands. To achieve that, we'll use the `addExecution` method.
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 
 == Java
 ```Java
@@ -113,7 +113,7 @@ The function will provide a `CommandContext` which is already fully explained in
 
 You can get the sender with [`CommandContext.getSender()`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/data/argument/CommandContext.kt#L7) and the results of any arguments using the [`CommandContext.getArgument()`](https://stellardocs.lutto.dev/com/undefined/stellar/data/argument/CommandContext.html#getArgument(java.lang.String)) methods.
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")
@@ -157,7 +157,7 @@ StellarCommand("message")
 
 Now we need to add custom permissions to the command, using the [`addRequirement`](https://stellardocs.lutto.dev/com/undefined/stellar/AbstractStellarCommand.html#addRequirement(java.lang.String)) method.
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")
@@ -190,7 +190,7 @@ Requirements are far more powerful than this, and we talk more about that in the
 
 To register this command, we can use the [`register`](https://stellardocs.lutto.dev/com/undefined/stellar/AbstractStellarCommand.html#register(org.bukkit.plugin.java.JavaPlugin)) method.
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("message")

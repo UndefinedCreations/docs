@@ -12,7 +12,7 @@ Keep in mind when you have added this into gradle you have accepted the [eula](h
 
 See below for an example
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Groovy DSL
 ```groovy 
 runServer {
