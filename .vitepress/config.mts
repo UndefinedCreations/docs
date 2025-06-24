@@ -384,17 +384,7 @@ export default defineVersionedConfig(
                 ],
               },
             ],
-          },
-          {
-            text: "Plugins",
-            collapsed: false,
-            items: [
-              {
-                text: "Undefined Run Server",
-                link: "/gradle-plugins/run-server",
-              },
-            ],
-          },
+          }
         ],
       },
       socialLinks: [
