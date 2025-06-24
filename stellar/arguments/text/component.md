@@ -3,7 +3,7 @@ title: Component Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Component Argument {#component}
+# Component Argument
 
 Must be a valid JSON text component, returns `net.kyori.adventure.text.Component`. Example:
 

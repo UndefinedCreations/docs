@@ -3,7 +3,7 @@ title: Accessing Server Internals
 description: The official docs for the Echo Plugin.
 ---
 
-# Accessing Server Internals {#setup}
+# Accessing Server Internals
 
 > [!Important]
 > `BuildTools` is a tool created by the SpigotMC team to build a server jar with Spigot and Bukkit changes, which you can read more about [here](https://www.spigotmc.org/wiki/buildtools/).

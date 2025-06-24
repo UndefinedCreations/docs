@@ -3,7 +3,7 @@ title: Axis Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Axis Argument {#axis}
+# Axis Argument
 
 Any non-repeating combination of the characters 'x', 'y', and 'z'. Returns `EnumSet<Axis>`. Example:
 

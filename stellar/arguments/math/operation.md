@@ -3,7 +3,7 @@ title: Operation Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Operation Argument {#operation}
+# Operation Argument
 
 Must be an arithmetic operator, such as = or +=. Returns an `Operation` enum, and use the `apply` method to calculate the new value from two numbers. Example:
 

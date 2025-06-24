@@ -3,7 +3,7 @@ title: Team Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Team Argument {#team}
+# Team Argument
 
 Returns `Team`, must be an unquoted string, executions only run when there is a valid player. Example:
 

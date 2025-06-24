@@ -3,7 +3,7 @@ title: Rotation Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Rotation Argument {#rotation}
+# Rotation Argument
 
 Must be a rotation consisting of yaw and pitch, which returns a `Location` only containing yaw and pitch. Example:
 

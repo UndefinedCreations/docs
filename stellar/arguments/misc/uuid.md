@@ -3,7 +3,7 @@ title: UUID Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# UUID Argument {#uuid}
+# UUID Argument
 
 Must be a valid `UUID`, which it returns. Example:
 

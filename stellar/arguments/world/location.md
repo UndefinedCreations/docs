@@ -3,7 +3,7 @@ title: Location Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Location Argument {#location}
+# Location Argument
 
 Returns `Location` and the syntax can vary depending on what  `LocationType` has been set. There are four types of `LocationType`: `LOCATION_3D`, `LOCATION_2D`, `PRECISE_LOCATION_3D` and `PRECISE_LOCATION_2D`. Examples:
 

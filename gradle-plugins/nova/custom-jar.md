@@ -3,7 +3,8 @@ title: Nova Custom Jar
 description: The official docs for the Echo Plugin.
 ---
 
-# Custom Jar {#nova-custom-jar}
+# Custom Jar
+
 `Nova` also allows you to run a custom `jar` instead of one of the presets. To be able to use this you need the path of the jar. When you have this inside the `runServer` task add `customJar("PATH")`. Below you will see an example.
 
 :::tabs key:kotlin-java

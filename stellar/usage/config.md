@@ -3,7 +3,7 @@ title: Stellar Config
 description: The official docs for the Stellar Command API.
 ---
 
-# Command Stellar Config {#config}
+# Command Stellar Config
 
 Stellar will default to certain values from the `StellarConfig` class. These values are usually still modifiable for each command and act as a default. 
 

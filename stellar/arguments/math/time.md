@@ -3,7 +3,7 @@ title: Time Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Time Argument {#rotation}
+# Time Argument
 
 Must be a long suffixed with a unit if wanted (1s, 1d or 1t), which returns a `Long` in ticks. Example:
 

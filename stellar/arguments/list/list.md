@@ -3,7 +3,7 @@ title: List Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# List Argument {#list}
+# List Argument
 
 The `ListArgument` wraps around a `AbstractStellarArgument` and adds a list of suggestions based on the list provided. Examples:
 

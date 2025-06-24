@@ -3,7 +3,7 @@ title: Boolean Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Boolean Argument {#boolean}
+# Boolean Argument
 
 The `BooleanArgument` allows you to input a `boolean`. Example:
 

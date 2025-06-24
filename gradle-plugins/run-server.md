@@ -3,7 +3,7 @@ title: Nova
 description: The official docs for Nova Gradle plugins.
 ---
 
-# Nova {#nova}
+# Nova
 
 Nova is a powerful gradle plugin that enables you to run any minecraft jar inside your IDE.
 

@@ -3,7 +3,7 @@ title: Enum Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Enum Argument {#enum}
+# Enum Argument
 
 The `EnumArgument` is an extension of `ListArgument`, using a `StringArgument` as a base, that adds a list of suggestions based on the `Enum` provided.
 

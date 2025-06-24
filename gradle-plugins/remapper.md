@@ -3,7 +3,7 @@ title: Undefined Remapper
 description: The official docs for Undefined Creations Gradle plugins.
 ---
 
-# Undefined Remapper {#remapper} 
+# Undefined Remapper 
 
 This gradle plugin is made to be able to remap any NMS project you are working on.
 

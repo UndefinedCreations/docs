@@ -3,7 +3,7 @@ title: Item Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Item Argument {#item}
+# Item Argument
 
 Returns an `ItemStack`, which players can specify with this syntax: `<item_id>[<list of components>]`. Example:
 

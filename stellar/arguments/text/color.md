@@ -3,7 +3,7 @@ title: Color Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Color Argument {#color}
+# Color Argument
 
 Must be a team color, returns `net.kyori.adventure.text.format.Style`. Example:
 

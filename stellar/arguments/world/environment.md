@@ -3,7 +3,7 @@ title: Environment Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Environment Argument {#dimension}
+# Environment Argument
 
 The `EnvironmentArgument` must be: `overworld`, `the_nether` or `the_end`. It returns an `Environment` enum. Example:
 

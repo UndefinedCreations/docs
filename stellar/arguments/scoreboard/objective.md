@@ -3,7 +3,7 @@ title: Objective Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Objective Argument {#objective}
+# Objective Argument
 
 Returns a scoreboard `Objective`. Example:
 

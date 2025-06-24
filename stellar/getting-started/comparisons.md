@@ -3,7 +3,7 @@ title: Comparison to similar APIs
 description: The official docs for the Stellar Command API.
 ---
 
-# Comparison to similar APIs {#comparisons}
+# Comparison to similar APIs
 
 |            API             |   Stellar   |  CommandAPI   |     Lamp     | LiteCommands |
 |:--------------------------:|:-----------:|:-------------:|:------------:|:------------:|
