@@ -1,33 +1,32 @@
 ---
 title: Nova Custom Jar
-description: The official docs for the Echo Plugin.
+description: The official docs for the Nova Gradle Plugin.
 ---
 
 # Custom Jar
 
-`Nova` also allows you to run a custom `jar` instead of one of the presets. To be able to use this you need the path of the jar. When you have this inside the `runServer` task add `customJar("PATH")`. Below you will see an example.
+Nova also allows you to run a custom JAR instead of one of the presets. You can use a custom JAR using the `customJar` method as such:
 
 :::tabs key:kotlin-java
 == Groovy DSL
-```groovy 
+``` Groovy 
 runServer {
     customJar("PATH")
 }
 ```
 == Kotlin DSL
-```kotlin
+``` Kotlin
 runServer {
     customJar("PATH")
 }
 ```
 :::
 
-
-There is also an option, this option is called `alwaysReplace`. When this is enabled it will replace the jar inside the server every time on startup. By default, this is on `false`. Below is an example.
+By default, the JAR inside the `run` folder will be reused every time the server starts. You can force the JAR to be replaced/updated every time using the `alwaysReplace` parameter:
 
 :::tabs key:kotlin-java
 == Groovy DSL
-```groovy 
+``` Groovy
 runServer {
     customJar(
         "PATH",
@@ -36,7 +35,7 @@ runServer {
 }
 ```
 == Kotlin DSL
-```kotlin
+``` Kotlin
 runServer {
     customJar(
         "PATH",
