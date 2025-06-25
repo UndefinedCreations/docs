@@ -370,16 +370,16 @@ export default defineVersionedConfig(
               { text: "Server Types", link: "/gradle-plugins/nova/server-type" },
               { text: "Custom Jar", link: "/gradle-plugins/nova/custom-jar" },
               {
-                text: "Run Folder",
+                text: "Folder Customization",
                 collapsed: false,
                 items: [
                   {
                     text: "Per Version",
-                    link: "/gradle-plugins/nova/runFolder/version-folder",
+                    link: "/gradle-plugins/nova/folder/version-folder",
                   },
                   {
                     text: "Custom Folder",
-                    link: "/gradle-plugins/nova/runFolder/custom-folder",
+                    link: "/gradle-plugins/nova/folder/custom-folder",
                   },
                 ],
               },
