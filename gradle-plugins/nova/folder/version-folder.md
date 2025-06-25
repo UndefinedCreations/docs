@@ -1,25 +1,24 @@
 ---
 title: Nova Version Folder
-description: The official docs for the Echo Plugin.
+description: The official docs for the Nova Gradle Plugin.
 ---
 
 # Per Version Folder {#nova-version-folder}
 
-When a server is created it will automatically create a folder. When this option is enabled it will create a folder for every `minecraftVersion`. 
-This will make the folder structure like this `run/1.21.4/spigot` if running a spigot server.
+When a server is created it will automatically create the run folder. If no custom path folder is selected, you can enable the generation of version sub-folders, e.g. `run/1.21.4/spigot`. 
 
-By default, this option is set to `false`. You can modify this by adding `perVersionFolder(true)`. Below you will see an example.
+By default, this option is set to `false`. You can modify this by adding `perVersionFolder(true)`:
 
 ::: tabs key:groovy-kotlin
 == Groovy DSL
-```groovy 
+``` Groovy
 runServer {
     minecraftVersion("1.21.4")
     perVersionFolder(true)
 }
 ```
 == Kotlin DSL
-```kotlin
+``` Kotlin
 runServer {
     minecraftVersion("1.21.4")
     perVersionFolder(true)

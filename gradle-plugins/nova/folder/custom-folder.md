@@ -11,6 +11,8 @@ You can change the run folder in three ways.
 
 The first and the most simple one is simply changing the folder name. You can do this by using the `serverFolderName` method. This will use a folder inside the main project path with that name.
 
+There are two `serverFolderName` methods: one provides a consumer with [`FolderData`](https://github.com/UndefinedCreations/Nova/blob/5ca5564a064c0256e5d328b0c59e957e5cff87c8/plugin/nova/src/main/kotlin/com/undefinedcreations/nova/AbstractServer.kt#L141), and one just takes in the folder name:
+
 ::: tabs key:groovy-kotlin
 == Groovy DSL
 ::: code-group
@@ -27,67 +29,41 @@ runServer {
 }
 ```
 == Kotlin DSL
-``` Kotlin [Consumer]
+::: code-group
+``` Kotlin [Parameter]
 runServer {
     minecraftVersion("1.21.4")
     serverFolderName("folderName")
+}
+```
+``` Kotlin [Consumer]
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolderName { "folderName" }
 }
 ```
 :::
 
 ## Modifying the entire path
 
-You can also modify the entire file path its going to use. You can do this by using the `serverFolder` method. This method allows you 
+You can also modify the entire file path it's going to use. You can do this by using the `serverFolder` method. 
 
 > [!IMPORTANT]
 > TBD, another `serverFolder` method should be added to allow for the passing of a `File` without using a function type
 
 ::: tabs key:groovy-kotlin
-:::
+== Groovy DSL
 ``` Groovy [Parameter]
 runServer {
     minecraftVersion("1.21.4")
     serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
 }
 ```
-``` Kotlin
-runServer {
-    minecraftVersion("1.21.4")
-    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
-}
-```
-== Consumer
-:::
-``` Groovy
-runServer {
-    minecraftVersion("1.21.4")
-    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
-}
-```
-``` Kotlin
-runServer {
-    minecraftVersion("1.21.4")
-    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
-}
-```
-:::
-
-The last method is very similar to the second one but instead of asking for a `File` it wasn't a `String`
-See below for an example
-
-::: tabs key:groovy-kotlin
-== Groovy DSL
-```groovy 
-runServer {
-    minecraftVersion("1.21.4")
-    serverFolderName { "$buildFolder/${serverType.name.lowercase()}-{${minecraftVersion}}" }
-}
-```
 == Kotlin DSL
-```kotlin
+``` Kotlin
 runServer {
     minecraftVersion("1.21.4")
-    serverFolderName { "$buildFolder/${serverType.name.lowercase()}-{${minecraftVersion}}" }
+    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
 }
 ```
 :::
