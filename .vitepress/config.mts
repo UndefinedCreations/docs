@@ -367,11 +367,18 @@ export default defineVersionedConfig(
             collapsed: false,
             items: [
               { text: "Getting Started", link: "/gradle-plugins/nova/getting-started" },
-              { text: "Server Types", link: "/gradle-plugins/nova/server-type" },
-              { text: "Custom Jar", link: "/gradle-plugins/nova/custom-jar" },
+              {
+                text: "Usage",
+                collapsed: false,
+                items: [
+                  { text: "Server Types", link: "/gradle-plugins/nova/usage/server-type" },
+                  { text: "Custom Jar", link: "/gradle-plugins/nova/usage/custom-jar" },
+                  { text: "Ram", link: "/gradle-plugins/nova/usage/configuration/ram" },
+                ],
+              },
               {
                 text: "Folder Customization",
-                collapsed: false,
+                collapsed: true,
                 items: [
                   {
                     text: "Per Version",
@@ -385,7 +392,7 @@ export default defineVersionedConfig(
               },
               {
                 text: "Plugins",
-                collapsed: false,
+                collapsed: true,
                 items: [
                   {
                     text: "Online Plugins",
@@ -394,6 +401,24 @@ export default defineVersionedConfig(
                   {
                     text: "Local Plugins",
                     link: "/gradle-plugins/nova/plugins/local-plugins",
+                  },
+                ],
+              },
+              {
+                text: "Configuration",
+                collapsed: true,
+                items: [
+                  {
+                    text: "Eula",
+                    link: "/gradle-plugins/nova/configuration/eula",
+                  },
+                  {
+                    text: "Input Task",
+                    link: "/gradle-plugins/nova/configuration/input-task",
+                  },
+                  {
+                    text: "No GUI",
+                    link: "/gradle-plugins/nova/configuration/no-gui",
                   },
                 ],
               },
