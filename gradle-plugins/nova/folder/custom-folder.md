@@ -46,10 +46,7 @@ runServer {
 
 ## Modifying the entire path
 
-You can also modify the entire file path it's going to use. You can do this by using the `serverFolder` method. 
-
-> [!IMPORTANT]
-> TBD, another `serverFolder` method should be added to allow for the passing of a `File` without using a function type
+You can also modify the entire file path it's going to use. You can do this by using the `serverFolder` method.
 
 ::: tabs key:groovy-kotlin
 == Groovy DSL
@@ -64,6 +61,25 @@ runServer {
 runServer {
     minecraftVersion("1.21.4")
     serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
+}
+```
+:::
+
+You can also modify the entire file by passing only a file.
+
+::: tabs key:groovy-kotlin
+== Groovy DSL
+``` Groovy [Parameter]
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder(File("serverFolder"))
+}
+```
+== Kotlin DSL
+``` Kotlin
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder(File("serverFolder"))
 }
 ```
 :::
