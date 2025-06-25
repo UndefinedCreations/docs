@@ -1,6 +1,6 @@
 ---
 title: Nova Online plugins
-description: The official docs for the Echo Plugin.
+description: The official docs for the Nova Gradle Plugin.
 ---
 
 # Online plugins
@@ -61,6 +61,7 @@ runServer {
 }
 ```
 == Kotlin DSL
+::: code-group
 ``` Kotlin [Single]
 runServer {
     minecraftVersion("1.21.4")

@@ -1,11 +1,11 @@
 ---
 title: Nova Local plugins
-description: The official docs for the Echo Plugin.
+description: The official docs for the Nova Gradle Plugin.
 ---
 
 # Local plugins
-If you have a local plugin you want to add to your server can you of course add them into the `plugins` folder you self, or you can give `Nova` a path to the local jar.
-See below for an example
+
+You can also automatically add local plugins as such:
 
 ::: tabs key:groovy-kotlin
 == Groovy DSL
@@ -24,8 +24,7 @@ runServer {
 ```
 :::
 
-You can also choose to overwrite the plugin every time on started.
-See below for an example
+You can also choose to override the plugin on each startup.
 
 ::: tabs key:groovy-kotlin
 == Groovy DSL
@@ -39,7 +38,7 @@ runServer {
 ```kotlin
 runServer {
     minecraftVersion("1.21.4")
-    filePlugin(File("PLUGIN_PATH"), true)
+    filePlugin(File("PLUGIN_PATH"), override = true)
 }
 ```
 :::
