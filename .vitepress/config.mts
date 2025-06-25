@@ -366,6 +366,7 @@ export default defineVersionedConfig(
             text: "Nova",
             collapsed: false,
             items: [
+              { text: "What is Nova?", link: "/gradle-plugins/nova/what-is-nova" },
               { text: "Getting Started", link: "/gradle-plugins/nova/getting-started" },
               {
                 text: "Usage",

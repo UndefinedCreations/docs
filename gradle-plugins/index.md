@@ -9,6 +9,6 @@ The official docs for Undefined Creations Gradle plugins.
 
 This is a list of plugins:
 - [Echo](/gradle-plugins/echo) - [GitHub](https://github.com/UndefinedCreations/Echo)
-- [Nova](/gradle-plugins/nova) - [Github](https://github.com/UndefinedCreations/Nova)
+- [Nova](/gradle-plugins/nova/what-is-nova) - [Github](https://github.com/UndefinedCreations/Nova)
 
 If you wish to contribute to these docs in any way, feel free to check out the [GitHub](https://github.com/UndefinedCreation/undefined-docs)!
