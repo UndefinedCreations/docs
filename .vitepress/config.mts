@@ -317,6 +317,10 @@ export default defineVersionedConfig(
             collapsed: false,
             items: [
               {
+                text: "What is Echo?",
+                link: "/gradle-plugins/echo/what-is-echo",
+              },
+              {
                 text: "Getting Started",
                 link: "/gradle-plugins/echo/getting-started",
               },
