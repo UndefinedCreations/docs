@@ -1,12 +1,11 @@
 ---
 title: Nova Input Task
-description: The official docs for the Echo Plugin.
+description: The official docs for the Nova Gradle Plugin.
 ---
 
 # Input Task
-The input task is the task that `Nova` will try and get the plugin jar from. By default, it will first check for `remap` task then `shadow` lastly `jar`.
-To change the input task you can add `inputTask(customTask)`.
-See below for an example
+
+The input task is the task that Nova will try and get the primary plugin JAR from. By default, it will first check for the `remap` task then the `shadow` task, and lastly the `jar` task.
 
 ::: tabs key:kotlin-java
 == Groovy DSL

@@ -1,25 +1,25 @@
 ---
 title: Nova No GUI
-description: The official docs for the Echo Plugin.
+description: The official docs for the Nova Gradle Plugin.
 ---
 
 # No GUI
-When running `spigot` and `paper` servers run they create a GUI. `No GUI` will disable this. By default, it's on. You can toggle this by adding `noGui(false)`.
-See below for example
+
+When running `SpigotMC` and `PaperMC` servers run they open a GUI. By default, the `noGui` option is enabled.
 
 ::: tabs key:kotlin-java
 == Groovy DSL
 ```groovy 
 runServer {
     minecraftVersion("1.21.4")
-    noGui(false)
+    noGui(false) // opens a gui
 }
 ```
 == Kotlin DSL
 ```kotlin
 runServer {
     minecraftVersion("1.21.4")
-    noGui(false)
+    noGui(false) // opens a gui
 }
 ```
 :::
