@@ -373,7 +373,7 @@ export default defineVersionedConfig(
                 items: [
                   { text: "Server Types", link: "/gradle-plugins/nova/usage/server-type" },
                   { text: "Custom Jar", link: "/gradle-plugins/nova/usage/custom-jar" },
-                  { text: "Ram", link: "/gradle-plugins/nova/usage/configuration/ram" },
+                  { text: "Ram", link: "/gradle-plugins/nova/usage/ram" },
                 ],
               },
               {
