@@ -4,13 +4,14 @@ description: The official docs for the Echo Plugin.
 ---
 
 # Online plugins
-`Nova` can also install plugins from `spigotmc`, `paperHangar` and `modrinth`. 
-The most way to add plugins is to add `plugins("link1", "link2")`.
-Below is an example to install `Luckperms` and `ViaVersion`
+
+Nova can automatically download plugins from SpigotMC, Paper Hangar and Modrinth. 
+
+The simplest way to add plugins is to use the `plugins` method:
 
 ::: tabs key:groovy-kotlin
 == Groovy DSL
-```groovy 
+``` Groovy 
 runServer {
     minecraftVersion("1.21.4")
     plugins(
@@ -20,7 +21,7 @@ runServer {
 }
 ```
 == Kotlin DSL
-```kotlin
+``` Kotlin
 runServer {
     minecraftVersion("1.21.4")
     plugins(
@@ -31,36 +32,45 @@ runServer {
 ```
 :::
 
-This easy way will only install it once. If you want a plugin that will be overwritten every time on start you can do this. See below
+The `plugins` method will automatically detect which platform it should download from.
+
+This method will download it once, then reuse that same plugin. You can force download on each startup by using the `plugin` method instead:
 
 ::: tabs key:groovy-kotlin
 == Groovy DSL
-```groovy 
+::: code-group
+``` Groovy [Single]
 runServer {
     minecraftVersion("1.21.4")
     plugin(
         "https://www.spigotmc.org/resources/luckperms.28140/",
-        true
+        true // override
+    )
+}
+```
+``` Groovy [List]
+runServer {
+    minecraftVersion("1.21.4")
+    plugin(
+        [
+            "https://www.spigotmc.org/resources/luckperms.28140/",
+            "https://modrinth.com/plugin/viaversion"
+        ],
+        true // override
     )
 }
 ```
 == Kotlin DSL
-```kotlin
+``` Kotlin [Single]
 runServer {
     minecraftVersion("1.21.4")
     plugin(
         "https://www.spigotmc.org/resources/luckperms.28140/",
-        true
+        override = true
     )
 }
 ```
-:::
-
-You can also pass a `List` and an `overwrite`. See below for an example.
-
-::: tabs key:groovy-kotlin
-== Groovy DSL
-```groovy 
+``` Kotlin [List]
 runServer {
     minecraftVersion("1.21.4")
     plugin(
@@ -68,20 +78,7 @@ runServer {
             "https://www.spigotmc.org/resources/luckperms.28140/",
             "https://modrinth.com/plugin/viaversion"
         ),
-        true
-    )
-}
-```
-== Kotlin DSL
-```kotlin
-runServer {
-    minecraftVersion("1.21.4")
-    plugin(
-        listOf(
-            "https://www.spigotmc.org/resources/luckperms.28140/",
-            "https://modrinth.com/plugin/viaversion"
-        ),
-        true
+        override = true
     )
 }
 ```

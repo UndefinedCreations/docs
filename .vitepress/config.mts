@@ -383,6 +383,20 @@ export default defineVersionedConfig(
                   },
                 ],
               },
+              {
+                text: "Plugins",
+                collapsed: false,
+                items: [
+                  {
+                    text: "Online Plugins",
+                    link: "/gradle-plugins/nova/plugins/online-plugins",
+                  },
+                  {
+                    text: "Local Plugins",
+                    link: "/gradle-plugins/nova/plugins/local-plugins",
+                  },
+                ],
+              },
             ],
           }
         ],
