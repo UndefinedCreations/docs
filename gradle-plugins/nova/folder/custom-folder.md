@@ -5,8 +5,6 @@ description: The official docs for the Nova Gradle Plugin.
 
 # Custom Folder
 
-You can change the run folder in three ways.
-
 ## Modifying the name
 
 The first and the most simple one is simply changing the folder name. You can do this by using the `serverFolderName` method. This will use a folder inside the main project path with that name.
@@ -50,36 +48,31 @@ You can also modify the entire file path it's going to use. You can do this by u
 
 ::: tabs key:groovy-kotlin
 == Groovy DSL
-``` Groovy [Parameter]
-runServer {
-    minecraftVersion("1.21.4")
-    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
-}
-```
-== Kotlin DSL
-``` Kotlin
-runServer {
-    minecraftVersion("1.21.4")
-    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
-}
-```
-:::
-
-You can also modify the entire file by passing only a file.
-
-::: tabs key:groovy-kotlin
-== Groovy DSL
+::: code-group
 ``` Groovy [Parameter]
 runServer {
     minecraftVersion("1.21.4")
     serverFolder(File("serverFolder"))
 }
 ```
+``` Groovy [Consumer]
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
+}
+```
 == Kotlin DSL
-``` Kotlin
+::: code-group
+``` Kotlin [Parameter]
 runServer {
     minecraftVersion("1.21.4")
     serverFolder(File("serverFolder"))
+}
+```
+``` Kotlin [Consumer]
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
 }
 ```
 :::

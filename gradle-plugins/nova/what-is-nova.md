@@ -5,16 +5,18 @@ description: The official docs for the Nova Gradle Plugin.
 
 # What is Nova?
 
-Nova is a highly flexible and customisable gradle plugin what allows you to run minecraft server inside you IDE.
+Nova is a highly flexible and customizable Gradle plugin what allows you to run Minecraft server using Gradle.
 
 ## Key Features
-- **Server Types** - Supports **9 Server types** and allows for custom jars
-- **Easy Versioning** - Allows for different server per version and server type
-- **Debugger** - Nova works with the Intellij Debugger and break points
-- **Plugins** - Automatically install plugins
-- **Eula** - Automatically accept the eula
+
+- **Server Types** — Supports **9 server types** and allows for custom jars.
+- **Easy Versioning** — Allows for different server per version and server type.
+- **Debugger** — Nova works with the Intellij debugger.
+- **Plugins** — Automatically install local, and online plugins.
+- **Eula** — Automatically accept the Mojang EULA.
 
 ## Documentation Structure
+
 These docs are specially designed to be simple and intuitive, while not missing any information. We made sure that everything is easily understandable, with code examples used everywhere.
 
 If you need more help, consider joining the [Discord Server](https://discord.undefinedcreations.com/).
