@@ -1,0 +1,27 @@
+---
+title: Nova Allowed Ram
+description: The official docs for the Nova Gradle Plugin.
+---
+
+# Allowed Ram
+
+By default, Nova will only allow 2GB for each individual server. 
+
+You can modify the allowed RAM using the `allowedRam(amount, RamAmount)` method, where [`RamAmount`](https://github.com/UndefinedCreations/Nova/blob/master/plugin/nova/src/main/kotlin/com/undefinedcreations/nova/RamAmount.kt) is the RAM type (`GB`, `MB`).
+
+::: tabs key:kotlin-java
+== Groovy DSL
+```groovy 
+runServer {
+    minecraftVersion("1.21.4")
+    ramAmount(4, RamAmount.GIGABYTE)
+}
+```
+== Kotlin DSL
+```kotlin
+runServer {
+    minecraftVersion("1.21.4")
+    ramAmount(4, RamAmount.GIGABYTE)
+}
+```
+:::

@@ -3,7 +3,7 @@ title: Stellar Docs
 description: The official docs for the Stellar Command API.
 ---
 
-# What is Akari? {#index}
+# What is Akari?
 
 Akari is a brand new camera framework for Java and Kotlin, built specifically for Spigot and Paper plugin development. It simplifies camera creation while offering deep customization and powerful features, easily configurable and expandable.
 

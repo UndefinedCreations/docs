@@ -3,7 +3,7 @@ title: GTA Teleportation
 description: The official docs for the Akari API.
 ---
 
-# GTA Teleportation {#gta}
+# GTA Teleportation
 
 In this example we will be creating a simple teleportation command, similar to the one in GTA.
 

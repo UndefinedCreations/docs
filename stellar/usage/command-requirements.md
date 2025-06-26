@@ -15,7 +15,7 @@ The server sends the client a list of commands at certain times (op, bukkit stri
 
 You can add bukkit string permissions (example.user.test), or level permissions, from 0-4. For more information on level permissions, see https://minecraft.wiki/w/Permission_level. To add such permissions, use the `addRequirement` method:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("test")
@@ -34,7 +34,7 @@ StellarCommand("test")
 
 To add custom requirements, you can also use the `addRequirement` method:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("test")

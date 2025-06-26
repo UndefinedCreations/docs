@@ -3,11 +3,11 @@ title: Range Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Range Argument {#range}
+# Range Argument
 
 Must bee a valid integer range (e.g. 0..5), which returns `IntRange`. This currently only works with the Kotlin `IntRange`, which you can still use in Java if you import Kotlin in your project. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("roll")

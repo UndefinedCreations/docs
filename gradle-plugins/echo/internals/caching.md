@@ -3,7 +3,7 @@ title: Caching
 description: The official docs for the Echo Plugin.
 ---
 
-# Caching {#caching}
+# Caching
 
 Information is cached in the `/undefined/echo` directory inside your [Gradle Home](https://docs.gradle.org/current/userguide/gradle_directories.html#gradle_user_home) (usually `~/.gradle` or `C:\Users\<USERNAME>\.gradle`).
 

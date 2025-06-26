@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 A yaw angle, in floating-point number, ranging from -180.0 (north) to 179.9 (just west of north). Returns `Float`. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("setangle")

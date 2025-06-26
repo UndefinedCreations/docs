@@ -3,7 +3,7 @@ title: Style Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Style Argument {#style}
+# Style Argument
 
 A valid JSON text component, and only returns its `net.kyori.adventure.text.format.Style`. Example:
 

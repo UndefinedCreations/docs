@@ -3,11 +3,11 @@ title: NamespacedKey Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# NamespacedKey Argument {#uuid}
+# NamespacedKey Argument
 
 Must be a valid `NamespacedKey`, which it returns. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("key")

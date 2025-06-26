@@ -9,7 +9,7 @@ Returns a `String` representing a score holder, being a player's name or an enti
 
 _Single_ Examples:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("objective")
@@ -36,7 +36,7 @@ StellarCommand("objective")
 
 _Multiple_ Examples:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("objective")

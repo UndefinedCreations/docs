@@ -7,7 +7,7 @@ description: The official docs for the Stellar Command API.
 
 Returns `BlockData`, with this syntax: `block_id[block_states]{data_tags}`. For more information about the syntax see [wiki](https://minecraft.wiki/w/Argument_types#minecraft:block_state). Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("spawn")

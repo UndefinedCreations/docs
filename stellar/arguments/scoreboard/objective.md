@@ -3,11 +3,11 @@ title: Objective Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Objective Argument {#objective}
+# Objective Argument
 
 Returns a scoreboard `Objective`. Example:
 
-:::tabs key:kotlin-java
+::: tabs key:kotlin-java
 == Java
 ```Java
 new StellarCommand("setamount")

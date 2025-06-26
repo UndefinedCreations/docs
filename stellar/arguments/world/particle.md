@@ -3,7 +3,7 @@ title: Particle Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Particle Argument {#particle}
+# Particle Argument
 
 Returns `ParticleData`, containing the particle itself and its data. The syntax is very simply just: `particle_type_id{configuration tags}`. Example:
 

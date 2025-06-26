@@ -24,7 +24,7 @@ features:
 
 <div class="vp-doc homepage-container">
 
-## Contributing {#contribute}
+## Contributing
 
 If you wish to contribute to these docs in any way, feel free to check out the [GitHub](https://github.com/UndefinedCreation/undefined-docs)!
 

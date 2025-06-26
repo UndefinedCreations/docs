@@ -5,8 +5,7 @@ import defineVersionedConfig from "vitepress-versioning-plugin";
 export default defineVersionedConfig(
   {
     title: "Undefined Creations",
-    description:
-      "The documentation for all projects under Undefined Creations.",
+    description: "The documentation for all projects under Undefined Creations.",
     cleanUrls: true,
     ignoreDeadLinks: true,
     versioning: {
@@ -318,6 +317,10 @@ export default defineVersionedConfig(
             collapsed: false,
             items: [
               {
+                text: "What is Echo?",
+                link: "/gradle-plugins/echo/what-is-echo",
+              },
+              {
                 text: "Getting Started",
                 link: "/gradle-plugins/echo/getting-started",
               },
@@ -367,48 +370,65 @@ export default defineVersionedConfig(
             text: "Nova",
             collapsed: false,
             items: [
-              { text: "Importing ", link: "/gradle-plugins/nova/importing" },
-              { text: "Setup ", link: "/gradle-plugins/nova/setup" },
+              { text: "What is Nova?", link: "/gradle-plugins/nova/what-is-nova" },
+              { text: "Getting Started", link: "/gradle-plugins/nova/getting-started" },
               {
-                text: "Server Jar ",
+                text: "Usage",
                 collapsed: false,
                 items: [
-                  {
-                    text: "Server Types",
-                    link: "/gradle-plugins/nova/serverJar/server-type",
-                  },
-                  {
-                    text: "Custom Jar",
-                    link: "/gradle-plugins/nova/serverJar/custom-jar",
-                  },
+                  { text: "Server Types", link: "/gradle-plugins/nova/usage/server-type" },
+                  { text: "Custom Jar", link: "/gradle-plugins/nova/usage/custom-jar" },
+                  { text: "Ram", link: "/gradle-plugins/nova/usage/ram" },
                 ],
               },
               {
-                text: "Run Folder ",
-                collapsed: false,
+                text: "Folder Customization",
+                collapsed: true,
                 items: [
                   {
                     text: "Per Version",
-                    link: "/gradle-plugins/nova/runFolder/version-folder",
+                    link: "/gradle-plugins/nova/folder/version-folder",
                   },
                   {
                     text: "Custom Folder",
-                    link: "/gradle-plugins/nova/runFolder/custom-folder",
+                    link: "/gradle-plugins/nova/folder/custom-folder",
+                  },
+                ],
+              },
+              {
+                text: "Plugins",
+                collapsed: true,
+                items: [
+                  {
+                    text: "Online Plugins",
+                    link: "/gradle-plugins/nova/plugins/online-plugins",
+                  },
+                  {
+                    text: "Local Plugins",
+                    link: "/gradle-plugins/nova/plugins/local-plugins",
+                  },
+                ],
+              },
+              {
+                text: "Configuration",
+                collapsed: true,
+                items: [
+                  {
+                    text: "Eula",
+                    link: "/gradle-plugins/nova/configuration/eula",
+                  },
+                  {
+                    text: "Input Task",
+                    link: "/gradle-plugins/nova/configuration/input-task",
+                  },
+                  {
+                    text: "No GUI",
+                    link: "/gradle-plugins/nova/configuration/no-gui",
                   },
                 ],
               },
             ],
-          },
-          {
-            text: "Plugins",
-            collapsed: false,
-            items: [
-              {
-                text: "Undefined Run Server",
-                link: "/gradle-plugins/run-server",
-              },
-            ],
-          },
+          }
         ],
       },
       socialLinks: [

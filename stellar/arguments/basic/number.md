@@ -3,7 +3,7 @@ title: Number Arguments
 description: The official docs for the Stellar Command API.
 ---
 
-# Number Arguments {#number}
+# Number Arguments
 
 There are four number arguments: `IntegerArgument`, `LongArgument`, `FloatArgument`, `DoubleArgument`. They respectively return those number types.
 

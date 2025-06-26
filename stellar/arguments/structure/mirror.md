@@ -3,7 +3,7 @@ title: Mirror Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Mirror Argument {#mirror}
+# Mirror Argument
 
 Must be one of the following: `none`, `front_back` and `left_right`. It returns `Mirror`. Example:
 

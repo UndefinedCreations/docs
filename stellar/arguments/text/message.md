@@ -3,7 +3,7 @@ title: Component Argument
 description: The official docs for the Stellar Command API.
 ---
 
-# Message Argument {#message}
+# Message Argument
 
 Is a phrase, like `StringArgument` with `StringType.PHRASE`, it replaces target selectors (@e, @s, etc.) with their actual result. It returns a `net.kyori.adventure.text.Component`. Example:
 
