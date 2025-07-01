@@ -1,9 +1,0 @@
-:root {
-    --vp-sidebar-width: 286px;
-    --vp-c-brand-1: var(--vp-c-indigo-1);
-}
-
-.dark {
-    /*--vp-c-indigo-1: #88aff0;*/
-    --vp-c-indigo-soft: rgba(68, 94, 191, 0.16);
-}
