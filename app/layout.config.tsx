@@ -1,4 +1,6 @@
+import { NavbarMenu, NavbarMenuContent, NavbarMenuLink, NavbarMenuTrigger } from 'fumadocs-ui/layouts/home/navbar';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { BookIcon } from 'lucide-react';
 
 /**
  * Shared layout configurations
@@ -23,6 +25,17 @@ export const baseOptions: BaseLayoutProps = {
       </>
     ),
   },
-  // see https://fumadocs.dev/docs/ui/navigation/links
-  links: [],
+  links: [
+    {
+      type: 'menu',
+      text: 'Projects',
+      items: [
+        {
+          text: 'Stellar',
+          description: 'Our Command Library for Spigot and Paper',
+          url: '/docs/stellar/latest',
+        },
+      ],
+    }
+  ],
 };

@@ -5,6 +5,10 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  images: {
+    domains: ["img.shields.io"],
+    dangerouslyAllowSVG: true
+  },
 };
 
 export default withMDX(config);
