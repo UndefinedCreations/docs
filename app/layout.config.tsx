@@ -35,6 +35,11 @@ export const baseOptions: BaseLayoutProps = {
           description: 'Our Command Library for Spigot and Paper',
           url: '/docs/stellar/latest',
         },
+        {
+          text: 'Echo',
+          description: 'A Gradle plugin that simplifies working with Spigot NMS.',
+          url: '/docs/echo/latest',
+        },
       ],
     }
   ],

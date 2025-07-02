@@ -1,0 +1,26 @@
+---
+title: Basic Setup
+description: Learn how to set up Echo in your project.
+full: false
+---
+
+## Installation
+
+To use Echo in your project, we'll first need to add the plugin to your Gradle project.
+You can easily add the Echo plugin by adding it to your `plugins` block.
+
+[![Latest Version](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreations.echo)](https://plugins.gradle.org/plugin/com.undefinedcreations.echo)
+
+```groovy tab="Groovy DSL"
+id 'com.undefinedcreations.echo' version 'LASTEST-VERSION'
+```
+```kts tab="Kotlin DSL"
+id("com.undefinedcreations.echo") version "LASTEST-VERSION"
+```
+
+## Usage
+
+Once the plugin is added, you can start using Echo in your project. You can do two things with Echo:
+
+1. **Access Server Internals**: Echo will automatically download, and import that server JAR using BuildTools.
+2. **Remap Server JAR**: The remap task will remap any code into either Mojang, Spigot or obfuscated mappings.
