@@ -1,0 +1,5 @@
+{
+  "title": "Internals",
+  "defaultOpen": true,
+  "pages": ["setup", "flags", "caching"]
+}

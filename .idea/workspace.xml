@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(nova): finish configuration">
-      <change beforePath="$PROJECT_DIR$/app/docs/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/docs/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.config.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bun.lock" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/echo/latest/internals/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/echo/latest/internals/setup.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/echo/latest/remap/actions.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/echo/latest/remap/input-tasks.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/echo/latest/remap/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/echo/latest/remap/new-jar.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/echo/latest/remap/set-up.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/echo/latest/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/echo/latest/meta.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,16 +49,19 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/undefinedcreations/docs",
-    "accountId": "e883d861-fa20-4061-90c6-8440632cea98"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/undefinedcreations/docs&quot;,
+    &quot;accountId&quot;: &quot;e883d861-fa20-4061-90c6-8440632cea98&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2q05cjRRHOxte9HbbQjxXKWI7ne" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "fumadocs",
-    "last_opened_file_path": "/Users/lutto/WebstormProjects/docs/stellar/arguments/list",
+    "last_opened_file_path": "C:/Users/lijnb/WebstormProjects/docs/content/docs/echo/latest/internals",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,17 +79,17 @@
     "nodejs_package_manager_path": "npm",
     "npm.docs:dev.executor": "Run",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "C:\\Users\\lijnb\\WebstormProjects\\docs\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\echo\latest\internals" />
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\echo\latest\remap" />
       <recent name="$PROJECT_DIR$/stellar/arguments/list" />
       <recent name="$PROJECT_DIR$/stellar/usage" />
       <recent name="$PROJECT_DIR$/stellar/arguments/math" />
-      <recent name="$PROJECT_DIR$/stellar/arguments/structure" />
-      <recent name="$PROJECT_DIR$/stellar/arguments" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gradle-plugins/nova/usage" />
