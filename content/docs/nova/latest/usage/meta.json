@@ -1,0 +1,5 @@
+{
+  "title": "Usage",
+  "defaultOpen": true,
+  "pages": ["server-type", "custom-jar", "ram"]
+}

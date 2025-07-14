@@ -1,0 +1,66 @@
+---
+title: Custom Folder
+---
+
+
+# Modifying the name
+
+The first and the most simple one is simply changing the folder name. You can do this by using the `serverFolderName` method. This will use a folder inside the main project path with that name.
+
+There are two `serverFolderName` methods: one provides a consumer with [`FolderData`](https://github.com/UndefinedCreations/Nova/blob/5ca5564a064c0256e5d328b0c59e957e5cff87c8/plugin/nova/src/main/kotlin/com/undefinedcreations/nova/AbstractServer.kt#L141), and one just takes in the folder name:
+
+
+```groovy tab="Groovy DSL [Parameter]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolderName("folderName")
+}
+```
+```groovy tab="Groovy DSL [Consumer]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolderName { "folderName" }
+}
+```
+```kotlin tab="Kotlin DSL [Parameter]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolderName("folderName")
+}
+```
+```kotlin tab="Kotlin DSL [Consumer]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolderName { "folderName" }
+}
+```
+
+# Modifying the entire path
+
+You can also modify the entire file path it's going to use. You can do this by using the `serverFolder` method.
+
+
+```groovy tab="Groovy DSL [Parameter]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder(File("serverFolder"))
+}
+```
+```groovy tab="Groovy DSL [Consumer]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
+}
+```
+```kotlin tab="Kotlin DSL [Parameter]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder(File("serverFolder"))
+}
+```
+```kotlin tab="Kotlin DSL [Consumer]"
+runServer {
+    minecraftVersion("1.21.4")
+    serverFolder { File(buildFolder, "${serverType.name.lowercase()}-{${minecraftVersion}}") }
+}
+```

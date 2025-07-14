@@ -1,0 +1,74 @@
+---
+title: Online plugins
+---
+
+Nova can automatically download plugins from SpigotMC, Paper Hangar and Modrinth.
+
+The simplest way to add plugins is to use the `plugins` method:
+
+
+```groovy tab="Groovy DSL"
+runServer {
+    minecraftVersion("1.21.4")
+    plugins(
+        "https://www.spigotmc.org/resources/luckperms.28140/",
+        "https://modrinth.com/plugin/viaversion"
+    )
+}
+```
+```kotlin tab="Kotlin DSL"
+runServer {
+    minecraftVersion("1.21.4")
+    plugins(
+        "https://www.spigotmc.org/resources/luckperms.28140/",
+        "https://modrinth.com/plugin/viaversion"
+    )
+}
+```
+The `plugins` method will automatically detect which platform it should download from.
+
+This method will download it once, then reuse that same plugin. You can force download on each startup by using the `plugin` method instead:
+
+
+```groovy tab="Groovy DSL [Single]"
+runServer {
+    minecraftVersion("1.21.4")
+    plugin(
+        "https://www.spigotmc.org/resources/luckperms.28140/",
+        true // override
+    )
+}
+```
+```groovy tab="Groovy DSL [List]"
+runServer {
+    minecraftVersion("1.21.4")
+    plugin(
+        [
+            "https://www.spigotmc.org/resources/luckperms.28140/",
+            "https://modrinth.com/plugin/viaversion"
+        ],
+        true // override
+    )
+}
+```
+```kotlin tab="Kotlin DSL [Single]"
+runServer {
+    minecraftVersion("1.21.4")
+    plugin(
+        "https://www.spigotmc.org/resources/luckperms.28140/",
+        override = true
+    )
+}
+```
+```kotlin tab="Kotlin DSL [List]"
+runServer {
+    minecraftVersion("1.21.4")
+    plugin(
+        listOf(
+            "https://www.spigotmc.org/resources/luckperms.28140/",
+            "https://modrinth.com/plugin/viaversion"
+        ),
+        override = true
+    )
+}
+```

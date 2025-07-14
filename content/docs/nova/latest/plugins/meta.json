@@ -1,0 +1,5 @@
+{
+  "title": "Plugins",
+  "defaultOpen": true,
+  "pages": ["online-plugins", "local-plugins"]
+}

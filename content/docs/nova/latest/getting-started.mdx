@@ -1,0 +1,39 @@
+---
+title: Getting Started
+---
+
+# Installation
+
+[![](https://img.shields.io/gradle-plugin-portal/v/com.undefinedcreations.nova)](https://plugins.gradle.org/plugin/com.undefinedcreations.nova)
+
+To use Nova in your project, start by adding the plugin under the plugins block in your `build.gradle` file:
+
+
+```groovy tab="Groovy DSL"
+id 'com.undefinedcreations.nova' version 'LATEST-VERSION'
+```
+```kotlin tab="Kotlin DSL"
+id("com.undefinedcreations.nova") version "LATEST-VERSION"
+```
+<Callout type="info">
+  If you are using [`Echo`](/gradle-plugins/echo/importing) and [`BuildTools`](/gradle-plugins/echo/buildTools/build-tools.md) is enable with a valid `minecraftVersion`, `Nova` will automatically grad that version select. This means you won't need to set the version again here.
+</Callout>
+
+To begin setting up Nova, set the `minecraftVersion` by modifying the `runServer` task configurations under the tasks block in your `build.gradle`:
+
+```groovy tab="Groovy DSL"
+tasks {
+    runServer {
+        minecraftVersion("1.21.4")
+    }
+}
+```
+```kotlin tab="Kotlin DSL"
+tasks {
+    runServer {
+        minecraftVersion("1.21.4")
+    }
+}
+```
+
+The `minecraftVersion`, as the name suggests, determines what Minecraft version the server will run.

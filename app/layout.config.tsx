@@ -35,6 +35,11 @@ export const baseOptions: BaseLayoutProps = {
           url: '/docs/stellar/latest',
         },
         {
+          text: 'Nova',
+          description: 'A Gradle plugin what allows you to run Minecraft server using Gradle',
+          url: '/docs/nova/latest',
+        },
+        {
           text: 'Echo',
           description: 'A Gradle plugin that simplifies working with Spigot NMS.',
           url: '/docs/echo/latest',
