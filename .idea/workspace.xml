@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): finish echo docs">
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/configuration/eula.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/configuration/input-task.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/configuration/meta.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/folder-customization/custom-folder.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/folder-customization/meta.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/folder-customization/version-folder.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/getting-started.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/meta.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/plugins/local-plugins.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/plugins/meta.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/plugins/online-plugins.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/usage/custom-jar.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/usage/meta.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/usage/ram.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/nova/latest/usage/server-type.mdx" afterDir="false" />
+    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): finish nova docs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(home)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(home)/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.config.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,15 +168,7 @@
       <workItem from="1750743003628" duration="5129000" />
       <workItem from="1750843164858" duration="2764000" />
       <workItem from="1751373396712" duration="602000" />
-      <workItem from="1752506053540" duration="3414000" />
-    </task>
-    <task id="LOCAL-00024" summary="feat(arguments): add height-map">
-      <option name="closed" value="true" />
-      <created>1734740102515</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1734740102515</updated>
+      <workItem from="1752506053540" duration="4773000" />
     </task>
     <task id="LOCAL-00025" summary="feat(arguments): add location">
       <option name="closed" value="true" />
@@ -577,7 +554,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752438043530</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="feat(fumadocs): finish nova docs">
+      <option name="closed" value="true" />
+      <created>1752512633060</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1752512633061</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(java-examples): add java examples to basic and block argument &amp; add general code block improvements" />
     <MESSAGE value="feat(list-arguments): add list argument" />
     <MESSAGE value="feat(list-arguments): add enum argument" />
     <MESSAGE value="feat(list-arguments): add online players argument" />
@@ -620,6 +604,7 @@
     <MESSAGE value="feat(nova): improve ram docs" />
     <MESSAGE value="feat(nova): finish configuration" />
     <MESSAGE value="feat(fumadocs): finish echo docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(fumadocs): finish echo docs" />
+    <MESSAGE value="feat(fumadocs): finish nova docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(fumadocs): finish nova docs" />
   </component>
 </project>
