@@ -1,0 +1,29 @@
+---
+title: Team Argument
+---
+
+
+Returns `Team`, must be an unquoted string, executions only run when there is a valid player. Example:
+
+```java tab="Java"
+new StellarCommand("setcolor")
+    .addTeamArgument("team")
+    .addColorArgument("color")
+    .addExecution<Player>(Player.class, context -> {
+        Team team = getArgument<Team>("team");
+        Style color = getArgument<Style>("color");
+        team.setColor(color);
+    });
+```
+```kotlin tab="Kotlin
+StellarCommand("setcolor")
+    .addTeamArgument(name = "team")
+    .addColorArgument(name = "color")
+    .addExecution<Player> {
+        val team = getArgument<Team>("team")
+        val color = getArgument<Style>("color")
+        team.color = color
+    }
+```
+
+![Team Argument](https://cdn.undefinedcreations.com/stellar/gifs/scoreboard/team.gif)

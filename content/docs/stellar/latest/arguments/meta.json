@@ -1,0 +1,17 @@
+{
+  "title": "Arguments",
+  "defaultOpen": true,
+  "pages": [
+    "literal",
+    "basic",
+    "list",
+    "entities",
+    "world",
+    "items",
+    "block",
+    "mics",
+    "math",
+    "text",
+    "scoreboard"
+  ]
+}

@@ -1,0 +1,28 @@
+---
+title: Block Predicate
+---
+
+Returns `Predicate<Block>`, using [this syntax](https://minecraft.wiki/w/Argument_types#minecraft:block_predicate). Example:
+
+```java tab="Java"
+new StellarCommand("isblock")
+    .addBlockPredicateArgument("predicate")
+    .addExecution(Player.class, context -> {
+        Predicate<Block> data = context.getArgument<Predicate<Block>>("predicate")
+        boolean isBlock = data.test(block)
+        sender.sendMessage(isBlock.toString())
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("isblock")
+    .addBlockPredicateArgument(name = "predicate")
+    .addExecution<Player> {
+        val data = getArgument<Predicate<Block>>("predicate")
+        val isBlock = data.test(block)
+        sender.sendMessage(isBlock.toString())
+    }
+```
+
+[//]: # (<ArgumentParser placeholder="#minecraft:stone" regex="^[#]?&#40;minecraft:[a-zA-Z]+|[a-zA-Z]+&#41;&#40;\[&#40;[a-zA-Z]+=\S+&#41;?\]&#41;?$" />)
+
+![Block Predicate Argument](https://cdn.undefinedcreations.com/stellar/gifs/block/block_predicate.gif)

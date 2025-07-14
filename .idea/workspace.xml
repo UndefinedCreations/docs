@@ -4,26 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): add github link">
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/comparisons.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/context-tree.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/creating-a-simple-command.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-cooldowns.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-executions.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-information.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-registration.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-requirements.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-unregistration.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/config.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/custom-suggestions.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/meta.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): add stellar usage">
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/basic/boolean.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/basic/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/basic/number.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/basic/string.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/block/block-data.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/block/block-predicate.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/block/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/entities/entity-anchor.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/entities/entity.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/entities/game-mode.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/entities/game-profile.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/entities/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/items/item-predicate.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/items/item-slots.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/items/item.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/items/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/list/enum.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/list/list.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/list/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/list/online-players.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/literal.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/math/angle.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/math/axis.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/math/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/math/operation.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/math/range.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/math/rotation.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/math/time.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/mics/key.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/mics/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/mics/uuid.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/scoreboard/display-slot.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/scoreboard/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/scoreboard/objective-criteria.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/scoreboard/objective.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/scoreboard/score-holders.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/scoreboard/team.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/structure/loot-table.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/structure/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/structure/mirror.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/structure/structure-rotation.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/text/color.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/text/component.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/text/message.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/text/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/text/style.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/world/environment.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/world/height-map.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/world/location.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/world/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/arguments/world/particle.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/docs/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/docs/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/meta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.config.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/docs/stellar/latest/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/stellar/latest/meta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
     </list>
-    <list id="ec4428ca-5377-4fe7-ab89-97623e8b47a8" name="Changes by still" comment="">
+    <list id="afea889c-c72a-44da-b83c-3341f6e29252" name="Changes by still" comment="">
       <change beforePath="$PROJECT_DIR$/app/layout.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.config.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +105,14 @@
     "accountId": "4c52bc25-a313-4b60-a308-fea5e012b1bc"
   }
 }]]></component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/app/layout.config.tsx">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="3" changelist="afea889c-c72a-44da-b83c-3341f6e29252" />
+        <range start1="24" end1="24" start2="26" end2="49" changelist="440bf10a-adf1-4b81-902a-f779c9f7d353" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -103,11 +150,11 @@
       <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\echo\latest\remap" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\stellar\latest\arguments" />
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\stellar\latest" />
       <recent name="$PROJECT_DIR$/gradle-plugins/nova/usage" />
       <recent name="$PROJECT_DIR$/gradle-plugins/nova" />
       <recent name="$PROJECT_DIR$/gradle-plugins/nova/configurations" />
-      <recent name="$PROJECT_DIR$/stellar/arguments/list" />
-      <recent name="$PROJECT_DIR$/stellar/arguments/primitives" />
     </key>
   </component>
   <component name="RunManager">
@@ -185,23 +232,7 @@
       <workItem from="1750743003628" duration="5129000" />
       <workItem from="1750843164858" duration="2764000" />
       <workItem from="1751373396712" duration="602000" />
-      <workItem from="1752506053540" duration="11576000" />
-    </task>
-    <task id="LOCAL-00026" summary="feat(arguments): add particle">
-      <option name="closed" value="true" />
-      <created>1734768337825</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1734768337825</updated>
-    </task>
-    <task id="LOCAL-00027" summary="feat(arguments): add color">
-      <option name="closed" value="true" />
-      <created>1734768720155</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1734768720155</updated>
+      <workItem from="1752506053540" duration="18235000" />
     </task>
     <task id="LOCAL-00028" summary="feat(arguments): add component">
       <option name="closed" value="true" />
@@ -579,7 +610,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752513926209</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="feat(fumadocs): add stellar usage">
+      <option name="closed" value="true" />
+      <created>1752520876043</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1752520876043</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Changes by still">
+      <option name="closed" value="true" />
+      <created>1752520941053</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1752520941053</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,8 +644,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(list-arguments): add enum argument" />
-    <MESSAGE value="feat(list-arguments): add online players argument" />
     <MESSAGE value="feat(list-arguments): add online players argument to the config.mts" />
     <MESSAGE value="feat(java-examples): add java examples to entities and items" />
     <MESSAGE value="feat(java-examples): add java examples to math" />
@@ -622,6 +667,8 @@
     <MESSAGE value="feat(fumadocs): finish echo docs" />
     <MESSAGE value="feat(fumadocs): finish nova docs" />
     <MESSAGE value="feat(fumadocs): add github link" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(fumadocs): add github link" />
+    <MESSAGE value="feat(fumadocs): add stellar usage" />
+    <MESSAGE value="Changes by still" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by still" />
   </component>
 </project>

@@ -1,0 +1,17 @@
+---
+title: Environment Argument
+---
+
+The `EnvironmentArgument` must be: `overworld`, `the_nether` or `the_end`. It returns an `Environment` enum. Example:
+
+```kotlin
+StellarCommand("isNether")
+    .addDimensionArgument(name = "dimension")
+    .addExecution<Player> {
+        val environment = getArgument<Environment>("dimension")
+        val isNether = environment == Environment.NETHER
+        sender.sendMessage(isNether.toString())
+    }
+```
+
+![Environment Argument](https://cdn.undefinedcreations.com/stellar/gifs/world/environment.gif)

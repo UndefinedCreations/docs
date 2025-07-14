@@ -1,0 +1,70 @@
+---
+title: Number Arguments
+---
+
+There are four number arguments: `IntegerArgument`, `LongArgument`, `FloatArgument`, `DoubleArgument`. They respectively return those number types.
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Integer"
+        new StellarCommand("server")
+            .addIntegerArgument("int")
+            .addExecution(Player.class, context -> {
+                context.getSender().sendMessage(context.get("int").toString()); // should be converter to context["int"] if possible
+            });
+        ```
+        ```java tab="Long"
+        new StellarCommand("server")
+            .addLongArgument("long")
+            .addExecution(Player.class, context -> {
+                context.getSender().sendMessage(context.get("long").toString())
+            });
+        ```
+        ```java tab="Float"
+        new StellarCommand("server")
+            .addFloatArgument("float")
+            .addExecution(Player.class, context -> {
+                context.getSender().sendMessage(context.get("float").toString())
+            });
+        ```
+        ```java tab="Double"
+        new StellarCommand("server")
+            .addDoubleArgument("double")
+            .addExecution(Player.class, context -> {
+                context.getSender().sendMessage(context.get("double").toString())
+            });
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```kotlin tab="Integer"
+        StellarCommand("server")
+            .addIntegerArgument("int")
+            .addExecution<Player> {
+                sender.sendMessage(getArgument<Int>("int"))
+            }
+        ```
+        ```kotlin tab="Long"
+        StellarCommand("server")
+            .addLongArgument("long")
+            .addExecution<Player> {
+                sender.sendMessage(getArgument<Long>("long"))
+            }
+        ```
+        ```kotlin tab="Float"
+        StellarCommand("server")
+            .addFloatArgument("float")
+            .addExecution<Player> {
+                sender.sendMessage(getArgument<Float>("float"))
+            }
+        ```
+        ```kotlin tab="Double"
+        StellarCommand("server")
+            .addDoubleArgument("double")
+            .addExecution<Player> {
+                sender.sendMessage(getArgument<Double>("double"))
+            }
+        ```
+    </Tab>
+</Tabs>
+
+![Number Argument](https://cdn.undefinedcreations.com/stellar/gifs/basic/number.gif)

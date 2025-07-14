@@ -1,0 +1,5 @@
+{
+  "title": "Text",
+  "defaultOpen": false,
+  "pages": ["color", "component", "message", "style"]
+}

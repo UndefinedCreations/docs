@@ -1,0 +1,5 @@
+{
+  "title": "Item",
+  "defaultOpen": false,
+  "pages": ["item", "item-predicate", "item-slots"]
+}

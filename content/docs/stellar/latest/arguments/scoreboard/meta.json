@@ -1,0 +1,5 @@
+{
+  "title": "Scoreboard",
+  "defaultOpen": false,
+  "pages": ["display-slot", "objective-criteria", "score-holders", "team"]
+}

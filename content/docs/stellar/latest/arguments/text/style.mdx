@@ -1,0 +1,28 @@
+---
+title: Style Argument
+---
+
+A valid JSON text component, and only returns its `net.kyori.adventure.text.format.Style`. Example:
+
+```java tab="Java"
+Audience audience = BukkitAudiences.create(this);
+new StellarCommand("reminder")
+        .addStyleArgument("style")
+        .addExecution(Player.class, context -> {
+            Style style = context.getArgument("style");
+            Component message = Component.text("This is a reminder").style(style);
+            audience.sendMessage(message);
+        });
+```
+```kotlin tab="Kotlin"
+val audience = BukkitAudiences.create(this)
+StellarCommand("reminder")
+    .addStyleArgument(name = "style")
+    .addExecution<Player> {
+        val style = getArgument<Style>("style")
+        val message = Component.text("This is a reminder").style(style)
+        audience.sender(sender).sendMessage(message)
+    }
+```
+
+![Style Argument](https://cdn.undefinedcreations.com/stellar/gifs/text/style.gif)

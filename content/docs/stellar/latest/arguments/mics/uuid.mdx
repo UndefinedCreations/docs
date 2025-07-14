@@ -1,0 +1,23 @@
+---
+title: UUID Argument
+---
+Must be a valid `UUID`, which it returns. Example:
+
+```java tab="Java"
+new StellarCommand("uuid")
+    .addUUIDArgument("uuid")
+    .addExecution<Player>(Player.class, context -> {
+        UUID uuid = getArgument<UUID>("uuid");
+        currentUUID = uuid; // separate variable
+    };
+```
+```kotlin tab="Kotlin"
+StellarCommand("uuid")
+    .addUUIDArgument(name = "uuid")
+    .addExecution<Player> {
+        val uuid = getArgument<UUID>("uuid")
+        currentUUID = uuid // separate variable
+    }
+```
+
+![UUID Argument](https://cdn.undefinedcreations.com/stellar/gifs/misc/uuid.gif)

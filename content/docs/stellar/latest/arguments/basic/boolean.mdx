@@ -1,0 +1,22 @@
+---
+title: Boolean Argument
+---
+
+The `BooleanArgument` allows you to input a `boolean`. Example:
+
+```java tab="Java"
+new StellarCommand("server")
+    .addBooleanArgument("boolean")
+    .addExecution(Player.class, context -> {
+        context.getSender().sendMessage(context.getArgument<Boolean>("bool"));
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("server")
+    .addBooleanArgument("boolean")
+    .addExecution<Player> {
+        sender.sendMessage(getArgument<Boolean>("bool"))
+    }
+```
+
+![Boolean Argument](https://cdn.undefinedcreations.com/stellar/gifs/basic/boolean.gif)
