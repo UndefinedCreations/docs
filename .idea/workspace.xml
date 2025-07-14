@@ -4,9 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): finish nova docs">
+    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): add github link">
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/comparisons.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/context-tree.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/creating-a-simple-command.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-cooldowns.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-executions.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-information.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-registration.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-requirements.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/command-unregistration.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/config.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/custom-suggestions.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(home)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(home)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/docs/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/docs/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/meta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/stellar/latest/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/stellar/latest/meta.json" afterDir="false" />
+    </list>
+    <list id="ec4428ca-5377-4fe7-ab89-97623e8b47a8" name="Changes by still" comment="">
       <change beforePath="$PROJECT_DIR$/app/layout.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.config.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +82,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "fumadocs",
-    "last_opened_file_path": "C:/Users/lijnb/WebstormProjects/docs/content/docs/nova/latest/configuration",
+    "last_opened_file_path": "C:/Users/lijnb/WebstormProjects/docs/content/docs/stellar/latest/usage",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,11 +96,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\stellar\latest\usage" />
       <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\nova\latest\configuration" />
       <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\nova\latest\folder-customization" />
       <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\echo\latest\internals" />
       <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\echo\latest\remap" />
-      <recent name="$PROJECT_DIR$/stellar/arguments/list" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gradle-plugins/nova/usage" />
@@ -168,15 +185,7 @@
       <workItem from="1750743003628" duration="5129000" />
       <workItem from="1750843164858" duration="2764000" />
       <workItem from="1751373396712" duration="602000" />
-      <workItem from="1752506053540" duration="4773000" />
-    </task>
-    <task id="LOCAL-00025" summary="feat(arguments): add location">
-      <option name="closed" value="true" />
-      <created>1734767935467</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1734767935467</updated>
+      <workItem from="1752506053540" duration="11576000" />
     </task>
     <task id="LOCAL-00026" summary="feat(arguments): add particle">
       <option name="closed" value="true" />
@@ -562,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752512633061</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="feat(fumadocs): add github link">
+      <option name="closed" value="true" />
+      <created>1752513926209</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1752513926209</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(list-arguments): add list argument" />
     <MESSAGE value="feat(list-arguments): add enum argument" />
     <MESSAGE value="feat(list-arguments): add online players argument" />
     <MESSAGE value="feat(list-arguments): add online players argument to the config.mts" />
@@ -605,6 +621,7 @@
     <MESSAGE value="feat(nova): finish configuration" />
     <MESSAGE value="feat(fumadocs): finish echo docs" />
     <MESSAGE value="feat(fumadocs): finish nova docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(fumadocs): finish nova docs" />
+    <MESSAGE value="feat(fumadocs): add github link" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(fumadocs): add github link" />
   </component>
 </project>

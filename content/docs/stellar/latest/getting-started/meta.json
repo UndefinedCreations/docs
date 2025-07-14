@@ -1,4 +1,5 @@
 {
   "title": "Getting Started",
-  "defaultOpen": true
+  "defaultOpen": true,
+  "pages": ["stellar-setup", "creating-a-simple-command", "context-tree", "comparisons"]
 }

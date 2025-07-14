@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       sidebar={{
           tabs: [
             {
-              title: '1.0.2 (latest)',
+              title: '1.0.3 (latest)',
               // TODO add icon
               url: '/docs/stellar/latest',
             },
