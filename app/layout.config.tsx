@@ -1,7 +1,4 @@
-import { NavbarMenu, NavbarMenuContent, NavbarMenuLink, NavbarMenuTrigger } from 'fumadocs-ui/layouts/home/navbar';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { BookIcon } from 'lucide-react';
-import Image from 'next/image';
 
 /**
  * Shared layout configurations
@@ -16,7 +13,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         <img
-          src="https://cdn.lutto.dev/undefinedcreations/logo.png"
+          src="https://cdn.undefinedcreations.com/undefinedcreations/logo.png"
           width={24}
           height={24}
           alt="Logo"
@@ -25,27 +22,4 @@ export const baseOptions: BaseLayoutProps = {
       </>
     ),
   },
-  links: [
-    {
-      type: 'menu',
-      text: 'Projects',
-      items: [
-        {
-          text: 'Stellar',
-          description: 'Our Command Library for Spigot and Paper',
-          url: '/docs/stellar/latest',
-        },
-        {
-          text: 'Nova',
-          description: 'A Gradle plugin what allows you to run Minecraft server using Gradle',
-          url: '/docs/nova/latest',
-        },
-        {
-          text: 'Echo',
-          description: 'A Gradle plugin that simplifies working with Spigot NMS.',
-          url: '/docs/echo/latest',
-        },
-      ],
-    }
-  ],
 };
