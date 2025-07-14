@@ -26,7 +26,14 @@ StellarCommand("test")
 
 Or with an execution that returns a list of Suggestion:
 
-```kotlin
+```java tab="Java"
+new StellarCommand("test")
+    .addStringArgument("string")
+    .addSuggestion(Player.class, (commandContext, s) -> {
+       return List.of(new Suggestion("title", "description"));
+    });
+```
+```kotlin tab="Kotlin"
 StellarCommand("test")
     .addStringArgument("string")
     .addSuggestion<Player> {
