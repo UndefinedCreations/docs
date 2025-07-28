@@ -1,0 +1,42 @@
+---
+title: Cape
+---
+
+Lynx allows you to get and modify the players cape.
+
+# Getting
+
+You are able to get the original cape of the player:
+
+```java tab="Java"
+Cape original = PlayerMetaUtil.getOriginalCape(player);
+```
+```kotlin tab="Kotlin"
+val original = player.getOriginalCape()
+```
+
+You can also get the current cape:
+
+```java tab="Java"
+Cape current = PlayerMetaUtil.getCape(player);
+```
+```kotlin tab="Kotlin"
+val current = player.getCape()
+```
+
+# Modify value
+
+You are able to change the player **CLIENT SIDE** cape.
+
+<Callout title="Important" type="warn">
+    When you chance the players cape it will only show up for there own client.
+</Callout>
+
+```java tab="Java"
+PlayerMetaUtil.setCape(player, Cape.MINECON_2012)
+```
+```kotlin tab="Kotlin"
+player.setCape(Cape.MINECON_2012)
+```
+
+![Cape Change](https://cdn.undefinedcreations.com/lynx/playerMeta/cape-change.gif)

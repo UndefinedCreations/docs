@@ -1,0 +1,126 @@
+---
+title: Setup
+---
+
+To use the Lynx API in your project, we first need to import this into the project.
+
+Here is a list of all the current modules:
+
+| Module Name | Version |
+|-------------|---------|
+| Display     | 1.19.4+ |
+| Event       | 1.13+   |
+| Items       | 1.13+   |
+| Logger      | 1.13+   |
+| NPC         | 1.13+   |
+| PlayerMeta  | 1.13+   |
+| Scheduler   | 1.13+   |
+| Scoreboard  | 1.13+   |
+| SQL         | 1.13+   |
+| Tab         | 1.13+   |
+
+# Accessing the API
+
+First add the repository:
+
+```groovy tab="Gradle Groovy DSL"
+maven {
+    name = "undefined-repo"
+    url = "https://repo.undefinedcreations.com/releases"
+}
+```
+```kotlin tab="Gradle Kotlin DSL"
+maven {
+    name = "undefined-repo"
+    url = uri("https://repo.undefinedcreations.com/releases")
+}
+```
+```xml tab="Maven"
+<repository>
+    <id>lynx</id>
+    <name>Lynx Repository</name>
+    <url>https://repo.undefinedcreation.com/releases</url>
+</repository>
+```
+
+[![Latest Version](https://img.shields.io/badge/dynamic/xml?label=Latest%20Version&style=for-the-badge&logo=gradle&url=https%3A%2F%2Frepo.undefinedcreations.com%2Freleases%2Fcom%2Fundefined%2Flynx%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2F%2Fversioning%2F%2Flatest)](https://github.com/UndefinedCreations/Lynx/releases)
+
+Then add the library to your dependencies:
+
+<Callout type="info">
+    This will automatically import all lynx modules
+</Callout>
+
+```groovy tab="Gradle Groovy DSL"
+compile 'com.undefined:lynx:(latest version)' // or implementation if shadowing
+```
+```groovy tab="Gradle Kotlin DSL"
+compileOnly("com.undefined:lynx:(latest version)") // or implementation if shadowing
+```
+```xml tab="Maven"
+<dependency>
+    <groupId>com.undefined</groupId>
+    <artifactId>stellar</artifactId>
+    <version>(latest version)</version>
+    <scope>provided</scope> // should be removed if shadowing
+</dependency>
+```
+
+## Importing Specific Module
+
+Lynx will also allow you to import a specific modules instead of all of them.
+
+Doing this you will first have to import the `core` module:
+
+```groovy tab="Gradle Groovy DSL"
+compile 'com.undefined:lynx:(latest version):core' // or implementation if shadowing
+```
+```groovy tab="Gradle Kotlin DSL"
+compileOnly("com.undefined:lynx:(latest version):core") // or implementation if shadowing
+```
+```xml tab="Maven"
+<dependency>
+    <groupId>com.undefined</groupId>
+    <artifactId>stellar</artifactId>
+    <version>(latest version)</version>
+    <classifier>core</classifier>
+    <scope>provided</scope> // should be removed if shadowing
+</dependency>
+```
+
+Now you can choose a specific module to import by replace `(module name)` with the correct module name:
+
+```groovy tab="Gradle Groovy DSL"
+compile 'com.undefined:lynx:(latest version):(module name)' // or implementation if shadowing
+```
+```groovy tab="Gradle Kotlin DSL"
+compileOnly("com.undefined:lynx:(latest version):(module name)") // or implementation if shadowing
+```
+```xml tab="Maven"
+<dependency>
+    <groupId>com.undefined</groupId>
+    <artifactId>stellar</artifactId>
+    <version>(latest version)</version>
+    <classifier>(module name)</classifier>
+    <scope>provided</scope> // should be removed if shadowing
+</dependency>
+```
+
+# Using Lynx
+
+To actually use Lynx, you have two options:
+
+1. Adding the plugin on your server
+2. Shadowing the dependency.
+
+## Adding the plugin to your server
+
+Another option is to add the Lynx plugin to your server. This is a good option for when you have multiple plugins that use Lynx. You can get the latest JAR from the GitHub releases: https://github.com/UndefinedCreations/Lynx/releases.
+
+## Shadowing the dependency
+
+Shadowing means that you lynx will be included in the built JAR. If you use Gradle, it's suggested to use [the gradleup shadow plugin](https://gradleup.com/shadow/getting-started/), and if you are using Maven it's suggested to use [the maven shade plugin](https://maven.apache.org/plugins/maven-shade-plugin/usage.html).
+
+<Callout title="Important" type="warn">
+  You should modify your Gradle dependency to `implementation` instead of `compile`/`compileOnly` and remove the `scope` block from your Maven dependency.
+</Callout>

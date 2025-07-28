@@ -1,0 +1,5 @@
+{
+  "title": "Player Meta",
+  "defaultOpen": false,
+  "pages": ["index", "gameProfile", "name", "skin", "cape", "events", "examples"]
+}

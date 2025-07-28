@@ -4,9 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): add stellar arguments">
+    <list default="true" id="440bf10a-adf1-4b81-902a-f779c9f7d353" name="Changes" comment="feat(fumadocs): add java to the environment argument">
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/getting-started/config.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/getting-started/lynx-setup.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/getting-started/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/event/custom-event.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/event/listening-to-events.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/event/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/item/item-builder.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/item/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/logger/logger.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/logger/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/cape.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/events/cape-change-event.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/events/game-profile-change-event.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/events/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/events/name-change-event.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/events/skin-change-event.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/examples/disguise.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/examples/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/gameProfile.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/name.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/docs/lynx/latest/modules/playerMeta/skin.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.config.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/docs/stellar/latest/usage/custom-suggestions.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/stellar/latest/usage/custom-suggestions.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/stellar-setup.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/docs/stellar/latest/getting-started/stellar-setup.mdx" afterDir="false" />
     </list>
     <list id="afea889c-c72a-44da-b83c-3341f6e29252" name="Changes by still" comment="">
       <change beforePath="$PROJECT_DIR$/app/layout.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.config.tsx" afterDir="false" />
@@ -45,17 +72,17 @@
     }
   ]
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/UndefinedCreations/docs.git",
-    "accountId": "4c52bc25-a313-4b60-a308-fea5e012b1bc"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/UndefinedCreations/docs.git&quot;,
+    &quot;accountId&quot;: &quot;4c52bc25-a313-4b60-a308-fea5e012b1bc&quot;
   }
-}]]></component>
+}</component>
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/app/layout.config.tsx">
       <ranges>
         <range start1="1" end1="1" start2="1" end2="3" changelist="afea889c-c72a-44da-b83c-3341f6e29252" />
-        <range start1="24" end1="24" start2="26" end2="49" changelist="440bf10a-adf1-4b81-902a-f779c9f7d353" />
+        <range start1="24" end1="24" start2="26" end2="54" changelist="440bf10a-adf1-4b81-902a-f779c9f7d353" />
       </ranges>
     </file>
   </component>
@@ -75,7 +102,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "fumadocs",
-    "last_opened_file_path": "C:/Users/lijnb/WebstormProjects/docs/content/docs/stellar/latest/usage",
+    "last_opened_file_path": "C:/Users/lijnb/WebstormProjects/docs/content/docs/lynx/latest/modules/item",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,18 +116,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\stellar\latest\usage" />
-      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\nova\latest\configuration" />
-      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\nova\latest\folder-customization" />
-      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\echo\latest\internals" />
-      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\echo\latest\remap" />
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\lynx\latest\modules\item" />
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\lynx\latest\modules\playerMeta\examples" />
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\lynx\latest\modules\playerMeta\events" />
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\lynx\latest\modules\playerMeta" />
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\lynx\latest\modules\event" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\lynx\latest\modules" />
       <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\stellar\latest\arguments" />
       <recent name="C:\Users\lijnb\WebstormProjects\docs\content\docs\stellar\latest" />
       <recent name="$PROJECT_DIR$/gradle-plugins/nova/usage" />
       <recent name="$PROJECT_DIR$/gradle-plugins/nova" />
-      <recent name="$PROJECT_DIR$/gradle-plugins/nova/configurations" />
     </key>
   </component>
   <component name="RunManager">
@@ -178,31 +205,12 @@
       <workItem from="1750743003628" duration="5129000" />
       <workItem from="1750843164858" duration="2764000" />
       <workItem from="1751373396712" duration="602000" />
-      <workItem from="1752506053540" duration="18569000" />
-    </task>
-    <task id="LOCAL-00029" summary="feat(arguments): add message and style">
-      <option name="closed" value="true" />
-      <created>1734771740575</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1734771740575</updated>
-    </task>
-    <task id="LOCAL-00030" summary="feat(arguments): add display-slot and objective">
-      <option name="closed" value="true" />
-      <created>1734772484935</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1734772484935</updated>
-    </task>
-    <task id="LOCAL-00031" summary="feat(arguments): add objective-criteria and score-holders">
-      <option name="closed" value="true" />
-      <created>1734784521446</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1734784521446</updated>
+      <workItem from="1752506053540" duration="18858000" />
+      <workItem from="1752689009714" duration="750000" />
+      <workItem from="1753186779816" duration="242000" />
+      <workItem from="1753523230211" duration="21997000" />
+      <workItem from="1753643986458" duration="603000" />
+      <workItem from="1753714151461" duration="4602000" />
     </task>
     <task id="LOCAL-00032" summary="feat(arguments): add team">
       <option name="closed" value="true" />
@@ -572,7 +580,31 @@
       <option name="project" value="LOCAL" />
       <updated>1752531591368</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="feat(fumadocs): add stellar more java examples">
+      <option name="closed" value="true" />
+      <created>1752532014692</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1752532014692</updated>
+    </task>
+    <task id="LOCAL-00079" summary="feat(fumadocs): me dum">
+      <option name="closed" value="true" />
+      <created>1752532044504</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1752532044504</updated>
+    </task>
+    <task id="LOCAL-00080" summary="feat(fumadocs): add java to the environment argument">
+      <option name="closed" value="true" />
+      <created>1752689066982</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1752689066982</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,9 +622,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(java-examples): add java examples to entities and items" />
-    <MESSAGE value="feat(java-examples): add java examples to math" />
-    <MESSAGE value="feat(java-examples): add java examples to misc" />
     <MESSAGE value="feat(java-examples): add java examples to scoreboard" />
     <MESSAGE value="feat(getting-started): update creating-a-simple-command" />
     <MESSAGE value="fix(config): config not working" />
@@ -615,6 +644,9 @@
     <MESSAGE value="feat(fumadocs): add stellar usage" />
     <MESSAGE value="Changes by still" />
     <MESSAGE value="feat(fumadocs): add stellar arguments" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(fumadocs): add stellar arguments" />
+    <MESSAGE value="feat(fumadocs): add stellar more java examples" />
+    <MESSAGE value="feat(fumadocs): me dum" />
+    <MESSAGE value="feat(fumadocs): add java to the environment argument" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(fumadocs): add java to the environment argument" />
   </component>
 </project>

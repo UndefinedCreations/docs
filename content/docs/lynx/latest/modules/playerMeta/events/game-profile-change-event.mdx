@@ -1,0 +1,26 @@
+---
+title: PlayerGameProfileChangeEvent
+---
+
+The [`PlayerGameProfileChangeEvent`](https://github.com/UndefinedCreations/Lynx/blob/master/modules/playerMeta/src/main/kotlin/com/undefined/lynx/nick/events/PlayerGameProfileChangeEvent.kt) will be run when any form of change happens to the players game profile.
+
+The event contains the player who the `GameProfile` is from:
+
+<Callout type="info">
+    This example uses [Lynx event](../../event/listening-to-events) system
+</Callout>
+
+```java tab="Java"
+Events.event(PlayerGameProfileChangeEvent.class, event -> {
+    if (!event.getPlayer().isOp()) {
+        event.setCancelled(true);
+    }
+});
+```
+```kotlin tab="Kotlin"
+event<PlayerGameProfileChangeEvent> {
+    if (!player.isOp()) {
+        isCancelled = true
+    }
+}
+```

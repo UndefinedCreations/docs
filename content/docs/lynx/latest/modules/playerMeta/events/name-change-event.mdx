@@ -1,0 +1,29 @@
+---
+title: PlayerNameChangeEvent
+---
+
+The [`PlayerNameChangeEvent`](https://github.com/UndefinedCreations/Lynx/blob/master/modules/playerMeta/src/main/kotlin/com/undefined/lynx/nick/events/PlayerNameChangeEvent.kt) will be run when any form of change happens to the player name.
+
+The event contains:
+- The Player
+- The old name
+- The new name
+
+<Callout type="info">
+    This example uses [Lynx event](../../event/listening-to-events) system
+</Callout>
+
+```java tab="Java"
+Events.event(PlayerNameChangeEvent.class, event -> {
+    if (!event.getOldName().equals(event.getNewName())) {
+        event.setCancelled(true);
+    }
+});
+```
+```kotlin tab="Kotlin"
+event<PlayerNameChangeEvent> {
+    if (oldName != newName) {
+        isCancelled = true
+    }
+}
+```

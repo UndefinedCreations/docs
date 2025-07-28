@@ -1,0 +1,29 @@
+---
+title: PlayerCapeChangeEvent
+---
+
+The [`PlayerCapeChangeEvent`](https://github.com/UndefinedCreations/Lynx/blob/master/modules/playerMeta/src/main/kotlin/com/undefined/lynx/nick/events/PlayerCapeChangeEvent.kt) will be run when any for of change happens to the player skin.
+
+The event contains:
+- The Player
+- The old cape
+- The new cape
+
+<Callout type="info">
+    This example uses [Lynx event](../../event/listening-to-events) system
+</Callout>
+
+```java tab="Java"
+Events.event(PlayerCapeChangeEvent.class, event -> {
+    if (event.getNewCape() != event.getPlayer().getOriginalCape()) {
+        event.setCancelled(true);
+    }
+});
+```
+```kotlin tab="Kotlin"
+event<PlayerSkinChangeEvent> {
+    if (newCape != player.getOriginalCape()) {
+        isCancelled = true
+    }
+}
+```

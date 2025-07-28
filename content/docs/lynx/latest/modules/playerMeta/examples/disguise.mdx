@@ -1,0 +1,284 @@
+---
+title: Disguise Example
+---
+
+We just learned everything from `PlayerMeta`. So we are going to be putting it to practise.
+We will create a basic disguise command.
+
+# Command SetUp
+<Callout type="info">
+    For this example I will be using [Stellar](../../../../../stellar/latest) to create the commands. [Github](https://github.com/UndefinedCreations/Stellar)
+</Callout>
+
+We will start by creating the base command with three arguments:
+- Name
+- Skin
+- Reset
+
+We will also add the executors and sub arguments:
+
+```java tab="Java"
+StellarCommand mainLevel = new StellarCommand("disguise");
+
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution(Player.class, context -> {
+            // Name Change
+        });
+
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution(Player.class, context -> {
+            // Skin Change
+        });
+
+mainLevel.addArgument("reset")
+        .addExecution(Player.class, context -> {
+            // Reset
+        });
+
+mainLevel.register();
+```
+```kotlin tab="Kotlin"
+val mainLevel = StellarCommand("disguise")
+
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution<Player> {
+            // Name Change
+        }
+
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution<Player> {
+            // Skin Change
+        }
+
+mainLevel.addArgument("reset")
+        .addExecution<Player> {
+            // Reset
+        }
+
+mainLevel.register()
+```
+
+Now lets get all the sub argument values:
+
+```java tab="Java"
+StellarCommand mainLevel = new StellarCommand("disguise");
+
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution(Player.class, context -> {
+            String newName = context.getArgument("name");
+        });
+
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution(Player.class, context -> {
+            String texture = context.getArgument("texture");
+            String signature = context.getArgument("signature");
+        });
+
+mainLevel.addArgument("reset")
+        .addExecution(Player.class, context -> {
+
+        });
+
+mainLevel.register();
+```
+```kotlin tab="Kotlin"
+val mainLevel = StellarCommand("disguise");
+
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution<Player> {
+            val newName: String by args
+        }
+
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution<Player> {
+            val texture: String by args
+            val signature: String by args
+        }
+
+mainLevel.addArgument("reset")
+        .addExecution<Player> {
+
+        }
+
+mainLevel.register();
+```
+
+# Name Logic
+
+Now that the command is set up we will do the logic of changing the player name.
+First we will check if the name is allowed. We can do this by checking the length of the name. It needs to be smaller than 16 characters:
+
+```java tab="Java"
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution(Player.class, context -> {
+            String newName = context.getArgument("name");
+            if (newName.length() > 16) {
+                context.getSender().sendMessage(ChatColor.RED + "The passed username isn't a valid name");
+                return;
+            }
+        });
+```
+```kotlin tab="Kotlin"
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution<Player> {
+            val newName: String by args
+            if (newName.length > 16) {
+                sender.sendMessage("${ChatColor.RED}The passed username isn't a valid name")
+                return@addExecution
+            }
+        }
+```
+
+Now that we know it won't be creating client crashes we can set the players name:
+
+```java tab="Java"
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution(Player.class, context -> {
+            String newName = context.getArgument("name");
+            if (newName.length() > 16) {
+                context.getSender().sendMessage(ChatColor.RED + "The passed username isn't a valid name");
+                return;
+            }
+            PlayerMetaUtil.setName(context.getSender(), newName);
+        });
+```
+```kotlin tab="Kotlin"
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution<Player> {
+            val newName: String by args
+            if (newName.length > 16) {
+                sender.sendMessage("${ChatColor.RED}The passed username isn't a valid name")
+                return@addExecution
+            }
+            sender.setName(newName)
+        }
+```
+
+# Skin Logic
+
+Next we can set up the skin logic. Unlike the name we don't have to check if the skin is valid. This means we can instantly go to setting the player skin:
+
+```java tab="Java"
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution(Player.class, context -> {
+            String texture = context.getArgument("texture");
+            String signature = context.getArgument("signature");
+            PlayerMetaUtil.setSkin(context.getSender(), texture, signature);
+        });
+```
+```kotlin tab="Kotlin"
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution<Player> {
+            val texture: String by args
+            val signature: String by args
+            sender.setSkin(texture, signature)
+        }
+```
+
+That's all the logic we need to do for the skin
+
+# Reset Logic
+Lastly we need to set up the reset logic. Luckily this is very simple because Lynx save the original player `GameProfile`:
+
+```java tab="Java"
+mainLevel.addArgument("reset")
+        .addExecution(Player.class, context -> {
+            PlayerMetaUtil.resetName(context.getSender());
+            PlayerMetaUtil.resetSkin(context.getSender());
+        });
+```
+```kotlin tab="Kotlin"
+mainLevel.addArgument("reset")
+        .addExecution<Player.class> {
+            sender.resetName()
+            sender.resetSkin()
+        }
+```
+
+# Putting Everything Together
+Now that all the logic is done we can put everything together into the final command:
+
+```java tab="Java"
+StellarCommand mainLevel = new StellarCommand("disguise");
+
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution(Player.class, context -> {
+            String newName = context.getArgument("name");
+            if (newName.length() > 16) {
+                context.getSender().sendMessage(ChatColor.RED + "The passed username isn't a valid name");
+                return;
+            }
+            PlayerMetaUtil.setName(context.getSender(), newName);
+        });
+
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution(Player.class, context -> {
+            String texture = context.getArgument("texture");
+            String signature = context.getArgument("signature");
+            PlayerMetaUtil.setSkin(context.getSender(), texture, signature);
+        });
+
+mainLevel.addArgument("reset")
+        .addExecution(Player.class, context -> {
+            PlayerMetaUtil.resetName(context.getSender());
+            PlayerMetaUtil.resetSkin(context.getSender());
+        });
+
+mainLevel.register();
+```
+```kotlin tab="Kotlin"
+val mainLevel = StellarCommand("disguise");
+
+mainLevel.addArgument("name")
+        .addStringArgument("newName")
+        .addExecution<Player> {
+            val newName: String by args
+            if (newName.length > 16) {
+                sender.sendMessage("${ChatColor.RED}The passed username isn't a valid name")
+                return@addExecution
+            }
+            sender.setName(newName)
+        }
+
+mainLevel.addArgument("skin")
+        .addStringArgument("texture")
+        .addStringArgument("signature")
+        .addExecution<Player> {
+            val texture: String by args
+            val signature: String by args
+            sender.setSkin(texture, signature)
+        }
+
+mainLevel.addArgument("reset")
+        .addExecution<Player> {
+            sender.resetName()
+            sender.resetSkin()
+        }
+
+mainLevel.register();
+```
+
+This is how you can create a simple disguise command using Lynx

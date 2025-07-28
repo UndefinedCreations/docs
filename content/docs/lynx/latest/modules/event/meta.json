@@ -1,0 +1,5 @@
+{
+  "title": "Events",
+  "defaultOpen": false,
+  "pages": ["listening-to-events", "custom-event"]
+}

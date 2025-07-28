@@ -1,0 +1,50 @@
+---
+title: Name
+---
+
+# Getting value
+
+You are able to get the original name:
+
+```java tab="Java"
+String original = PlayerMetaUtil.getOriginalPlayerName(player);
+```
+```kotlin tab="Kotlin"
+val original = player.getOriginalName()
+```
+
+You can also check if the player has a modified name:
+
+```java tab="Java"
+boolean isModified = PlayerMetaUtil.isNameModified(player);
+```
+```kotlin tab="Kotlin"
+val isModified = player.isNameModified()
+```
+
+# Modify value
+
+You are also able to change the player name:
+
+<Callout title="Important" type="warn">
+    Make sure the name is less than 16 characters. If its longer it will crash your client.
+</Callout>
+
+```java tab="Java"
+PlayerMetaUtil.setName(player, "Cool Name");
+```
+```kotlin tab="Kotlin"
+player.setName("Cool Name")
+```
+
+![Name Change](https://cdn.undefinedcreations.com/lynx/playerMeta/name-change.gif)
+
+# Reset
+Lastly you can reset the player back to there original name:
+
+```java tab="Java"
+PlayerMetaUtil.resetName(player);
+```
+```kotlin tab="Kotlin"
+player.resetName()
+```
