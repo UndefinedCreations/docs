@@ -1,0 +1,32 @@
+---
+title: Config
+---
+
+Lynx will default to certain values from `LynxConfig` class.
+
+These are all the current values:
+ - The `JavaPlugin` instance. This is mostly used to create `BukkitRunnables` in the back end
+ - The `MiniMessage` instance used by string parsing
+
+When setting these values make sure to do it inside the `onEnable` method
+
+# JavaPlugin
+You will need to set the `JavaPlugin` by setting it inside the `LynxConfig`
+
+```java tab="Java"
+LynxConfig.setPlugin(this);
+```
+```kotlin tab="Kotlin"
+LynxConfig.setPlugin(this)
+```
+
+# MiniMessage
+You don't need to set `MiniMessage` for Lynx to work. If you don't set it Lynx won't be parsing strings.
+You will be able to set the `MiniMessage` instance also inside the `LynxConfig`
+
+```java tab="Java"
+LynxConfig.setMiniMessage(MiniMessage.miniMessage());
+```
+```kotlin tab="Kotlin"
+LynxConfig.setMiniMessage(MiniMessage.miniMessage())
+```

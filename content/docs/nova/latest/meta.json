@@ -1,0 +1,5 @@
+{
+  "title": "Nova",
+  "root": true,
+  "pages": ["index", "getting-started", "usage", "folder-customization", "plugins", "configuration"]
+}

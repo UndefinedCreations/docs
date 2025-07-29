@@ -1,0 +1,66 @@
+---
+title: GameProfile
+---
+
+Every player has their own [`GameProfile`](https://github.com/UndefinedCreations/Lynx/blob/master/common/src/main/kotlin/com/undefined/lynx/GameProfile.kt). This contains the players name and [skin](https://github.com/UndefinedCreations/Lynx/blob/master/common/src/main/kotlin/com/undefined/lynx/Skin.kt).
+
+# Getting values
+Lynx will automatically create two instances of this class. The first instance of this class is the Original `GameProfile`.
+This instance contains the original name and skin of the player.
+
+```java tab="Java"
+GameProfile original = PlayerMetaUtil.getOriginalGameProfile(player);
+```
+```kotlin tab="Kotlin"
+val original = player.getOriginalGameProfile()
+```
+
+The second instance of the class is the current profile with all the modified values. If you change a player name or skin this instance will have the modified value.
+
+```java tab="Java"
+GameProfile current = PlayerMetaUtil.getGameProfile(player);
+```
+```kotlin tab="Kotlin"
+val current = player.getGameProfile()
+```
+
+You are also able to check if player has a modified `GameProfile`:
+
+```java tab="Java"
+boolean isModified = PlayerMetaUtil.hasModifiedGameProfile(player);
+```
+```kotlin tab="Kotlin"
+val isModified = player.hasModifiedGameProfile()
+```
+
+# Modifying value
+Now we get to the fun part. Changing the players GameProfile. We can do this by creating a new profile and setting it. In this example we will set the `GameProfile` to the name of `Lynx` and the skin values of `StillLutto`
+
+<Callout title="Important" type="warn">
+    Make sure the `GameProfile` name is less than 16 characters. If its longer it will crash your client.
+</Callout>
+
+```java tab="Java"
+GameProfile customGameProfile = new GameProfile(
+        "Lynx",
+        new Skin(
+           "ewogICJ0aW1lc3RhbXAiIDogMTc1MzU0NjY3OTM3NywKICAicHJvZmlsZUlkIiA6ICJiODFkNjcyZmE5YjU0ZWM5YmUwODdjZWZiMGEwMjUwNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJTdGlsbEx1dHRvIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI1OWVmY2IyMzEzYmUwOGFjZjk4MjQ4ZmQwNjIyNDczNGEyZDY3NzlkNTBjYTFiNDI4NDM0MGIxOWVlYjY2MGUiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS81YzI5NDEwMDU3ZTMyYWJlYzAyZDg3MGVjYjUyZWMyNWZiNDVlYTgxZTc4NWE3ODU0YWU4NDI5ZDcyMzZjYTI2IgogICAgfQogIH0KfQ==",
+           "UgKUexMcL7XuIHtrIMGm9ZQ/Sg+EsUOastYk6WQBRcEmm7KxmaYL/rBhtxmsbVDslJhJh7PzjWc/+lnALQ1wWept/nR1yWByOhiJRFzrWjLgqcxDjMEbizOwZD5tuSynb0bFNXElVrKlDUkdO++u+kealtthr2M+4m0KSwu4U1q2xAebgYM1ETkT+Qr0ByRe4jrgUN3r6rKfKWeekrIrBtSZ7Deo6K3b/fW9gKspZ0Z/BB89I46CBa3/06pY/KbLTKeMv+ysViHKwIEOfX9yAZ6ScSFhZ2n34OCxqD1yHDIK7hzHrwCnKIucT3g8k3gTkmt47xBYRiCfXdOGwkiAfBBz6j7Y28bYEZhegHOzw3Hp0+HkZNyv7Puh8L12Da3nYGTMRV5YUipqnzjXOv77nFJjtaPF8ALxu9AYojSJBeFFVbUOWdrsoBrvT09CDqZ/WAAV4jNyWonatdqd9VWXXPB77F90pnUmq4iQKSCTjRG0meuo+YM/mZF3TWCPsYLDuas88NfboeADfys0vmdG9YsAn/7OopLpeLYfVOLBqq0e0O3pf70IIIL8AP3NhJHpnKZOS/I+dd2WlRSVlaaBPqUVz0LHNkdmLLJ20yH3HiDuLWRivNDEYBqV6P9Qf1n+D+ZMzl6iN+3zqQKyGVQKKECktDy2vDa1wbuiZtWPbAQ="
+        )
+);
+
+PlayerMetaUtil.setGameProfile(player, customGameProfile);
+```
+```kotlin tab="Kotlin"
+val customGameProfile = GameProfile(
+        "Lynx",
+        Skin(
+           "ewogICJ0aW1lc3RhbXAiIDogMTc1MzU0NjY3OTM3NywKICAicHJvZmlsZUlkIiA6ICJiODFkNjcyZmE5YjU0ZWM5YmUwODdjZWZiMGEwMjUwNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJTdGlsbEx1dHRvIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzI1OWVmY2IyMzEzYmUwOGFjZjk4MjQ4ZmQwNjIyNDczNGEyZDY3NzlkNTBjYTFiNDI4NDM0MGIxOWVlYjY2MGUiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS81YzI5NDEwMDU3ZTMyYWJlYzAyZDg3MGVjYjUyZWMyNWZiNDVlYTgxZTc4NWE3ODU0YWU4NDI5ZDcyMzZjYTI2IgogICAgfQogIH0KfQ==",
+           "UgKUexMcL7XuIHtrIMGm9ZQ/Sg+EsUOastYk6WQBRcEmm7KxmaYL/rBhtxmsbVDslJhJh7PzjWc/+lnALQ1wWept/nR1yWByOhiJRFzrWjLgqcxDjMEbizOwZD5tuSynb0bFNXElVrKlDUkdO++u+kealtthr2M+4m0KSwu4U1q2xAebgYM1ETkT+Qr0ByRe4jrgUN3r6rKfKWeekrIrBtSZ7Deo6K3b/fW9gKspZ0Z/BB89I46CBa3/06pY/KbLTKeMv+ysViHKwIEOfX9yAZ6ScSFhZ2n34OCxqD1yHDIK7hzHrwCnKIucT3g8k3gTkmt47xBYRiCfXdOGwkiAfBBz6j7Y28bYEZhegHOzw3Hp0+HkZNyv7Puh8L12Da3nYGTMRV5YUipqnzjXOv77nFJjtaPF8ALxu9AYojSJBeFFVbUOWdrsoBrvT09CDqZ/WAAV4jNyWonatdqd9VWXXPB77F90pnUmq4iQKSCTjRG0meuo+YM/mZF3TWCPsYLDuas88NfboeADfys0vmdG9YsAn/7OopLpeLYfVOLBqq0e0O3pf70IIIL8AP3NhJHpnKZOS/I+dd2WlRSVlaaBPqUVz0LHNkdmLLJ20yH3HiDuLWRivNDEYBqV6P9Qf1n+D+ZMzl6iN+3zqQKyGVQKKECktDy2vDa1wbuiZtWPbAQ="
+        )
+)
+
+player.setGameProfile(customGameProfile)
+```
+
+![GameProfile Example](https://cdn.undefinedcreations.com/lynx/playerMeta/game-profle.gif)

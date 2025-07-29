@@ -1,0 +1,5 @@
+{
+  "title": "Events",
+  "defaultOpen": false,
+  "pages": ["game-profile-change-event", "name-change-event", "skin-change-event", "cape-change-event"]
+}

@@ -1,0 +1,71 @@
+---
+title: Skin
+---
+
+# Getting value
+
+You are able to get the original skin:
+
+```java tab="Java"
+Skin original = PlayerMetaUtil.getOriginalPlayerSkin(player);
+```
+```kotlin tab="Kotlin"
+val original = player.getOriginalSkin()
+```
+
+You can also get the current skin:
+
+```java tab="Java"
+Skin current = PlayerMetaUtil.getSkin(player);
+```
+```kotlin tab="Kotlin"
+val current = player.getSkin()
+```
+
+You can also check if the player has a modified skin:
+
+```java tab="Java"
+boolean isModified = PlayerMetaUtil.isSkinModified(player);
+```
+```kotlin tab="Kotlin"
+val isModified = player.isSkinModified()
+```
+
+# Modify value
+
+Lastly you are able to change the player skin.
+
+The first method of doing this is by creating a new `Skin` Instance:
+
+```java tab="Java"
+Skin skin = new Skin("texture", "signature");
+PlayerMetaUtil.setSkin(player, skin);
+```
+```kotlin tab="Kotlin"
+val skin = Skin("texture", "signature")
+player.setSkin(skin)
+```
+
+Second method is by setting the `texture` and `signature` inside the method:
+
+```java tab="Java"
+PlayerMetaUtil.setSkin(player, "texture", "signature");
+```
+```kotlin tab="Kotlin"
+player.setSkin("texture", "signature")
+```
+
+Let's use the hypixel's `texture` and `signature`:
+
+![Skin Change](https://cdn.undefinedcreations.com/lynx/playerMeta/skin-change.gif)
+
+# Reset
+
+Lastly you are able to reset the players skin back to the original:
+
+```java tab="Java"
+PlayerMetaUtil.resetSkin(player);
+```
+```kotlin tab="Kotlin"
+player.resetSkin()
+```

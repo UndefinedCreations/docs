@@ -1,0 +1,14 @@
+{
+  "title": "Usage",
+  "defaultOpen": true,
+  "pages": [
+    "command-registration",
+    "command-unregistration",
+    "config",
+    "command-executions",
+    "custom-suggestions",
+    "command-requirements",
+    "command-information",
+    "command-cooldowns"
+  ]
+}

@@ -1,0 +1,29 @@
+---
+title: PlayerSkinChangeEvent
+---
+
+The [`PlayerSkinChangeEvent`](https://github.com/UndefinedCreations/Lynx/blob/master/modules/playerMeta/src/main/kotlin/com/undefined/lynx/nick/events/PlayerSkinChangeEvent.kt) will be run when any form of change happens to the player skin.
+
+The event contains:
+- The Player
+- The old skin
+- The new skin
+
+<Callout type="info">
+    This example uses [Lynx event](../../event/listening-to-events) system
+</Callout>
+
+```java tab="Java"
+Events.event(PlayerSkinChangeEvent.class, event -> {
+    if (event.getNewSkin() != event.getPlayer().getSkin()) {
+        event.setCancelled(true);
+    }
+});
+```
+```kotlin tab="Kotlin"
+event<PlayerSkinChangeEvent> {
+    if (newSkin != player.getSkin()) {
+        isCancelled = true
+    }
+}
+```

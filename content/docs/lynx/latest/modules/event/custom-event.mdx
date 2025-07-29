@@ -1,0 +1,88 @@
+---
+title: Custom Events
+---
+
+With Lynx we make it easy and simple to create custom events. We will be explaining this as an example.
+
+# Creating Event
+We will be creating `GameStateChangeEvent`.
+
+We will start by creating a class and extend `LynxEvent`:
+
+```java tab="Java"
+public class GameStateChangeEvent extends LynxEvent {
+
+}
+```
+```kotlin tab="Kotlin"
+class GameStateChangeEvent(): LynxEvent() {
+
+}
+```
+
+Next we add the event values. We will be adding `oldState` and `newState`:
+
+```java tab="Java"
+public class GameStateChangeEvent extends LynxEvent {
+
+    private final GameState oldState;
+    private final GameState newState;
+
+    public GameStateChangeEvent(GameState oldState, GameState newState) {
+        this.oldState = oldState;
+        this.newState = newState;
+    }
+
+    public GameState getOldState() {
+        return oldState;
+    }
+
+    public GameState getNewState() {
+        return newState;
+    }
+
+}
+```
+```kotlin tab="Kotlin"
+class GameStateChangeEvent(
+    val oldState: GameState,
+    val newState: GameState
+): LynxEvent() {}
+```
+
+Now we have the custom event.
+
+# Calling Events
+
+Now that we have a custom event we will need to call it.
+This can be done by creating a new instance of the event:
+
+```java tab="Java"
+GameStateChangeEvent event = new GameStateChangeEvent(GameState.LOADING, GameState.STARTING);
+```
+```kotlin tab="Kotlin"
+val event = GameStateChangeEvent(GameState.LOADING, GameState.STARTING)
+```
+
+When we have a new instance of the event we call it:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+
+        Calling events in Java we call the static method `LynxEventUtil.call(Event)`:
+
+        ```java
+        GameStateChangeEvent event = new GameStateChangeEvent(GameState.LOADING, GameState.STARTING)
+        LynxEventUtil.call(event);
+        ```
+
+    </Tab>
+    <Tab value="Kotlin">
+        Calling events in Kotlin we call the `Event.call()`:
+
+        ```kotlin
+        val event = GameStateChangeEvent(GameState.LOADING, GameState.STARTING)
+        event.call()
+        ```
+    </Tab>
+</Tabs>

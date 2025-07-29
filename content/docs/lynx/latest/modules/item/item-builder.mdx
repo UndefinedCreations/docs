@@ -1,0 +1,116 @@
+---
+title: ItemBuilder
+---
+
+Lynx has a simple but powerful `ItemBuilder`. An `ItemBuilder` allows you to easily create and modify new `ItemStacks`.
+
+# Simple Builder
+
+We will start by creating a new instance of a `ItemBuilder`:
+
+```java tab="Java"
+new ItemBuilder(Material.DIAMOND_CHESTPLATE);
+```
+```kotlin tab="Kotlin"
+ItemBuilder(Material.DIAMOND_CHESTPLATE)
+```
+
+Next we are able to modify the item. Let's change the item name by using `setName(name)`:
+
+```java tab="Java"
+new ItemBuilder(Material.DIAMOND_CHESTPLATE)
+    .setName("Cool Name")
+```
+```kotlin tab="Kotlin"
+ItemBuilder(Material.DIAMOND_CHESTPLATE) {
+    setName("Cool Name")
+}
+```
+
+Now that the name is set lets also add some lore. We can do this with `addLore(lore)`:
+
+```java tab="Java"
+new ItemBuilder(Material.DIAMOND_CHESTPLATE)
+    .setName("Cool Name")
+    .addLore("Great Lore")
+```
+```kotlin tab="Kotlin"
+ItemBuilder(Material.DIAMOND_CHESTPLATE) {
+    setName("Cool Name")
+    addLore("Great Lore")
+}
+```
+
+Now that the item has been modified we can build it with using `.build()`:
+
+```java tab="Java"
+ItemStack item = new ItemBuilder(Material.DIAMOND_CHESTPLATE)
+    .setName("Cool Name")
+    .addLore("Great Lore")
+    .build();
+```
+```kotlin tab="Kotlin"
+val itemStack = ItemBuilder(Material.DIAMOND_CHESTPLATE) {
+        setName("Cool Name")
+        addLore("Great Lore")
+    }.build()
+```
+
+# All Options
+
+Inside the `ItemBuilder` you have given a lot of options to modify the item. Here is a list of everything:
+
+- Item Name
+- Item Lore
+- Item Amount
+- Custom Model Data
+- PersistentDataContainer
+- Enchantments
+- Unbreakable
+- Item Flags
+- Attributes
+- Hide Tool Tips
+- Max Stack Size
+- Item Rarity
+- Damage
+- Max Damage
+
+# Meta
+
+The Lynx `ItemBuilder` also allows you to modify the bukkit `ItemMeta` directly with using `.meta<T: ItemMeta>()`. We will change the armors trim:
+
+```java tab="Java"
+new ItemBuilder(Material.DIAMOND_CHESTPLATE)
+    .setName("Cool Name")
+    .addLore("Great Lore")
+    .meta(ArmorMeta.class, meta -> {
+        meta.setTrim(new ArmorTrim(TrimMaterial.AMETHYST, TrimPattern.BOLT));
+    }).build();
+```
+```kotlin tab="Kotlin"
+ItemBuilder(Material.DIAMOND_CHESTPLATE) {
+    setName("Cool Name")
+    addLore("Great Lore")
+    meta<ArmorMeta> {
+        setTrim(ArmorTrim(TrimMaterial.AMETHYST, TrimPattern.BOLT))
+    }
+}.build()
+```
+
+# SkullMeta
+
+Lynx also you to modify the texture of a Skull with `setTexture()`:
+
+```java tab="Java"
+new ItemBuilder(Material.PLAYER_HEAD)
+     .meta(SkullMeta.class, meta -> {
+         meta.setTexture("texture");
+     }).build();
+```
+```kotlin tab="Kotlin"
+ItemBuilder(Material.PLAYER_HEAD) {
+    meta<SkullMeta> {
+        setTexture("texture")
+    }
+}.build()
+```

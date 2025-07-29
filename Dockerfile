@@ -1,14 +1,12 @@
-FROM node:22
-
+FROM oven/bun:canary
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-
-RUN npm install
-
 COPY . .
-RUN npm run docs:build
 
-EXPOSE 4173
+RUN bun install --verbose
 
-CMD ["npm", "run", "docs:preview"]
+RUN bun run build
+
+EXPOSE 3000
+
+CMD ["bun", "run", "start"]

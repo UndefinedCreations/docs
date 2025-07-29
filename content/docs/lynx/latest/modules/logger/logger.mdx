@@ -1,0 +1,51 @@
+---
+title: Sending Logs
+---
+
+Lynx has a very simple to use logger wrapper. This simplifies sending logs into console.
+
+# Log Types
+
+There are three log types:
+
+| Name    | Description                                             | View                                                           |
+|---------|---------------------------------------------------------|----------------------------------------------------------------|
+| Info    | Should be used to log information into console          | ![Info Log](https://cdn.undefinedcreations.com/lynx/logger/info-log.png)    |
+| Warning | Should be used to log warnings into console             | ![Warning Log](https://cdn.undefinedcreations.com/lynx/logger/warning-log.png) |
+| Error   | Should be used to log game breaking errors into console | ![Error Log](https://cdn.undefinedcreations.com/lynx/logger/error-log.png)   |
+
+# Usage
+
+Sending logs is very simple:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Info"
+        LoggerUtil.sendInfo("This is a info log");
+        ```
+        ```java tab="Warning"
+        LoggerUtil.sendWarn("This is a warning log");
+        ```
+        ```java tab="Error"
+        LoggerUtil.sendError("This is a error log");
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        When using Kotlin there are two ways to send logs. The first way is by using the static method. The second way is by using the extension function
+        ```kotlin tab="Info"
+        sendInfo("This is a info log")
+
+        "This is a info log".sendInfo()
+        ```
+        ```kotlin tab="Warning"
+        sendWarn("This is a warning log")
+
+        "This is a warning log".sendWarn()
+        ```
+        ```kotlin tab="Error"
+        sendError("This is a error log")
+
+        "This is a error log".sendError()
+        ```
+    </Tab>
+</Tabs>

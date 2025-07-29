@@ -1,0 +1,5 @@
+{
+  "title": "Lynx",
+  "root": true,
+  "pages": ["index", "getting-started", "modules"]
+}

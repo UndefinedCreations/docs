@@ -1,0 +1,5 @@
+{
+  "title": "World",
+  "defaultOpen": false,
+  "pages": ["location", "particle", "environment", "height-map"]
+}

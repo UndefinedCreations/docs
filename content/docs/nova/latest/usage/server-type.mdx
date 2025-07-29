@@ -1,0 +1,44 @@
+---
+title: Server Types
+---
+
+
+Nova makes it really easy to change what server you are running on.
+
+By default, we support 8 different server JARs:
+
+<Callout type="info">
+  By default, the server type is set to SpigotMC.
+</Callout>
+
+| Name                 | Back End | Proxy |
+|----------------------|----------|-------|
+| [Spigot](https://www.spigotmc.org/)               | ✅        | ❌     |
+| [Paper](https://papermc.io/software/paper)                | ✅        | ❌     |
+| [Pufferfish](https://pufferfish.host/downloads)          | ✅        | ❌     |
+| [Purpur](https://purpurmc.org/)               | ✅        | ❌     |
+| [Advanced Slime Paper](https://github.com/InfernalSuite/AdvancedSlimePaper) | ✅        | ❌     |
+| [Leaf](https://www.leafmc.one/)                 | ✅        | ❌     |
+| [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/)           | ❌        | ✅     |
+| [WaterFall](https://papermc.io/software/waterfall)            | ❌        | ✅     |
+| [Velocity](https://papermc.io/software/velocity)             | ❌        | ✅     |
+| [Folia](https://papermc.io/software/folia)                | ❌        | ✅     |
+
+
+You can also use a custom JAR, which is shown in the next page.
+
+You can change the server type by using the `serverType` method as such:
+
+```groovy tab="Groovy DSL"
+runServer {
+    minecraftVersion("1.21.4")
+    serverType(ServerType.PAPERMC)
+}
+```
+```kotlin tab="Kotlin DSL"
+runServer {
+    minecraftVersion("1.21.4")
+    serverType(ServerType.PAPERMC)
+}
+```
+

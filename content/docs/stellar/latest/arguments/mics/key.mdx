@@ -1,0 +1,24 @@
+---
+title: NamespacedKey Argument
+---
+
+Must be a valid `NamespacedKey`, which it returns. Example:
+
+```java tab="Java"
+new StellarCommand("key")
+    .addNamespacedKeyArgument("key")
+    .addExecution<Player>(Player.class, context -> {
+        NamespacedKey key = context.getArgument<NamespacedKey>("key");
+        currentKey = key; // separate variable
+    };
+```
+```kotlin tab="Kotlin"
+StellarCommand("key")
+    .addNamespacedKeyArgument(name = "key")
+    .addExecution<Player> {
+        val key = getArgument<NamespacedKey>("key")
+        currentKey = key // separate variable
+    }
+```
+
+![Namespaced Key Argument](https://cdn.undefinedcreations.com/stellar/gifs/misc/key.gif)

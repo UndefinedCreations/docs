@@ -1,0 +1,5 @@
+{
+  "title": "Items",
+  "defaultOpen": false,
+  "pages": ["item-builder"]
+}

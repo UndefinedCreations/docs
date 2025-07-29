@@ -1,0 +1,41 @@
+---
+title: Listening to events
+---
+
+Lynx makes it easy to listen to Bukkit events. Even though it's simple, it still allows for all the customization of normal events.
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+
+        When listening to events in Java you will need to call the static method `Events.event()`. Inside the constructor of this method you can customise the event:
+
+
+        ```java tab="Simple"
+        Events.event(PlayerJoinEvent.class, event -> {
+            event.setJoinMessage("Fun Custom Join Message");
+        });
+        ```
+        ```kotlin tab="Customisable"
+        Events.event(PlayerJoinEvent.class, event -> {
+            event.setJoinMessage("Fun Custom Join Message");
+        }, EventPriority.HIGH, true);
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        When listening to events in Kotlin you can call the static method `event<T: Event>()`. Inside the constructor of this method you can customise the event:
+
+        ```kotlin tab="Simple"
+        event<PlayerJoinEvent> {
+            joinMessage = "Fun Custom Join Message"
+        }
+        ```
+        ```kotlin tab="Customisable"
+        event<PlayerJoinEvent>(
+            priority = EventPriority.HIGH,
+            ignoreCancelled = true
+        ) {
+            joinMessage = "Fun Custom Join Message"
+        }
+        ```
+    </Tab>
+</Tabs>

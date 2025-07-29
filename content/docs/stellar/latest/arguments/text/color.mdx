@@ -1,0 +1,24 @@
+---
+title: Color Argument
+---
+
+Must be a team color, returns `net.kyori.adventure.text.format.Style`. Example:
+
+```java tab="Java"
+new StellarCommand("choose")
+    .addColorArgument("color")
+    .addExecution(Player.class, context -> {
+        Style style = context.getArgument("color");
+        context.getSender().sendMessage("Color chosen: " + style.color());
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("choose")
+    .addColorArgument(name = "color")
+    .addExecution<Player> {
+        val color = getArgument<Style>("color")
+        sender.sendMessage("Color chosen: ${color.color()!!.asHexString()}")
+    }
+```
+
+![Color Argument](https://cdn.undefinedcreations.com/stellar/gifs/text/color.gif)
