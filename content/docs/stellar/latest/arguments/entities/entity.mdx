@@ -22,8 +22,8 @@ StellarCommand("select")
 
 ## Entity vs Entities & Player vs Players
 
-::: warning
-The player argument never hides the entity selectors. They are still suggested, just not usable on execution.
-:::
+<Callout type="warning">
+    The player argument never hides the entity selectors. They are still suggested, just not usable on execution.
+</Callout>
 
 By using the `ENTITY`/`PLAYER` enums, you limit the use of the selector to make people _only be able_ to select one player, but it doesn't visually force you, the command simply fails. Here is an example of a target selector that only allows for one entity: `@e[limit=1]`.
