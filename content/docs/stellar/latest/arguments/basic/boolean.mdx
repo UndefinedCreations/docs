@@ -8,14 +8,14 @@ The `BooleanArgument` allows you to input a `boolean`. Example:
 new StellarCommand("server")
     .addBooleanArgument("boolean")
     .addExecution(Player.class, context -> {
-        context.getSender().sendMessage(context.getArgument<Boolean>("bool"));
+        context.getSender().sendMessage(context.getArgument<Boolean>("boolean"));
     });
 ```
 ```kotlin tab="Kotlin"
 StellarCommand("server")
     .addBooleanArgument("boolean")
     .addExecution<Player> {
-        sender.sendMessage(getArgument<Boolean>("bool"))
+        sender.sendMessage(getArgument<Boolean>("boolean"))
     }
 ```
 
