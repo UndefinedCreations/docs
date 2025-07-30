@@ -1,0 +1,89 @@
+---
+title: Spawning Entities
+---
+
+Lynx allows you to spawn full packet based display entities. The power of using packet based entity is that you are able to modify them asynchronously creating less lag for the server.
+
+We will be showing you have to spawn them into your world.
+
+# Text Display
+
+```java tab="Java"
+Location spawnLocation = player.getLocation();
+
+TextDisplay text = new TextDisplay(spawnLocation);
+```
+```kotlin tab="Kotlin"
+val spawnLocation = player.location
+
+val text = TextDisplay(spawnLocation)
+```
+
+# Block Display
+
+```java tab="Java"
+Location spawnLocation = player.getLocation();
+
+BlockDisplay block = new BlockDisplay(spawnLocation);
+```
+```kotlin tab="Kotlin"
+val spawnLocation = player.location
+
+val block = BlockDisplay(spawnLocation)
+```
+
+# Item Display
+
+```java tab="Java"
+Location spawnLocation = player.getLocation();
+
+ItemDisplay item = new ItemDisplay(spawnLocation);
+```
+```kotlin tab="Kotlin"
+val spawnLocation = player.location
+
+val item = ItemDisplay(spawnLocation)
+```
+
+# Interaction
+
+<Callout title="info">
+    Any interaction entity isn't an Display Entity witch means it won't have all the same methods as the other entity above.
+</Callout>
+
+```java tab="Java"
+Location spawnLocation = player.getLocation();
+
+Interaction interaction = new Interaction(spawnLocation);
+```
+```kotlin tab="Kotlin"
+val spawnLocation = player.location
+
+val interaction = Interaction(spawnLocation)
+```
+
+# Visible To
+
+When spawning in your entity you have the option to modify to whom the entity is visible to.
+
+This option is a list of players. If this list is `null` witch it is by default it will make the entity global.
+
+Here is an example make an `TextDisplay` only show to a player called `TheRedMagic`:
+
+```java tab="Java"
+Location spawnLocation = player.getLocation();
+
+List<Player> visibleTo = new ArrayList<>();
+visibleTo.add(Bukkit.getPlayer("TheRedMagic"));
+
+TextDisplay text = new TextDisplay(spawnLocation, visibleTo);
+```
+```kotlin tab="Kotlin"
+val spawnLocation = player.location
+val visibleToList = listOf(Bukkit.getPlayer("TheRedMagic"))
+
+val text = TextDisplay(
+    location = spawnLocation,
+    visibleTo = visibleToList
+)
+```

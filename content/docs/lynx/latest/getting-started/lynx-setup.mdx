@@ -23,27 +23,61 @@ Here is a list of all the current modules:
 
 First add the repository:
 
-```groovy tab="Gradle Groovy DSL"
-maven {
-    name = "undefined-repo"
-    url = "https://repo.undefinedcreations.com/releases"
-}
-```
-```kotlin tab="Gradle Kotlin DSL"
-maven {
-    name = "undefined-repo"
-    url = uri("https://repo.undefinedcreations.com/releases")
-}
-```
-```xml tab="Maven"
-<repository>
-    <id>lynx</id>
-    <name>Lynx Repository</name>
-    <url>https://repo.undefinedcreation.com/releases</url>
-</repository>
-```
+<Tabs items={["Releases", "Snapshots"]}>
+    <Tab value="Releases">
+        [![Latest Version](https://img.shields.io/badge/dynamic/xml?label=Latest%20Version&style=for-the-badge&logo=gradle&url=https%3A%2F%2Frepo.undefinedcreations.com%2Freleases%2Fcom%2Fundefined%2Flynx%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2F%2Fversioning%2F%2Flatest)](https://github.com/UndefinedCreations/Lynx/releases)
+        ```groovy tab="Gradle Groovy DSL"
+        maven {
+            name = "undefined-repo"
+            url = "https://repo.undefinedcreations.com/releases"
+        }
+        ```
+        ```kotlin tab="Gradle Kotlin DSL"
+        maven {
+            name = "undefined-repo"
+            url = uri("https://repo.undefinedcreations.com/releases")
+        }
+        ```
+        ```xml tab="Maven"
+        <repository>
+            <id>lynx</id>
+            <name>Lynx Repository</name>
+            <url>https://repo.undefinedcreation.com/releases</url>
+        </repository>
+        ```
 
-[![Latest Version](https://img.shields.io/badge/dynamic/xml?label=Latest%20Version&style=for-the-badge&logo=gradle&url=https%3A%2F%2Frepo.undefinedcreations.com%2Freleases%2Fcom%2Fundefined%2Flynx%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2F%2Fversioning%2F%2Flatest)](https://github.com/UndefinedCreations/Lynx/releases)
+
+    </Tab>
+    <Tab value="Snapshots">
+
+        [![Latest Snapshot](https://img.shields.io/badge/dynamic/xml?label=Latest%20Version&style=for-the-badge&logo=gradle&url=https%3A%2F%2Frepo.undefinedcreations.com%2Fsnapshots%2Fcom%2Fundefined%2Flynx%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2F%2Fversioning%2F%2Flatest)](https://github.com/UndefinedCreations/Lynx)
+
+        Lynx snapshots are version that aren't fully done and are created for testing uses.
+
+        ```groovy tab="Gradle Groovy DSL"
+        maven {
+            name = "undefined-snapshots"
+            url = "https://repo.undefinedcreations.com/snapshots"
+        }
+        ```
+        ```kotlin tab="Gradle Kotlin DSL"
+        maven {
+            name = "undefined-snapshots"
+            url = uri("https://repo.undefinedcreations.com/snapshots")
+        }
+        ```
+        ```xml tab="Maven"
+        <repository>
+            <id>lynx-snapshots</id>
+            <name>Lynx Repository</name>
+            <url>https://repo.undefinedcreation.com/snapshots</url>
+        </repository>
+        ```
+
+    </Tab>
+</Tabs>
+
+
 
 Then add the library to your dependencies:
 

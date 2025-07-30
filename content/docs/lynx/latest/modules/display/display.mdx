@@ -1,0 +1,183 @@
+---
+title: Display
+---
+
+All the three display entities are extensions of the [`Display`](https://github.com/UndefinedCreations/Lynx/blob/master/modules/display/src/main/kotlin/com/undefined/lynx/display/implementions/Display.kt) class.
+We will first look into this class and what methods it has.
+
+# Display
+
+## Teleportation
+
+When moving the location of the display entity you will need to teleport it using `teleport(Location)`:
+
+```java tab="Java"
+Display display = new BlockDisplay(spawnLocation);
+display.teleport(newLocation);
+```
+```kotlin tab="Kotlin"
+val display = BlockDisplay(spawnLocation)
+display.teleport(newLocation)
+```
+
+### Teleportation Delay
+
+<Callout title="info">
+    This is only supported from version 1.20.2 up
+</Callout>
+
+Teleportation delay will add a delay to when the teleportation happens in ticks:
+
+```java tab="Java"
+Display display = new BlockDisplay(spawnLocation);
+display.setTeleportDelay(20);
+```
+```kotlin tab="Kotlin"
+val display = BlockDisplay(spawnLocation)
+display.setTeleportDelay(20)
+```
+
+## Meta Data
+
+Entity metadata is all the information of the entity. Some examples are `scale` and `translation`. By default, when modifying these it will send the modified metadata, but you are able to send them manually as well:
+
+```java tab="Java"
+Display display = new BlockDisplay(spawnLocation);
+display.sendMetaDataUpdate();
+```
+```kotlin tab="Kotlin"
+val display = BlockDisplay(spawnLocation)
+display.sendMetaDataUpdate();
+```
+
+## Transformation
+
+Display entities using something called `transformation` to be able to do some cool movements.
+
+<Callout title="info">
+    When using `transformation` and you want to see how it will look check out [this cool site](https://misode.github.io/transformation/)
+</Callout>
+
+### Scale
+
+When setting the scale requires the new `x`, `y` and `z` scale. You can change the scale by setting all three manually or using a `Vector3f`:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Simple"
+        Display display = new BlockDisplay(spawnLocation);
+        display.setScale(2f, 5f, 2.5f);
+        ```
+        ```java tab="Vector3f"
+        Display display = new BlockDisplay(spawnLocation);
+        display.setScale(new Vector3f(2f, 5f, 2.5f));
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```kotlin tab="Simple"
+        val display = BlockDisplay(spawnLocation);
+        display.setScale(2f, 5f, 2.5f);
+        ```
+        ```kotlin tab="Vector3f"
+        val display = BlockDisplay(spawnLocation);
+        display.setScale(Vector3f(2f, 5f, 2.5f));
+        ```
+    </Tab>
+</Tabs>
+
+### Rotation
+
+Display entities have their own type of rotation separate from the location. They both have `leftRotation` and `rightRotation`. These rotations use `quaternionf`:
+
+```java tab="Java"
+Display display = new BlockDisplay(spawnLocation);
+display.setLeftRotation(1.0, 1.0, 1.0, 1.0)
+display.setRightRotation(1.0, 1.0, 1.0, 1.0)
+```
+```kotlin tab="Kotlin"
+Display display = new BlockDisplay(spawnLocation);
+display.setLeftRotation(1.0, 1.0, 1.0, 1.0)
+display.setRightRotation(1.0, 1.0, 1.0, 1.0)
+```
+
+### Translation
+
+The displays translation is like an offset from its true location. You are able to use `x`, `y` and `z` to modify them, but you can also use `Vector3f`:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Simple"
+        Display display = new BlockDisplay(spawnLocation);
+        display.setTranslation(2.0, 5.0, 2.5);
+        ```
+        ```java tab="Vector3f"
+        Display display = new BlockDisplay(spawnLocation);
+        display.setTranslation(new Vector3f(2.0, 5.0, 2.5));
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```kotlin tab="Simple"
+        val display = BlockDisplay(spawnLocation);
+        display.setTranslation(2.0, 5.0, 2.5);
+        ```
+        ```kotlin tab="Vector3f"
+        val display = BlockDisplay(spawnLocation);
+        display.setTranslation(Vector3f(2.0, 5.0, 2.5));
+        ```
+    </Tab>
+</Tabs>
+
+### Interpolation Duration
+
+Interpolation duration is the time it will take to do the last `transformation` modification. It will interpolate all the points from the old to new point.
+Here we will show a quick example of moving a `BlockDisplay` one block to the side in 20 ticks:
+
+```java tab="Java"
+Display display = new BlockDisplay(spawnLocation);
+display.setBlock(Material.STONE);
+display.setInterpolationDuration(20);
+display.setTranslation(0.0, 0.0, 1.0);
+```
+```kotlin tab="Kotlin"
+val display = BlockDisplay(spawnLocation)
+display.setBlock(Material.STONE)
+display.setInterpolationDuration(20)
+display.setTranslation(0.0, 0.0, 1.0)
+```
+
+![Block Interpolation](https://cdn.undefinedcreations.com/lynx/display/block-interpation.gif)
+
+### Interpolation Delay
+
+Interpolation delay is the time it will take to start the last `transformation` modification in ticks.
+
+```java tab="Java"
+Display display = new BlockDisplay(spawnLocation);
+display.setInterpolationDelat(20);
+```
+```kotlin tab="Kotlin"
+val display = BlockDisplay(spawnLocation)
+display.setInterpolationDelat(20)
+```
+
+## Billboard
+
+Display allow you to modify the way they rotation. This is called `Billboard`:
+
+| Name       | Example                                                                                 |
+|------------|-----------------------------------------------------------------------------------------|
+| FIXED      | ![Fixed](https://cdn.undefinedcreations.com/lynx/display/billboard-fixed.gif)           |
+| VERTICAL   | ![Vertical](https://cdn.undefinedcreations.com/lynx/display/billboard-vertical.gif)     |
+| HORIZONTAL | ![Horizontal](https://cdn.undefinedcreations.com/lynx/display/billboard-horizontal.gif) |
+| CENTER     | ![Center](https://cdn.undefinedcreations.com/lynx/display/billboard-center.gif)         |
+
+Here is how you can modify them:
+
+```java tab="Java"
+Display display = new TextDisplay(spawnLocation);
+display.setBillboard(Display.Billbaord.CENTER)
+```
+```kotlin tab="Kotlin"
+val display = TextDisplay(spawnLocation);
+display.setBillboard(Display.Billbaord.CENTER)
+```
