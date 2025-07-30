@@ -65,16 +65,27 @@ You can type anything you want using this, the only problem here is that **it's 
 
 To be able to use a Phrase argument and handle each word independently, use the `PhraseArgument`. It contains a list of `WordArgument`, which you can customize:
 
-```kotlin
+```kotlin tab="Kotlin"
 StellarCommand("server")
     .addPhraseArgument("args")
-    .onWord(index = 0) { // Extension function of WordArgument
+    .addWordArgument(index = 0) { // Extension function of WordArgument
         addExecution<Player> { // extension function of PhraseCommandContext
             getArgument(0)
             this[0]
         }
     }
-    .addWordSuggestions(index = 1, suggestions = "first, "second")
+    .addWordSuggestions(index = 1, "first", "second")
+```
+```java tab="Java"
+new StellarCommand("server")
+        .addPhraseArgument("args")
+        .addWordArgument(0, argument -> {
+            argument.addExecution(context -> {
+                    context.getArgument(0);
+                    // ...
+            });
+        })
+        .addWordSuggestions(1, "first", "second");
 ```
 
 [//]: # (<ArgumentParser placeholder="You can write anything you want here!" regex="^.*$" />)
