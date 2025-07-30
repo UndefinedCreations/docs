@@ -8,7 +8,7 @@ To fully understand requirement, we need to learn a bit about how commands work.
 
 The server sends the client a list of commands at certain times (op, bukkit string permission change, player join), and will filter out any that do not fill in the requirements. You can send this information manually using `Player.updateCommands()`.
 
-# Permission & Level Requirements
+## Permission & Level Requirements
 
 You can add bukkit string permissions (example.user.test), or level permissions, from 0-4. For more information on level permissions, see https://minecraft.wiki/w/Permission_level. To add such permissions, use the `addRequirement` method:
 
@@ -23,7 +23,7 @@ StellarCommand("test")
     .addRequirement("example.user.test")
 ```
 
-# Custom Requirements
+## Custom Requirements
 
 To add custom requirements, you can also use the `addRequirement` method:
 

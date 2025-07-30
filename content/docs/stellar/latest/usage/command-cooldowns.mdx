@@ -14,7 +14,7 @@ You can either set add cooldowns with a duration and an execution, or with a dur
     If you omit the `TimeUnit` in any cooldown method, and it will default to milliseconds.
 </Callout>
 
-# Cooldown Executions
+## Cooldown Executions
 
 You can add a cooldown execution as such:
 
@@ -49,7 +49,7 @@ StellarCommand("message")
 
 The above code will run that message the player whenever they run that command twice within 5 seconds. The function itself will return the `CommandContext` and the remaining duration in milliseconds, as a `long`.
 
-# Cooldown Message
+## Cooldown Message
 
 For a simpler system, you can instead return cooldown messages which will be sent to the player. Cooldown messages use cooldown executions under the hood.
 

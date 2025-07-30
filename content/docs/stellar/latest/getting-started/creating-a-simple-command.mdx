@@ -6,7 +6,6 @@ Best way to learn is by doing, thus we are going to create a simple message comm
 
 We first need to initialize the base command:
 
-
 ```java tab="Java"
 new StellarCommand("message");
 ```
@@ -58,7 +57,6 @@ StellarCommand("message")
 <Callout type="warn">
     Note: You cannot have two non-literal arguments with the same! This will result in a [`DuplicateArgumentNameException`](https://github.com/UndefinedCreations/Stellar/blob/4ede2e9b8a195d5b675beaca8be5eecd4cc4e606/common/src/main/kotlin/com/undefined/stellar/exception/DuplicateArgumentNameException.kt#L7) being thrown at runtime.
 </Callout>
-
 
 Now we need to message the target with the chosen message whenever a player runs the commands. To achieve that, we'll use the `addExecution` method.
 

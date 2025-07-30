@@ -2,7 +2,6 @@
 title: Stellar Config
 ---
 
-
 Stellar will default to certain values from the `StellarConfig` class. These values are usually still modifiable for each command and act as a default.
 
 These are all the current values:
@@ -78,7 +77,6 @@ StellarCommand("test")
 ## Prefix
 
 Any command you register will be registered under two names: the base command name (/admin) and the command name with its prefix (/staffplugin:admin). This prefix is by default the name of your plugin, but can be modified in the `StellarConfig`, or on command register.
-
 
 ```java tab="Java"
 StellarConfig.INSTANCE.setPrefix("myserver");

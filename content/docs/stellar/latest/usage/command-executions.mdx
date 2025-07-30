@@ -2,17 +2,16 @@
 title: Command Executions
 ---
 
-
 When creating a command, you will nearly **always** use command executions and/or runnables. They allow you to run pieces of code at specific times, and they are added to specific arguments. This page will teach you everything you need to know about command executions.
 
-# Types of executions
+## Types of executions
 
 There are three types of executions:
 1. A regular execution that runs whenever someone types the **exact** command, e.g. /world **create** (bold indicating where the execution is).
 2. The second is the runnable, which is _always_ called if it is in the command path, e.g. /world **create** worldname1.
 3. The third and last is a failure execution, which, when someone types a command incorrectly, will run the last correctly typed command, e.g. /scoreboard **objectives** ads.
 
-# Regular Executions
+## Regular Executions
 
 These will only run when it's the last command typed.
 
@@ -43,7 +42,7 @@ These will only run when it's the last command typed.
     </Tab>
 </Tabs>
 
-# Command Runnables
+## Command Runnables
 
 A command runnable will always run if it is in the command tree **if there are other executions present in the last argument**, before any other executions and runnables in upper arguments. They are run in from the lowest argument (or root command) to the last argument.
 
@@ -70,7 +69,7 @@ StellarCommand("info")
 
 This command will open the first page (1) if no page is selected, otherwise just open the selected page.
 
-# Failure Executions
+## Failure Executions
 
 When a command fails, it will look for the last correctly typed argument that it can find, then run its failure executions.
 
