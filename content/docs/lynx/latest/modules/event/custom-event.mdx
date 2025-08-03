@@ -51,7 +51,37 @@ class GameStateChangeEvent(
 ): LynxEvent() {}
 ```
 
-Now we have the custom event.
+## Cancellable Event
+
+If you want to make you event cancellable you need to change the extensions from `LynxEvent` to `CancellableLynxEvent`:
+
+```java tab="Java"
+public class GameStateChangeEvent extends CancellableLynxEvent {
+
+    private final GameState oldState;
+    private final GameState newState;
+
+    public GameStateChangeEvent(GameState oldState, GameState newState) {
+        this.oldState = oldState;
+        this.newState = newState;
+    }
+
+    public GameState getOldState() {
+        return oldState;
+    }
+
+    public GameState getNewState() {
+        return newState;
+    }
+
+}
+```
+```kotlin tab="Kotlin"
+class GameStateChangeEvent(
+    val oldState: GameState,
+    val newState: GameState
+): CancellableLynxEvent() {}
+```
 
 # Calling Events
 
