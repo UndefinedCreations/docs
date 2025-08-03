@@ -50,11 +50,33 @@ val display = BlockDisplay(spawnLocation)
 display.sendMetaDataUpdate();
 ```
 
+## Billboard
+
+Display allow you to modify the way they rotation. This is called `Billboard`:
+
+| Name       | Example                                                                                 |
+|------------|-----------------------------------------------------------------------------------------|
+| FIXED      | ![Fixed](https://cdn.undefinedcreations.com/lynx/display/billboard-fixed.gif)           |
+| VERTICAL   | ![Vertical](https://cdn.undefinedcreations.com/lynx/display/billboard-vertical.gif)     |
+| HORIZONTAL | ![Horizontal](https://cdn.undefinedcreations.com/lynx/display/billboard-horizontal.gif) |
+| CENTER     | ![Center](https://cdn.undefinedcreations.com/lynx/display/billboard-center.gif)         |
+
+Here is how you can modify them:
+
+```java tab="Java"
+Display display = new TextDisplay(spawnLocation);
+display.setBillboard(Display.Billbaord.CENTER)
+```
+```kotlin tab="Kotlin"
+val display = TextDisplay(spawnLocation);
+display.setBillboard(Display.Billbaord.CENTER)
+```
+
 ## Transformation
 
 Display entities using something called `transformation` to be able to do some cool movements.
 
-<Callout title="info">
+<Callout title="Tip">
     When using `transformation` and you want to see how it will look check out [this cool site](https://misode.github.io/transformation/)
 </Callout>
 
@@ -160,24 +182,129 @@ val display = BlockDisplay(spawnLocation)
 display.setInterpolationDelat(20)
 ```
 
-## Billboard
 
-Display allow you to modify the way they rotation. This is called `Billboard`:
+# Implementation
 
-| Name       | Example                                                                                 |
-|------------|-----------------------------------------------------------------------------------------|
-| FIXED      | ![Fixed](https://cdn.undefinedcreations.com/lynx/display/billboard-fixed.gif)           |
-| VERTICAL   | ![Vertical](https://cdn.undefinedcreations.com/lynx/display/billboard-vertical.gif)     |
-| HORIZONTAL | ![Horizontal](https://cdn.undefinedcreations.com/lynx/display/billboard-horizontal.gif) |
-| CENTER     | ![Center](https://cdn.undefinedcreations.com/lynx/display/billboard-center.gif)         |
+## TextDisplay
 
-Here is how you can modify them:
+TextDisplay is a type of display entity that can display text. This can be useful to display information to the player.
 
-```java tab="Java"
-Display display = new TextDisplay(spawnLocation);
-display.setBillboard(Display.Billbaord.CENTER)
-```
-```kotlin tab="Kotlin"
-val display = TextDisplay(spawnLocation);
-display.setBillboard(Display.Billbaord.CENTER)
-```
+### Text
+
+There is two ways you can set the text of the entity. The default one is by using a `String` but you can also use an adventure `Component`:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="String"
+        TextDisplay display = new TextDisplay(spawnLocation);
+        display.setText("Cool Text");
+        ```
+        ```java tab="Component"
+        TextDisplay display = new TextDisplay(spawnLocation);
+        display.setText(Component.text("Cool Text"));
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```kotlin tab="String"
+        val display = TextDisplay(spawnLocation)
+        display.setText("Cool Text")
+        ```
+        ```kotlin tab="Component"
+        val display = TextDisplay(spawnLocation)
+        display.setText(Component.text("Cool Text"))
+        ```
+    </Tab>
+</Tabs>
+
+### Background Color
+
+When setting the background color of a display entity there are two ways of doing it. The first is by using the bukkit `Color`. The next option is using the `ARGB` value.
+
+<Callout title="Information">
+    If you want a transparent background you can set the `ARBG` value to `0`
+</Callout>
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Color"
+        TextDisplay display = new TextDisplay(spawnLocation);
+        display.setBackgroundColor(Color.RED);
+        ```
+        ```java tab="ARBG"
+        TextDisplay display = new TextDisplay(spawnLocation);
+        display.setBackgroundColor(0);
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="Color"
+        val display = TextDisplay(spawnLocation)
+        display.setBackgroundColor(Color.RED)
+        ```
+        ```java tab="ARBG"
+        val display = TextDisplay(spawnLocation)
+        display.setBackgroundColor(0)
+        ```
+    </Tab>
+</Tabs>
+
+## Block Display
+
+Next we have block displays. These are used to display blocks.
+
+### Block
+
+There are two ways of setting the block that is being displayed. First you can use `Material` enum, second you can use `BlockData`:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Material"
+        BlockDisplay display = new BlockDisplay(spawnLocation);
+        display.setBlock(Material.STONE);
+        ```
+        ```java tab="BlockData"
+        BlockDisplay display = new BlockDisplay(spawnLocation);
+        display.setBlock(Material.STONE.createBlockData());
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="Material"
+        val display = BlockDisplay(spawnLocation)
+        display.setBlock(Material.STONE)
+        ```
+        ```java tab="BlockData"
+        val display = BlockDisplay(spawnLocation)
+        display.setBlock(Material.STONE.createBlockData())
+        ```
+    </Tab>
+</Tabs>
+
+## Item Display
+
+Lastly we have Item Displays. These display `ItemStacks`
+
+### Item
+
+There are two ways for setting the item that needs to be displayed. First by using `ItemStack`, second you can use `Material` enum:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="ItemStack"
+        ItemDisplay display = new ItemDisplay(spawnLocation);
+        display.setItem(new ItemStack(Material.STONE));
+        ```
+        ```java tab="Material"
+        ItemDisplay display = new ItemDisplay(spawnLocation);
+        display.setItem(Material.STONE);
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="ItemStack"
+        val display = ItemDisplay(spawnLocation)
+        display.setItem(ItemStack(Material.STONE))
+        ```
+        ```java tab="Material"
+        val display = ItemDisplay(spawnLocation)
+        display.setItem(Material.STONE)
+        ```
+    </Tab>
+</Tabs>

@@ -1,0 +1,19 @@
+---
+title: On Click
+---
+
+All the display entity allow you to check when a player interacts with it. We can add a `onClick` listener by using `.onClick(consumer)`.
+This will provide [`EntityInteract`](https://github.com/UndefinedCreations/Lynx/blob/master/common/src/main/kotlin/com/undefined/lynx/nms/EntityInteract.kt). The `EntityInteract` class contains the `player` who interacted with the entity and [`ClickType`](https://github.com/UndefinedCreations/Lynx/blob/master/common/src/main/kotlin/com/undefined/lynx/nms/EntityInteract.kt#L11).
+
+```java tab="Java"
+BlockDisplay display = new BlockDisplay(spawnLocation);
+display.onClick( event -> {
+   event.getPlayer().sendMessage(event.getClickType().name());
+});
+```
+```kotlin tab="Kotlin"
+val display = BlockDisplay(spawnLocation)
+display.onClick {
+   player.sendMessage(clickType.name)
+}
+```

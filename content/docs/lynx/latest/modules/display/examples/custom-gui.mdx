@@ -1,0 +1,476 @@
+---
+title: Custom GUI
+---
+
+Now that we just learned how to use `Display` entities we are going to use this knowledge to create a cool custom gui.
+
+![Custom GUI](https://cdn.undefinedcreations.com/lynx/display/cusotm-gui-example.gif)
+
+# Class Set Up
+
+We will start by creating the class with 4 methods `create(location)`, `createBackGround(location)`, `createTitle(location, title)` and `addButton(location)`.
+We will use these methods the create the basic gui.
+
+```java tab="Java"
+public class CustomGUIExample {
+
+    public static void create(Location loaction) {
+
+    }
+
+    private void createBackGround(Location location) {
+
+    }
+
+    private void createTitle(Location location, String title) {
+
+    }
+
+    private void addButton(location: Location) {
+
+    }
+
+}
+```
+```kotlin tab="Kotlin"
+object CustomGUIExample {
+
+    fun create(location: Location) {
+
+    }
+
+    private fun createBackGround(location: Location) {
+
+    }
+
+    private fun createTitle(location: Location, title: String) {
+
+    }
+
+    private fun addButton(location: Location) {
+
+    }
+
+}
+```
+
+# Background Logic
+
+The first thing we will create is the logic for the background. For the background we will use an `BlockDisplay` and change the scale:
+
+```java tab="Java"
+private void createBackGround(Location location) {
+    BlockDisplay blockDisplay = new BlockDisplay(location);
+    blockDisplay.setBlock(Material.WHITE_CONCRETE);
+    blockDisplay.setScale(0.01, 3.0, 2.0);
+}
+```
+```kotlin tab="Kotlin"
+private fun createBackGround(location: Location) {
+    val blockDisplay = BlockDisplay(location)
+    blockDisplay.setBlock(Material.WHITE_CONCRETE)
+    blockDisplay.setScale(0.01, 3.0, 2.0)
+}
+```
+
+# Title Logic
+
+Next we will create the title of the gui. We will be using `TextDisplay` for this.
+
+First we create it, next we set the text as the title. After we have done this we will change the background color to 0 to make it translucent.
+
+```java tab="Java"
+private void createTitle(Location location, String title) {
+    TextDisplay textDisplay = new TextDisplay(location);
+    textDisplay.setText(title);
+    textDisplay.setBackgroundColor(0);
+}
+```
+```kotlin tab="Kotlin"
+private fun createTitle(location: Location, title: String) {
+    val textDisplay = TextDisplay(location)
+    textDisplay.setText(title)
+    textDisplay.setBackgroundColor(0)
+}
+```
+
+Now we need to change the translation to set it to the correct offset so it on the top of the gui.
+Lastly we need to rotate the display by 90 degrees, we can do this by setting the `LeftRotation` to `0.7, 0.0, 0.7, 0.0`:
+
+<Callout title="Tip">
+    I was able to find these rotation values by using [this cool site](https://misode.github.io/transformation/)
+</Callout>
+
+```java tab="Java"
+private void createTitle(Location location, String title) {
+    TextDisplay textDisplay = new TextDisplay(location);
+    textDisplay.setText(title);
+    textDisplay.setBackgroundColor(0);
+
+    textDisplay.setTranslation(0.02, 2.7, 1.0)
+    textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0)
+}
+```
+```kotlin tab="Kotlin"
+private fun createTitle(location: Location, title: String) {
+    val textDisplay = TextDisplay(location)
+    textDisplay.setText(title)
+    textDisplay.setBackgroundColor(0)
+
+    textDisplay.setTranslation(0.02, 2.7, 1.0)
+    textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0)
+}
+```
+
+Now that we have both the background and title done this is how it looks:
+
+![Custom GUI Progress](https://cdn.undefinedcreations.com/lynx/display/custom-gui-progress.png)
+
+# Add Button Logic
+
+Next step is adding the button logic. First step to this is creating the visual of the button.
+
+# Visual Logic
+
+The button visual contains out of two entities, a `BlockDisplay` and `TextDisplay`. We will start by creating the `BlockDisplay`
+We will create it and then set the scale:
+
+```java tab="Java"
+BlockDisplay blockDisplay = new BlockDisplay(location);
+blockDisplay.setBlock(Material.RED_CONCRETE);
+blockDisplay.setScale(0.01, 0.5, 1.5);
+```
+```kotlin tab="Kotlin"
+val blockDisplay = BlockDisplay(location)
+blockDisplay.setBlock(Material.RED_CONCRETE)
+blockDisplay.setScale(0.01, 0.5, 1.5)
+```
+
+Next we will set the `translation` of it to the center:
+
+```java tab="Java"
+BlockDisplay blockDisplay = new BlockDisplay(location);
+blockDisplay.setBlock(Material.RED_CONCRETE);
+blockDisplay.setScale(0.01, 0.5, 1.5);
+blockDisplay.setTranslation(0.02, 0.0, 0.25);
+```
+```kotlin tab="Kotlin"
+val blockDisplay = BlockDisplay(location)
+blockDisplay.setBlock(Material.RED_CONCRETE)
+blockDisplay.setScale(0.01, 0.5, 1.5)
+blockDisplay.setTranslation(0.02, 0.0, 0.25)
+```
+
+Now that the `BlockDisplay` is done we can create the `TextDisplay`. We will start by creating it and setting the text and background color again:
+
+```java tab="Java"
+TextDisplay textDisplay = new TextDisplay(location);
+textDisplay.setText("Click ME :D");
+textDisplay.setBackgroundColor(0);
+```
+```kotlin tab="Kotlin"
+val textDisplay = TextDisplay(location)
+textDisplay.setText("Click ME :D")
+textDisplay.setBackgroundColor(0)
+```
+
+Lastly we rotate it 90 degrees and change the `translation` to position it correctly in the center of the button:
+
+```java tab="Java"
+TextDisplay textDisplay = new TextDisplay(location);
+textDisplay.setText("Click ME :D");
+textDisplay.setBackgroundColor(0);
+textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0);
+textDisplay.setTranslation(0.03, 0.1, 1.0);
+```
+```kotlin tab="Kotlin"
+val textDisplay = TextDisplay(location)
+textDisplay.setText("Click ME :D")
+textDisplay.setBackgroundColor(0)
+textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0);
+textDisplay.setTranslation(0.03, 0.1, 1.0);
+```
+
+Now that all the visual of the button is done lets put them together into the method:
+
+```java tab="Java"
+private void addButton(location: Location) {
+
+    // Visual box
+    BlockDisplay blockDisplay = new BlockDisplay(location);
+    blockDisplay.setBlock(Material.RED_CONCRETE);
+    blockDisplay.setScale(0.01, 0.5, 1.5);
+    blockDisplay.setTranslation(0.02, 0.0, 0.25);
+
+    // Visual Text
+    TextDisplay textDisplay = new TextDisplay(location);
+    textDisplay.setText("Click ME :D");
+    textDisplay.setBackgroundColor(0);
+    textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0);
+    textDisplay.setTranslation(0.03, 0.1, 1.0);
+
+}
+```
+```kotlin tab="Kotlin"
+private fun addButton(location: Location) {
+
+    // Visual box
+    val blockDisplay = BlockDisplay(location)
+    blockDisplay.setBlock(Material.RED_CONCRETE)
+    blockDisplay.setScale(0.01, 0.5, 1.5)
+    blockDisplay.setTranslation(0.02, 0.0, 0.25)
+
+    // Visual Text
+    val textDisplay = TextDisplay(location)
+    textDisplay.setText("Click ME :D")
+    textDisplay.setBackgroundColor(0)
+    textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0)
+    textDisplay.setTranslation(0.03, 0.1, 1.0)
+
+}
+```
+
+# Interaction
+Now that the visual is done we will work of the interaction of the button.
+We will start by creating the `Interaction` entity and positioning it correctly:
+
+```java tab="Java"
+Location interactionSpawn = location.add(-0.7, 0.0, 1.0);
+Interaction interaction = new Interaction(interactionSpawn);
+```
+```kotlin tab="Kotlin"
+val interactionSpawn = location.add(-0.7, 0.0, 1.0)
+val interaction = Interaction(interactionSpawn)
+```
+
+Next we set the `Height` and `Width` to match the button dimensions:
+
+```java tab="Java"
+Location interactionSpawn = location.add(-0.7, 0.0, 1.0);
+Interaction interaction = new Interaction(interactionSpawn);
+interaction.setWidth(1.5f);
+interaction.setHeight(0.5f);
+```
+```kotlin tab="Kotlin"
+val interactionSpawn = location.add(-0.7, 0.0, 1.0)
+val interaction = Interaction(interactionSpawn)
+interaction.setWidth(1.5f)
+interaction.setHeight(0.5f)
+```
+
+Lastly we add the interaction logic. For this example we will change the text of the button to `Click : (ClickType)` but you can change this interaction to anything you want it to do:
+
+```java tab="Java"
+Location interactionSpawn = location.add(-0.7, 0.0, 1.0);
+Interaction interaction = new Interaction(interactionSpawn);
+interaction.setWidth(1.5f);
+interaction.setHeight(0.5f);
+
+interaction.onClick(interaction -> {
+    textDisplay.setText("Click : " + interaction.getClickType().getName());
+});
+```
+```kotlin tab="Kotlin"
+val interactionSpawn = location.add(-0.7, 0.0, 1.0)
+val interaction = Interaction(interactionSpawn)
+interaction.setWidth(1.5f)
+interaction.setHeight(0.5f)
+
+interaction.onClick {
+    textDisplay.setText("Click : $clickType")
+}
+```
+
+Now that the interaction is fully done lets add it on top of the visual code:
+
+```java tab="Java"
+private void addButton(location: Location) {
+
+    // Visual box
+    BlockDisplay blockDisplay = new BlockDisplay(location);
+    blockDisplay.setBlock(Material.RED_CONCRETE);
+    blockDisplay.setScale(0.01, 0.5, 1.5);
+    blockDisplay.setTranslation(0.02, 0.0, 0.25);
+
+    // Visual Text
+    TextDisplay textDisplay = new TextDisplay(location);
+    textDisplay.setText("Click ME :D");
+    textDisplay.setBackgroundColor(0);
+    textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0);
+    textDisplay.setTranslation(0.03, 0.1, 1.0);
+
+    // Interaction
+    Location interactionSpawn = location.add(-0.7, 0.0, 1.0);
+    Interaction interaction = new Interaction(interactionSpawn);
+    interaction.setWidth(1.5f);
+    interaction.setHeight(0.5f);
+
+    // Listening to interaction
+    interaction.onClick(interaction -> {
+        textDisplay.setText("Click : " + interaction.getClickType().getName());
+    });
+}
+```
+```kotlin tab="Kotlin"
+private fun addButton(location: Location) {
+    // Visual box
+    val blockDisplay = BlockDisplay(location)
+    blockDisplay.setBlock(Material.RED_CONCRETE)
+    blockDisplay.setScale(0.01, 0.5, 1.5)
+    blockDisplay.setTranslation(0.02, 0.0, 0.25)
+
+    // Visual Text
+    val textDisplay = TextDisplay(location)
+    textDisplay.setText("Click ME :D")
+    textDisplay.setBackgroundColor(0)
+    textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0)
+    textDisplay.setTranslation(0.03, 0.1, 1.0)
+
+    //Interaction
+    val interactionSpawn = location.add(-0.7, 0.0, 1.0)
+    val interaction = Interaction(interactionSpawn)
+    interaction.setWidth(1.5f)
+    interaction.setHeight(0.5f)
+
+    // Listening to interaction
+    interaction.onClick {
+        textDisplay.setText("Click : $clickType")
+    }
+}
+```
+
+# Putting everything together
+
+Now that all the sub methods are created we can create the `create` method. We will first create the background after the title lastly we add all the three buttons:
+
+```java tab="Java"
+public static void create(Location location) {
+    createBackGround(location)
+    createTitle(location, "Custom GUI")
+    addButton(location.clone().add(0.0, 0.25, 0.0));
+    addButton(location.clone().add(0.0, 1.0, 0.0));
+    addButton(location.clone().add(0.0, 1.75, 0.0));
+}
+```
+```kotlin tab="Kotlin"
+fun create(location: Location) {
+    createBackGround(location)
+    createTitle(location, "Custom GUI")
+    addButton(location.clone().add(0.0, 0.25, 0.0))
+    addButton(location.clone().add(0.0, 1.0, 0.0))
+    addButton(location.clone().add(0.0, 1.75, 0.0))
+}
+```
+
+Now that everything is done we will put it together into the final class:
+
+```java tab="Java"
+public class CustomGUIExample {
+
+    public static void create(Location location) {
+        createBackGround(location);
+        createTitle(location, "Custom GUI");
+        addButton(location.clone().add(0.0, 0.25, 0.0));
+        addButton(location.clone().add(0.0, 1.0, 0.0));
+        addButton(location.clone().add(0.0, 1.75, 0.0));
+    }
+
+    private void addButton(Location location) {
+        // Visual box
+        BlockDisplay blockDisplay = new BlockDisplay(location);
+        blockDisplay.setBlock(Material.RED_CONCRETE);
+        blockDisplay.setScale(0.01, 0.5, 1.5);
+        blockDisplay.setTranslation(0.02, 0.0, 0.25);
+
+        // Visual Text
+        TextDisplay textDisplay = new TextDisplay(location);
+        textDisplay.setText("Click ME :D");
+        textDisplay.setBackgroundColor(0);
+        textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0);
+        textDisplay.setTranslation(0.03, 0.1, 1.0);
+
+        //Interaction
+        Location interactionSpawn = location.add(-0.7, 0.0, 1.0);
+        Interaction interaction = new Interaction(interactionSpawn);
+        interaction.setWidth(1.5f);
+        interaction.setHeight(0.5f);
+
+        // Listening to interaction
+        interaction.onClick(interaction -> {
+            textDisplay.setText("Click : " + interaction.getClickType().getName());
+        });
+    }
+
+    private void createTitle(Location location, String title) {
+        TextDisplay textDisplay = new TextDisplay(location);
+        textDisplay.setText(title);
+        textDisplay.setBackgroundColor(0);
+        textDisplay.setTranslation(0.02, 2.7, 1.0);
+        textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0);
+    }
+
+    private void createBackGround(Location location) {
+        BlockDisplay blockDisplay = new BlockDisplay(location);
+        blockDisplay.setBlock(Material.WHITE_CONCRETE);
+        blockDisplay.setScale(0.01, 3.0, 2.0);
+    }
+
+}
+```
+```kotlin tab="Kotlin"
+object CustomGUIExample {
+
+    fun create(location: Location) {
+        createBackGround(location)
+        createTitle(location, "Custom GUI")
+        addButton(location.clone().add(0.0, 0.25, 0.0))
+        addButton(location.clone().add(0.0, 1.0, 0.0))
+        addButton(location.clone().add(0.0, 1.75, 0.0))
+    }
+
+    private fun addButton(location: Location) {
+        // Visual box
+        val blockDisplay = BlockDisplay(location)
+        blockDisplay.setBlock(Material.RED_CONCRETE)
+        blockDisplay.setScale(0.01, 0.5, 1.5)
+        blockDisplay.setTranslation(0.02, 0.0, 0.25)
+
+        // Visual Text
+        val textDisplay = TextDisplay(location)
+        textDisplay.setText("Click ME :D")
+        textDisplay.setBackgroundColor(0)
+        textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0)
+        textDisplay.setTranslation(0.03, 0.1, 1.0)
+
+        //Interaction
+        val interactionSpawn = location.add(-0.7, 0.0, 1.0)
+        val interaction = Interaction(interactionSpawn)
+        interaction.setWidth(1.5f)
+        interaction.setHeight(0.5f)
+
+        // Listening to interaction
+        interaction.onClick {
+            textDisplay.setText("Click : $clickType")
+        }
+    }
+
+    private fun createTitle(location: Location, title: String) {
+        val textDisplay = TextDisplay(location)
+        textDisplay.setText(title)
+        textDisplay.setBackgroundColor(0)
+        textDisplay.setTranslation(0.02, 2.7, 1.0)
+        textDisplay.setLeftRotation(0.7, 0.0, 0.7, 0.0)
+    }
+
+    private fun createBackGround(location: Location) {
+        val blockDisplay = BlockDisplay(location)
+        blockDisplay.setBlock(Material.WHITE_CONCRETE)
+        blockDisplay.setScale(0.01, 3.0, 2.0)
+    }
+
+}
+```
+
+Now you have completed creating a basic custom gui :D
+
+![Custom GUI](https://cdn.undefinedcreations.com/lynx/display/cusotm-gui-example.gif)

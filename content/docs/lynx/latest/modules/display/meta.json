@@ -1,5 +1,5 @@
 {
   "title": "Display",
   "defaultOpen": false,
-  "pages": ["spawning-display", "display", "name", "skin", "cape", "events", "examples"]
+  "pages": ["spawning-display", "display", "interaction", "on-click", "examples"]
 }
