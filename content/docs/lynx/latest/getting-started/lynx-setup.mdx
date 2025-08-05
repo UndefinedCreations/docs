@@ -16,7 +16,6 @@ Here is a list of all the current modules:
 | PlayerMeta  | 1.13+   |
 | Scheduler   | 1.13+   |
 | Scoreboard  | 1.13+   |
-| SQL         | 1.13+   |
 | Tab         | 1.13+   |
 
 # Accessing the API
@@ -158,3 +157,21 @@ Shadowing means that you lynx will be included in the built JAR. If you use Grad
 <Callout title="Important" type="warn">
   You should modify your Gradle dependency to `implementation` instead of `compile`/`compileOnly` and remove the `scope` block from your Maven dependency.
 </Callout>
+
+## Using Java
+
+When coding you will need to import kotlin. You can do this by adding the kotlin plugin:
+
+```groovy tab="Gradle Groovy DSL"
+id 'org.jetbrains.kotlin.jvm' version "2.2.0"
+```
+```groovy tab="Gradle Kotlin DSL"
+kotlin("jvm") version "2.2.0"
+```
+```xml tab="Maven"
+<plugin>
+    <artifactId>kotlin-maven-plugin</artifactId>
+    <groupId>org.jetbrains.kotlin</groupId>
+    <version>2.2.0</version>
+</plugin>
+```

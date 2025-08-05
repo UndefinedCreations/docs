@@ -1,5 +1,5 @@
 {
   "title": "Modules",
   "defaultOpen": true,
-  "pages": ["display", "logger", "event", "playerMeta", "item", "scheduler"]
+  "pages": ["display", "event", "item", "logger", "playerMeta", "scheduler", "scoreboard"]
 }

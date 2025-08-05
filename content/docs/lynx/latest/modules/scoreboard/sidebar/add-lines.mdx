@@ -1,0 +1,70 @@
+---
+title: Adding Lines
+---
+
+Now we get to the fun stuff `Lines`. We have giving by default multiple type of lines. Let's start off by looking at `Line` and `EmptyLine`.
+
+# Line
+An `Line` if a static text that can't be changed. You are able to use a `String` and `Component` again:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="String"
+        new SideBar(ChatColor.RED + "Cool Sidebar", sidebar -> {
+            sidebar.addLine("Cool Line");
+        });
+        ```
+        ```java tab="Component"
+        new SideBar(MiniMessage.deserialize("<red>Cool Sidebar"), sidebar -> {
+            sidebar.addLine(Component.text("Cool Line"));
+        });
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="String"
+        sidebar(ChatColor.RED + "Cool Sidebar") {
+            addLine("Cool Line")
+        }
+        ```
+        ```java tab="Component"
+        sidebar(MiniMessage.deserialize("<red>Cool Sidebar")) {
+            addLine(Component.text("Cool Line"))
+        }
+        ```
+    </Tab>
+</Tabs>
+
+# Empty Line
+
+Adding an `EmptyLine` is as simple using `.addEmptyLine`:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="String"
+        new SideBar(ChatColor.RED + "Cool Sidebar", sidebar -> {
+            sidebar.addLine("Cool Line");
+            sidebar.addEmptyLine();
+        });
+        ```
+        ```java tab="Component"
+        new SideBar(MiniMessage.deserialize("<red>Cool Sidebar"), sidebar -> {
+            sidebar.addLine(Component.text("Cool Line"));
+            sidebar.addEmptyLine();
+        });
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="String"
+        sidebar(ChatColor.RED + "Cool Sidebar") {
+            addLine("Cool Line")
+            addEmptyLine()
+        }
+        ```
+        ```java tab="Component"
+        sidebar(MiniMessage.deserialize("<red>Cool Sidebar")) {
+            addLine(Component.text("Cool Line"))
+            addEmptyLine()
+        }
+        ```
+    </Tab>
+</Tabs>

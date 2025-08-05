@@ -1,0 +1,110 @@
+---
+title: Updatable Lines
+---
+
+These types of lines are lines that can be updated and modified.
+
+# Update
+We will look at multiple type of lines but the same of all the lines is that you can update them by using `.update()`. I will show you with an `UpdatableLine` witch we will discuss later:
+
+```java tab="Java"
+new SideBar(ChatColor.RED + "Cool Sidebar", sidebar -> {
+    UpdatableLine updatableLine = sidebar.addUpdatableLine(() -> {});
+    updateLine.update();
+});
+```
+```kotlin tab="Kotlin"
+sidebar("${ChatColor.RED} Cool Sidebar") {
+    val updatableLine = addUpdatableLine {}
+    updatableLine.update()
+}
+```
+
+<Callout title="Information" type="info">
+    With all the line types below there are options to use `Component`'s instead of strings
+</Callout>
+
+# Standard
+
+How these work are that you set a supplier and can be run and updated using `.update()`. This supplier can be modified later by using `.setUpdatable(Supplier)`.
+In the example we will be setting the player count:
+
+```java tab="Java"
+new SideBar(ChatColor.RED + "Cool Sidebar", sidebar -> {
+    sidebar.addUpdatableLine(() -> {
+        return "Online Players : " + Bukkit.getOnlinePlayers().getSize();
+    });
+});
+```
+```kotlin tab="Kotlin"
+sidebar("${ChatColor.RED} Cool Sidebar") {
+    addUpdatableLine {
+        "Online Players : ${Bukkit.getOnlinePlayers().size}"
+    }
+}
+```
+
+# Player
+
+This one is similar as the previous type but the difference is that the line can be different for every player. In this example we will show the players `GameMode`:
+
+```java tab="Java"
+new SideBar(ChatColor.RED + "Cool Sidebar", sidebar -> {
+    sidebar.addUpdatablePlayerLine(player -> {
+        return "GameMode : " + player.getGameMode().getName();
+    });
+});
+```
+```kotlin tab="Kotlin"
+sidebar("${ChatColor.RED} Cool Sidebar") {
+    addUpdatablePlayerLine {
+        "GameMode : ${it.gameMode.name}"
+    }
+}
+```
+
+# Standard Timer
+
+These are very similar as the previous standard line the difference is that it will automatically run `.update()` on a set interval. You are also able to choose if it should be run async.
+For this example I will add a line that will update every 20 ticks and will return player count asynchronously:
+
+```java tab="Java"
+new SideBar(ChatColor.RED + "Cool Sidebar", sidebar -> {
+    sidebar.addUpdatableTimerLine(
+        20,
+        true, () -> {
+        return "Online Players : " + Bukkit.getOnlinePlayers().getSize();
+    });
+});
+```
+```kotlin tab="Kotlin"
+sidebar("${ChatColor.RED} Cool Sidebar") {
+    addUpdatableLine(
+        20,
+        async = true
+    ) {
+        "Online Players : ${Bukkit.getOnlinePlayers().size}"
+    }
+}
+```
+
+# Player Timer
+
+As you can expect this is the same as `Standard Timer` but then per player. So in this example I will add a line that will show the players ping and update every 10 ticks:
+
+```java tab="Java"
+new SideBar(ChatColor.RED + "Cool Sidebar", sidebar -> {
+    sidebar.addUpdatablePlayerTimerLine(
+        10,
+        player -> {
+        return "Ping : " + player.getPing();
+    });
+});
+```
+```kotlin tab="Kotlin"
+sidebar("${ChatColor.RED} Cool Sidebar") {
+    addUpdatablePlayerTimerLine(10) {
+        "Ping : ${it.ping}"
+    }
+}
+```

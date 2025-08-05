@@ -1,0 +1,40 @@
+---
+title: Creating Sidebar
+---
+
+Lynx allows you to create packet bases sidebars. We have made the packet based to allow use to run them async this will help with performance.
+
+We will start by creating the sidebar. When creating the sidebar the only thing we need to give is the `title`. The `title` can be passed as both a `String` or `Component`
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="String"
+        new SideBar(ChatColor.RED + "Cool Sidebar");
+        ```
+        ```java tab="Component"
+        new SideBar(MiniMessage.deserialize("<red>Cool Sidebar"));
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="String"
+        sidebar("${ChatColor.RED} Cool Sidebar")
+        ```
+        ```java tab="Component"
+        sidebar(MiniMessage.deserialize("<red>Cool Sidebar"))
+        ```
+    </Tab>
+</Tabs>
+
+# Adding Viewer
+
+Adding an player to view the sidebar is as simple as doing `.addViewer`:
+
+```java tab="Java"
+new SideBar(ChatColor.RED + "Cool Sidebar")
+    .addViewer(player);
+```
+```kotlin tab="Kotlin"
+sidebar(ChatColor.RED + "Cool Sidebar")
+    .addViewer(player)
+```
+
