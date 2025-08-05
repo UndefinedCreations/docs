@@ -1,0 +1,189 @@
+---
+title: "Creating Tasks"
+---
+
+Lynx gives you an easy option of creating `Bukkit` schedule tasks.
+
+# Sync
+
+We will start off by showing you how you can create a `sync` task:
+
+```java tab="Java"
+Scheduler.sync(task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+sync {
+
+}
+```
+
+# Async
+
+Now that we know how to create `sync` tasks you can quickly see how we are able to create `async` tasks as well:
+
+```java tab="Java"
+Scheduler.async(task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+async {
+
+}
+```
+
+# Delay
+
+Next we will look into delaying tasks. This will delay the task with a set number of ticks:
+For this example we will delay it with 20 ticks witch is one second.
+
+```java tab="Java"
+Scheduler.delay(20, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+delay(20) {
+
+}
+```
+
+We are also able to not use ticks and use a `TimeUnit` instead. Let's delay the tasks by one minute:
+
+```java tab="Java"
+Scheduler.delay(1, TimeUnit.MINUTES, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+delay(
+    1,
+    unit = TimeUnit.MINUTES
+) {
+
+}
+```
+
+Lastly we can make the task run asynchronous also well:
+
+```java tab="Java"
+Scheduler.delay(1, TimeUnit.MINUTES, true, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+delay(
+    1,
+    unit = TimeUnit.MINUTES,
+    async = true
+) {
+
+}
+```
+
+# Repeating
+
+Lastly you are able to create a repeating task. This will repeat the task with a set interval.
+Let's start by making a tasks that will repeat every 10 ticks:
+
+```java tab="Java"
+Scheduler.repeatingTask(10, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+repeatingTask(10) {
+
+}
+```
+
+Next we can change the period. This is the time in ticks it will wait before it starts the loop:
+
+```java tab="Java"
+Scheduler.repeatingTask(10, 10, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+repeatingTask(
+    10,
+    period = 10
+) {
+
+}
+```
+
+The same as delay task you are use `TimeUnit`:
+
+```java tab="Java"
+Scheduler.repeatingTask(1, 1, TimeUnit.MINUTES, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+repeatingTask(
+    1,
+    period = 1,
+    unit = TimeUnit.MINUTES
+) {
+
+}
+```
+
+Next you have the option to choose if it should run asynchronously:
+
+```java tab="Java"
+Scheduler.repeatingTask(1, 1, TimeUnit.MINUTES, true, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+repeatingTask(
+    1,
+    period = 1,
+    unit = TimeUnit.MINUTES,
+    async = true
+) {
+
+}
+```
+
+## Times
+
+With a repeating task you are able to choose the amount of times it should run. In this example I will show how to run a task 5 times:
+
+```java tab="Java"
+Scheduler.repeatingTask(1, 1, TimeUnit.MINUTES, true, 5, task -> {
+
+});
+```
+```kotlin tab="Kotlin"
+repeatingTask(
+    1,
+    times = 5
+) {
+
+}
+```
+
+## Condition
+
+You are also able to use conditions. These are bits of custom code that will run before the task and if this code will return `false` it will cancel the task. Here is an example that will send an action bar until the player isn't an operator:
+
+```java tab="Java"
+Scheduler.repeatingTask(
+        10,
+        () -> { return player.isOp(); },
+        bukkitRunnable -> {
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("You are an operator"));
+        });
+```
+```kotlin tab="Kotlin"
+repeatingTask(
+    10,
+    condition = { player.isOp() }
+) {
+    player.spigot.sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText("You are an operator"))
+}
