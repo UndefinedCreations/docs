@@ -1,0 +1,39 @@
+---
+title: Creating Team
+---
+
+Lynx allows you to create fully packet based teams. This is useful for server performance because we can run and send the packet async.
+
+Let's start by creating a team. We can do this by creating a new instance of `Team`. When creating this you will see some options you can choose from.
+
+Let's look at the first one. Its called `autoLoad` when this is on `true` it will automatically send the team packet to all the player to register the team. It won't add them to the team, but it will allow them to see it. If its `false` it won't do this automatically, and you will have to use the `.addViewer(player)` method. By default, this is set to `true`.
+
+Next we have `aync` if this is on `true` it will send the packet asynchronous, by default this is set to `false`.
+
+Lastly you can choose the `order` index. This will determine where the team will show up in team. This is a `Int` between 1 and 999.
+
+Let's create a team now:
+
+```java tab="Java"
+new Team();
+```
+```kotlin tab="Kotlin"
+team()
+```
+
+# Entry
+
+You are able to add an player to the team by using `.addEntry(player)`:
+
+<Callout title="Important" type="info">
+    Adding entry will be using the players username. Sadly this is a limitation of minecraft.
+</Callout>
+
+```java tab="Java"
+new Team()
+    .addEntry(player);
+```
+```kotlin tab="Kotlin"
+team()
+    .addEntry(player)
+```

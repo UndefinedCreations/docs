@@ -1,0 +1,5 @@
+{
+  "title": "Teams",
+  "defaultOpen": false,
+  "pages": ["creating-team", "modifing-team"]
+}

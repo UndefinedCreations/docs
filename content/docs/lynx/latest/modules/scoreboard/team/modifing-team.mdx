@@ -1,0 +1,133 @@
+---
+title: Modifying Team
+---
+
+Teams have a lot of possible modifications you can change on it. Let's start with cosmetics.
+
+# Cosmetics
+
+## Prefix
+Teams all you to change the prefix in front of the players name. You can both use `String` and `Component`:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="String"
+        new Team()
+            .setPrefix("Cool Prefix ");
+        ```
+        ```java tab="Component"
+        new Team()
+            .setPrefixComponent(Component.text("Cool Prefix "));
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="String"
+        team {
+            setPrefix("Cool Prefix ")
+        }
+        ```
+        ```java tab="Component"
+        team {
+            setPrefixComponent(Component.text("Cool Prefix "))
+        }
+        ```
+    </Tab>
+</Tabs>
+
+## Suffix
+The same as prefix you can set the suffix with both a `String` and `Component`:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="String"
+        new Team()
+            .setSuffix("Cool Prefix ");
+        ```
+        ```java tab="Component"
+        new Team()
+            .setSuffixComponent(Component.text("Cool Prefix "));
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```java tab="String"
+        team {
+            setSuffix("Cool Prefix ")
+        }
+        ```
+        ```java tab="Component"
+        team {
+            setSuffixComponent(Component.text("Cool Prefix "))
+        }
+        ```
+    </Tab>
+</Tabs>
+
+## Color
+
+Lastly with cosmetics you are able to modify the teams color. This will change the color of the players name as well:
+
+```java tab="Java"
+new Team()
+    .setColor(ChatColor.RED);
+```
+```kotlin tab="Kotlin"
+team {
+    setColor(ChatColor.RED)
+}
+```
+
+# Friendly Invisible
+
+When this option is `true` you can see player that are invisible in the same team, by default it is `true`:
+
+```java tab="Java"
+new Team()
+    .setSeeFriendlyInvisible(true);
+```
+```kotlin tab="Kotlin"
+team {
+    setSeeFriendlyInvisible(true)
+}
+```
+
+# Name Tag Visibility
+
+This option will allow you to the name tag visibility. You will set it with using `NameTagVisibility` enum. In this enum there are these options:
+
+- ALWAYS
+- NEVER
+- HIDE_FOR_OTHER_TEAMS
+- HIDE_FOR_OWN_TEAM
+
+By default, it is `ALWAYS`
+
+```java tab="Java"
+new Team()
+    .setNameTagVisibility(NameTagVisibility.NEVER);
+```
+```kotlin tab="Kotlin"
+team {
+    setNameTagVisibility(NameTagVisibility.NEVER)
+}
+```
+
+# Collision Rule
+
+The last option will allow you how the players collision happens. These are the available options:
+
+- ALWAYS
+- NEVER
+- FOR_OTHER_TEAMS
+- FOR_OWN_TEAM
+
+By default, it is `ALWAYS`
+
+```java tab="Java"
+new Team()
+    .setCollisionRule(CollisionRule.NEVER);
+```
+```kotlin tab="Kotlin"
+team {
+    setCollisionRule(CollisionRule.NEVER)
+}
+```
