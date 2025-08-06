@@ -37,3 +37,16 @@ new Team()
 team()
     .addEntry(player)
 ```
+
+## Track Entry
+
+A default entry is limited by the username. This means if you change the players username using `playerMeta` module it will remove then from the team. This is what a `TrackEntry` is. When a username is changed it will update the team:
+
+```java tab="Java"
+new Team()
+    .addTrackEntry(player);
+```
+```kotlin tab="Kotlin"
+team()
+    .addTrackEntry(player)
+```
