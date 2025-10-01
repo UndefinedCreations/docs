@@ -1,0 +1,5 @@
+{
+  "title": "Basic",
+  "defaultOpen": false,
+  "pages": ["string", "number", "boolean"]
+}

@@ -1,0 +1,31 @@
+---
+title: Online Players Argument
+---
+
+The `OnlinePlayersArgument` is an extension of [ListArgument] using [StringArgument] as a base. It lists the currently online players using `Bukkit.getServer().getOnlinePlayers`.
+
+
+```java tab="Java"
+new StellarCommand("get-uuid")
+    .addOnlinePlayersArgument("target")
+    .addExecution(Player.class, context -> {
+        context.getSender().sendMessage(context.getArgument<Player>("target").getUUID().toString())
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("get-uuid")
+    .addOnlinePlayersArgument("target")
+    .addExecution<Player> {
+        sender.sendMessage(getArgument<Player>("target").uuid.toString())
+    }
+```
+
+![Online Players Argument](https://cdn.undefinedcreations.com/stellar/gifs/list/online_players.gif)
+
+## Parameters
+
+Here is a list of all parameters:
+
+* `name` - The name of the argument.
+* `filter` - A function passing in a `Player` and returning a `boolean`. It filters any players that return `false`.
+* `async` - Whether the _suggestions_ should be gotten asynchronously (default: `false`).

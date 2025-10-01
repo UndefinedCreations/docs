@@ -1,0 +1,48 @@
+---
+title: Item Slots
+---
+
+Returns an int of a specific slot in any type of inventory . You can use `ItemSlotArgument` for the selection of _one_ slot, and `ItemSlotsArgument` for multiple slots. Examples:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Slot"
+        new StellarCommand("clear-item")
+            .addItemSlotArgument("slot")
+            .addExecution(Player.class, context -> {
+                int slot = (int) context.getArgument("slot")
+                context.getSendern().getInventory().setItem(slot, null)
+            });
+        ```
+        ```java tab="Slots"
+        new StellarCommand("clear-tems")
+            .addItemSlotArgument("slots", multiple = true)
+            .addExecution(Player.class, context -> {
+                int slots = getArgument<List<Integer>>("slots")
+                for (slot in slots) context.getSendern().getInventory().setItem(slot, null)
+            });
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```kotlin tab="Slot"
+        StellarCommand("clear-item")
+            .addItemSlotArgument(name = "slot")
+            .addExecution<Player> {
+                val slot = getArgument<Int>("slot")
+                sender.inventory.setItem(slot, null)
+            }
+        ```
+        ```kotlin tab="Slots"
+        StellarCommand("clear-items")
+        .addItemSlotArgument(name = "slots", multiple = true)
+        .addExecution<Player> {
+            val slots = getArgument<List<Int>>("slots")
+            for (slot in slots) sender.inventory.setItem(slot, null)
+        }
+        ```
+    </Tab>
+</Tabs>
+
+[//]: # (<ArgumentParser placeholder="container.0" regex="^[a-zA-Z]+.[a-zA-Z0-9]+$" />)
+
+![Item Slot Argument](https://cdn.undefinedcreations.com/stellar/gifs/items/item_slot.gif)

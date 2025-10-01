@@ -1,0 +1,28 @@
+---
+title: Height Map
+---
+
+Must be one of `world_surface`, `motion_blocking`, `motion_blocking_no_leaves`, and `ocean_floor`. It returns a `HeighMap` enum, which defines _how_ to calculate the highest y block. Example:
+
+```java tab="Java"
+new StellarCommand("isNether")
+     .addHeightMapArgument("height_map")
+     .addExecution(Player.class, context -> {
+         HeightMap height = context.getArgument("height_map");
+         Integer highestYBlock = context.getSender().getWorld().getHighestBlockYAt(context.getSender().getLocation(), height);
+         Location newLocation = context.getSender().getLocation();
+         newLocation.setY(highestYBlock + 1.0);
+         context.getSender().teleport(newLocation);
+     });
+```
+```kotlin tab="Kotlin"
+StellarCommand("top")
+    .addHeightMapArgument(name = "height_map")
+    .addExecution<Player> {
+        val environment = getArgument<HeightMap>("height_map")
+        val highestYBlock = sender.world.getHighestBlockAt(sender.location, environment)
+        sender.teleport(highestYBlock.location.add(0.0, 1.0, 0.0))
+    }
+```
+
+![Height Map Argument](https://cdn.undefinedcreations.com/stellar/gifs/world/height_map.gif)

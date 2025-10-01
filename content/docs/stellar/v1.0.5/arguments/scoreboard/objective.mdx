@@ -1,0 +1,28 @@
+---
+title: Objective Argument
+---
+
+Returns a scoreboard `Objective`. Example:
+
+```java tab="Java"
+new StellarCommand("setamount")
+    .addObjectiveArgument("objective")
+    .addIntegerArgument("amount")
+    .addExecution<Player>(Player.class, context -> {
+        Objective objective = getArgument<Objective>("objective");
+        int amount = (int) getArgument("amount");
+        objective.getScore("amount").setScore(amount);
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("setamount")
+    .addObjectiveArgument(name = "objective")
+    .addIntegerArgument(name = "amount")
+    .addExecution<Player> {
+        val objective = getArgument<Objective>("objective")
+        val amount = getArgument<Int>("amount")
+        objective.getScore("amount").score = amount
+    }
+```
+
+![Objective Argument](https://cdn.undefinedcreations.com/stellar/gifs/scoreboard/objective.gif)

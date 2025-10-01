@@ -1,0 +1,5 @@
+{
+  "title": "Math",
+  "defaultOpen": false,
+  "pages": ["angle", "axis", "operation", "range", "rotation", "time"]
+}

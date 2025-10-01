@@ -1,0 +1,31 @@
+---
+title: Literal Argument
+---
+
+A literal argument is an argument that represents an option you can choose from. They have suggestion, and if the player ends up _not_ choosing any arguments, then nothing will happen.
+Examples:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Short"
+        new StellarCommand("server")
+            .addArgument("reset")
+        ```
+        ```java tab="Long"
+        new StellarCommand("server")
+            .addLiteralArgument("reset")
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```kotlin tab="Short"
+        StellarCommand("server")
+            .addArgument(name = "reset")
+        ```
+        ```kotlin tab="Long"
+        StellarCommand("server")
+            .addLiteralArgument(name = "reset")
+        ```
+    </Tab>
+</Tabs>
+
+![Literal Argument](https://cdn.undefinedcreations.com/stellar/gifs/literal_argument.gif)

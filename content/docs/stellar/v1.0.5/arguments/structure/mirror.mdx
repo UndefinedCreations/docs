@@ -1,0 +1,27 @@
+---
+title: Mirror Argument
+---
+
+
+Must be one of the following: `none`, `front_back` and `left_right`. It returns `Mirror`. Example:
+
+```java tab="Java"
+new StellarCommand("structure")
+    .addArgument("spawn")
+    .addMirrorArgument("mirror")
+    .addExecution(Player.class, context -> {
+        Mirror mirror = context.getArgument("mirror");
+        spawnStructure(mirror) // custom method
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("structure")
+    .addArgument("spawn")
+    .addMirrorArgument(name = "mirror")
+    .addExecution<Player> {
+        val mirror = getArgument<Mirror>("mirror")
+        spawnStructure(mirror) // custom method
+    }
+```
+
+![Mirror Argument](https://cdn.undefinedcreations.com/stellar/gifs/structure/mirror.gif)
