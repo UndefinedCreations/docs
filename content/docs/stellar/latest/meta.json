@@ -1,5 +1,5 @@
 {
   "title": "Stellar",
   "root": true,
-  "pages": ["index", "getting-started", "usage", "arguments"]
+  "pages": ["index", "getting-started", "usage", "kotlin", "arguments"]
 }

@@ -1,0 +1,88 @@
+---
+title: Usage
+---
+
+<Callout type="info">
+  Make sure you have the Kotlin module properly set up as described in the [Getting Started](/docs/stellar/latest/kotlin) section before proceeding with the examples below.
+</Callout>
+
+This page covers practical usage patterns, command creation techniques, and features available in the Kotlin module.
+
+## Creating Commands
+
+The Kotlin module allows you to build commands either using `KotlinStellarCommand`, which will be shown below; or using `KotlinBaseStellarCommand`, which will not be covered here yet since it's still experimental.
+
+You can create a command with the `KotlinStellarCommand` class with the `command` method:
+
+```kt
+command(name = "message") {
+    // ...
+}
+```
+
+You can then modify certain fields as such:
+
+```kt
+command("message") {
+    // [!code highlight]
+    description = "Message other players!"
+    // [!code highlight]
+    usage = "/message <target> <message>"
+    // [!code highlight]
+    aliases += "msg"
+}
+```
+
+## Arguments
+
+<Callout type="info">
+    Many lambdas in the argument builders, such as the list provider, are suspended functions. 
+</Callout>
+
+To add arguments, use their usual method names, excluding the "add" part. For example, `stringArgument("test")`, would be a valid argument. Example:
+
+```kt
+command("message") {
+    description = "Message other players!"
+    usage = "/message <target> <message>"
+    aliases += "msg"
+
+    listArgument(
+        name = "test",
+        list = { /** fetch data **/ }, // suspended function
+        context = Dispatchers.IO, // modify the CoroutineContext for the list parameter
+    ) {
+        // ...
+    }
+}
+```
+
+<Callout type="info">
+    Additionally, [literal arguments](../arguments/literal) can be added as such:
+
+    ```kt
+    command("menu") {
+        "open" {
+            // ...
+        }
+    }
+    ```
+</Callout>
+
+## Executions and more
+
+You can add requirements, suggestions, and executions by calling these methods:
+
+```kt
+stringArgument("message")
+    .requires<Player> { /* ... */ }
+    .execution<Player>(context = Dispatchers.IO) { // context can be modified
+        // ...
+    }
+    .suggest { /* ... */ }
+    .runnable<Player> {
+        // ...
+    }
+```
+
+These are then run in suspended functions, with the context that is given.

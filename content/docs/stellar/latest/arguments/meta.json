@@ -1,6 +1,6 @@
 {
   "title": "Arguments",
-  "defaultOpen": true,
+  "defaultOpen": false,
   "pages": [
     "literal",
     "basic",

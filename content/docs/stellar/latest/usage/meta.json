@@ -1,6 +1,6 @@
 {
   "title": "Usage",
-  "defaultOpen": true,
+  "defaultOpen": false,
   "pages": [
     "command-registration",
     "command-unregistration",
