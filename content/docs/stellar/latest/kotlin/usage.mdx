@@ -86,3 +86,106 @@ stringArgument("message")
 ```
 
 These are then run in suspended functions, with the context that is given.
+
+## Example
+
+Here's a complete example that demonstrates the Kotlin module's features, including coroutines, argument handling, and player messaging:
+
+```kt
+import com.undefined.stellar.kotlin.command
+import kotlinx.coroutines.Dispatchers
+import org.bukkit.Bukkit
+import org.bukkit.entity.Player
+
+// First unregister the default message/msg command.
+unregisterCommand("")
+
+// Create a messaging command with multiple features
+command("message") {
+    description = "Send a message to another player with optional formatting"
+    usage = "/message <player> <message> [format]"
+    aliases += listOf("msg", "pm", "tell")
+    
+    // Player argument with online player validation
+    playerArgument("target") {
+        requires<Player> { sender ->
+            sender.hasPermission("stellar.message.send")
+        }
+        
+        // Literal argument for formatting options
+        "formatted" {
+            // String argument for the actual message
+            stringArgument("message") {
+                execution<Player>(context = Dispatchers.IO) { sender, args ->
+                    val target = args.get<Player>("target")
+                    val message = args.get<String>("message")
+                    
+                    // Simulate async operation (e.g., database logging)
+                    delay(100) // This is a suspended function
+                    
+                    // Send formatted message
+                    val formattedMessage = "§6[§eMessage§6] §f$message"
+                    target.sendMessage("§6From ${sender.name}: $formattedMessage")
+                    sender.sendMessage("§6To ${target.name}: $formattedMessage")
+                    
+                    // Log to console asynchronously
+                    Bukkit.getLogger().info("${sender.name} sent formatted message to ${target.name}")
+                }
+            }
+        }
+        
+        // Regular message without formatting
+        stringArgument("message") {
+            execution<Player> { sender, args ->
+                val target = args.get<Player>("target")
+                val message = args.get<String>("message")
+                
+                target.sendMessage("§7${sender.name} whispers: §f$message")
+                sender.sendMessage("§7You whisper to ${target.name}: §f$message")
+            }
+        }
+    }
+
+    // Alternative: Broadcast to all online players
+    "broadcast" {
+        requires<Player> { sender ->
+            sender.hasPermission("stellar.message.broadcast")
+        }
+        
+        stringArgument("message") {
+            execution<Player>(context = Dispatchers.Default) { sender, args ->
+                val message = args.get<String>("message")
+                val broadcast = "§c[§6Broadcast§c] §e${sender.name}: §f$message"
+                
+                // Use coroutines to send message to all players
+                Bukkit.getOnlinePlayers().forEach { player ->
+                    launch {
+                        player.sendMessage(broadcast)
+                    }
+                }
+            }
+            
+            suggest { sender, _ ->
+                // Dynamic suggestions based on context
+                listOf("Hello everyone!", "Server maintenance in 10 minutes", "Welcome new players!")
+            }
+        }
+    }
+}
+```
+
+This example showcases:
+
+- **Command structure** with aliases and descriptions
+- **Nested literal arguments** for different command modes (`formatted` and `broadcast`)
+- **Permission requirements** using the `requires` method
+- **Coroutine contexts** for async operations with `Dispatchers.IO` and `Dispatchers.Default`
+- **Suspended functions** like `delay()` for async operations
+- **Dynamic suggestions** for better user experience
+- **Multiple execution paths** depending on the arguments provided
+
+The command supports usage patterns like:
+- `/message Steve Hello there!` - Send a simple message
+- `/message Steve formatted Welcome to the server!` - Send a formatted message  
+- `/message broadcast Server restart in 5 minutes` - Broadcast to all players
+
