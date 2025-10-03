@@ -1,0 +1,27 @@
+---
+title: Component Argument
+---
+
+
+Is a phrase, like `StringArgument` with `StringType.PHRASE`, it replaces target selectors (@e, @s, etc.) with their actual result. It returns a `net.kyori.adventure.text.Component`. Example:
+
+```java tab="Java"
+Audience audience = BukkitAudiences.create(this);
+new StellarCommand("send-to-self")
+        .addMessageArgument("message")
+        .addExecution(Player.class, context -> {
+            Component component = context.getArgument("message");
+            audience.sendMessage(component);
+        });
+```
+```kotlin tab="Kotlin"
+val audience = BukkitAudiences.create(this)
+StellarCommand("send-to-self")
+    .addMessageArgument(name = "message")
+    .addExecution<Player> {
+        val component = getArgument<Component>("message")
+        audience.sender(sender).sendMessage(component)
+    }
+```
+
+![Message Argument](https://cdn.undefinedcreations.com/stellar/gifs/text/message.gif)

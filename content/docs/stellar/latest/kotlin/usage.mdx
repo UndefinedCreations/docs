@@ -1,0 +1,181 @@
+---
+title: Usage
+---
+
+<Callout type="info">
+  Make sure you have the Kotlin module properly set up as described in the [Getting Started](/docs/stellar/latest/kotlin) section before proceeding with the examples below.
+</Callout>
+
+This page covers practical usage patterns, command creation techniques, and features available in the Kotlin module.
+
+## Creating Commands
+
+The Kotlin module allows you to build commands either using `KotlinStellarCommand`, which will be shown below; or using `KotlinBaseStellarCommand`, which will not be covered here yet since it's still experimental.
+
+You can create a command with the `KotlinStellarCommand` class with the `command` method:
+
+```kt
+command(name = "message") {
+    // ...
+}
+```
+
+You can then modify certain fields as such:
+
+```kt
+command("message") {
+    // [!code highlight]
+    description = "Message other players!"
+    // [!code highlight]
+    usage = "/message <target> <message>"
+    // [!code highlight]
+    aliases += "msg"
+}
+```
+
+## Arguments
+
+<Callout type="info">
+    Many lambdas in the argument builders, such as the list provider, are suspended functions. 
+</Callout>
+
+To add arguments, use their usual method names, excluding the "add" part. For example, `stringArgument("test")`, would be a valid argument. Example:
+
+```kt
+command("message") {
+    description = "Message other players!"
+    usage = "/message <target> <message>"
+    aliases += "msg"
+
+    listArgument(
+        name = "test",
+        list = { /** fetch data **/ }, // suspended function
+        scope = Plugin.scope, // modify the CoroutineScopce for the list parameter
+    ) {
+        // ...
+    }
+}
+```
+
+<Callout type="info">
+    Additionally, [literal arguments](../arguments/literal) can be added as such:
+
+    ```kt
+    command("menu") {
+        "open" {
+            // ...
+        }
+    }
+    ```
+</Callout>
+
+## Executions and more
+
+You can add requirements, suggestions, and executions by calling these methods:
+
+```kt
+stringArgument("message")
+    .requires<Player> { /* ... */ }
+    .execution<Player>(scope = Plugin.scope) { // scope can be modified
+        // ...
+    }
+    .suggest { /* ... */ }
+    .runnable<Player> {
+        // ...
+    }
+```
+
+These are then run in suspended functions, in the scope that is given.
+
+## Example
+
+Here's a complete example that demonstrates the Kotlin module's features, including coroutines, argument handling, and player messaging:
+
+```kt
+import com.undefined.stellar.kotlin.command
+import kotlinx.coroutines.Dispatchers
+import org.bukkit.Bukkit
+import org.bukkit.entity.Player
+
+// First unregister the default message/msg command.
+unregisterCommand("")
+
+// Create a messaging command with multiple features
+command("message") {
+    description = "Send a message to another player with optional formatting"
+    usage = "/message <player> <message> [format]"
+    aliases += listOf("msg", "pm", "tell")
+    
+    // Player argument with online player validation
+    playerArgument("target") {
+        requires<Player> { sender ->
+            sender.hasPermission("stellar.message.send")
+        }
+        
+        // Literal argument for formatting options
+        "formatted" {
+            // String argument for the actual message
+            stringArgument("message") {
+                execution<Player>(scope = Plugin.scope) { sender, args ->
+                    val target = args.get<Player>("target")
+                    val message = args.get<String>("message")
+                    
+                    // Simulate async operation (e.g., database logging)
+                    delay(100) // This is a suspended function
+                    
+                    // Send formatted message
+                    val formattedMessage = "§6[§eMessage§6] §f$message"
+                    target.sendMessage("§6From ${sender.name}: $formattedMessage")
+                    sender.sendMessage("§6To ${target.name}: $formattedMessage")
+                    
+                    // Log to console asynchronously
+                    Bukkit.getLogger().info("${sender.name} sent formatted message to ${target.name}")
+                }
+            }
+        }
+        
+        // Regular message without formatting
+        stringArgument("message") {
+            execution<Player> { sender, args ->
+                val target = args.get<Player>("target")
+                val message = args.get<String>("message")
+                
+                target.sendMessage("§7${sender.name} whispers: §f$message")
+                sender.sendMessage("§7You whisper to ${target.name}: §f$message")
+            }
+        }
+    }
+
+    // Alternative: Broadcast to all online players
+    "broadcast" {
+        requires<Player> { sender ->
+            sender.hasPermission("stellar.message.broadcast")
+        }
+        
+        stringArgument("message") {
+            execution<Player>(scope = Plugin.scope) { sender, args ->
+                val message = args.get<String>("message")
+                val broadcast = "§c[§6Broadcast§c] §e${sender.name}: §f$message"
+                
+                // Use coroutines to send message to all players
+                Bukkit.getOnlinePlayers().forEach { player ->
+                    launch {
+                        player.sendMessage(broadcast)
+                    }
+                }
+            }
+            
+            suggest { sender, _ ->
+                // Dynamic suggestions based on context
+                listOf("Hello everyone!", "Server maintenance in 10 minutes", "Welcome new players!")
+            }
+        }
+    }
+}
+```
+
+The command supports usage patterns like:
+- `/message Steve Hello there!` - Send a simple message
+- `/message Steve formatted Welcome to the server!` - Send a formatted message  
+- `/message broadcast Server restart in 5 minutes` - Broadcast to all players
+

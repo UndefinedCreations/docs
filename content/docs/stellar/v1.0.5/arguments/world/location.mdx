@@ -1,0 +1,108 @@
+---
+title: Location Argument
+---
+
+Returns `Location` and the syntax can vary depending on what  `LocationType` has been set. There are four types of `LocationType`: `LOCATION_3D`, `LOCATION_2D`, `PRECISE_LOCATION_3D` and `PRECISE_LOCATION_2D`. Examples:
+
+<Tabs items={["Java", "Kotlin"]}>
+    <Tab value="Java">
+        ```java tab="Location 3D"
+        new StellarCommand("teleport-to")
+            .addLocationArgument(
+                "location",
+                LocationType.LOCATION_3D // Default
+            )
+            .addExecution(Player.class, context -> {
+                Location location = context.getArgument("location");
+                context.getSender().teleport(location);
+            });
+        ```
+        ```java tab="Location 2D"
+        new StellarCommand("teleport-to")
+            .addLocationArgument(
+                "location",
+                LocationType.LOCATION_2D
+            )
+            .addExecution(Player.class, context -> {
+                Location location = context.getArgument("location");
+                Doudle currentY = context.getSender().getLocation().getY();
+                location.setY(currentY);
+                context.getSender().teleport(location);
+            });
+        ```
+        ```java tab="Precise Location 3D"
+        new StellarCommand("teleport-to")
+            .addLocationArgument(
+                "location",
+                LocationType.Precise Location 3D // Default
+            )
+            .addExecution(Player.class, context -> {
+                Location location = context.getArgument("location");
+                context.getSender().teleport(location);
+            });
+        ```
+        ```java tab="Precise Location 2D"
+        new StellarCommand("teleport-to")
+            .addLocationArgument(
+                "location",
+                LocationType.Precise Location 2D
+            )
+            .addExecution(Player.class, context -> {
+                Location location = context.getArgument("location");
+                Doudle currentY = context.getSender().getLocation().getY();
+                location.setY(currentY);
+                context.getSender().teleport(location);
+            });
+        ```
+    </Tab>
+    <Tab value="Kotlin">
+        ```kotlin tab="Location 3D"
+        StellarCommand("teleport-to")
+            .addLocationArgument(
+                name = "location",
+                type = LocationType.LOCATION_3D // Default
+            )
+            .addExecution<Player> {
+                val location = getArgument<Location>("location")
+                sender.teleport(location)
+            }
+        ```
+        ```kotlin tab="Location 2D"
+        StellarCommand("teleport-to")
+            .addLocationArgument(
+                 name = "location",
+                 type = LocationType.LOCATION_2D
+            )
+            .addExecution<Player> {
+                val location = getArgument<Location>("location")
+                val currentY = sender.location.y
+                sender.teleport(location.apply { y = currentY })
+            }
+        ```
+        ```kotlin tab="Precise Location 3D"
+        StellarCommand("teleport-to")
+            .addLocationArgument(
+                name = "location",
+                type = LocationType.PRECISE_LOCATION_3D
+            )
+            .addExecution<Player> {
+                val location = getArgument<Location>("location")
+                sender.teleport(location)
+            }
+        ```
+        ```kotlin tab="Precise Location 2D"
+        StellarCommand("teleport-to")
+            .addLocationArgument(
+                name = "location",
+                type = LocationType.PRECISE_LOCATION_2D
+            )
+            .addExecution<Player> {
+                val location = getArgument<Location>("location")
+                val currentY = sender.location.y
+                sender.teleport(location.apply { y = currentY })
+            }
+         ```
+    </Tab>
+</Tabs>
+
+![Location Argument](https://cdn.undefinedcreations.com/stellar/gifs/world/location.gif)

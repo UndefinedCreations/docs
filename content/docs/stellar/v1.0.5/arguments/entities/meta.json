@@ -1,0 +1,5 @@
+{
+  "title": "Entity & Player",
+  "defaultOpen": false,
+  "pages": ["entity", "entity-anchor", "game-mode", "game-profile"]
+}

@@ -1,0 +1,27 @@
+---
+title: Rotation Argument
+---
+
+Must be a rotation consisting of yaw and pitch, which returns a `Location` only containing yaw and pitch. Example:
+
+```java tab="Java"
+new StellarCommand("set-rotation")
+    .addRotationArgument("rotation")
+    .addExecution<Player>(Player.class, context -> {
+        Location rotation = context.getArgument<Location>("rotation");
+        Location newLocation = context.getSender().getLocation().clone();
+        newLocation.setYaw(rotation.getYaw());
+        newLocation.setPitch(rotation.getPitch());
+        context.getSender().teleport(newLocation);
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("set-rotation")
+    .addRotationArgument("rotation")
+    .addExecution<Player> {
+        val rotation = getArgument<Location>("rotation")
+        sender.teleport(sender.location.apply { yaw = rotation.yaw; pitch = rotation.pitch })
+    }
+```
+
+![Rotation Argument](https://cdn.undefinedcreations.com/stellar/gifs/math/rotation.gif)

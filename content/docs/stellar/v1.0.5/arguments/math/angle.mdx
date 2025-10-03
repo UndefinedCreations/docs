@@ -1,0 +1,29 @@
+---
+title: Angle Argument
+---
+
+
+A yaw angle, in floating-point number, ranging from -180.0 (north) to 179.9 (just west of north). Returns `Float`. Example:
+
+```java tab="Java"
+new StellarCommand("setangle")
+    .addAngleArgument("angle")
+    .addExecution(Player.class, context -> {
+        float angle = (float) context.getArgument("angle");
+        Location newLocation = context.getSender().location;
+        newLocation.yaw = angle;
+        context.getSender.teleport(newLocation);
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("setangle")
+    .addAngleArgument(name = "angle")
+    .addExecution<Player> {
+        val angle = getArgument<Float>("angle")
+        sender.teleport(
+            sender.location.clone().apply { yaw = angle }
+        )
+    }
+```
+
+![Angle Argument](https://cdn.undefinedcreations.com/stellar/gifs/math/angle.gif)

@@ -1,0 +1,26 @@
+---
+title: Game Mode Argument
+---
+
+Must be one of the following: `survival`, `creative`, `adventure` or `spectator`. It returns the `GameMode` enum.
+
+```java tab="Java"
+new StellarCommand("gamemode")
+    .addGameModeArgument("mode")
+    .addExecution(Player.class, context -> {
+        GameMode mode = context.getArgument<GameMode>("mode")
+        sender.gamemode = mode
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("gamemode")
+    .addGameModeArgument("mode")
+    .addExecution<Player> {
+        val mode = getArgument<GameMode>("mode")
+        sender.gamemode = mode
+    }
+```
+
+[//]: # (<ArgumentParser placeholder="survival" regex="^&#40;survival|creative|adventure|spectator&#41;$" />)
+
+![GameMode Argument](https://cdn.undefinedcreations.com/stellar/gifs/entities/gamemode.gif)

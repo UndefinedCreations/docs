@@ -1,0 +1,26 @@
+---
+title: Mirror Argument
+---
+
+Must be one of the following: `none`, `clockwise_90`, `counterclockwise_90` and `180`. It returns `StructureRotation`. Example:
+
+```java tab="Java"
+new StellarCommand("structure")
+    .addArgument("spawn")
+    .addStructureRotationArgument("rotation")
+    .addExecution(Player.class, context -> {
+        StructureRotation rotation = context.getArgument("rotation");
+        spawnStructure(rotation) // custom method
+    });
+```
+```kotlin tab="Kotlin"
+StellarCommand("structure")
+    .addArgument("spawn")
+    .addStructureRotationArgument(name = "rotation")
+    .addExecution<Player> {
+        val rotation = getArgument<StructureRotation>("rotation")
+        spawnStructure(rotation) // custom method
+    }
+```
+
+![Structure Rotation Argument](https://cdn.undefinedcreations.com/stellar/gifs/structure/rotation.gif)
