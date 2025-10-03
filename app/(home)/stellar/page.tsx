@@ -186,7 +186,7 @@ function Amazing({ delay }: { delay: number }) {
     <React.Fragment>
         <motion.div
           initial={{ scale: 2, opacity: 0, letterSpacing: "64px" }}
-          animate={{ scale: 1, opacity: 1, letterSpacing: "8px" }}
+          animate={{ scale: 1, opacity: 1, letterSpacing: ["4px"] }}
           transition={{ duration: 1, delay, ease: "anticipate" }}
           className="font-black text-shadow-title text-white text-6xl md:7xl lg:text-8xl xl:text-9xl"
           >
@@ -198,7 +198,7 @@ function Amazing({ delay }: { delay: number }) {
           transition={{ duration: 1, delay: 0.5, ease: "anticipate" }}
           className="font-black text-white text-9xl"
           >
-          <p className="text-white mb-16 px-4 py-1 rounded-lg text-lg md:text-xl lg:text-xl font-semibold text-shadow-title">Blazingly fast to develop</p>
+          <p className="text-white mb-16 px-4 py-1 rounded-lg text-lg md:text-xl lg:text-2xl font-semibold text-shadow-title">Blazingly fast to develop</p>
         </motion.div>
     </React.Fragment>
   )
