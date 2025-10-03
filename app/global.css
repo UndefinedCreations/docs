@@ -1,3 +1,15 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
+
+.webkit-user-drag {
+    -webkit-user-drag: none;
+}
+.bg-dotted-black {
+  background-image: radial-gradient(rgba(0,0,0,1) 1px, transparent 0);
+  background-size: 1em 1em;
+  background-position: -1vw -1vw;
+}
+.text-shadow-title {
+    text-shadow: 0px 10px 40px rgba(0,0,0,0.5);
+}
