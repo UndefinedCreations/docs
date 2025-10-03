@@ -33,3 +33,17 @@ compileOnly("com.undefined:stellar-kotlin:(latest version):(platform)") // or im
 <Callout title="If you don't use the plugin" type="warn">
   you need modify your Gradle dependency to `implementation` instead of `compile`/`compileOnly` or remove the `scope` block from your Maven dependency.
 </Callout>
+
+## Setup
+
+To get started, make sure to change the scope in `StellarConfig`:
+
+```kt
+class MyPlugin : JavaPlugin() {
+  val scope = // ...
+
+  override fun onEnable() {
+    StellarConfig.setScope(scope)
+  }
+}
+```

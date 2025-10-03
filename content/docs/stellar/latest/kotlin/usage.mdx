@@ -50,7 +50,7 @@ command("message") {
     listArgument(
         name = "test",
         list = { /** fetch data **/ }, // suspended function
-        context = Dispatchers.IO, // modify the CoroutineContext for the list parameter
+        scope = Plugin.scope, // modify the CoroutineScopce for the list parameter
     ) {
         // ...
     }
@@ -76,7 +76,7 @@ You can add requirements, suggestions, and executions by calling these methods:
 ```kt
 stringArgument("message")
     .requires<Player> { /* ... */ }
-    .execution<Player>(context = Dispatchers.IO) { // context can be modified
+    .execution<Player>(scope = Plugin.scope) { // scope can be modified
         // ...
     }
     .suggest { /* ... */ }
@@ -85,7 +85,7 @@ stringArgument("message")
     }
 ```
 
-These are then run in suspended functions, with the context that is given.
+These are then run in suspended functions, in the scope that is given.
 
 ## Example
 
@@ -116,7 +116,7 @@ command("message") {
         "formatted" {
             // String argument for the actual message
             stringArgument("message") {
-                execution<Player>(context = Dispatchers.IO) { sender, args ->
+                execution<Player>(scope = Plugin.scope) { sender, args ->
                     val target = args.get<Player>("target")
                     val message = args.get<String>("message")
                     
@@ -153,7 +153,7 @@ command("message") {
         }
         
         stringArgument("message") {
-            execution<Player>(context = Dispatchers.Default) { sender, args ->
+            execution<Player>(scope = Plugin.scope) { sender, args ->
                 val message = args.get<String>("message")
                 val broadcast = "§c[§6Broadcast§c] §e${sender.name}: §f$message"
                 
@@ -173,16 +173,6 @@ command("message") {
     }
 }
 ```
-
-This example showcases:
-
-- **Command structure** with aliases and descriptions
-- **Nested literal arguments** for different command modes (`formatted` and `broadcast`)
-- **Permission requirements** using the `requires` method
-- **Coroutine contexts** for async operations with `Dispatchers.IO` and `Dispatchers.Default`
-- **Suspended functions** like `delay()` for async operations
-- **Dynamic suggestions** for better user experience
-- **Multiple execution paths** depending on the arguments provided
 
 The command supports usage patterns like:
 - `/message Steve Hello there!` - Send a simple message
