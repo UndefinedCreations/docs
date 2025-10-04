@@ -6,6 +6,8 @@ import { SplitMB } from "../components/Split-media-body";
 import { ReactNode } from "react";
 import { cn } from "fumadocs-ui/utils/cn";
 
+const lynxModules = ["NPC's", "Scoreboard", "Tab", "Easy Events", "ItemBuilder", "Logging", "Player Meta", "Sceduler"]
+
 export default function HomePage() {
   return (
     <main className="flex flex-1 relative flex-col text-center overflow-x-hidden">
@@ -57,11 +59,17 @@ export default function HomePage() {
         <SplitMB
           className="my-16"
           media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"}}
-          title="Stellar Command API"
-          description="The best way to create commands. With next to no time to develop and maintain, and ease of use with Kotlin features."
+          title="Lynx "
+          description={(
+            <div className="flex flex-col gap-2">
+              <p>A general purpose api with efficient and powerful features to develop with less hassle.</p>
+              <div className="flex flex-row flex-wrap gap-1">
+                {lynxModules.map((m, i) => <span key={m} className="text-sm rounded bg-neutral-800 px-2 py-1">{m}</span>)}
+              </div>
+            </div>)}
           direction="right"
           classNames={{media: "object-center skew-5 scale-150"}}
-          link={{href:"/stellar", "label": "Learn more"}}
+          link={{href:"/lynx", "label": "Learn more"}}
           />
       </section>
 

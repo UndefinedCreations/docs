@@ -15,7 +15,7 @@ import { MdList } from "react-icons/md"
 import ParallaxLogo from "./parallax"
 import { SplitMB } from "@/app/components/Split-media-body"
 
-export default function HomePage() {
+export default function StellarPage() {
   return (
     <main className="p-4 pt-0 flex min-h-screen relative flex-col bg-neutral-900 text-center overflow-hidden">
       <motion.header initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} className="container outline-2 rounded-b-xl outline-neutral-700 bg-gradient-to-r from-black via-transparent to-black mx-auto relative overflow-hidden h-100 w-full py-4 items-center justify-center flex flex-col">

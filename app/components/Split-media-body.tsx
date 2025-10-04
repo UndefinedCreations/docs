@@ -69,8 +69,8 @@ export function SplitMB({ media, title, description, direction, link, className,
           direction === "right" ? "md:order-1" : "md:order-2"
         )}
       >
-        <h1 className="text-4xl font-bold">{title}</h1>
-        <p className="text-xl">{description}</p>
+        <div className="text-4xl font-bold">{title}</div>
+        <div className="text-xl">{description}</div>
         {link && <Link className="bg-neutral-200 hover:bg-neutral-300 text-neutral-800 font-semibold px-6 py-2 rounded-md" href={link.href} >{link.label}</Link>}
       </div>
     </section>
