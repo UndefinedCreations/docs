@@ -9,6 +9,7 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
+    "@types/prismjs": "^1.26.5",
     "framer-motion": "^12.23.22",
     "fumadocs-core": "15.6.0",
     "fumadocs-mdx": "11.6.10",
@@ -17,6 +18,7 @@
     "hls.js": "^1.6.13",
     "lucide-react": "^0.525.0",
     "next": "15.3.4",
+    "prismjs": "^1.30.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",

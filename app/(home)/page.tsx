@@ -5,10 +5,25 @@ import { motion } from "framer-motion"
 import { SplitMB } from "../components/Split-media-body";
 import { ReactNode } from "react";
 import { cn } from "fumadocs-ui/utils/cn";
+import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
+import { useFetch } from "../components/hooks/use-fetch";
 
 const lynxModules = ["NPC's", "Scoreboard", "Tab", "Easy Events", "ItemBuilder", "Logging", "Player Meta", "Sceduler"]
 
+type GitHubMember = {
+  login: string
+  id: number
+  avatar_url: string
+  html_url: string
+}
+
 export default function HomePage() {
+
+  const members = useFetch<GitHubMember[]>(
+    "https://api.github.com/orgs/UndefinedCreations/members"
+  )
+
   return (
     <main className="flex flex-1 relative flex-col text-center overflow-x-hidden">
 
@@ -41,9 +56,10 @@ export default function HomePage() {
         </div>
       </header> */}
 
-      <h1 className="text-5xl font-black mb-8 tracking-wider">Ours Solutions</h1>
 
       <section className="bg-radial from-rose-700/25 to-75% to-transparent">
+        <h1 className="text-5xl font-black mb-8 tracking-wider">Ours Solutions</h1>
+
         <SplitMB
           className="my-16"
           media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"}}
@@ -53,13 +69,11 @@ export default function HomePage() {
           classNames={{media: "object-center skew-5 scale-150"}}
           link={{href:"/stellar", "label": "Learn more"}}
           />
-      </section>
-
-      <section className="">
+          
         <SplitMB
           className="my-16"
           media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"}}
-          title="Lynx "
+          title={(<p className="flex flex-row gap-4 items-center">Lynx <span className="text-base font-medium text-rose-200 h-fit px-4 py-0.5 rounded-full text-center bg-rose-800/50">Beta</span></p>)}
           description={(
             <div className="flex flex-col gap-2">
               <p>A general purpose api with efficient and powerful features to develop with less hassle.</p>
@@ -73,10 +87,52 @@ export default function HomePage() {
           />
       </section>
 
-      <Divider />
+      {/* <section className="bg-neutral-900">
+        <Divider className="mt-0 mb-8" />
+
+        <h1 className="text-5xl font-black mb-8 tracking-wider">Gradle Plugins</h1>
+
+        <div className="max-w-5xl mx-auto w-full p-4">
+          <Link href={"/docs/echo/latest"} className="w-full bg-amber-500">
+            <h1 className="text-3xl">Echo</h1>
+          </Link>
+        </div>
+        
+      </section> */}
       
+      <section className="container mt-16 w-full mx-auto h-200 flex flex-col">
+        <h1 className="text-5xl font-black mb-8 tracking-wider">Contributors</h1>
+            
+        <div className="flex flex-row flex-wrap gap-2 items-center justify-center">
+          {members.loading && <p className="text-neutral-400">Loading contributors…</p>}
+          {members.error && <p className="text-red-400">Failed to load contributors</p>}
+            
+          {!members.loading && members.data?.map((m) => (
+            <Contributor
+              key={m.id}
+              name={m.login}
+              avatar={m.avatar_url}
+              github={m.html_url}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
+}
+
+function Contributor ({name, avatar, github}:{name: string, avatar: string, github?: string}) {
+  return (
+    <Link href={github || "/"} className="p-4 px-6 rounded-xl flex flex-row gap-4 items-center bg-neutral-800/25 hover:bg-neutral-800/75 transition-colors duration-150 border-1 backdrop-blur-xl">
+      <Image className="rounded-full size-12" width={128} height={128} alt="avatar" src={avatar} />
+      <div className="flex flex-col gap-1">
+        <h2 className="text-xl">{name}</h2>
+        {/* <div className="flex flex-row gap-2">
+          {github && <Link href={github} ><BsGithub size={16}/></Link>}
+        </div> */}
+      </div>
+    </Link>
+  )
 }
 
 function Divider ({className}:{className?: string}) {
@@ -98,8 +154,7 @@ function Amazing ({delay}:{delay:number}) {
   )
 }
 
-
-export function Hero() {
+function Hero () {
   return (
     <header className="relative w-full overflow-hidden h-200 flex items-center justify-center">
       {/* Background image */}

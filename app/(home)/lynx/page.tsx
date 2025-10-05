@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import { CodeBlock } from "fumadocs-ui/components/codeblock"
 import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock"
@@ -14,8 +14,41 @@ import { BiSolidError } from "react-icons/bi"
 import { MdList } from "react-icons/md"
 import ParallaxLogo from "./parallax"
 import { SplitMB } from "@/app/components/Split-media-body"
+import TypingCodeBlock from "@/app/components/typing-code-block"
+
+type CodeExample = {
+  code: string,
+  title: string,
+}
+
+const examples: CodeExample[] = [
+  {
+    "title": "Spawn NPC",
+    "code": "location.spawnNPC(\n    name = \"FakePlayer\",\n    skin = Skin(texture, signature)\n).onClick {\n    sender.sendMessage(clickType.name)\n}.setScale(10.0)"
+  },
+  {
+    "title": "Nick Player",
+    "code": "player.setName(newName)\nplayer.setSkin(Skin(texture, signature))"
+  },
+  {
+    "title": "Sidebar/Scoreboard",
+    "code": "sidebar(\"Survival\") {\n    addEmptyLine()\n    addUpdatablePlayerLine { \"${ChatColor.AQUA}${it.name}\" }\n    addUpdatablePlayerTimerLine(20) { \"${ChatColor.RED}Kills : ${ChatColor.GRAY}${it.getStatistic(Statistic.PLAYER_KILLS)}\" }\n    addUpdatablePlayerTimerLine(20) { \"${ChatColor.DARK_PURPLE}Deaths : ${ChatColor.GRAY}${it.getStatistic(Statistic.DEATHS)}\" }\n    addUpdatablePlayerTimerLine(20) { \"${ChatColor.DARK_AQUA}Ping : ${ChatColor.GRAY}${it.ping}\" }\n    addEmptyLine()\n    addUpdatablePlayerTimerLine(20) { \"${ChatColor.AQUA}Rank : ${ChatColor.GRAY}OWNER\" }\n    addUpdatableTimerLine(20) { \"${ChatColor.AQUA}Online : ${ChatColor.GRAY}${Bukkit.getOnlinePlayers().size}\" }\n    addEmptyLine()\n}"
+  },
+  {
+    "title": "Scheduler",
+    "code": "delay(20) {\n Bukkit.broadcastMessage(\"Hello World!!\")\n}"
+  }
+]
+
 
 export default function LynxPage() {
+
+  const [codeExample, setCodeExample] = useState<CodeExample | null>(null)
+
+  useEffect(() => {
+    setCodeExample(examples[Math.floor(Math.random() * examples.length)])
+  }, [])
+
   return (
     <main className="p-4 pt-0 flex min-h-screen relative flex-col bg-neutral-900 text-center overflow-hidden">
       <motion.header initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} className="container outline-2 rounded-b-xl outline-neutral-700 bg-gradient-to-r from-blue-900 to-violet-700 mx-auto relative overflow-hidden h-100 w-full py-4 items-center justify-center flex flex-col">
@@ -27,10 +60,25 @@ export default function LynxPage() {
         <Amazing delay={0} />
       </div>
       </motion.header>
+
+      <motion.div
+        className="rounded-xl p-0 h-auto max-w-4xl mx-auto shadow-md text-left"
+        initial={{ translateY: -75, opacity: 0 }}
+        animate={{ translateY: -75, opacity: 1 }}
+        transition={{ delay: 1, duration: 1, ease: "anticipate" }}
+      >
+        {codeExample && <h2 className="text-xl bg-neutral-800/75 border-2 border-b-0 border-neutral-800/25 backdrop-blur-3xl mb-0 rounded-none rounded-t-md px-4 py-1 w-fit">{codeExample?.title}</h2>}
+        {codeExample && <TypingCodeBlock
+          text={codeExample?.code || ""}
+          onComplete={()=>{}}
+          speed={5}
+          className={"rounded-tl-none rounded-b-2xl border-neutral-800/25"}
+        />}
+      </motion.div>
       
-      <section className="mt-24 w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
+      <section className="w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
         <Link href={"/docs/lynx/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Book /> Documentation</Link>
-        {/* <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Github /> Github</Link> */}
+        <Link href={"https://github.com/UndefinedCreations/Lynx"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Github /> Github</Link>
         {/* <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><File /> Repository</Link> */}
       </section>
 
@@ -38,20 +86,11 @@ export default function LynxPage() {
 
       <SplitMB
         media={{type: "image", src:"https://cdn.undefinedcreations.com/lynx/display/cusotm-gui-example.gif"}}
-        title="Create 3D menus"
-        description="With hte use of Display Entities we can easily create a custom game-space GUI."
+        title="Easily create complex & performant features"
+        description="In this example Lynx leverages NMS and Packet Display Entities to create, player-specific GUIs without using Spigot's performance-heavy API, saving server resources."
         direction="left"
         className="h-100"
         link={{label: "See Example", href: "/docs/lynx/latest/modules/display/examples/custom-gui"}}
-      />
-
-      <Divider />
-
-      <SplitMB
-        media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"}}
-        title={(<div className="flex flex-col gap-1"><span className="rounded-t-md">Example Command</span> <span className="font-semibold text-xl px-3 py-1 bg-neutral-800 rounded-md">/tphere</span></div>)}
-        description="Here you can see how quickly and easily a tphere command is created using Stellar, utilizing its efficient Kotlin workflow."
-        direction="right"
       />
 
       <Divider />
@@ -104,44 +143,5 @@ function Amazing({ delay }: { delay: number }) {
           <p className="text-white mb-16 px-4 py-1 rounded-lg text-lg md:text-xl lg:text-2xl font-semibold text-shadow-title">General Purpose API for future servers</p>
         </motion.div>
     </React.Fragment>
-  )
-}
-
-export function TypingCodeBlock({
-  text,
-  speed = 50,
-}: {
-  text: string
-  speed?: number
-}) {
-  const [displayed, setDisplayed] = useState("")
-
-  useEffect(() => {
-    let i = 0
-    let cancelled = false
-
-    const typeChar = () => {
-      if (cancelled) return
-      if (i <= text.length) {
-        setDisplayed(text.slice(0, i)) // <-- slice ensures correctness
-        i++
-        setTimeout(typeChar, speed)
-      }
-    }
-
-    setDisplayed("")
-    typeChar()
-
-    return () => {
-      cancelled = true
-    }
-  }, [text, speed])
-
-  return (
-    <DynamicCodeBlock
-      lang="kotlin"
-      code={displayed}
-      options={{ theme: "dracula-soft" }}
-    />
   )
 }

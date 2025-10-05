@@ -14,24 +14,25 @@ import { BiSolidError } from "react-icons/bi"
 import { MdList } from "react-icons/md"
 import ParallaxLogo from "./parallax"
 import { SplitMB } from "@/app/components/Split-media-body"
+import TypingCodeBlock from "@/app/components/typing-code-block"
 
 export default function StellarPage() {
   return (
     <main className="p-4 pt-0 flex min-h-screen relative flex-col bg-neutral-900 text-center overflow-hidden">
       <motion.header initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} className="container outline-2 rounded-b-xl outline-neutral-700 bg-gradient-to-r from-black via-transparent to-black mx-auto relative overflow-hidden h-100 w-full py-4 items-center justify-center flex flex-col">
-      <Image src={"/logos/stellar.png"} className="scale-500 opacity-36 blur-[1em] saturate-500" quality={50} fill alt="stellar-logo" />
-      <Image src={"/logos/stellar.png"} className="scale-150 rotate-180 blur-[2em] saturate-500" quality={50} fill alt="stellar-logo" />
-      <div className="z-0 absolute inset-0 w-full opacity-50 skew-5 scale-150 bg-dotted-black"></div>
-      {/* <div className="z-0 absolute inset-0 w-full bg-gradient-to-r opacity-85 from-rose-500 via-transparent to-amber-200"></div> */}
-      <div className="z-1 w-full h-full inset-0 absolute flex flex-col items-center justify-center ">
-        <Amazing delay={0} />
-      </div>
+        <Image src={"/logos/stellar.png"} className="scale-500 opacity-36 blur-[1em] saturate-500" quality={50} fill alt="stellar-logo" />
+        <Image src={"/logos/stellar.png"} className="scale-150 rotate-180 blur-[2em] saturate-500" quality={50} fill alt="stellar-logo" />
+        <div className="z-0 absolute inset-0 w-full opacity-50 skew-5 scale-150 bg-dotted-black"></div>
+        {/* <div className="z-0 absolute inset-0 w-full bg-gradient-to-r opacity-85 from-rose-500 via-transparent to-amber-200"></div> */}
+        <div className="z-1 w-full h-full inset-0 absolute flex flex-col items-center justify-center ">
+          <Amazing delay={0} />
+        </div>
       </motion.header>
 
       <motion.div
-        className="absolute top-120 left-1/2 -translate-1/2 rounded-xl p-0 h-auto max-w-4xl mx-auto shadow-md text-left"
+        className="rounded-xl p-0 h-auto max-w-4xl mx-auto shadow-md text-left"
         initial={{ translateY: 0, opacity: 0 }}
-        animate={{ translateY: -50, opacity: 1 }}
+        animate={{ translateY: -75, opacity: 1 }}
         transition={{ delay: 1, duration: 1, ease: "anticipate" }}
       >
         <TypingCodeBlock
@@ -49,9 +50,9 @@ export default function StellarPage() {
       </motion.div>
 
       
-      <section className="mt-48 w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
+      <section className="w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
         <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Book /> Documentation</Link>
-        <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Github /> Github</Link>
+        <Link href={"https://github.com/UndefinedCreations/Stellar"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Github /> Github</Link>
         <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><File /> Repository</Link>
       </section>
 
@@ -201,44 +202,5 @@ function Amazing({ delay }: { delay: number }) {
           <p className="text-white mb-16 px-4 py-1 rounded-lg text-lg md:text-xl lg:text-2xl font-semibold text-shadow-title">Blazingly fast to develop</p>
         </motion.div>
     </React.Fragment>
-  )
-}
-
-export function TypingCodeBlock({
-  text,
-  speed = 50,
-}: {
-  text: string
-  speed?: number
-}) {
-  const [displayed, setDisplayed] = useState("")
-
-  useEffect(() => {
-    let i = 0
-    let cancelled = false
-
-    const typeChar = () => {
-      if (cancelled) return
-      if (i <= text.length) {
-        setDisplayed(text.slice(0, i)) // <-- slice ensures correctness
-        i++
-        setTimeout(typeChar, speed)
-      }
-    }
-
-    setDisplayed("")
-    typeChar()
-
-    return () => {
-      cancelled = true
-    }
-  }, [text, speed])
-
-  return (
-    <DynamicCodeBlock
-      lang="kotlin"
-      code={displayed}
-      options={{ theme: "dracula-soft" }}
-    />
   )
 }

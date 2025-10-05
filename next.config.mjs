@@ -6,7 +6,7 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ["img.shields.io", "cdn.undefinedcreations.com"],
+    domains: ["img.shields.io", "cdn.undefinedcreations.com", "avatars.githubusercontent.com"],
     dangerouslyAllowSVG: true
   },
 };

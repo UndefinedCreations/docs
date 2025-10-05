@@ -13,3 +13,13 @@
 .text-shadow-title {
     text-shadow: 0px 10px 40px rgba(0,0,0,0.5);
 }
+
+pre[class*="language-"] {
+  background: unset !important; /* dark gray */
+  border-radius: 0.5rem;
+  padding: 0rem !important;
+}
+
+code[class*="language-"] {
+  background: unset !important;
+}
