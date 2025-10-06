@@ -52,8 +52,6 @@ export default function LynxPage() {
   return (
     <main className="p-4 pt-0 flex min-h-screen relative flex-col bg-neutral-900 text-center overflow-hidden">
       <motion.header initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 1}} className="container outline-2 rounded-b-xl outline-neutral-700 bg-gradient-to-r from-blue-900 to-violet-700 mx-auto relative overflow-hidden h-100 w-full py-4 items-center justify-center flex flex-col">
-      {/* <Image src={"/logos/stellar.png"} className="scale-500 opacity-36 blur-[1em] saturate-500" quality={50} fill alt="stellar-logo" /> */}
-      {/* <Image src={"/logos/stellar.png"} className="scale-150 rotate-180 blur-[2em] saturate-500" quality={50} fill alt="stellar-logo" /> */}
       <div className="z-0 absolute inset-0 w-full opacity-50 skew-5 scale-150 bg-dotted-black"></div>
       <div className="z-0 absolute inset-0 w-full bg-gradient-to-r opacity-75 from-blue-500 via-transparent to-violet-500"></div>
       <div className="z-1 w-full h-full inset-0 absolute flex flex-col items-center justify-center ">
@@ -83,36 +81,49 @@ export default function LynxPage() {
       </section>
 
       <Divider />
-
-      <SplitMB
-        media={{type: "image", src:"https://cdn.undefinedcreations.com/lynx/display/cusotm-gui-example.gif"}}
-        title="Easily create complex & performant features"
-        description="In this example Lynx leverages NMS and Packet Display Entities to create, player-specific GUIs without using Spigot's performance-heavy API, saving server resources."
-        direction="left"
-        className="h-100"
-        link={{label: "See Example", href: "/docs/lynx/latest/modules/display/examples/custom-gui"}}
-      />
+      <section className="mb-32 h-fit">
+        <SplitMB
+          media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/group-photo.png"}}
+          title="Spawn NPCs"
+          description="You can spawn player specific NPCs. You can use this to create mirrored NPC skins, make the npc look at the player, or simply hide unimportant ones from other players."
+          direction="right"
+          // link={{label: "See Example", href: "/docs/lynx/latest/modules/display/examples/custom-gui"}}
+          />
+      </section>
+      <section className="mb-32 h-fit">
+        <SplitMB
+          media={{type: "image", src:"https://cdn.discordapp.com/attachments/1366490793212117137/1424847782216208394/Adobe_Express_-_Untitled_1.gif?ex=68e57067&is=68e41ee7&hm=4cdda1c77708035178dd0470a47214bd7834cb2d1ebcbfb7f1eb3ebb2a44a217&"}}
+          title="Edit players names"
+          description="You can even nick players with protocols to make client specific changes. Imagine giving different names to teammates in a minigame or a friend prefix."
+          direction="left"
+          classNames={{media: "object-center scale-125"}}
+          // link={{label: "See Example", href: "/docs/lynx/latest/modules/display/examples/custom-gui"}}
+          />
+      </section>
+      <section className="mb-32 h-fit">
+        <SplitMB
+          media={{type: "image", src:"https://cdn.discordapp.com/attachments/1366490793212117137/1424850149154357288/2025-10-06_22.03.45.png?ex=68e5729b&is=68e4211b&hm=f022bd8331c59d5047c1393e4977301e30f783b1126a6416a7ab168a6724dcca&"}}
+          title="Client-side sidebar"
+          description="Easy to create with no flickering and a scoreboard per player Due to its smart client-side implementation this sidebar will only be rendered on the client as the server only handles delivering its content."
+          direction="right"
+          classNames={{media: "object-right scale-100"}}
+          />
+      </section>
+      <section className="mb-32">
+        <SplitMB
+          media={{type: "image", src:"https://cdn.undefinedcreations.com/lynx/display/cusotm-gui-example.gif"}}
+          title="Easily create complex & performant features"
+          description="In this example Lynx leverages NMS and Packet Display Entities to create, player-specific GUIs without using Spigot's performance-heavy API, saving server resources."
+          direction="left"
+          classNames={{media: "object-contain max-w-fit rounded-md mx-auto flex items-center justify-center"}}
+          link={{label: "See Example", href: "/docs/lynx/latest/modules/display/examples/custom-gui"}}
+          />
+        </section>
 
       <Divider />
 
 
     </main>
-  )
-}
-
-function IncludedRow () {
-  return (
-    <td className="px-4 py-3 text-lime-500 font-semibold text-[0.9em] gap-2"><div className="flex flex-row gap-2 items-center"><Check size={22} strokeWidth={4} className="text-white bg-lime-600 p-1 rounded-md" /> <span className="hidden md:inline">Included</span></div></td>
-  )
-}
-function NotIncludedRow () {
-  return (
-    <td>{""}</td>
-  )
-}
-function PartialRow () {
-  return (
-    <td className="px-4 py-3 text-amber-400 font-regular text-[0.9em] gap-2"><div className="flex flex-row gap-2 items-center"><Clock size={22} strokeWidth={2} className="text-amber-400" /><span className="hidden md:inline">Partial</span></div></td>
   )
 }
 

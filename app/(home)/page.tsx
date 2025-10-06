@@ -72,7 +72,7 @@ export default function HomePage() {
           
         <SplitMB
           className="my-16"
-          media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"}}
+          media={{type: "image", src:"https://cdn.undefinedcreations.com/lynx/playerMeta/game-profle.gif"}}
           title={(<p className="flex flex-row gap-4 items-center">Lynx <span className="text-base font-medium text-rose-200 h-fit px-4 py-0.5 rounded-full text-center bg-rose-800/50">Beta</span></p>)}
           description={(
             <div className="flex flex-col gap-2">
@@ -102,11 +102,11 @@ export default function HomePage() {
       
       <section className="container mt-16 w-full mx-auto h-200 flex flex-col">
         <h1 className="text-5xl font-black mb-8 tracking-wider">Contributors</h1>
-            
+
         <div className="flex flex-row flex-wrap gap-2 items-center justify-center">
           {members.loading && <p className="text-neutral-400">Loading contributors…</p>}
           {members.error && <p className="text-red-400">Failed to load contributors</p>}
-            
+
           {!members.loading && members.data?.map((m) => (
             <Contributor
               key={m.id}

@@ -70,7 +70,7 @@ export default function StellarPage() {
       <SplitMB
         media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"}}
         title={(<div className="flex flex-col gap-1"><span className="rounded-t-md">Example Command</span> <span className="font-semibold text-xl px-3 py-1 bg-neutral-800 rounded-md">/tphere</span></div>)}
-        description="Here you can see how quickly and easily a tphere command is created using Stellar, utilizing its efficient Kotlin workflow."
+        description="Here you can see how quic  kly and easily a tphere command is created using Stellar, utilizing its efficient Kotlin workflow."
         direction="right"
       />
 
