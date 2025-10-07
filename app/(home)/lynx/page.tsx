@@ -92,7 +92,7 @@ export default function LynxPage() {
       </section>
       <section className="mb-32 h-fit">
         <SplitMB
-          media={{type: "image", src:"https://cdn.discordapp.com/attachments/1366490793212117137/1424847782216208394/Adobe_Express_-_Untitled_1.gif?ex=68e57067&is=68e41ee7&hm=4cdda1c77708035178dd0470a47214bd7834cb2d1ebcbfb7f1eb3ebb2a44a217&"}}
+          media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/idk_what_this_is.gif"}}
           title="Edit players names"
           description="You can even nick players with protocols to make client specific changes. Imagine giving different names to teammates in a minigame or a friend prefix."
           direction="left"
@@ -102,7 +102,7 @@ export default function LynxPage() {
       </section>
       <section className="mb-32 h-fit">
         <SplitMB
-          media={{type: "image", src:"https://cdn.discordapp.com/attachments/1366490793212117137/1424850149154357288/2025-10-06_22.03.45.png?ex=68e5729b&is=68e4211b&hm=f022bd8331c59d5047c1393e4977301e30f783b1126a6416a7ab168a6724dcca&"}}
+          media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/sidebar.png"}}
           title="Client-side sidebar"
           description="Easy to create with no flickering and a scoreboard per player Due to its smart client-side implementation this sidebar will only be rendered on the client as the server only handles delivering its content."
           direction="right"
