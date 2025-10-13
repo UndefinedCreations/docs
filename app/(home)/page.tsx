@@ -160,7 +160,8 @@ function BentoGrid() {
             <Image alt="gradle" className="object-cover object-left" fill quality={100} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/happy-ghast.png"} />
             <motion.div
               initial={{translateY: "100%"}}
-              animate={{translateY: "5%", translateX: "-120%", rotate: "25deg", scale: "125%"}}
+              animate={{translateY: "5%"}}
+              style={{translateX: "-120%", rotate: "25deg", scale: "125%"}}
               transition={{duration: 2, ease: "circInOut"}}
               className="h-full absolute right-0 w-1/2"
               >
