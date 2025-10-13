@@ -8,7 +8,7 @@ type Props = {
   groupId: string;
   artifactId: string;
   type?: "release" | "version";
-  host: "undefinedcreations" | "gradle"
+  host?: "undefinedcreations" | "gradle"
 };
 
 export default function LatestVersion({
