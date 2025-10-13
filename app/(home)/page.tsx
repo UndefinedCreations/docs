@@ -10,7 +10,7 @@ import { BsGithub } from "react-icons/bs";
 import { useFetch } from "../components/hooks/use-fetch";
 import TypingCodeBlock from "../components/typing-code-block";
 
-const lynxModules = ["NPC's", "Scoreboard", "Tab", "Easy Events", "ItemBuilder", "Logging", "Player Meta", "Sceduler"]
+const lynxModules = ["NPCs", "Scoreboard", "Tab", "Easy Events", "ItemBuilder", "Logging", "Player Meta", "Scheduler"]
 
 type GitHubMember = {
   login: string
@@ -41,7 +41,7 @@ export default function HomePage() {
       <Divider />
 
             <section id="mcplugins" className="mt-16 bg-radial from-rose-700/25 to-75% px-8 xl:px-0 to-transparent">
-              <h1 className="text-5xl font-black mb-8 tracking-wider">Ours Solutions</h1>
+              <h1 className="text-5xl font-black mb-8 tracking-wider">Our Solutions</h1>
       
               <SplitMB
                 className="my-16"
@@ -59,7 +59,7 @@ export default function HomePage() {
                 title={(<p className="flex flex-row gap-4 items-center">Lynx <span className="text-base font-medium text-rose-200 h-fit px-4 py-0.5 rounded-full text-center bg-rose-800/50">Beta</span></p>)}
                 description={(
                   <div className="flex flex-col gap-2">
-                    <p>A general purpose api with efficient and powerful features to develop with less hassle.</p>
+                    <p>A general purpose API with efficient and powerful features to develop with less hassle.</p>
                     <div className="flex flex-row flex-wrap gap-1">
                       {lynxModules.map((m, i) => <span key={m} className="text-sm rounded bg-neutral-800 px-2 py-1">{m}</span>)}
                     </div>
