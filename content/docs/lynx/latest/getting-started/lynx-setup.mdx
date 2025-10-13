@@ -2,6 +2,8 @@
 title: Setup
 ---
 
+import LatestVersion from "@/app/components/latest-version"
+
 To use the Lynx API in your project, we first need to import this into the project.
 
 Here is a list of all the current modules:
@@ -24,7 +26,7 @@ First add the repository:
 
 <Tabs items={["Releases", "Snapshots"]}>
     <Tab value="Releases">
-        [![Latest Version](https://img.shields.io/badge/dynamic/xml?label=Latest%20Version&style=for-the-badge&logo=gradle&url=https%3A%2F%2Frepo.undefinedcreations.com%2Freleases%2Fcom%2Fundefined%2Flynx%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2F%2Fversioning%2F%2Flatest)](https://github.com/UndefinedCreations/Lynx/releases)
+        <LatestVersion groupId="com.undefined" artifactId="lynx" />
         ```groovy tab="Gradle Groovy DSL"
         maven {
             name = "undefined-repo"
@@ -49,7 +51,7 @@ First add the repository:
     </Tab>
     <Tab value="Snapshots">
 
-        [![Latest Snapshot](https://img.shields.io/badge/dynamic/xml?label=Latest%20Version&style=for-the-badge&logo=gradle&url=https%3A%2F%2Frepo.undefinedcreations.com%2Fsnapshots%2Fcom%2Fundefined%2Flynx%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2F%2Fversioning%2F%2Flatest)](https://github.com/UndefinedCreations/Lynx)
+        <LatestVersion groupId="com.undefined" artifactId="lynx" type="version" />
 
         Lynx snapshots are version that aren't fully done and are created for testing uses.
 

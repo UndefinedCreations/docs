@@ -2,6 +2,8 @@
 title: Setup
 ---
 
+import LatestVersion from "@/app/components/latest-version"
+
 To use the Stellar API in your project, we first need to import this into the project.
 
 Here is a list of platforms:
@@ -39,7 +41,7 @@ maven {
 </repository>
 ```
 
-[![Latest Version](https://img.shields.io/badge/dynamic/xml?label=Latest%20Version&style=for-the-badge&logo=gradle&url=https%3A%2F%2Frepo.undefinedcreations.com%2Freleases%2Fcom%2Fundefined%2Fstellar%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2F%2Fversioning%2F%2Flatest)](https://github.com/UndefinedCreations/Stellar/releases)
+<LatestVersion groupId="com.undefined" artifactId="stellar" />
 
 Then add the library to your dependencies:
 
