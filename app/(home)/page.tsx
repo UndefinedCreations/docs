@@ -157,10 +157,10 @@ function BentoGrid() {
           "lg:col-start-4 lg:col-end-13 lg:row-start-1 lg:row-end-13",
           "relative bg-neutral-950 rounded-2xl")}  >
           <div className="duration-200 shadow-2xl shadow-black inset-0 z-0 absolute rounded-xl overflow-hidden object-cover">
-            <Image alt="gradle" className="object-cover" fill quality={100} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/code-stock-footage.jpg"} />
+            <Image alt="gradle" className="object-cover object-left" fill quality={100} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/happy-ghast.png"} />
             <motion.div
               initial={{translateY: "100%"}}
-              animate={{translateY: "0px"}}
+              animate={{translateY: "5%", translateX: "-120%", rotate: "25deg", scale: "125%"}}
               transition={{duration: 2, ease: "circInOut"}}
               className="h-full absolute right-0 w-1/2"
               >
