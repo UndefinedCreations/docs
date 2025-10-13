@@ -40,7 +40,7 @@ export default function HomePage() {
 
       <Divider />
 
-            <section id="mcplugins" className="mt-16 bg-radial from-rose-700/25 to-75% px-8 xl:px-0 to-transparent">
+            <section id="mcplugins" className="mt-16 bg-radial from-rose-700/25 to-75% px-4 xl:px-0 to-transparent">
               <h1 className="text-5xl font-black mb-8 tracking-wider">Our Solutions</h1>
       
               <SplitMB
@@ -72,7 +72,7 @@ export default function HomePage() {
 
             <Divider />
 
-            <section id="gradleplugins" className="mt-16 px-8 xl:px-0 bg-radial from-cyan-500/25 to-75% to-transparent">
+            <section id="gradleplugins" className="mt-16 px-4 xl:px-0 bg-radial from-cyan-500/25 to-75% to-transparent">
               <h1 className="text-5xl font-black mb-8 tracking-wider">Gradle Plugins</h1>
       
               <SplitMB
