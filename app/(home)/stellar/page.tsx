@@ -15,6 +15,8 @@ import { MdList } from "react-icons/md"
 import ParallaxLogo from "./parallax"
 import { SplitMB } from "@/app/components/Split-media-body"
 import TypingCodeBlock from "@/app/components/typing-code-block"
+import LatestVersion from "@/app/components/latest-version"
+import { RiGitRepositoryLine } from "react-icons/ri"
 
 export default function StellarPage() {
   return (
@@ -50,10 +52,15 @@ export default function StellarPage() {
       </motion.div>
 
       
-      <section className="w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
+      <section className="mt-0 w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
         <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Book /> Documentation</Link>
         <Link href={"https://github.com/UndefinedCreations/Stellar"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Github /> Github</Link>
-        <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><File /> Repository</Link>
+        <Link href={"https://repo.undefinedcreations.com/#/releases/com/undefined/stellar"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><RiGitRepositoryLine /> Repository</Link>
+      </section>
+
+      <section className="mt-6 w-full relative container flex flex-row items-center justify-center mx-auto gap-2">
+        <LatestVersion groupId="com.undefined" artifactId="stellar" />
+        <LatestVersion groupId="com.undefined" artifactId="stellar" type="version" />
       </section>
 
       <Divider />

@@ -15,6 +15,8 @@ import { MdList } from "react-icons/md"
 import ParallaxLogo from "./parallax"
 import { SplitMB } from "@/app/components/Split-media-body"
 import TypingCodeBlock from "@/app/components/typing-code-block"
+import LatestVersion from "@/app/components/latest-version"
+import { RiGitRepositoryLine } from "react-icons/ri"
 
 type CodeExample = {
   code: string,
@@ -74,11 +76,17 @@ export default function LynxPage() {
         />}
       </motion.div>
       
-      <section className="w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
+      <section className="mt-0 w-full relative container flex flex-row items-center justify-center mx-auto gap-4 md:gap-8">
         <Link href={"/docs/lynx/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Book /> Documentation</Link>
         <Link href={"https://github.com/UndefinedCreations/Lynx"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><Github /> Github</Link>
-        {/* <Link href={"/docs/stellar/latest"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><File /> Repository</Link> */}
+        <Link href={"https://repo.undefinedcreations.com/#/releases/com/undefined/lynx"} className="hover:underline flex flex-row gap-2 text-xl items-center" ><RiGitRepositoryLine /> Repository</Link>
       </section>
+
+      <section className="mt-6 w-full relative container flex flex-row items-center justify-center mx-auto gap-2">
+        <LatestVersion groupId="com.undefined" artifactId="lynx" />
+        <LatestVersion groupId="com.undefined" artifactId="lynx" type="version" />
+      </section>
+
 
       <Divider />
       <section className="mb-32 h-fit">

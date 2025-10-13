@@ -2,6 +2,10 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 
+* {
+  scroll-behavior: smooth;
+}
+
 .webkit-user-drag {
     -webkit-user-drag: none;
 }

@@ -9,7 +9,10 @@ import { SearchDialog } from 'fumadocs-ui/components/dialog/search';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return <div>
-        <HomeLayout {...baseOptions}>
+        <HomeLayout
+          {...baseOptions}
+          themeSwitch={{enabled: false}}
+          >
           <div className='min-h-screen inline'>
             {children}
           </div>

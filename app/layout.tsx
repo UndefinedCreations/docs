@@ -14,7 +14,14 @@ export default function Layout({ children }: { children: ReactNode }) {
           <title>Undefined Creations</title>
       </head>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+      <RootProvider
+        theme={{
+          enabled: true,
+          forcedTheme: "dark"
+        }}
+      >
+        {children}
+      </RootProvider>
       </body>
     </html>
   );
