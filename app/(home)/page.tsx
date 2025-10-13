@@ -278,5 +278,3 @@ function AppleCodeBlock ({code}:{code: string}) {
     </div>
   )
 }
-
-export { BentoGrid, BentoCard }
