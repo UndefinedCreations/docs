@@ -79,7 +79,7 @@ export default function HomePage() {
                 className="my-16"
                 media={{type: "image", src:"https://cdn.undefinedcreations.com/undefinedcreations/website/nova-spinning.gif"}}
                 title="Nova"
-                description="Quickly spin up a local minecraft server to debug your plugin efficiently."
+                description="Quickly spin up a local Minecraft server to debug your plugin efficiently."
                 direction="left"
                 classNames={{media: "object-center skew-5 scale-150"}}
                 link={{href:"/docs/nova/latest", "label": "Learn more"}}
@@ -91,7 +91,7 @@ export default function HomePage() {
                 title={(<p className="flex flex-row gap-4 items-center">Echo</p>)}
                 description={(
                   <div className="flex flex-col gap-2">
-                    <p>Simplify buildtools, mojang mappings and NMS with your plugin.</p>
+                    <p>Simplify BuildTools, mojang mappings and NMS with your plugin.</p>
                   </div>)}
                 direction="right"
                 classNames={{media: "object-right skew-0 scale-101"}}
