@@ -19,9 +19,9 @@ type GitHubMember = {
   html_url: string
 }
 
-function Divider () {
+function Divider ({className}:{className?: string}) {
   return (
-    <div className="container mx-auto w-full h-0.5 bg-gradient-to-r to-transparent via-neutral-700 from-transparent" />
+    <div className={cn("container mx-auto my-16 w-full h-0.5 bg-gradient-to-r to-transparent via-neutral-700/50 from-transparent", className)} />
   )
 }
 
@@ -33,12 +33,12 @@ export default function HomePage() {
   
 
   return (
-    <main className="text-white flex flex-1 relative flex-col gap-16 text-center overflow-x-hidden bg-neutral-950">
+    <main className="text-white flex flex-1 relative flex-col gap-0 text-center overflow-x-hidden bg-neutral-950">
       <div className="mx-auto w-full h-full">
         <BentoGrid />
       </div>
-
-      <Divider />
+      
+      <Divider className="mt-0" />
 
             <section id="mcplugins" className="mt-16 bg-radial from-rose-700/25 to-75% px-4 xl:px-0 to-transparent">
               <h1 className="text-5xl font-black mb-8 tracking-wider">Our Solutions</h1>
@@ -136,81 +136,91 @@ function Contributor ({name, avatar, github}:{name: string, avatar: string, gith
 
 function BentoGrid() {
   return (
-    <header className="flex flex-col bg-radial from-violet-950 via-violet-950/25 to-black min-h-200 w-full pb-20 p-0">
-
-      <div className="h-60 mt-25 flex flex-col items-center justify-center">
-        <h1 className="text-6xl font-black tracking-wider">WAYS TO CREATE <span className="text-violet-500 text-shadow-sm text-shadow-violet-900">MORE</span> <span className="italic font-medium">faster</span></h1>
-      </div>
+    <header className="relative flex flex-col min-h-200 w-full bg-black pb-20 p-0">
 
       <motion.div
-        // initial={{translateY: 500, scale: 1.2, opacity: 0}}
-        // animate={{translateY: 0, scale: 1, opacity: 1}}
-        // transition={{delay: 0, duration: 1, ease: "anticipate"}}
-        className={cn(
-          "w-full h-260 sm:h-200 lg:h-160 container mx-auto",
-          "grid grid-cols-12 grid-rows-12 gap-4 p-4",
-        )}
-      >
-        <div className={cn(
-          "col-start-1 col-end-13 row-start-1 row-end-5",
-          "sm:col-start-1 sm:col-end-13 sm:row-start-1 sm:row-end-8",
-          "lg:col-start-4 lg:col-end-13 lg:row-start-1 lg:row-end-13",
-          "relative bg-neutral-950 rounded-2xl")}  >
-          <div className="duration-200 shadow-2xl shadow-black inset-0 z-0 absolute rounded-xl overflow-hidden object-cover">
-            <Image alt="gradle" className="object-cover object-left" fill quality={100} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/happy-ghast.png"} />
-            <motion.div
-              initial={{translateY: "100%"}}
-              animate={{translateY: "5%"}}
-              style={{translateX: "-120%", rotate: "25deg", scale: "125%"}}
-              transition={{duration: 2, ease: "circInOut"}}
-              className="h-full absolute right-0 w-1/2"
-              >
-              <Image quality={100} className="absolute inset-0 object-cover object-top w-full h-full" alt="team" height={927} width={422} src={"/undefined-render.png"} />
-            </motion.div>
-          </div>
-        </div>
-        <div
-          className={cn(
-            "col-start-1 col-end-13 row-start-9 row-end-13",
-            "sm:col-start-7 sm:col-end-13 sm:row-start-8 sm:row-end-13",
-            "lg:col-start-1 lg:col-end-4 lg:row-start-7 lg:row-end-13",
-            "flex cursor-pointer bg-gradient-to-tr group from-neutral-950/75 to-neutral-950/50")}
-        >
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 1, ease: "easeInOut"}}
+        className="z-0 mx-auto absolute inset-0 w-full h-full bg-radial from-violet-800 via-violet-950/36 to-black"
+      />
 
-          <Link href={"#gradleplugins"} className="relative flex flex-col items-start justify-end text-start gap-4">
-            <div className="skew-y-4 group-hover:-translate-y-10 duration-200 shadow-2xl shadow-black left-4 top-4 z-0 right-4 bottom-12 absolute rounded-md overflow-hidden object-cover">
-              <Image alt="gradle" className="object-cover" fill quality={25} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/nova-spinning.gif"} />
-            </div>
+      <div className="z-1 flex flex-col w-full">
 
-            <div className="rounded-lg flex flex-col z-10 gap-2 h-full items-start justify-end p-4 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent">
-              <h2 className="text-neutral-300/90 text-3xl flex  items-center font-semibold"><SiGradle className="mr-4 inline" />Gradle Plugins</h2>
-              <p className="font-normal text-neutral-500">Improve the experience of project setup & create <span className="text-violet-600 font-bold">better, faster</span></p>
-            </div>
-          </Link>
-
+        <div className="h-60 mt-25 flex flex-col items-center justify-center">
+          <h1 className="text-6xl font-black tracking-wider">WAYS TO CREATE <span className="text-violet-500 text-shadow-sm text-shadow-violet-900">MORE</span> <span className="italic font-medium">faster</span></h1>
         </div>
 
-        <div
+        <motion.div
+          // initial={{translateY: 500, scale: 1.2, opacity: 0}}
+          // animate={{translateY: 0, scale: 1, opacity: 1}}
+          // transition={{delay: 0, duration: 1, ease: "anticipate"}}
           className={cn(
-            "col-start-1 col-end-13 row-start-5 row-end-9",
-            "sm:col-start-1 sm:col-end-7 sm:row-start-8 sm:row-end-13",
-            "lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-7",
-            "relative flex rounded-lg bg-gradient-to-tr group from-rose-950/0 to-violet-700/25 gap-4"
+            "w-full h-260 sm:h-200 lg:h-160 container mx-auto",
+            "grid grid-cols-12 grid-rows-12 gap-4 p-4",
           )}
           >
-          <Link href={"#mcplugins"} className="flex flex-col items-start justify-end text-start gap-4 p-4">
+          <div className={cn(
+            "col-start-1 col-end-13 row-start-1 row-end-5",
+            "sm:col-start-1 sm:col-end-13 sm:row-start-1 sm:row-end-8",
+            "lg:col-start-4 lg:col-end-13 lg:row-start-1 lg:row-end-13",
+            "relative bg-neutral-950 rounded-2xl")}  >
+            <div className="duration-200 shadow-2xl shadow-black inset-0 z-0 absolute rounded-xl overflow-hidden object-cover">
+              <Image alt="gradle" className="object-cover object-left" fill quality={100} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/happy-ghast.png"} />
+              <motion.div
+                initial={{translateY: "100%"}}
+                animate={{translateY: "5%"}}
+                style={{translateX: "-120%", rotate: "25deg", scale: "125%"}}
+                transition={{duration: 2, ease: "circInOut"}}
+                className="h-full absolute right-0 w-1/2"
+                >
+                <Image quality={100} className="absolute inset-0 object-cover object-top w-full h-full" alt="team" height={927} width={422} src={"/undefined-render.png"} />
+              </motion.div>
+            </div>
+          </div>
+          <div
+            className={cn(
+              "col-start-1 col-end-13 row-start-9 row-end-13",
+              "sm:col-start-7 sm:col-end-13 sm:row-start-8 sm:row-end-13",
+              "lg:col-start-1 lg:col-end-4 lg:row-start-7 lg:row-end-13",
+              "flex cursor-pointer bg-gradient-to-tr group from-neutral-950/75 to-neutral-950/50")}
+              >
+
+            <Link href={"#gradleplugins"} className="relative flex flex-col items-start justify-end text-start gap-4">
+              <div className="skew-y-4 group-hover:-translate-y-10 duration-200 shadow-2xl shadow-black left-4 top-4 z-0 right-4 bottom-12 absolute rounded-md overflow-hidden object-cover">
+                <Image alt="gradle" className="object-cover" fill quality={25} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/nova-spinning.gif"} />
+              </div>
+
+              <div className="rounded-lg flex flex-col z-10 gap-2 h-full items-start justify-end p-4 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent">
+                <h2 className="text-neutral-300/90 text-3xl flex  items-center font-semibold"><SiGradle className="mr-4 inline" />Gradle Plugins</h2>
+                <p className="font-normal text-neutral-500">Improve the experience of project setup & create <span className="text-violet-600 font-bold">better, faster</span></p>
+              </div>
+            </Link>
+
+          </div>
+
+          <div
+            className={cn(
+              "col-start-1 col-end-13 row-start-5 row-end-9",
+              "sm:col-start-1 sm:col-end-7 sm:row-start-8 sm:row-end-13",
+              "lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-7",
+              "relative flex rounded-lg bg-gradient-to-tr group from-rose-950/0 to-violet-700/25 gap-4"
+            )}
+            >
+            <Link href={"#mcplugins"} className="flex flex-col items-start justify-end text-start gap-4 p-4">
+
+              <div className="shadow-2xl group-hover:-translate-x-8 duration-200 shadow-black relative w-full rounded-md overflow-hidden object-cover">
+                <Image alt="stellar" className="object-cover w-full h-full flex-1" height={700} width={500} quality={25} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"} />
+              </div>
+              <div className="rounded-lg flex flex-col z-10 gap-2 -m-4 h-fit mt-auto items-start justify-end p-4 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent">
+                <h2 className="text-neutral-300/90 text-3xl flex  items-center font-semibold">Minecraft APIs</h2>
+                <p className="font-normal text-neutral-500">Performant and developer friendly libraries for creating advanced features easily.</p>
+              </div>
+            </Link>
+          </div>
           
-            <div className="shadow-2xl group-hover:-translate-x-8 duration-200 shadow-black relative w-full rounded-md overflow-hidden object-cover">
-              <Image alt="stellar" className="object-cover w-full h-full flex-1" height={700} width={500} quality={25} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"} />
-            </div>
-            <div className="rounded-lg flex flex-col z-10 gap-2 -m-4 h-fit mt-auto items-start justify-end p-4 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent">
-              <h2 className="text-neutral-300/90 text-3xl flex  items-center font-semibold">Minecraft APIs</h2>
-              <p className="font-normal text-neutral-500">Performant and developer friendly libraries for creating advanced features easily.</p>
-            </div>
-          </Link>
-        </div>
-        
-      </motion.div>
+        </motion.div>
+      </div>
     </header>
   )
 }
@@ -252,6 +262,7 @@ import "prismjs/components/prism-kotlin"
 import "prismjs/themes/prism-okaidia.css"
 import { SiGradle } from "react-icons/si";
 import LatestVersion from "../components/latest-version";
+import { BiSupport } from "react-icons/bi";
 
 function AppleCodeBlock ({code}:{code: string}) {
   

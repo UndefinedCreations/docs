@@ -8,7 +8,8 @@ export default function BasicFooter () {
             <h1>© {new Date().getFullYear()} Undefined Creations | All Rights Reserved</h1>
           </div>
           <div className='flex flex-row gap-4'>
-            <Link href={"https://discord.gg/VxJMQ24pUF"} className='flex flex-row text-violet-300 gap-2 items-center'><BsDiscord /> Discord</Link>
+            <Link href={"https://discord.undefinedcreations.com"} className='flex flex-row text-violet-300 gap-2 items-center'><BsDiscord /> Discord</Link>
+            <Link href={"https://discord.undefinedcreations.com"} className='flex flex-row text-neutral-800 font-semibold px-4 py-1 rounded-lg bg-neutral-300 gap-2 items-center'> Support</Link>
           </div>
         </footer>
     )
