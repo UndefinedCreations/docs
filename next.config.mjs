@@ -6,9 +6,14 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ["img.shields.io", "cdn.discordapp.com", "cdn.undefinedcreations.com", "avatars.githubusercontent.com"],
+    remotePatterns: [
+      { protocol: "https", hostname: "img.shields.io" },
+      { protocol: "https", hostname: "cdn.discordapp.com" },
+      { protocol: "https", hostname: "cdn.undefinedcreations.com" },
+      { protocol: "https", hostname: "avatars.githubusercontent.com" }
+    ],
     dangerouslyAllowSVG: true
-  },
+  }
 };
 
 export default withMDX(config);
