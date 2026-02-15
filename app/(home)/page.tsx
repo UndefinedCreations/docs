@@ -166,7 +166,7 @@ function BentoGrid() {
             "lg:col-start-4 lg:col-end-13 lg:row-start-1 lg:row-end-13",
             "relative bg-neutral-950 rounded-2xl")}  >
             <div className="duration-200 shadow-2xl shadow-black inset-0 z-0 absolute rounded-xl overflow-hidden object-cover">
-              <Image alt="gradle" className="object-cover object-left" fill quality={100} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/happy-ghast.png"} />
+              <Image alt="gradle" className="object-cover object-left" fill quality={75} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/happy-ghast.png"} />
               <motion.div
                 initial={{translateY: "100%"}}
                 animate={{translateY: "5%"}}
@@ -174,7 +174,7 @@ function BentoGrid() {
                 transition={{duration: 2, ease: "circInOut"}}
                 className="h-full absolute right-0 w-1/2"
                 >
-                <Image quality={100} className="absolute inset-0 object-cover object-top w-full h-full" alt="team" height={927} width={422} src={"/undefined-render.png"} />
+                <Image quality={75} className="absolute inset-0 object-cover object-top w-full h-full" alt="team" height={927} width={422} src={"/undefined-render.png"} />
               </motion.div>
             </div>
           </div>
@@ -188,7 +188,7 @@ function BentoGrid() {
 
             <Link href={"#gradleplugins"} className="relative flex flex-col items-start justify-end text-start gap-4">
               <div className="skew-y-4 group-hover:-translate-y-10 duration-200 shadow-2xl shadow-black left-4 top-4 z-0 right-4 bottom-12 absolute rounded-md overflow-hidden object-cover">
-                <Image alt="gradle" className="object-cover" fill quality={25} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/nova-spinning.gif"} />
+                <Image alt="gradle" className="object-cover" fill quality={75} unoptimized src={"https://cdn.undefinedcreations.com/undefinedcreations/website/nova-spinning.gif"} />
               </div>
 
               <div className="rounded-lg flex flex-col z-10 gap-2 h-full items-start justify-end p-4 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent">
@@ -210,7 +210,7 @@ function BentoGrid() {
             <Link href={"#mcplugins"} className="flex flex-col items-start justify-end text-start gap-4 p-4">
 
               <div className="shadow-2xl group-hover:-translate-x-8 duration-200 shadow-black relative w-full rounded-md overflow-hidden object-cover">
-                <Image alt="stellar" className="object-cover w-full h-full flex-1" height={700} width={500} quality={25} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"} />
+                <Image alt="stellar" className="object-cover w-full h-full flex-1" height={700} width={500} unoptimized quality={75} src={"https://cdn.undefinedcreations.com/undefinedcreations/website/tpahere.gif"} />
               </div>
               <div className="rounded-lg flex flex-col z-10 gap-2 -m-4 h-fit mt-auto items-start justify-end p-4 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-transparent">
                 <h2 className="text-neutral-300/90 text-3xl flex  items-center font-semibold">Minecraft APIs</h2>

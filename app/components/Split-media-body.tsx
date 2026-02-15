@@ -49,6 +49,7 @@ export function SplitMB({ media, title, description, direction, link, className,
         {media.type == "image" ? <Image
           alt="gif"
           fill
+          unoptimized
           className={cn("object-cover object-left", classNames?.media, link ? "cursor-pointer duration-250 hover:opacity-75 hover:scale-120" : "")}
           src={media.src}
         /> : <VideoPlayer
