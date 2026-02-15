@@ -122,10 +122,13 @@ export default function HomePage() {
 
 function Contributor ({name, avatar, github}:{name: string, avatar: string, github?: string}) {
   return (
-    <Link href={github || "/"} className="p-4 px-6 rounded-xl flex flex-row gap-4 items-center bg-neutral-800/25 hover:bg-neutral-800/75 transition-colors duration-150 border-1 backdrop-blur-xl">
-      <Image className="rounded-full size-12" width={128} height={128} alt="avatar" src={avatar} />
-      <div className="flex flex-col gap-1">
-        <h2 className="text-xl">{name}</h2>
+    <Link href={github || "/"} className="p-3 px-6 pl-3 group rounded-xl relative overflow-hidden flex flex-row gap-4 items-center hover:bg-neutral-800 transition-colors duration-150 border-1 backdrop-blur-xl">
+      <div className="absolute inset-0.5 rounded-[10px] z-2 bg-neutral-900 group-hover:bg-neutral-900/75" ></div>
+      <Image className="rounded-md size-12 z-2" width={128} height={128} alt="avatar" src={avatar} />
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-neutral-800/0 to-neutral-800/75" ></div>
+      <Image className="group-hover:opacity-100 opacity-12.5 z-0 w-full h-full blur-xl scale-150 absolute inset-0 group-hover:scale-110" width={128} height={128} alt="avatar" src={avatar} />
+      <div className="flex flex-col gap-1 z-2">
+        <h2 className="text-xl px-2">{name}</h2>
         {/* <div className="flex flex-row gap-2">
           {github && <Link href={github} ><BsGithub size={16}/></Link>}
         </div> */}
